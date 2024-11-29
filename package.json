@@ -14,6 +14,7 @@
     "test:install": "pnpm --filter=e2e test:install",
     "changeset": "changeset",
     "lint": "eslint .",
+    "fix": "eslint . --fix",
     "release": "changeset publish",
     "prepare": "husky"
   },
