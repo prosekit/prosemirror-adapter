@@ -1,6 +1,6 @@
 import './Editor.css'
 
-import { useNodeViewFactory, usePluginViewFactory, useWidgetViewFactory } from '@prosemirror-adapter/react'
+import { useMarkViewFactory, useNodeViewFactory, usePluginViewFactory, useWidgetViewFactory } from '@prosemirror-adapter/react'
 import type { EditorView } from 'prosemirror-view'
 import { DecorationSet } from 'prosemirror-view'
 import type { FC } from 'react'
@@ -12,10 +12,12 @@ import { Hashes } from './Hashes'
 import { Heading } from './Heading'
 import { Paragraph } from './Paragraph'
 import { Size } from './Size'
+import { Link } from './Link'
 
 export const Editor: FC = () => {
   const viewRef = useRef<EditorView>()
   const nodeViewFactory = useNodeViewFactory()
+  const markViewFactory = useMarkViewFactory()
   const pluginViewFactory = usePluginViewFactory()
   const widgetViewFactory = useWidgetViewFactory()
   const editorRef = useRef<HTMLDivElement>(null)
@@ -41,6 +43,12 @@ export const Editor: FC = () => {
       }),
       heading: nodeViewFactory({
         component: Heading,
+      }),
+    }, {
+      link: markViewFactory({
+        component: Link,
+        as: 'span',
+        contentAs: 'span',
       }),
     }, [
       new Plugin({
@@ -69,7 +77,7 @@ export const Editor: FC = () => {
     return () => {
       viewRef.current?.destroy()
     }
-  }, [nodeViewFactory, pluginViewFactory, widgetViewFactory])
+  }, [nodeViewFactory, markViewFactory, pluginViewFactory, widgetViewFactory])
 
   return <div className="editor" ref={editorRef} />
 }

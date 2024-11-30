@@ -37,6 +37,7 @@ export function Editor() {
           component: Heading,
         }),
       },
+      {},
       [
         new Plugin({
           view: pluginViewFactory({

@@ -1,6 +1,6 @@
-import 'prosemirror-view/style/prosemirror.css'
 import 'prosemirror-example-setup/style/style.css'
 import 'prosemirror-menu/style/menu.css'
+import 'prosemirror-view/style/prosemirror.css'
 
 import { exampleSetup } from 'prosemirror-example-setup'
 import { keymap } from 'prosemirror-keymap'
@@ -8,10 +8,18 @@ import { DOMParser } from 'prosemirror-model'
 import { schema } from 'prosemirror-schema-basic'
 import type { Plugin } from 'prosemirror-state'
 import { EditorState } from 'prosemirror-state'
-import type { NodeViewConstructor } from 'prosemirror-view'
+import type {
+  MarkViewConstructor,
+  NodeViewConstructor,
+} from 'prosemirror-view'
 import { EditorView } from 'prosemirror-view'
 
-export function createEditorView(element: HTMLElement | ShadowRoot, nodeViews: Record<string, NodeViewConstructor>, plugins: Plugin[]) {
+export function createEditorView(
+  element: HTMLElement | ShadowRoot,
+  nodeViews: Record<string, NodeViewConstructor>,
+  markViews: Record<string, MarkViewConstructor>,
+  plugins: Plugin[],
+) {
   const content = document.querySelector('#content')
   if (!content)
     throw new Error('Content element not found')
@@ -48,5 +56,6 @@ export function createEditorView(element: HTMLElement | ShadowRoot, nodeViews: R
       ],
     }),
     nodeViews,
+    markViews,
   })
 }

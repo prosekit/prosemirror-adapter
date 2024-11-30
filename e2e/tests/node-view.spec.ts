@@ -3,15 +3,19 @@ import { testAll } from './helpers'
 
 testAll(() => {
   test('heading node view render', async ({ page }) => {
-    await expect(
-      page.locator('.editor [data-node-view-root="true"] h3 [data-node-view-content="true"]'),
-    ).toContainText('Hello ProseMirror')
+    const locator = page.locator(
+      '.editor [data-node-view-root="true"] h3 [data-node-view-content="true"]',
+    )
+    await expect(locator).toBeVisible()
+    await expect(locator).toContainText('Hello ProseMirror')
   })
 
   test('paragraph node view render', async ({ page }) => {
-    await expect(
-      page.locator('.editor blockquote [data-node-view-root="true"] p[data-node-view-content="true"]'),
-    ).toContainText('This is editable text')
+    const locator = page.locator(
+      '.editor blockquote [data-node-view-root="true"] p[data-node-view-content="true"]',
+    )
+    await expect(locator).toBeVisible()
+    await expect(locator).toContainText('This is editable text')
   })
 
   test('heading node view update', async ({ page }) => {

@@ -35,7 +35,7 @@ watchEffect((onCleanup) => {
     heading: nodeViewFactory({
       component: Heading,
     }),
-  }, [
+  }, {}, [
     new Plugin({
       view: pluginViewFactory({
         component: Size,

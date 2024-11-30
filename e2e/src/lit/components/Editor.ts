@@ -46,7 +46,7 @@ export class MyEditor extends ShallowLitElement {
       heading: nodeViewFactory({
         component: Heading,
       }),
-    }, [
+    }, {}, [
       new Plugin({
         view: pluginViewFactory({
           component: Size,

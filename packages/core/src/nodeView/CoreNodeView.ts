@@ -1,7 +1,7 @@
 import type { Attrs, Node } from 'prosemirror-model'
 import type { Decoration, DecorationSource, EditorView, NodeView, ViewMutationRecord } from 'prosemirror-view'
 
-import type { CoreNodeViewSpec, CoreNodeViewUserOptions } from './CoreNodeViewOptions'
+import type { CoreNodeViewSpec, CoreNodeViewUserOptions, NodeViewDOMSpec } from './CoreNodeViewOptions'
 
 export class CoreNodeView<ComponentType> implements NodeView {
   dom: HTMLElement
@@ -16,7 +16,7 @@ export class CoreNodeView<ComponentType> implements NodeView {
   setSelection?: (anchor: number, head: number, root: Document | ShadowRoot) => void
   stopEvent?: (event: Event) => boolean
 
-  #createElement(as?: string | HTMLElement | ((node: Node) => HTMLElement)) {
+  #createElement(as?: NodeViewDOMSpec) {
     const { node } = this
     return as == null
       ? document.createElement(node.isInline ? 'span' : 'div')
@@ -27,11 +27,11 @@ export class CoreNodeView<ComponentType> implements NodeView {
           : document.createElement(as)
   }
 
-  createDOM(as?: string | HTMLElement | ((node: Node) => HTMLElement)) {
+  createDOM(as?: NodeViewDOMSpec) {
     return this.#createElement(as)
   }
 
-  createContentDOM(as?: string | HTMLElement | ((node: Node) => HTMLElement)) {
+  createContentDOM(as?: NodeViewDOMSpec) {
     return this.#createElement(as)
   }
 
@@ -109,7 +109,7 @@ export class CoreNodeView<ComponentType> implements NodeView {
     if (this.node.isLeaf || this.node.isAtom)
       return true
 
-    if ((mutation.type as unknown) === 'selection')
+    if (mutation.type === 'selection')
       return false
 
     if (this.contentDOM === mutation.target && mutation.type === 'attributes')
