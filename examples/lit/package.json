@@ -6,9 +6,9 @@
     "start": "vite"
   },
   "dependencies": {
-    "@lit-labs/context": "^0.3.0",
+    "@lit-labs/context": "^0.5.1",
     "@prosemirror-adapter/lit": "*",
-    "lit": "^2.7.0",
+    "lit": "^2.8.0",
     "prosemirror-example-setup": "^1.2.3",
     "prosemirror-keymap": "^1.2.2",
     "prosemirror-menu": "^1.2.4",
@@ -16,7 +16,7 @@
     "prosemirror-schema-basic": "^1.2.3",
     "prosemirror-state": "^1.4.3",
     "prosemirror-view": "^1.37.0",
-    "tslib": "^2.5.0"
+    "tslib": "^2.8.1"
   },
   "devDependencies": {
     "typescript": "^4.9.5",
