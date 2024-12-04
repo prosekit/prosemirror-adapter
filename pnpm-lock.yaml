@@ -157,7 +157,7 @@ importers:
         version: 0.3.0
       '@prosemirror-adapter/lit':
         specifier: '*'
-        version: link:../../packages/lit
+        version: 0.2.6(@lit-labs/context@0.3.0)(lit@2.7.0)
       lit:
         specifier: ^2.7.0
         version: 2.7.0
@@ -197,7 +197,7 @@ importers:
     dependencies:
       '@prosemirror-adapter/react':
         specifier: '*'
-        version: link:../../packages/react
+        version: 0.2.6(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@type-config/strict':
         specifier: ^1.2.1
         version: 1.2.1
@@ -294,7 +294,7 @@ importers:
     dependencies:
       '@prosemirror-adapter/svelte':
         specifier: '*'
-        version: link:../../packages/svelte
+        version: 0.3.0(svelte@5.0.2)
       prosemirror-example-setup:
         specifier: ^1.2.3
         version: 1.2.3
@@ -324,11 +324,11 @@ importers:
         specifier: ^2.7.2
         version: 2.7.2(@sveltejs/vite-plugin-svelte@4.0.0(svelte@5.0.2)(vite@5.4.11(@types/node@22.10.1)))(svelte@5.0.2)(vite@5.4.11(@types/node@22.10.1))
       prettier:
-        specifier: ^2.8.7
-        version: 2.8.7
+        specifier: ^3.3.3
+        version: 3.4.2
       prettier-plugin-svelte:
         specifier: ^3.2.8
-        version: 3.3.2(prettier@2.8.7)(svelte@5.0.2)
+        version: 3.3.2(prettier@3.4.2)(svelte@5.0.2)
       svelte:
         specifier: ^5.0.2
         version: 5.0.2
@@ -349,7 +349,7 @@ importers:
     dependencies:
       '@prosemirror-adapter/vue':
         specifier: '*'
-        version: link:../../packages/vue
+        version: 0.2.6(vue@3.5.12(typescript@4.9.5))
       '@type-config/strict':
         specifier: ^1.2.1
         version: 1.2.1
@@ -1157,6 +1157,31 @@ packages:
   '@polka/url@1.0.0-next.28':
     resolution: {integrity: sha512-8LduaNlMZGwdZ6qWrKlfa+2M4gahzFkprZiAt2TF8uS0qQgBizKXpXURqvTJ4WtmupWxaLqjRb2UCTe72mu+Aw==}
 
+  '@prosemirror-adapter/core@0.2.6':
+    resolution: {integrity: sha512-7GXWQBR/bd6ngvek8SgtlEVC0x3KL7LKZ5cxyZl4IBAlRDbITQWsuKLChEXNan9A6+9Ry4a46crbDGTQlzooOg==}
+
+  '@prosemirror-adapter/lit@0.2.6':
+    resolution: {integrity: sha512-vdTc51W8iu771bohR6JLLga+0eukMJZDDG9bLSfF9JzcNNlLo7LSw47tBsjn1Jqf5/dqYvsmXVxIbOOkZ/+vcA==}
+    peerDependencies:
+      '@lit-labs/context': ^0.3.0
+      lit: ^2.6.1
+
+  '@prosemirror-adapter/react@0.2.6':
+    resolution: {integrity: sha512-JdDqAJV7FnRyIlnXPP+E0Iu80BQPvHeB+7c0ZfdcHLfVb2BLTNHk6iOoqJmBJmqqHt/KjxXXTmxRUS4EEsjVlg==}
+    peerDependencies:
+      react: '*'
+      react-dom: '*'
+
+  '@prosemirror-adapter/svelte@0.3.0':
+    resolution: {integrity: sha512-THzG04lSh7JzoVw+RF7oSUoCtKovEIjbwJWDkkUPanm8J20FrlWn/1ZhCUl2Cis4h3mKUzXL3s+/XTvfEKRfQA==}
+    peerDependencies:
+      svelte: ^4.0.0 || ^5.0.0
+
+  '@prosemirror-adapter/vue@0.2.6':
+    resolution: {integrity: sha512-NYjgHfjfmeS3QtMvGpL885BNdE8OnsdlNfzqO78fT2QIsKITR6hiiqsghlVBzrn41UxBILwVH3rf1gfXi7f7kg==}
+    peerDependencies:
+      vue: ^3.0.0
+
   '@rollup/rollup-android-arm-eabi@4.24.0':
     resolution: {integrity: sha512-Q6HJd7Y6xdB48x8ZNVDOqsbh2uByBhgK8PiQgPhwkIw/HC/YX5Ghq2mQY5sRMZWHb3VsFkWooUVOZHKr7DmDIA==}
     cpu: [arm]
@@ -1583,11 +1608,6 @@ packages:
     resolution: {integrity: sha512-xsc9Xv0xlVfwp2o7sQ+GCQ1PgbkdcpWdTzrwXxO3xDMTAywVS3oXVOcOHuRjAPkS4P9b+yc/qNF15460v+jp4Q==}
     peerDependencies:
       acorn: '>=8.9.0'
-
-  acorn@8.12.1:
-    resolution: {integrity: sha512-tcpGyI9zbizT9JbV6oYE477V6mTlXvvi0T0G3SNIYE2apm/G5huBa1+K89VGeovbg+jycCrfhl3ADxErOuO6Jg==}
-    engines: {node: '>=0.4.0'}
-    hasBin: true
 
   acorn@8.14.0:
     resolution: {integrity: sha512-cl669nCJTZBsL97OF4kUQm5g5hC2uihk0NxY3WENAC0TYdILVkAyHymAntgxGkl7K+t0cXIrH5siy5S4XkFycA==}
@@ -2830,9 +2850,6 @@ packages:
     resolution: {integrity: sha512-WYDyuc/uFcGp6YtM2H0uKmUwieOuzeE/5YocFJLnLfclZ4inf3mRn8ZVy1s7Hxji7Jxm6Ss8gqpexD/GlKoGgg==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
 
-  jsonc-parser@3.2.0:
-    resolution: {integrity: sha512-gfFQZrcTc8CnKXp6Y4/CBT3fTc0OVuDofpre4aEeEpSBPV5X5v4+Vmx+8snU7RLPrNHPKSgLxGo9YuQzz20o+w==}
-
   jsonfile@4.0.0:
     resolution: {integrity: sha512-m6F1R3z8jjlf2imQHS2Qez5sjKWQzbuuhuJ/FKYFRZvPE3PuHcSMVZzfsLhGVOkfd20obL5SWEBew5ShlquNxg==}
 
@@ -3037,9 +3054,6 @@ packages:
     resolution: {integrity: sha512-VC5fg6ySUscaWUpI4gxCBTQMH2RdUpNrk+MsbpCYtIvf9SBJdiUey4qE7BXviJsJR4nDQxCZ+3yaYNW3guz/Pw==}
     engines: {node: '>= 8.0.0'}
 
-  mlly@1.4.2:
-    resolution: {integrity: sha512-i/Ykufi2t1EZ6NaPLdfnZk2AX8cs0d+mTzVKuPfqPKPatxLApaBoxJQ9x1/uckXtrS/U5oisPMDkNs0yQTaBRg==}
-
   mlly@1.7.3:
     resolution: {integrity: sha512-xUsx5n/mN0uQf4V548PKQ+YShA4/IW0KI1dZhrNrPCLG+xizETbHTkOa1f8/xut9JRPp8kQuMnz0oqwkTiLo/A==}
 
@@ -3060,6 +3074,11 @@ packages:
   nanoid@3.3.7:
     resolution: {integrity: sha512-eSRppjcPIatRIMC1U6UngP8XFcz8MQWGQdt1MTBQ7NaAmvXDfvNxbvWV3x2y6CdEUciCSsDHDQZbhYaB8QEo2g==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
+    hasBin: true
+
+  nanoid@4.0.2:
+    resolution: {integrity: sha512-7ZtY5KTCNheRGfEFxnedV5zFiORN1+Y1N6zvPTnHQd8ENUvfaDBeuJDZb2bN/oXwXxu3qkTXDzy57W5vAmDTBw==}
+    engines: {node: ^14 || ^16 || >=18}
     hasBin: true
 
   nanoid@5.0.1:
@@ -3254,9 +3273,6 @@ packages:
     resolution: {integrity: sha512-ljR1Axx1Vb4uY8NZ+QItj1PpuBtLDJcgEbWsdscDdif1I3YJUpfSRWmdULPkTbNxhfbG8TnPmheAZSmqh2QzcQ==}
     hasBin: true
 
-  pkg-types@1.0.3:
-    resolution: {integrity: sha512-nN7pYi0AQqJnoLPC9eHFQ8AcyaixBUOwvqc5TDnIKCMEE6I0y8P7OKA7fPexsXGCGxQDl/cmrLAp26LhcwxZ4A==}
-
   pkg-types@1.2.1:
     resolution: {integrity: sha512-sQoqa8alT3nHjGuTjuKgOnvjo4cljkufdtLMnO2LBP/wRwuDlo1tkaEdMxCRhyGRPacv/ztlZgDPm2b7FAmEvw==}
 
@@ -3303,6 +3319,11 @@ packages:
   prettier@2.8.7:
     resolution: {integrity: sha512-yPngTo3aXUUmyuTjeTUT75txrf+aMh9FiD7q9ZE/i6r0bPb22g4FsE6Y338PQX1bmfy08i9QQCB7/rcUAVntfw==}
     engines: {node: '>=10.13.0'}
+    hasBin: true
+
+  prettier@3.4.2:
+    resolution: {integrity: sha512-e9MewbtFo+Fevyuxn/4rrcDAaq0IYxPGLvObpQjiZBMAzB9IGmzlnG9RZy3FFas+eBMu2vA0CszMeduow5dIuQ==}
+    engines: {node: '>=14'}
     hasBin: true
 
   prop-types@15.8.1:
@@ -3878,9 +3899,6 @@ packages:
     resolution: {integrity: sha512-vcI4UpRgg81oIRUFwR0WSIHKt11nJ7SAVlYNIu+QpqeyXP+gpQJy/Z4+F0aGxSE4MqwjyXvW/TzgkLAx2AGHwQ==}
     engines: {node: '>=14.17'}
     hasBin: true
-
-  ufo@1.3.1:
-    resolution: {integrity: sha512-uY/99gMLIOlJPwATcMVYfqDSxUR9//AUcgZMzwfSTJPDKzA1S8mX4VLqa+fiAtveraQUBCz4FFcwVZBGbwBXIw==}
 
   ufo@1.5.4:
     resolution: {integrity: sha512-UsUk3byDzKd04EyoZ7U4DOlxQaD14JUKQl6/P7wiX4FNvUfm3XL246n9W5AmqwW5RSFJ27NAuM0iLscAOYUiGQ==}
@@ -4926,6 +4944,40 @@ snapshots:
 
   '@polka/url@1.0.0-next.28': {}
 
+  '@prosemirror-adapter/core@0.2.6':
+    dependencies:
+      tslib: 2.7.0
+
+  '@prosemirror-adapter/lit@0.2.6(@lit-labs/context@0.3.0)(lit@2.7.0)':
+    dependencies:
+      '@lit-labs/context': 0.3.0
+      '@prosemirror-adapter/core': 0.2.6
+      lit: 2.7.0
+      nanoid: 4.0.2
+      tslib: 2.7.0
+
+  '@prosemirror-adapter/react@0.2.6(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
+    dependencies:
+      '@prosemirror-adapter/core': 0.2.6
+      nanoid: 4.0.2
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      tslib: 2.7.0
+
+  '@prosemirror-adapter/svelte@0.3.0(svelte@5.0.2)':
+    dependencies:
+      '@prosemirror-adapter/core': 0.2.6
+      nanoid: 5.0.1
+      svelte: 5.0.2
+      tslib: 2.7.0
+
+  '@prosemirror-adapter/vue@0.2.6(vue@3.5.12(typescript@4.9.5))':
+    dependencies:
+      '@prosemirror-adapter/core': 0.2.6
+      nanoid: 4.0.2
+      tslib: 2.7.0
+      vue: 3.5.12(typescript@4.9.5)
+
   '@rollup/rollup-android-arm-eabi@4.24.0':
     optional: true
 
@@ -5441,15 +5493,13 @@ snapshots:
       jsonparse: 1.3.1
       through: 2.3.8
 
-  acorn-jsx@5.3.2(acorn@8.12.1):
+  acorn-jsx@5.3.2(acorn@8.14.0):
     dependencies:
-      acorn: 8.12.1
+      acorn: 8.14.0
 
-  acorn-typescript@1.4.13(acorn@8.12.1):
+  acorn-typescript@1.4.13(acorn@8.14.0):
     dependencies:
-      acorn: 8.12.1
-
-  acorn@8.12.1: {}
+      acorn: 8.14.0
 
   acorn@8.14.0: {}
 
@@ -6331,14 +6381,14 @@ snapshots:
 
   espree@10.1.0:
     dependencies:
-      acorn: 8.12.1
-      acorn-jsx: 5.3.2(acorn@8.12.1)
+      acorn: 8.14.0
+      acorn-jsx: 5.3.2(acorn@8.14.0)
       eslint-visitor-keys: 4.0.0
 
   espree@9.6.1:
     dependencies:
-      acorn: 8.12.1
-      acorn-jsx: 5.3.2(acorn@8.12.1)
+      acorn: 8.14.0
+      acorn-jsx: 5.3.2(acorn@8.14.0)
       eslint-visitor-keys: 3.4.3
 
   esprima@4.0.1: {}
@@ -6809,12 +6859,10 @@ snapshots:
 
   jsonc-eslint-parser@2.4.0:
     dependencies:
-      acorn: 8.12.1
+      acorn: 8.14.0
       eslint-visitor-keys: 3.4.3
       espree: 9.6.1
       semver: 7.6.3
-
-  jsonc-parser@3.2.0: {}
 
   jsonfile@4.0.0:
     optionalDependencies:
@@ -6909,8 +6957,8 @@ snapshots:
 
   local-pkg@0.5.0:
     dependencies:
-      mlly: 1.4.2
-      pkg-types: 1.0.3
+      mlly: 1.7.3
+      pkg-types: 1.2.1
 
   locate-character@3.0.0: {}
 
@@ -7051,13 +7099,6 @@ snapshots:
 
   mixme@0.5.9: {}
 
-  mlly@1.4.2:
-    dependencies:
-      acorn: 8.12.1
-      pathe: 1.1.2
-      pkg-types: 1.0.3
-      ufo: 1.3.1
-
   mlly@1.7.3:
     dependencies:
       acorn: 8.14.0
@@ -7074,6 +7115,8 @@ snapshots:
   ms@2.1.3: {}
 
   nanoid@3.3.7: {}
+
+  nanoid@4.0.2: {}
 
   nanoid@5.0.1: {}
 
@@ -7262,12 +7305,6 @@ snapshots:
       query-registry: 3.0.1
       tinyglobby: 0.2.10
 
-  pkg-types@1.0.3:
-    dependencies:
-      jsonc-parser: 3.2.0
-      mlly: 1.4.2
-      pathe: 1.1.2
-
   pkg-types@1.2.1:
     dependencies:
       confbox: 0.1.8
@@ -7306,12 +7343,14 @@ snapshots:
 
   prelude-ls@1.2.1: {}
 
-  prettier-plugin-svelte@3.3.2(prettier@2.8.7)(svelte@5.0.2):
+  prettier-plugin-svelte@3.3.2(prettier@3.4.2)(svelte@5.0.2):
     dependencies:
-      prettier: 2.8.7
+      prettier: 3.4.2
       svelte: 5.0.2
 
   prettier@2.8.7: {}
+
+  prettier@3.4.2: {}
 
   prop-types@15.8.1:
     dependencies:
@@ -7847,8 +7886,8 @@ snapshots:
       '@ampproject/remapping': 2.3.0
       '@jridgewell/sourcemap-codec': 1.5.0
       '@types/estree': 1.0.6
-      acorn: 8.12.1
-      acorn-typescript: 1.4.13(acorn@8.12.1)
+      acorn: 8.14.0
+      acorn-typescript: 1.4.13(acorn@8.14.0)
       aria-query: 5.3.2
       axobject-query: 4.1.0
       esm-env: 1.0.0
@@ -7976,8 +8015,6 @@ snapshots:
   typescript@4.9.5: {}
 
   typescript@5.4.5: {}
-
-  ufo@1.3.1: {}
 
   ufo@1.5.4: {}
 
