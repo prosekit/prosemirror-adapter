@@ -8,7 +8,7 @@
   "dependencies": {
     "@lit-labs/context": "^0.3.0",
     "@prosemirror-adapter/lit": "*",
-    "lit": "^2.7.0",
+    "lit": "^3.2.1",
     "prosemirror-example-setup": "^1.2.3",
     "prosemirror-keymap": "^1.2.2",
     "prosemirror-menu": "^1.2.4",
