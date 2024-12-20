@@ -9,7 +9,6 @@ docs
 coverage
 test-results
 .pnpm-store
-.npmrc
 tsconfig.tsbuildinfo
 e2e/cypress/videos
 e2e/cypress/screenshots
