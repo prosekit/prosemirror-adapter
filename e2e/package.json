@@ -20,7 +20,7 @@
     "@prosemirror-adapter/vue": "workspace:*",
     "@sveltejs/vite-plugin-svelte": "^4.0.4",
     "@types/node": "^22.10.1",
-    "@types/react": "^18.3.17",
+    "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
     "@vitejs/plugin-react": "^4.3.4",
     "@vitejs/plugin-vue": "^5.2.1",
@@ -30,8 +30,8 @@
     "prosemirror-schema-basic": "^1.2.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "solid-js": "^1.9.3",
-    "svelte": "^5.14.4",
+    "solid-js": "^1.9.4",
+    "svelte": "^5.17.3",
     "vite-plugin-solid": "^2.11.0",
     "vue": "3.5.13"
   }
