@@ -28,6 +28,11 @@
   "peerDependencies": {
     "solid-js": "^1.8.22"
   },
+  "peerDependenciesMeta": {
+    "solid-js": {
+      "optional": true
+    }
+  },
   "dependencies": {
     "@prosemirror-adapter/core": "workspace:*",
     "nanoid": "^5.0.9",

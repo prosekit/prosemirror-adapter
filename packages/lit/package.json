@@ -29,6 +29,14 @@
     "@lit-labs/context": "^0.5.0",
     "lit": "^3.0.0"
   },
+  "peerDependenciesMeta": {
+    "@lit-labs/context": {
+      "optional": true
+    },
+    "lit": {
+      "optional": true
+    }
+  },
   "dependencies": {
     "@prosemirror-adapter/core": "workspace:*",
     "nanoid": "^5.0.9",
