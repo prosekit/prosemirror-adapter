@@ -28,6 +28,11 @@
   "peerDependencies": {
     "vue": "^3.0.0"
   },
+  "peerDependenciesMeta": {
+    "vue": {
+      "optional": true
+    }
+  },
   "dependencies": {
     "@prosemirror-adapter/core": "workspace:*",
     "nanoid": "^5.0.9",
