@@ -12,7 +12,7 @@
   },
   "devDependencies": {
     "@lit-labs/context": "^0.5.1",
-    "@playwright/test": "^1.49.1",
+    "@playwright/test": "^1.51.1",
     "@prosemirror-adapter/lit": "workspace:*",
     "@prosemirror-adapter/react": "workspace:*",
     "@prosemirror-adapter/solid": "workspace:*",
@@ -23,16 +23,16 @@
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
     "@vitejs/plugin-react": "^4.3.4",
-    "@vitejs/plugin-vue": "^5.2.1",
+    "@vitejs/plugin-vue": "^5.2.3",
     "lit": "^3.2.1",
     "prosemirror-example-setup": "^1.2.3",
     "prosemirror-menu": "^1.2.4",
     "prosemirror-schema-basic": "^1.2.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "solid-js": "^1.9.4",
-    "svelte": "^5.17.3",
-    "vite-plugin-solid": "^2.11.0",
+    "solid-js": "^1.9.5",
+    "svelte": "^5.23.1",
+    "vite-plugin-solid": "^2.11.6",
     "vue": "3.5.13"
   }
 }

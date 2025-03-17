@@ -9,17 +9,17 @@
   "dependencies": {
     "@prosemirror-adapter/vue": "*",
     "@type-config/strict": "^1.2.1",
-    "@vitejs/plugin-vue": "^5.2.1",
+    "@vitejs/plugin-vue": "^5.2.3",
     "prosemirror-example-setup": "^1.2.3",
     "prosemirror-keymap": "^1.2.2",
     "prosemirror-menu": "^1.2.4",
     "prosemirror-model": "^1.24.1",
     "prosemirror-schema-basic": "^1.2.3",
     "prosemirror-state": "^1.4.3",
-    "prosemirror-view": "^1.37.1",
+    "prosemirror-view": "^1.38.1",
     "tslib": "^2.8.1",
-    "typescript": "~5.7.2",
-    "vite": "^5.4.11",
+    "typescript": "~5.7.3",
+    "vite": "^5.4.14",
     "vue": "^3.5.13"
   }
 }

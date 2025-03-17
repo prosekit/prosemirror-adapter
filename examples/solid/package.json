@@ -16,13 +16,13 @@
     "prosemirror-model": "^1.24.1",
     "prosemirror-schema-basic": "^1.2.3",
     "prosemirror-state": "^1.4.3",
-    "prosemirror-view": "^1.37.1",
-    "solid-js": "^1.9.4"
+    "prosemirror-view": "^1.38.1",
+    "solid-js": "^1.9.5"
   },
   "devDependencies": {
     "solid-devtools": "^0.33.0",
-    "typescript": "~5.7.2",
-    "vite": "^5.4.11",
-    "vite-plugin-solid": "^2.11.0"
+    "typescript": "~5.7.3",
+    "vite": "^5.4.14",
+    "vite-plugin-solid": "^2.11.6"
   }
 }
