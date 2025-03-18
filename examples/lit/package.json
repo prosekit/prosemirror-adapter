@@ -9,7 +9,7 @@
   "dependencies": {
     "@lit-labs/context": "^0.5.1",
     "@prosemirror-adapter/lit": "*",
-    "lit": "^2.8.0",
+    "lit": "^3.2.1",
     "prosemirror-example-setup": "^1.2.3",
     "prosemirror-keymap": "^1.2.2",
     "prosemirror-menu": "^1.2.4",
