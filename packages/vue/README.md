@@ -50,7 +50,7 @@ const { contentRef, selected } = useNodeViewContext()
 </script>
 
 <template>
-  <div :ref="contentRef" role="presentation" :class="{ selected }" />
+  <div ref="contentRef" role="presentation" :class="{ selected }" />
 </template>
 
 <style scoped>
@@ -90,7 +90,7 @@ const editorRef: VNodeRef = (element) => {
 </script>
 
 <template>
-  <div :ref="editorRef" class="editor" />
+  <div ref="editorRef" class="editor" />
 </template>
 ```
 
@@ -147,7 +147,7 @@ onUnmounted(() => {
 <template>
   <a
     :href="href"
-    :ref="contentRef"
+    ref="contentRef"
     :style="{ color: color, transition: 'color 1s ease-in-out' }"
     :title="title || undefined"
   />
@@ -190,7 +190,7 @@ const editorRef: VNodeRef = (element) => {
 </script>
 
 <template>
-  <div :ref="editorRef" class="editor" />
+  <div ref="editorRef" class="editor" />
 </template>
 ```
 
@@ -257,7 +257,7 @@ const editorRef: VNodeRef = (element) => {
 </script>
 
 <template>
-  <div :ref="editorRef" class="editor" />
+  <div ref="editorRef" class="editor" />
 </template>
 ```
 
@@ -347,7 +347,7 @@ const editorRef: VNodeRef = (element) => {
 </script>
 
 <template>
-  <div :ref="editorRef" class="editor" />
+  <div ref="editorRef" class="editor" />
 </template>
 ```
 
