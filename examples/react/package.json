@@ -1,8 +1,8 @@
 {
   "name": "@examples/react",
-  "description": "React example for ProseMirror Adapter",
   "type": "module",
   "private": true,
+  "description": "React example for ProseMirror Adapter",
   "license": "MIT",
   "scripts": {
     "start": "vite",

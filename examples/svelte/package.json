@@ -1,8 +1,8 @@
 {
 	"name": "@examples/svelte",
-	"description": "Svelte example for ProseMirror Adapter",
 	"type": "module",
 	"private": true,
+	"description": "Svelte example for ProseMirror Adapter",
 	"scripts": {
 		"start": "vite",
 		"build": "vite build"

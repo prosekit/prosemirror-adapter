@@ -1,9 +1,9 @@
 {
   "name": "@example/solid",
-  "description": "Solid example for ProseMirror Adapter",
   "type": "module",
   "version": "0.0.0",
   "private": true,
+  "description": "Solid example for ProseMirror Adapter",
   "license": "MIT",
   "scripts": {
     "start": "vite",
