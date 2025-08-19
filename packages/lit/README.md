@@ -19,7 +19,6 @@ npm install @prosemirror-adapter/lit
 ### Wrap your component with provider
 
 ```ts
-
 import { ProsemirrorAdapterProvider } from '@prosemirror-adapter/lit'
 
 class YourElement extends LitElement {
@@ -46,7 +45,6 @@ In this section we will implement a node view for paragraph node.
 #### Build component for [node view](https://prosemirror.net/docs/ref/#view.NodeView)
 
 ```ts
-
 import { ShallowLitElement, useNodeViewContext } from '@prosemirror-adapter/lit'
 import { html } from 'lit'
 import { customElement } from 'lit/decorators.js'
@@ -58,8 +56,7 @@ export class Paragraph extends ShallowLitElement {
 
   override render() {
     const contentRef = this.nodeViewContext.value?.contentRef
-    if (!contentRef)
-      return
+    if (!contentRef) return
 
     return html`<div ${ref(contentRef)}></div>`
   }
@@ -75,12 +72,8 @@ declare global {
 #### Bind node view components with prosemirror
 
 ```ts
-
-import {
-  ShallowLitElement,
-  useNodeViewFactory,
-} from '@prosemirror-adapter/lit'
-import type { RefOrCallback} from 'lit/directives/ref.js';
+import { ShallowLitElement, useNodeViewFactory } from '@prosemirror-adapter/lit'
+import type { RefOrCallback } from 'lit/directives/ref.js'
 import { ref } from 'lit/directives/ref.js'
 import Paragraph from './Paragraph.ts'
 
@@ -132,9 +125,21 @@ import { customElement, state } from 'lit/decorators.js'
 import { ref } from 'lit/directives/ref.js'
 
 const colors = [
-  '#f06292', '#ba68c8', '#9575cd', '#7986cb', '#64b5f6',
-  '#4fc3f7', '#4dd0e1', '#4db6ac', '#81c784', '#aed581',
-  '#ffb74d', '#ffa726', '#ff8a65', '#d4e157', '#ffd54f',
+  '#f06292',
+  '#ba68c8',
+  '#9575cd',
+  '#7986cb',
+  '#64b5f6',
+  '#4fc3f7',
+  '#4dd0e1',
+  '#4db6ac',
+  '#81c784',
+  '#aed581',
+  '#ffb74d',
+  '#ffa726',
+  '#ff8a65',
+  '#d4e157',
+  '#ffd54f',
   '#ffecb3',
 ]
 
@@ -153,8 +158,7 @@ export class Link extends ShallowLitElement {
 
   override render() {
     const ctx = this.markViewContext.value
-    if (!ctx)
-      return
+    if (!ctx) return
     const { contentRef } = ctx
     return html`<a style="color: ${this.color}; transition: color 1s ease-in-out;" ${ref(contentRef)}></a>`
   }
@@ -191,8 +195,7 @@ import './Link'
 const markViewFactory = useMarkViewFactory()
 
 function createEditor(element: HTMLElement) {
-  if (!element || element.firstChild)
-    return
+  if (!element || element.firstChild) return
 
   const editorView = new EditorView(element, {
     state: EditorState.create({
@@ -207,8 +210,8 @@ function createEditor(element: HTMLElement) {
             },
           },
         }),
-      ]
-    })
+      ],
+    }),
   })
 }
 ```
@@ -230,7 +233,6 @@ In this section we will implement a plugin view that will display the size of th
 #### Build component for [plugin view](https://prosemirror.net/docs/ref/#state.PluginView)
 
 ```ts
-
 import { ShallowLitElement, usePluginViewContext } from '@prosemirror-adapter/lit'
 import { html } from 'lit'
 import { customElement } from 'lit/decorators.js'
@@ -256,12 +258,8 @@ declare global {
 #### Bind plugin view components with prosemirror
 
 ```ts
-
-import {
-  ShallowLitElement,
-  usePluginViewFactory,
-} from '@prosemirror-adapter/lit'
-import type { RefOrCallback} from 'lit/directives/ref.js';
+import { ShallowLitElement, usePluginViewFactory } from '@prosemirror-adapter/lit'
+import type { RefOrCallback } from 'lit/directives/ref.js'
 import { ref } from 'lit/directives/ref.js'
 import { Plugin } from 'prosemirror-state'
 import Size from './Size.ts'
@@ -280,7 +278,7 @@ export class MyEditor extends ShallowLitElement {
             component: Size,
           }),
         }),
-      ]
+      ],
     })
   }
 
@@ -307,7 +305,6 @@ In this section we will implement a widget view that will add hashes for heading
 #### Build component for [widget decoration view](https://prosemirror.net/docs/ref/#view.Decoration%5Ewidget)
 
 ```ts
-
 import { ShallowLitElement, useWidgetViewContext } from '@prosemirror-adapter/lit'
 import { html } from 'lit'
 import { customElement } from 'lit/decorators.js'
@@ -334,12 +331,8 @@ declare global {
 #### Bind widget view components with prosemirror
 
 ```ts
-
-import {
-  ShallowLitElement,
-  useWidgetViewFactory,
-} from '@prosemirror-adapter/lit'
-import type { RefOrCallback} from 'lit/directives/ref.js';
+import { ShallowLitElement, useWidgetViewFactory } from '@prosemirror-adapter/lit'
+import type { RefOrCallback } from 'lit/directives/ref.js'
 import { ref } from 'lit/directives/ref.js'
 import { Plugin } from 'prosemirror-state'
 import { Hashes } from './Hashes'
@@ -362,8 +355,7 @@ export class MyEditor extends ShallowLitElement {
             decorations(state) {
               const { $from } = state.selection
               const node = $from.node()
-              if (node.type.name !== 'heading')
-                return DecorationSet.empty
+              if (node.type.name !== 'heading') return DecorationSet.empty
 
               const widget = getHashWidget($from.before() + 1, {
                 side: -1,
@@ -374,7 +366,7 @@ export class MyEditor extends ShallowLitElement {
             },
           },
         }),
-      ]
+      ],
     })
   }
 
@@ -401,7 +393,6 @@ export class MyEditor extends ShallowLitElement {
 #### useNodeViewFactory: () => (options: NodeViewFactoryOptions) => NodeView
 
 ```ts
-
 type DOMSpec = string | HTMLElement | ((node: Node) => HTMLElement)
 
 interface NodeViewFactoryOptions {
@@ -430,7 +421,6 @@ interface NodeViewFactoryOptions {
 #### useNodeViewContext: () => NodeViewContext
 
 ```ts
-
 interface NodeViewContext {
   // The DOM element that contains the content of the node.
   contentRef: NodeViewContentRef
@@ -501,7 +491,7 @@ interface MarkViewContext {
   // The prosemirror mark for current mark view
   mark: Mark
 
-  // Whether the mark is inline 
+  // Whether the mark is inline
   inline: boolean
 }
 ```
@@ -519,7 +509,6 @@ interface MarkViewContext {
 #### usePluginViewFactory: () => (options: PluginViewFactoryOptions) => PluginView
 
 ```ts
-
 interface PluginViewFactoryOptions {
   // Component
   component: LitComponent
@@ -538,7 +527,6 @@ interface PluginViewFactoryOptions {
 #### usePluginViewContext: () => PluginViewContext
 
 ```ts
-
 interface PluginViewContext {
   // The prosemirror editor view.
   view: Writable<EditorView>
@@ -562,7 +550,6 @@ interface PluginViewContext {
 #### useWidgetViewFactory: () => (options: WidgetViewFactoryOptions) => WidgetDecorationFactory
 
 ```ts
-
 type WidgetDecorationFactory = (pos: number, spec?: WidgetDecorationSpec) => Decoration
 
 interface WidgetViewFactoryOptions {
@@ -574,11 +561,9 @@ interface WidgetViewFactoryOptions {
 }
 ```
 
-
 #### useWidgetViewContext: () => WidgetViewContext
 
 ```ts
-
 interface WidgetViewContext {
   // The prosemirror editor view.
   view: EditorView

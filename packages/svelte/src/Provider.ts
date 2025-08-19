@@ -11,10 +11,7 @@ import { widgetViewFactoryKey } from './widgetView'
 import { useSvelteWidgetViewCreator } from './widgetView/useSvelteWidgetViewCreator'
 
 export function useProsemirrorAdapterProvider() {
-  const {
-    renderSvelteRenderer,
-    removeSvelteRenderer,
-  } = useSvelteRenderer()
+  const { renderSvelteRenderer, removeSvelteRenderer } = useSvelteRenderer()
 
   const createSvelteNodeView = useSvelteNodeViewCreator(renderSvelteRenderer, removeSvelteRenderer)
   const createSvelteMarkView = useSvelteMarkViewCreator(renderSvelteRenderer, removeSvelteRenderer)

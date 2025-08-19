@@ -29,8 +29,7 @@ export class WidgetViewDOMProvider extends ShallowLitElement {
 
   constructor(widgetView: LitWidgetView) {
     super()
-    if (!widgetView)
-      return
+    if (!widgetView) return
 
     this.widgetView = widgetView
     this.provider = new ContextProvider(this, widgetViewContextKey, this.widgetView.context)

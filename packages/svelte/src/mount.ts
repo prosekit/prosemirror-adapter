@@ -1,9 +1,6 @@
 import * as svelte from 'svelte'
 
-import type {
-  SvelteClassComponentConstructor,
-  SvelteComponentConstructor,
-} from './types'
+import type { SvelteClassComponentConstructor, SvelteComponentConstructor } from './types'
 
 const isSvelte5 = !!svelte.mount && !!svelte.flushSync
 

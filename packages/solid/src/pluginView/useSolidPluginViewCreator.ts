@@ -9,9 +9,7 @@ export function useSolidPluginViewCreator(
   renderSolidRenderer: SolidRendererResult['renderSolidRenderer'],
   removeSolidRenderer: SolidRendererResult['removeSolidRenderer'],
 ) {
-  const createSolidPluginView = (
-    options: SolidPluginViewUserOptions,
-  ): PluginViewSpec => {
+  const createSolidPluginView = (options: SolidPluginViewUserOptions): PluginViewSpec => {
     return (view) => {
       const pluginView = new SolidPluginView({
         view,

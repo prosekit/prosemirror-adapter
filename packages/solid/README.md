@@ -22,7 +22,7 @@ npm install @prosemirror-adapter/solid
 import { ProsemirrorAdapterProvider } from '@prosemirror-adapter/solid'
 import { YourAwesomeEditor } from 'somewhere'
 
-export function Component () {
+export function Component() {
   return (
     <ProsemirrorAdapterProvider>
       <YourAwesomeEditor />
@@ -46,15 +46,9 @@ In this section we will implement a node view for paragraph node.
 ```tsx
 import { useNodeViewContext } from '@prosemirror-adapter/solid'
 
-function Paragraph () {
+function Paragraph() {
   const { contentRef, selected } = useNodeViewContext()
-  return (
-    <div
-      style={{ outline: selected ? 'blue solid 1px' : 'none' }}
-      role="presentation"
-      ref={contentRef}
-    />
-  )
+  return <div style={{ outline: selected ? 'blue solid 1px' : 'none' }} role="presentation" ref={contentRef} />
 }
 ```
 
@@ -80,7 +74,7 @@ export const YourAwesomeEditor: Component = () => {
           contentAs: 'p',
         }),
       },
-      []
+      [],
     )
   }
 
@@ -109,9 +103,21 @@ import { useMarkViewContext } from '@prosemirror-adapter/solid'
 import { createEffect, createMemo, createSignal, onCleanup } from 'solid-js'
 
 const colors = [
-  '#f06292', '#ba68c8', '#9575cd', '#7986cb', '#64b5f6',
-  '#4fc3f7', '#4dd0e1', '#4db6ac', '#81c784', '#aed581',
-  '#ffb74d', '#ffa726', '#ff8a65', '#d4e157', '#ffd54f',
+  '#f06292',
+  '#ba68c8',
+  '#9575cd',
+  '#7986cb',
+  '#64b5f6',
+  '#4fc3f7',
+  '#4dd0e1',
+  '#4db6ac',
+  '#81c784',
+  '#aed581',
+  '#ffb74d',
+  '#ffa726',
+  '#ff8a65',
+  '#d4e157',
+  '#ffd54f',
   '#ffecb3',
 ]
 
@@ -124,7 +130,7 @@ export function Link() {
   const context = useMarkViewContext()
   const href = createMemo(() => context().mark.attrs.href as string)
   const title = createMemo(() => context().mark.attrs.title as string | null)
-  
+
   createEffect(() => {
     const interval = setInterval(() => {
       setColor(pickRandomColor())
@@ -138,8 +144,7 @@ export function Link() {
       title={title() || undefined}
       ref={context().contentRef}
       style={{ color: color(), transition: 'color 1s ease-in-out' }}
-    >
-    </a>
+    ></a>
   )
 }
 ```
@@ -155,8 +160,7 @@ export function Editor() {
   const markViewFactory = useMarkViewFactory()
 
   const editorRef = (element: HTMLElement) => {
-    if (!element || element.firstChild)
-      return
+    if (!element || element.firstChild) return
 
     const editorView = new EditorView(element, {
       state: EditorState.create({
@@ -171,8 +175,8 @@ export function Editor() {
               },
             },
           }),
-        ]
-      })
+        ],
+      }),
     })
   }
 
@@ -271,11 +275,7 @@ export function Hashes() {
   const level = createMemo(() => context().spec?.level)
   const hashes = createMemo(() => new Array(level() || 0).fill('#').join(''))
 
-  return (
-    <span style={{ 'color': 'blue', 'margin-right': '6px' }}>
-      {hashes()}
-    </span>
-  )
+  return <span style={{ color: 'blue', 'margin-right': '6px' }}>{hashes()}</span>
 }
 ```
 
@@ -293,8 +293,7 @@ export const YourAwesomeEditor: Component = () => {
 
   const editorRef = useCallback(
     (element: HTMLDivElement) => {
-      if (!element || element.firstChild)
-        return
+      if (!element || element.firstChild) return
 
       const getHashWidget = widgetViewFactory({
         as: 'i',
@@ -310,8 +309,7 @@ export const YourAwesomeEditor: Component = () => {
                 decorations(state) {
                   const { $from } = state.selection
                   const node = $from.node()
-                  if (node.type.name !== 'heading')
-                    return DecorationSet.empty
+                  if (node.type.name !== 'heading') return DecorationSet.empty
 
                   const widget = getHashWidget($from.before() + 1, {
                     side: -1,
@@ -322,8 +320,8 @@ export const YourAwesomeEditor: Component = () => {
                 },
               },
             }),
-          ]
-        })
+          ],
+        }),
       })
     },
     [widgetViewFactory],
@@ -332,6 +330,7 @@ export const YourAwesomeEditor: Component = () => {
   return <div className="editor" ref={editorRef} />
 }
 ```
+
 🚀 Congratulations! You have built your first solid widget view with prosemirror-adapter.
 
 </details>
@@ -361,19 +360,11 @@ interface NodeViewFactoryOptions {
   contentAs?: DOMSpec
 
   // Overrides: this part is equal to properties of [NodeView](https://prosemirror.net/docs/ref/#view.NodeView)
-  update?: (
-    node: Node,
-    decorations: readonly Decoration[],
-    innerDecorations: DecorationSource
-  ) => boolean | void
+  update?: (node: Node, decorations: readonly Decoration[], innerDecorations: DecorationSource) => boolean | void
   ignoreMutation?: (mutation: ViewMutationRecord) => boolean | void
   selectNode?: () => void
   deselectNode?: () => void
-  setSelection?: (
-    anchor: number,
-    head: number,
-    root: Document | ShadowRoot
-  ) => void
+  setSelection?: (anchor: number, head: number, root: Document | ShadowRoot) => void
   stopEvent?: (event: Event) => boolean
   destroy?: () => void
 
@@ -455,7 +446,7 @@ interface MarkViewContext {
   // The prosemirror mark for current mark view
   mark: Mark
 
-  // Whether the mark is inline 
+  // Whether the mark is inline
   inline: boolean
 }
 ```
@@ -514,10 +505,7 @@ interface PluginViewContext {
 #### useWidgetViewFactory: () => (options: WidgetViewFactoryOptions) => WidgetDecorationFactory
 
 ```ts
-type WidgetDecorationFactory = (
-  pos: number,
-  spec?: WidgetDecorationSpec
-) => Decoration
+type WidgetDecorationFactory = (pos: number, spec?: WidgetDecorationSpec) => Decoration
 
 interface WidgetViewFactoryOptions {
   // Component

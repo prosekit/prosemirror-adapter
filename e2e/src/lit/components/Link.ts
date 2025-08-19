@@ -37,8 +37,7 @@ export class Link extends ShallowLitElement {
 
   override render() {
     const ctx = this.markViewContext.value
-    if (!ctx)
-      return
+    if (!ctx) return
     const { contentRef } = ctx
     return html`<a style="color: ${this.color}; transition: color 1s ease-in-out;" ${ref(contentRef)}></a>`
   }

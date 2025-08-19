@@ -25,7 +25,9 @@
   outline: none;
 }
 
-.ProseMirror p { margin-bottom: 1em }
+.ProseMirror p {
+  margin-bottom: 1em;
+}
 
 .hash {
   color: blue;

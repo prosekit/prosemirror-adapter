@@ -29,8 +29,7 @@ export class MarkViewDOMProvider extends ShallowLitElement {
 
   constructor(markView: LitMarkView) {
     super()
-    if (!markView)
-      return
+    if (!markView) return
 
     this.markView = markView
     this.provider = new ContextProvider(this, markViewContextKey, this.markView.context)
@@ -56,12 +55,7 @@ export class LitMarkView extends CoreMarkView<LitMarkViewComponent> implements L
 
   context: MarkViewContext = {
     contentRef: (element) => {
-      if (
-        element
-        && element instanceof HTMLElement
-        && this.contentDOM
-        && element.firstChild !== this.contentDOM
-      ) {
+      if (element && element instanceof HTMLElement && this.contentDOM && element.firstChild !== this.contentDOM) {
         element.appendChild(this.contentDOM)
       }
     },

@@ -3,8 +3,11 @@ import type { SvelteRendererResult } from '../SvelteRenderer'
 import { SveltePluginView } from './SveltePluginView'
 import type { PluginViewFactory } from './pluginViewContext'
 
-export function useSveltePluginViewCreator(renderSvelteRenderer: SvelteRendererResult['renderSvelteRenderer'], removeSvelteRenderer: SvelteRendererResult['removeSvelteRenderer']) {
-  const createSveltePluginView: PluginViewFactory = options => (view) => {
+export function useSveltePluginViewCreator(
+  renderSvelteRenderer: SvelteRendererResult['renderSvelteRenderer'],
+  removeSvelteRenderer: SvelteRendererResult['removeSvelteRenderer'],
+) {
+  const createSveltePluginView: PluginViewFactory = (options) => (view) => {
     const pluginView = new SveltePluginView({
       view,
       options: {

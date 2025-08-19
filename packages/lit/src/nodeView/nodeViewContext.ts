@@ -23,9 +23,13 @@ export interface NodeViewContext {
 export const nodeViewContextKey = createContext<NodeViewContext>('[ProsemirrorAdapter]nodeViewContext')
 
 export type ConsumeNodeViewContext = ContextConsumer<typeof nodeViewContextKey, LitElement>
-export const useNodeViewContext = (element: LitElement): ConsumeNodeViewContext => new ContextConsumer(element, nodeViewContextKey, undefined, true)
+export function useNodeViewContext(element: LitElement): ConsumeNodeViewContext {
+  return new ContextConsumer(element, nodeViewContextKey, undefined, true)
+}
 export const nodeViewFactoryKey = createContext<NodeViewFactory>('[ProsemirrorAdapter]useNodeViewFactory')
 export type NodeViewFactory = (options: LitNodeViewUserOptions) => NodeViewConstructor
 
 export type ConsumeNodeViewFactory = ContextConsumer<typeof nodeViewFactoryKey, LitElement>
-export const useNodeViewFactory = (element: LitElement): ConsumeNodeViewFactory => new ContextConsumer(element, nodeViewFactoryKey, undefined, true)
+export function useNodeViewFactory(element: LitElement): ConsumeNodeViewFactory {
+  return new ContextConsumer(element, nodeViewFactoryKey, undefined, true)
+}

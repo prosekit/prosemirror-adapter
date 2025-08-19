@@ -3,8 +3,11 @@ import type { VueRendererResult } from '../VueRenderer'
 import { VuePluginView } from './VuePluginView'
 import type { PluginViewFactory } from './pluginViewContext'
 
-export function useVuePluginViewCreator(renderVueRenderer: VueRendererResult['renderVueRenderer'], removeVueRenderer: VueRendererResult['removeVueRenderer']) {
-  const createVuePluginView: PluginViewFactory = options => (view) => {
+export function useVuePluginViewCreator(
+  renderVueRenderer: VueRendererResult['renderVueRenderer'],
+  removeVueRenderer: VueRendererResult['removeVueRenderer'],
+) {
+  const createVuePluginView: PluginViewFactory = (options) => (view) => {
     const pluginView = new VuePluginView({
       view,
       options: {

@@ -15,11 +15,14 @@ export class TestApp extends ShallowLitElement {
     return html`
       <h1>Prosemirror Adapter Lit</h1>
       <button @click="${this._onClick}">rerender</button>
-      ${keyed(this.editorId, html`
-        <prosemirror-adapter-provider>
-          <my-editor></my-editor>
-        </prosemirror-adapter-provider>
-      `)}
+      ${keyed(
+        this.editorId,
+        html`
+          <prosemirror-adapter-provider>
+            <my-editor></my-editor>
+          </prosemirror-adapter-provider>
+        `,
+      )}
     `
   }
 

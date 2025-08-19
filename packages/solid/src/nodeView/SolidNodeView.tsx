@@ -1,4 +1,3 @@
-
 import { CoreNodeView, type CoreNodeViewSpec } from '@prosemirror-adapter/core'
 import { nanoid } from 'nanoid'
 import type { Setter } from 'solid-js'
@@ -12,9 +11,7 @@ import type { SolidNodeViewComponent } from './SolidNodeViewOptions'
 import type { NodeViewContext, NodeViewContextProps } from './nodeViewContext'
 import { nodeViewContext } from './nodeViewContext'
 
-export class SolidNodeView
-  extends CoreNodeView<SolidNodeViewComponent>
-  implements SolidRenderer<NodeViewContext> {
+export class SolidNodeView extends CoreNodeView<SolidNodeViewComponent> implements SolidRenderer<NodeViewContext> {
   key: string = nanoid()
   context: NodeViewContext
 
@@ -24,8 +21,7 @@ export class SolidNodeView
     super(spec)
     const [context, setContext] = createSignal<NodeViewContextProps>({
       contentRef: (element) => {
-        if (element && this.contentDOM && element.firstChild !== this.contentDOM)
-          element.appendChild(this.contentDOM)
+        if (element && this.contentDOM && element.firstChild !== this.contentDOM) element.appendChild(this.contentDOM)
       },
       view: this.view,
       getPos: this.getPos,
@@ -41,7 +37,7 @@ export class SolidNodeView
   }
 
   updateContext = () => {
-    this.setContext(prev => ({
+    this.setContext((prev) => ({
       ...prev,
       node: this.node,
       selected: this.selected,
@@ -54,7 +50,7 @@ export class SolidNodeView
     const UserComponent = this.component
 
     return (
-      <Portal mount={this.dom} ref={el => hidePortalDiv(el)}>
+      <Portal mount={this.dom} ref={(el) => hidePortalDiv(el)}>
         <nodeViewContext.Provider value={this.context}>
           <Dynamic component={UserComponent} />
         </nodeViewContext.Provider>

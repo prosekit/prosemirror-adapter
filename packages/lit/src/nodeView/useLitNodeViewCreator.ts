@@ -3,8 +3,11 @@ import type { LitRendererResult } from '../LitRenderer'
 import { LitNodeView } from './LitNodeView'
 import type { NodeViewFactory } from './nodeViewContext'
 
-export function useLitNodeViewCreator(renderLitRenderer: LitRendererResult['renderLitRenderer'], removeLitRenderer: LitRendererResult['removeLitRenderer']) {
-  const createLitNodeView: NodeViewFactory = options => (node, view, getPos, decorations, innerDecorations) => {
+export function useLitNodeViewCreator(
+  renderLitRenderer: LitRendererResult['renderLitRenderer'],
+  removeLitRenderer: LitRendererResult['removeLitRenderer'],
+) {
+  const createLitNodeView: NodeViewFactory = (options) => (node, view, getPos, decorations, innerDecorations) => {
     const nodeView = new LitNodeView({
       node,
       view,

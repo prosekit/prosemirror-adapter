@@ -55,7 +55,7 @@ const { contentRef, selected } = useNodeViewContext()
 
 <style scoped>
 .selected {
-    outline: blue solid 1px;
+  outline: blue solid 1px;
 }
 </style>
 ```
@@ -72,8 +72,7 @@ const nodeViewFactory = useNodeViewFactory()
 
 const editorRef: VNodeRef = (element) => {
   const el = element as HTMLElement
-  if (!el || el.firstChild)
-    return
+  if (!el || el.firstChild) return
 
   const editorView = new EditorView(el, {
     state: YourProsemirrorEditorState,
@@ -116,9 +115,21 @@ import { ref, onMounted, onUnmounted } from 'vue'
 import { useMarkViewContext } from '@prosemirror-adapter/vue'
 
 const colors = [
-  '#f06292', '#ba68c8', '#9575cd', '#7986cb', '#64b5f6',
-  '#4fc3f7', '#4dd0e1', '#4db6ac', '#81c784', '#aed581',
-  '#ffb74d', '#ffa726', '#ff8a65', '#d4e157', '#ffd54f',
+  '#f06292',
+  '#ba68c8',
+  '#9575cd',
+  '#7986cb',
+  '#64b5f6',
+  '#4fc3f7',
+  '#4dd0e1',
+  '#4db6ac',
+  '#81c784',
+  '#aed581',
+  '#ffb74d',
+  '#ffa726',
+  '#ff8a65',
+  '#d4e157',
+  '#ffd54f',
   '#ffecb3',
 ]
 
@@ -167,8 +178,7 @@ const markViewFactory = useMarkViewFactory()
 
 const editorRef: VNodeRef = (element) => {
   const el = element as HTMLElement
-  if (!el || el.firstChild)
-    return
+  if (!el || el.firstChild) return
 
   const editorView = new EditorView(el, {
     state: EditorState.create({
@@ -183,8 +193,8 @@ const editorRef: VNodeRef = (element) => {
             },
           },
         }),
-      ]
-    })
+      ],
+    }),
   })
 }
 </script>
@@ -238,8 +248,7 @@ const pluginViewFactory = usePluginViewFactory()
 
 const editorRef: VNodeRef = (element) => {
   const el = element as HTMLElement
-  if (!el || el.firstChild)
-    return
+  if (!el || el.firstChild) return
 
   const editorView = new EditorView(el, {
     state: EditorState.create({
@@ -250,8 +259,8 @@ const editorRef: VNodeRef = (element) => {
             component: Size,
           }),
         }),
-      ]
-    })
+      ],
+    }),
   })
 }
 </script>
@@ -283,7 +292,9 @@ import { useWidgetViewContext } from '@prosemirror-adapter/vue'
 
 const { spec } = useWidgetViewContext()
 const level = spec?.level
-const hashes = Array(level || 0).fill('#').join('')
+const hashes = Array(level || 0)
+  .fill('#')
+  .join('')
 </script>
 
 <template>
@@ -311,8 +322,7 @@ const widgetViewFactory = useWidgetViewFactory()
 
 const editorRef: VNodeRef = (element) => {
   const el = element as HTMLElement
-  if (!el || el.firstChild)
-    return
+  if (!el || el.firstChild) return
 
   const getHashWidget = widgetViewFactory({
     as: 'i',
@@ -328,8 +338,7 @@ const editorRef: VNodeRef = (element) => {
             decorations(state) {
               const { $from } = state.selection
               const node = $from.node()
-              if (node.type.name !== 'heading')
-                return DecorationSet.empty
+              if (node.type.name !== 'heading') return DecorationSet.empty
 
               const widget = getHashWidget($from.before() + 1, {
                 side: -1,
@@ -340,8 +349,8 @@ const editorRef: VNodeRef = (element) => {
             },
           },
         }),
-      ]
-    })
+      ],
+    }),
   })
 }
 </script>
@@ -368,7 +377,6 @@ const editorRef: VNodeRef = (element) => {
 #### useNodeViewFactory: () => (options: NodeViewFactoryOptions) => NodeView
 
 ```ts
-
 type DOMSpec = string | HTMLElement | ((node: Node) => HTMLElement)
 
 interface NodeViewFactoryOptions {
@@ -397,7 +405,6 @@ interface NodeViewFactoryOptions {
 #### useNodeViewContext: () => NodeViewContext
 
 ```ts
-
 interface NodeViewContext {
   // The DOM element that contains the content of the node.
   contentRef: NodeViewContentRef
@@ -468,7 +475,7 @@ interface MarkViewContext {
   // The prosemirror mark for current mark view
   mark: ShallowRef<Mark>
 
-  // Whether the mark is inline 
+  // Whether the mark is inline
   inline: ShallowRef<boolean>
 }
 ```
@@ -486,7 +493,6 @@ interface MarkViewContext {
 #### usePluginViewFactory: () => (options: PluginViewFactoryOptions) => PluginView
 
 ```ts
-
 interface PluginViewFactoryOptions {
   // Component
   component: VueComponent
@@ -505,7 +511,6 @@ interface PluginViewFactoryOptions {
 #### usePluginViewContext: () => PluginViewContext
 
 ```ts
-
 interface PluginViewContext {
   // The prosemirror editor view.
   view: ShallowRef<EditorView>
@@ -529,7 +534,6 @@ interface PluginViewContext {
 #### useWidgetViewFactory: () => (options: WidgetViewFactoryOptions) => WidgetDecorationFactory
 
 ```ts
-
 type WidgetDecorationFactory = (pos: number, spec?: WidgetDecorationSpec) => Decoration
 
 interface WidgetViewFactoryOptions {
@@ -541,11 +545,9 @@ interface WidgetViewFactoryOptions {
 }
 ```
 
-
 #### useWidgetViewContext: () => WidgetViewContext
 
 ```ts
-
 interface WidgetViewContext {
   // The prosemirror editor view.
   view: EditorView

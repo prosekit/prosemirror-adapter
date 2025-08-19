@@ -43,7 +43,6 @@ export function Link() {
       ref={contentRef}
       style={{ color, transition: 'color 1s ease-in-out' }}
       title={title || undefined}
-    >
-    </a>
+    ></a>
   )
 }

@@ -14,7 +14,9 @@ export interface WidgetViewContext {
 
 export type WidgetViewContextMap = Obj2Map<WidgetViewContext>
 
-export const useWidgetViewContext = <Key extends keyof WidgetViewContext>(key: Key): WidgetViewContext[Key] => getContext(key)
+export function useWidgetViewContext<Key extends keyof WidgetViewContext>(key: Key): WidgetViewContext[Key] {
+  return getContext(key)
+}
 
 export type WidgetViewFactory = (options: SvelteWidgetViewUserOptions) => WidgetDecorationFactory
 export const widgetViewFactoryKey = '[ProsemirrorAdapter]useWidgetViewFactory'

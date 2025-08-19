@@ -29,8 +29,7 @@ export class NodeViewDOMProvider extends ShallowLitElement {
 
   constructor(nodeView: LitNodeView) {
     super()
-    if (!nodeView)
-      return
+    if (!nodeView) return
 
     this.nodeView = nodeView
     this.provider = new ContextProvider(this, nodeViewContextKey, this.nodeView.context)
@@ -56,12 +55,7 @@ export class LitNodeView extends CoreNodeView<LitNodeViewComponent> implements L
 
   context: NodeViewContext = {
     contentRef: (element) => {
-      if (
-        element
-        && element instanceof HTMLElement
-        && this.contentDOM
-        && element.firstChild !== this.contentDOM
-      ) {
+      if (element && element instanceof HTMLElement && this.contentDOM && element.firstChild !== this.contentDOM) {
         element.appendChild(this.contentDOM)
       }
     },

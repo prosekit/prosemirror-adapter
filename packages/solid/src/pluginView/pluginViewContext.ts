@@ -20,10 +20,10 @@ export const pluginViewContext = createContext<PluginViewContext>(() => ({
 
 export const usePluginViewContext = () => useContext(pluginViewContext)
 
-export const createPluginViewContext = createContext<
-  (options: SolidPluginViewUserOptions) => PluginViewSpec
->((_options) => {
-      throw new Error('out of scope')
-    })
+export const createPluginViewContext = createContext<(options: SolidPluginViewUserOptions) => PluginViewSpec>(
+  (_options) => {
+    throw new Error('out of scope')
+  },
+)
 
 export const usePluginViewFactory = () => useContext(createPluginViewContext)

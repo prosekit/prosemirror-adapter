@@ -2,7 +2,7 @@ import type { CoreNodeViewSpec, CoreNodeViewUserOptions } from '@prosemirror-ada
 
 import type { SvelteComponentConstructor } from '../types'
 
-export type SvelteNodeViewComponent = SvelteComponentConstructor 
+export type SvelteNodeViewComponent = SvelteComponentConstructor
 
 export type SvelteNodeViewSpec = CoreNodeViewSpec<SvelteNodeViewComponent>
 

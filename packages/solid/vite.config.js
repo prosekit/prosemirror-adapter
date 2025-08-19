@@ -1,4 +1,3 @@
-
 import { defineConfig } from 'vite'
 import solid from 'vite-plugin-solid'
 
@@ -15,11 +14,8 @@ export default defineConfig({
     },
     minify: false,
     rollupOptions: {
-      external: [
-        ...Object.keys(packageJson.dependencies || {}),
-        ...Object.keys(packageJson.peerDependencies || {})
-      ],
+      external: [...Object.keys(packageJson.dependencies || {}), ...Object.keys(packageJson.peerDependencies || {})],
     },
   },
-  plugins: [solid()]
+  plugins: [solid()],
 })

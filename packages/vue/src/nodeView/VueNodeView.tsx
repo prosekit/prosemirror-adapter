@@ -1,4 +1,3 @@
-
 import { CoreNodeView } from '@prosemirror-adapter/core'
 import { nanoid } from 'nanoid'
 import { defineComponent, markRaw, provide, shallowRef, Teleport } from 'vue'
@@ -14,12 +13,7 @@ export class VueNodeView extends CoreNodeView<VueNodeViewComponent> implements V
 
   context: NodeViewContext = {
     contentRef: (element) => {
-      if (
-        element
-        && element instanceof HTMLElement
-        && this.contentDOM
-        && element.firstChild !== this.contentDOM
-      ) {
+      if (element && element instanceof HTMLElement && this.contentDOM && element.firstChild !== this.contentDOM) {
         element.appendChild(this.contentDOM)
       }
     },
@@ -41,8 +35,7 @@ export class VueNodeView extends CoreNodeView<VueNodeViewComponent> implements V
       innerDecorations: this.innerDecorations,
     }).forEach(([key, value]) => {
       const prev = this.context[key as 'node' | 'selected' | 'decorations' | 'innerDecorations']
-      if (prev.value !== value)
-        prev.value = value
+      if (prev.value !== value) prev.value = value
     })
   }
 

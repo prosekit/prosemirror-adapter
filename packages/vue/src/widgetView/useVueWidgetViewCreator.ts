@@ -6,7 +6,10 @@ import type { VueRendererResult } from '../VueRenderer'
 import { VueWidgetView } from './VueWidgetView'
 import type { VueWidgetViewUserOptions } from './VueWidgetViewOptions'
 
-export function useVueWidgetViewCreator(renderVueRenderer: VueRendererResult['renderVueRenderer'], removeVueRenderer: VueRendererResult['removeVueRenderer']) {
+export function useVueWidgetViewCreator(
+  renderVueRenderer: VueRendererResult['renderVueRenderer'],
+  removeVueRenderer: VueRendererResult['removeVueRenderer'],
+) {
   const createWidgetPluginView = (options: VueWidgetViewUserOptions): WidgetDecorationFactory => {
     return (pos, userSpec = {}) => {
       const widgetView = new VueWidgetView({
@@ -22,13 +25,17 @@ export function useVueWidgetViewCreator(renderVueRenderer: VueRendererResult['re
       }
       widgetView.spec = spec
 
-      return Decoration.widget(pos, (view, getPos) => {
-        widgetView.bind(view, getPos)
-        widgetView.updateContext()
-        renderVueRenderer(widgetView)
+      return Decoration.widget(
+        pos,
+        (view, getPos) => {
+          widgetView.bind(view, getPos)
+          widgetView.updateContext()
+          renderVueRenderer(widgetView)
 
-        return widgetView.dom
-      }, spec)
+          return widgetView.dom
+        },
+        spec,
+      )
     }
   }
 

@@ -8,9 +8,7 @@ const counter = ref(0)
 
 <template>
   <h1>Prosemirror Adapter Vue</h1>
-  <button @click="counter++">
-    rerender
-  </button>
+  <button @click="counter++">rerender</button>
   <ProsemirrorAdapterProvider :key="counter">
     <Editor />
   </ProsemirrorAdapterProvider>

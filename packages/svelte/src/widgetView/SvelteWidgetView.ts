@@ -7,8 +7,10 @@ import { mount } from '../mount'
 import type { SvelteWidgetViewComponent } from './SvelteWidgetViewOptions'
 import type { WidgetViewContext, WidgetViewContextMap } from './widgetViewContext'
 
-
-export class SvelteWidgetView extends CoreWidgetView<SvelteWidgetViewComponent> implements SvelteRenderer<WidgetViewContextMap> {
+export class SvelteWidgetView
+  extends CoreWidgetView<SvelteWidgetViewComponent>
+  implements SvelteRenderer<WidgetViewContextMap>
+{
   key: string = nanoid()
 
   _context: WidgetViewContext = {

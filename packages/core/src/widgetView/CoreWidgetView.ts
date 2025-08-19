@@ -12,9 +12,7 @@ export class CoreWidgetView<Component> {
   options: CoreWidgetViewUserOptions<Component>
 
   #createElement(as: string | HTMLElement) {
-    return as instanceof HTMLElement
-      ? as
-      : document.createElement(as)
+    return as instanceof HTMLElement ? as : document.createElement(as)
   }
 
   constructor({ pos, spec, options }: CoreWidgetViewSpec<Component>) {

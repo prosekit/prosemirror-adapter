@@ -9,15 +9,12 @@ import type { ReactMarkViewComponent } from './ReactMarkViewOptions'
 import type { MarkViewContext } from './markViewContext'
 import { markViewContext } from './markViewContext'
 
-export class ReactMarkView
-  extends CoreMarkView<ReactMarkViewComponent>
-  implements ReactRenderer<MarkViewContext> {
+export class ReactMarkView extends CoreMarkView<ReactMarkViewComponent> implements ReactRenderer<MarkViewContext> {
   key: string = nanoid()
 
   context: MarkViewContext = {
     contentRef: (element) => {
-      if (element && this.contentDOM && element.firstChild !== this.contentDOM)
-        element.appendChild(this.contentDOM)
+      if (element && this.contentDOM && element.firstChild !== this.contentDOM) element.appendChild(this.contentDOM)
     },
     view: this.view,
 

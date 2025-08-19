@@ -11,28 +11,15 @@ import { createWidgetViewContext } from './widgetView'
 import { useSolidWidgetViewCreator } from './widgetView/useSolidWidgetViewCreator'
 
 export const ProsemirrorAdapterProvider: Component<ParentProps> = (props) => {
-  const { renderSolidRenderer, removeSolidRenderer, portals }
-    = useSolidRenderer()
+  const { renderSolidRenderer, removeSolidRenderer, portals } = useSolidRenderer()
 
-  const createSolidNodeView = useSolidNodeViewCreator(
-    renderSolidRenderer,
-    removeSolidRenderer,
-  )
+  const createSolidNodeView = useSolidNodeViewCreator(renderSolidRenderer, removeSolidRenderer)
 
-  const createSolidMarkView = useSolidMarkViewCreator(
-    renderSolidRenderer,
-    removeSolidRenderer,
-  )
+  const createSolidMarkView = useSolidMarkViewCreator(renderSolidRenderer, removeSolidRenderer)
 
-  const createSolidWidgetView = useSolidWidgetViewCreator(
-    renderSolidRenderer,
-    removeSolidRenderer,
-  )
+  const createSolidWidgetView = useSolidWidgetViewCreator(renderSolidRenderer, removeSolidRenderer)
 
-  const createSolidPluginView = useSolidPluginViewCreator(
-    renderSolidRenderer,
-    removeSolidRenderer,
-  )
+  const createSolidPluginView = useSolidPluginViewCreator(renderSolidRenderer, removeSolidRenderer)
 
   return (
     <createNodeViewContext.Provider value={createSolidNodeView}>
@@ -40,7 +27,7 @@ export const ProsemirrorAdapterProvider: Component<ParentProps> = (props) => {
         <createWidgetViewContext.Provider value={createSolidWidgetView}>
           <createPluginViewContext.Provider value={createSolidPluginView}>
             {props.children}
-            <For each={Object.values(portals)}>{portal => portal}</For>
+            <For each={Object.values(portals)}>{(portal) => portal}</For>
           </createPluginViewContext.Provider>
         </createWidgetViewContext.Provider>
       </createMarkViewContext.Provider>

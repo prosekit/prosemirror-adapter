@@ -14,8 +14,7 @@ export class ReactNodeView extends CoreNodeView<ReactNodeViewComponent> implemen
 
   context: NodeViewContext = {
     contentRef: (element) => {
-      if (element && this.contentDOM && element.firstChild !== this.contentDOM)
-        element.appendChild(this.contentDOM)
+      if (element && this.contentDOM && element.firstChild !== this.contentDOM) element.appendChild(this.contentDOM)
     },
     view: this.view,
     getPos: this.getPos,

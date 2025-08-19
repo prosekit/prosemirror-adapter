@@ -1,8 +1,5 @@
 {
-  "cSpell.words": [
-    "Mirone",
-    "prosemirror"
-  ],
+  "cSpell.words": ["Mirone", "prosemirror"],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
   },

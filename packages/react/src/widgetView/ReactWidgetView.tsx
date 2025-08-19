@@ -9,7 +9,10 @@ import type { ReactWidgetViewComponent } from './ReactWidgetViewOptions'
 import type { WidgetViewContext } from './widgetViewContext'
 import { widgetViewContext } from './widgetViewContext'
 
-export class ReactWidgetView extends CoreWidgetView<ReactWidgetViewComponent> implements ReactRenderer<WidgetViewContext> {
+export class ReactWidgetView
+  extends CoreWidgetView<ReactWidgetViewComponent>
+  implements ReactRenderer<WidgetViewContext>
+{
   key: string = nanoid()
 
   context: WidgetViewContext = {

@@ -9,15 +9,13 @@ import type { SolidRenderer } from '../SolidRenderer'
 import { hidePortalDiv } from '../utils/hidePortalDiv'
 
 import type { SolidWidgetViewComponent } from './SolidWidgetViewOptions'
-import type {
-  WidgetViewContext,
-  WidgetViewContextProps,
-} from './widgetViewContext'
+import type { WidgetViewContext, WidgetViewContextProps } from './widgetViewContext'
 import { widgetViewContext } from './widgetViewContext'
 
 export class SolidWidgetView
   extends CoreWidgetView<SolidWidgetViewComponent>
-  implements SolidRenderer<WidgetViewContext> {
+  implements SolidRenderer<WidgetViewContext>
+{
   key: string = nanoid()
 
   context: WidgetViewContext
@@ -47,7 +45,7 @@ export class SolidWidgetView
     const UserComponent = this.component
 
     return (
-      <Portal mount={this.dom} ref={el => hidePortalDiv(el)}>
+      <Portal mount={this.dom} ref={(el) => hidePortalDiv(el)}>
         <widgetViewContext.Provider value={this.context}>
           <Dynamic component={UserComponent} />
         </widgetViewContext.Provider>

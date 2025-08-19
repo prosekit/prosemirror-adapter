@@ -20,7 +20,7 @@ export function useSvelteRenderer(): SvelteRendererResult {
   const unmounts: Writable<Record<string, VoidFunction>> = writable({})
 
   const renderSvelteRenderer = (renderer: SvelteRenderer<unknown>) => {
-    unmounts.update(records => ({
+    unmounts.update((records) => ({
       ...records,
       [renderer.key]: renderer.render(),
     }))

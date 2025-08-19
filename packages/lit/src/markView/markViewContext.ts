@@ -16,9 +16,13 @@ export interface MarkViewContext {
 export const markViewContextKey = createContext<MarkViewContext>('[ProsemirrorAdapter]markViewContext')
 
 export type ConsumeMarkViewContext = ContextConsumer<typeof markViewContextKey, LitElement>
-export const useMarkViewContext = (element: LitElement): ConsumeMarkViewContext => new ContextConsumer(element, markViewContextKey, undefined, true)
+export function useMarkViewContext(element: LitElement): ConsumeMarkViewContext {
+  return new ContextConsumer(element, markViewContextKey, undefined, true)
+}
 export const markViewFactoryKey = createContext<MarkViewFactory>('[ProsemirrorAdapter]useMarkViewFactory')
 export type MarkViewFactory = (options: LitMarkViewUserOptions) => MarkViewConstructor
 
 export type ConsumeMarkViewFactory = ContextConsumer<typeof markViewFactoryKey, LitElement>
-export const useMarkViewFactory = (element: LitElement): ConsumeMarkViewFactory => new ContextConsumer(element, markViewFactoryKey, undefined, true)
+export function useMarkViewFactory(element: LitElement): ConsumeMarkViewFactory {
+  return new ContextConsumer(element, markViewFactoryKey, undefined, true)
+}

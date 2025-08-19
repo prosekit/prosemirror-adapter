@@ -1,11 +1,7 @@
 import type { Mark } from 'prosemirror-model'
 import type { EditorView, MarkView, ViewMutationRecord } from 'prosemirror-view'
 
-import type {
-  CoreMarkViewSpec,
-  CoreMarkViewUserOptions,
-  MarkViewDOMSpec,
-} from './CoreMarkViewOptions'
+import type { CoreMarkViewSpec, CoreMarkViewUserOptions, MarkViewDOMSpec } from './CoreMarkViewOptions'
 
 export class CoreMarkView<ComponentType> implements MarkView {
   dom: HTMLElement
@@ -34,12 +30,7 @@ export class CoreMarkView<ComponentType> implements MarkView {
     return this.#createElement(as)
   }
 
-  constructor({
-    mark,
-    view,
-    inline,
-    options,
-  }: CoreMarkViewSpec<ComponentType>) {
+  constructor({ mark, view, inline, options }: CoreMarkViewSpec<ComponentType>) {
     this.mark = mark
     this.view = view
     this.inline = inline
@@ -57,34 +48,27 @@ export class CoreMarkView<ComponentType> implements MarkView {
   }
 
   shouldIgnoreMutation: (mutation: ViewMutationRecord) => boolean = (mutation) => {
-    if (!this.dom || !this.contentDOM)
-      return true
+    if (!this.dom || !this.contentDOM) return true
 
-    if (mutation.type === 'selection')
-      return false
+    if (mutation.type === 'selection') return false
 
-    if (this.contentDOM === mutation.target && mutation.type === 'attributes')
-      return true
+    if (this.contentDOM === mutation.target && mutation.type === 'attributes') return true
 
-    if (this.contentDOM.contains(mutation.target))
-      return false
+    if (this.contentDOM.contains(mutation.target)) return false
 
     return true
   }
 
   ignoreMutation: (mutation: ViewMutationRecord) => boolean = (mutation) => {
-    if (!this.dom || !this.contentDOM)
-      return true
+    if (!this.dom || !this.contentDOM) return true
 
     let result
 
     const userIgnoreMutation = this.options.ignoreMutation
 
-    if (userIgnoreMutation)
-      result = userIgnoreMutation(mutation)
+    if (userIgnoreMutation) result = userIgnoreMutation(mutation)
 
-    if (typeof result !== 'boolean')
-      result = this.shouldIgnoreMutation(mutation)
+    if (typeof result !== 'boolean') result = this.shouldIgnoreMutation(mutation)
 
     return result
   }

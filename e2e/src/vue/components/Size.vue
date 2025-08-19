@@ -9,7 +9,5 @@ const size = computed(() => {
 </script>
 
 <template>
-  <div data-test-id="size-view-plugin">
-    Size for document: {{ size }}
-  </div>
+  <div data-test-id="size-view-plugin">Size for document: {{ size }}</div>
 </template>
