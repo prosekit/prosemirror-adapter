@@ -1,12 +1,10 @@
 {
- 
   "extends": "@ocavue/tsconfig/dom/app.json",
   "references": [
     {
       "path": "../shared/"
     }
   ],
-
 
   "compilerOptions": {
     "jsx": "react-jsx"

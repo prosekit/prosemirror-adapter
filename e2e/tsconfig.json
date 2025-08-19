@@ -1,10 +1,7 @@
 {
   "extends": "@ocavue/tsconfig/dom/app.json",
-  "include": [
-    "./tests",
-  ],
+  "include": ["./tests"],
   "references": [
-
     {
       "path": "./src/lit/tsconfig.json"
     },
@@ -23,7 +20,7 @@
     {
       "path": "./src/shared/tsconfig.json"
     },
-    
+
     {
       "path": "../packages/lit/tsconfig.json"
     },
