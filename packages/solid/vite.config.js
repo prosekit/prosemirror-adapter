@@ -8,7 +8,7 @@ export default defineConfig({
   build: {
     emptyOutDir: false,
     lib: {
-      entry: '/Users/ocavue/code/github/prosemirror-adapter/packages/solid/src/index.ts',
+      entry: './src/index.ts',
       name: 'prosemirror-adapter_solid',
       formats: ['es'],
       fileName: 'index',
