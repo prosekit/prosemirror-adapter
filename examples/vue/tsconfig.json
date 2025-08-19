@@ -1,11 +1,11 @@
 {
   "extends": "@ocavue/tsconfig/dom/app.json",
   "compilerOptions": {
-    "jsx": "preserve",
-},
-"references": [
+    "jsx": "preserve"
+  },
+  "references": [
     {
-        "path": "../../packages/vue/tsconfig.json"
+      "path": "../../packages/vue/tsconfig.json"
     }
-]
+  ]
 }

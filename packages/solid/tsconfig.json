@@ -3,10 +3,10 @@
   "compilerOptions": {
     "jsx": "preserve",
     "jsxImportSource": "solid-js"
-},
-"references": [
+  },
+  "references": [
     {
-        "path": "../core/tsconfig.json"
+      "path": "../core/tsconfig.json"
     }
-],
+  ]
 }

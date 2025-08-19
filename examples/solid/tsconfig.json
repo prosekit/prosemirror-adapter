@@ -2,11 +2,11 @@
   "extends": "@ocavue/tsconfig/dom/app.json",
   "compilerOptions": {
     "jsx": "preserve",
-    "jsxImportSource": "solid-js",
-},
-"references": [
+    "jsxImportSource": "solid-js"
+  },
+  "references": [
     {
-        "path": "../../packages/solid/tsconfig.json"
+      "path": "../../packages/solid/tsconfig.json"
     }
-]
+  ]
 }
