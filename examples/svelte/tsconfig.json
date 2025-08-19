@@ -1,5 +1,14 @@
 {
-  "extends": "@ocavue/tsconfig/dom/app.json",
+  "extends": "./.svelte-kit/tsconfig.json",
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "composite": true,
+    "noEmit": false,
+    "allowJs": true,
+    "outDir": "./node_modules/.cache/tsconfig/out",
+    "tsBuildInfoFile": "./node_modules/.cache/tsconfig/build"
+  },
+  "include": ["./*", "./src", "./tests", "./src/**/*.svelte", "./tests/**/*.svelte"],
   "references": [
     {
       "path": "../../packages/svelte/tsconfig.json"

@@ -1,5 +1,10 @@
 {
-  "extends": "../../tsconfig.json",
+  "extends": "@ocavue/tsconfig/dom/app.json",
+  "references": [
+    {
+      "path": "../shared/"
+    }
+  ],
   "compilerOptions": {
     "jsx": "preserve",
     "jsxImportSource": "solid-js"

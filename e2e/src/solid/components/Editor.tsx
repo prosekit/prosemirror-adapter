@@ -7,7 +7,7 @@ import {
 import { Plugin } from 'prosemirror-state'
 import { DecorationSet } from 'prosemirror-view'
 
-import { createEditorView } from '../../createEditorView'
+import { createEditorView } from '../../shared/createEditorView'
 
 import { Hashes } from './Hashes'
 import { Heading } from './Heading'

@@ -8,7 +8,7 @@
   import { Plugin } from 'prosemirror-state'
   import { DecorationSet, EditorView } from 'prosemirror-view'
   import { onDestroy } from 'svelte'
-  import { createEditorView } from '../../createEditorView'
+  import { createEditorView } from '../../shared/createEditorView'
   import Hashes from './Hashes.svelte'
   import Paragraph from './Paragraph.svelte'
   import Heading from './Heading.svelte'

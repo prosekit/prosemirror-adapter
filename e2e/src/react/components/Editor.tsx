@@ -10,7 +10,7 @@ import { DecorationSet } from 'prosemirror-view'
 import type { FC } from 'react'
 import { useEffect, useRef } from 'react'
 
-import { createEditorView } from '../../createEditorView'
+import { createEditorView } from '../../shared/createEditorView'
 
 import { Hashes } from './Hashes'
 import { Heading } from './Heading'

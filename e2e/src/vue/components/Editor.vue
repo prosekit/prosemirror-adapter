@@ -8,7 +8,7 @@ import {
 import { ref, watchEffect } from 'vue'
 import { Plugin } from 'prosemirror-state'
 import { DecorationSet } from 'prosemirror-view'
-import { createEditorView } from '../../createEditorView'
+import { createEditorView } from '../../shared/createEditorView'
 import Paragraph from './Paragraph.vue'
 import Heading from './Heading.vue'
 import Size from './Size.vue'
