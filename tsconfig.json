@@ -1,8 +1,23 @@
 {
-  "extends": "./tsconfig.base.json",
-  "compilerOptions": {
-    "emitDeclarationOnly": false,
-    "noEmit": true
-  },
-  "exclude": ["node_modules", "lib"]
+  "extends": "@ocavue/tsconfig/es/root.json",
+  "references": [
+    {
+      "path": "./packages/core"
+    },
+    {
+      "path": "./packages/lit"
+    },
+    {
+      "path": "./packages/react"
+    },
+    {
+      "path": "./packages/solid"
+    },
+    {
+      "path": "./packages/svelte"
+    },
+    {
+      "path": "./packages/vue"
+    }
+  ]
 }

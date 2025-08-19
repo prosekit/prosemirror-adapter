@@ -1,9 +1,3 @@
 {
-  "extends": "../../tsconfig.base.json",
-  "compilerOptions": {
-    "experimentalDecorators": true,
-    "rootDir": "src",
-    "outDir": "lib"
-  },
-  "include": ["src"]
+    "extends": "@ocavue/tsconfig/dom/app.json",
 }

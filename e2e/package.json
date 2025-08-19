@@ -2,6 +2,7 @@
   "name": "e2e",
   "type": "module",
   "private": true,
+  "description": "End-to-end tests for ProseMirror Adapter",
   "license": "MIT",
   "scripts": {
     "start": "vite --host",
