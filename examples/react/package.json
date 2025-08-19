@@ -1,5 +1,6 @@
 {
   "name": "@examples/react",
+  "type": "module",
   "private": true,
   "license": "MIT",
   "scripts": {
