@@ -13,7 +13,7 @@
   },
   "devDependencies": {
     "@lit-labs/context": "^0.5.1",
-    "@playwright/test": "^1.54.2",
+    "@playwright/test": "^1.51.1",
     "@prosemirror-adapter/lit": "workspace:*",
     "@prosemirror-adapter/react": "workspace:*",
     "@prosemirror-adapter/solid": "workspace:*",
