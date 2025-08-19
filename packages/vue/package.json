@@ -41,9 +41,9 @@
     }
   },
   "devDependencies": {
-    "@vitejs/plugin-vue-jsx": "^4.2.0",
+    "@vitejs/plugin-vue-jsx": "^5.0.1",
     "tsdown": "^0.14.1",
-    "vue": "^3.5.13"
+    "vue": "^3.5.18"
   },
   "publishConfig": {
     "types": "./dist/index.d.ts",
