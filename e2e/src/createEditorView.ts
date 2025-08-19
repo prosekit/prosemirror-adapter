@@ -36,7 +36,7 @@ export function createEditorView(
             if (node.type.name !== 'heading')
               return false
 
-            let level = node.attrs.level
+            let level = node.attrs.level as number
             if (level >= 6)
               level = 1
             else

@@ -28,7 +28,7 @@ export function createEditorView(element: HTMLElement, nodeViews: Record<string,
             if (node.type.name !== 'heading')
               return false
 
-            let level = node.attrs.level
+            let level = (node.attrs.level as number) || 1
             if (level >= 6)
               level = 1
             else

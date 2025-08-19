@@ -1,5 +1,6 @@
 {
   "name": "@examples/lit",
+  "description": "Lit example",
   "type": "module",
   "private": true,
   "scripts": {
