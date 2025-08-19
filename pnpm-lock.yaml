@@ -45,11 +45,11 @@ importers:
         specifier: ^0.0.41
         version: 0.0.41
       prettier:
-        specifier: ^3.5.3
-        version: 3.5.3
+        specifier: ^3.6.2
+        version: 3.6.2
       prettier-plugin-svelte:
-        specifier: ^3.3.3
-        version: 3.3.3(prettier@3.5.3)(svelte@5.23.1)
+        specifier: ^3.4.0
+        version: 3.4.0(prettier@3.6.2)(svelte@5.23.1)
       prosemirror-keymap:
         specifier: ^1.2.2
         version: 1.2.2
@@ -3573,8 +3573,8 @@ packages:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
 
-  prettier-plugin-svelte@3.3.3:
-    resolution: {integrity: sha512-yViK9zqQ+H2qZD1w/bH7W8i+bVfKrD8GIFjkFe4Thl6kCT9SlAsXVNmt3jCvQOCsnOhcvYgsoVlRV/Eu6x5nNw==}
+  prettier-plugin-svelte@3.4.0:
+    resolution: {integrity: sha512-pn1ra/0mPObzqoIQn/vUTR3ZZI6UuZ0sHqMK5x2jMLGrs53h0sXhkVuDcrlssHwIMk7FYrMjHBPoUSyyEEDlBQ==}
     peerDependencies:
       prettier: ^3.0.0
       svelte: ^3.2.0 || ^4.0.0-next.0 || ^5.0.0-next.0
@@ -3584,8 +3584,8 @@ packages:
     engines: {node: '>=10.13.0'}
     hasBin: true
 
-  prettier@3.5.3:
-    resolution: {integrity: sha512-QQtaxnoDJeAkDvDKWCLiwIXkTgRhwYDEQCghU9Z6q03iyek/rxRh/2lC3HB7P8sWT2xC/y5JDctPLBIGzHKbhw==}
+  prettier@3.6.2:
+    resolution: {integrity: sha512-I7AIg5boAr5R0FFtJ6rCfD+LFsWHp81dolrFD8S79U9tb8Az2nGrJncnMSnys+bpQJfRUzqs9hnA81OAA3hCuQ==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -7859,14 +7859,14 @@ snapshots:
 
   prelude-ls@1.2.1: {}
 
-  prettier-plugin-svelte@3.3.3(prettier@3.5.3)(svelte@5.23.1):
+  prettier-plugin-svelte@3.4.0(prettier@3.6.2)(svelte@5.23.1):
     dependencies:
-      prettier: 3.5.3
+      prettier: 3.6.2
       svelte: 5.23.1
 
   prettier@2.8.7: {}
 
-  prettier@3.5.3: {}
+  prettier@3.6.2: {}
 
   prop-types@15.8.1:
     dependencies:
