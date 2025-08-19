@@ -1,7 +1,7 @@
 {
   "name": "@prosemirror-adapter/react",
   "type": "module",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "React package for ProseMirror Adapter",
   "license": "MIT",
   "repository": {

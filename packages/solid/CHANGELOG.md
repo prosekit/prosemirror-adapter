@@ -1,5 +1,13 @@
 # @prosemirror-adapter/solid
 
+## 0.4.2
+
+### Patch Changes
+
+- 72d8679: Update ProseMirror packages.
+- Updated dependencies [72d8679]
+  - @prosemirror-adapter/core@0.4.2
+
 ## 0.4.1
 
 ### Patch Changes
