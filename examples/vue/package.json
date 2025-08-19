@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@prosemirror-adapter/vue": "*",
-    "@vitejs/plugin-vue": "^5.2.4",
+    "@vitejs/plugin-vue": "^6.0.0",
     "prosemirror-example-setup": "^1.2.3",
     "prosemirror-keymap": "^1.2.2",
     "prosemirror-menu": "^1.2.4",
