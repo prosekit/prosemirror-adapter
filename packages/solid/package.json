@@ -14,7 +14,7 @@
     "solid-js"
   ],
   "sideEffects": false,
-  "main": "./src/index.ts",
+  "main": "./dist/index.js",
   "types": "./src/index.ts",
   "files": [
     "dist",
