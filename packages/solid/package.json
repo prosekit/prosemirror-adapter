@@ -42,7 +42,7 @@
   },
   "devDependencies": {
     "tsdown": "^0.14.1",
-    "vite": "^5.4.14",
+    "vite": "^5.4.19",
     "vite-plugin-solid": "^2.11.8"
   },
   "publishConfig": {
