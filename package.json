@@ -36,10 +36,6 @@
     "pkg-pr-new": "^0.0.56",
     "prettier": "^3.6.2",
     "prettier-plugin-svelte": "^3.4.0",
-    "prosemirror-keymap": "^1.2.2",
-    "prosemirror-model": "^1.24.1",
-    "prosemirror-state": "^1.4.3",
-    "prosemirror-view": "^1.38.1",
     "typescript": "~5.7.3",
     "vite": "^6.3.5"
   }

@@ -10,12 +10,12 @@
   "dependencies": {
     "@prosemirror-adapter/svelte": "*",
     "prosemirror-example-setup": "^1.2.3",
-    "prosemirror-keymap": "^1.2.2",
-    "prosemirror-menu": "^1.2.4",
-    "prosemirror-model": "^1.24.1",
-    "prosemirror-schema-basic": "^1.2.3",
+    "prosemirror-keymap": "^1.2.3",
+    "prosemirror-menu": "^1.2.5",
+    "prosemirror-model": "^1.25.3",
+    "prosemirror-schema-basic": "^1.2.4",
     "prosemirror-state": "^1.4.3",
-    "prosemirror-view": "^1.38.1"
+    "prosemirror-view": "^1.40.1"
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "^6.1.0",
