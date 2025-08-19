@@ -1,5 +1,8 @@
 {
   "extends": "@ocavue/tsconfig/dom/app.json",
+  "include": [
+    "./tests",
+  ],
   "references": [
 
     {
@@ -16,6 +19,9 @@
     },
     {
       "path": "./src/vue/tsconfig.json"
+    },
+    {
+      "path": "./src/shared/tsconfig.json"
     },
     
     {
