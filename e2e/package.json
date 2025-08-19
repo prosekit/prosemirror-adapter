@@ -13,7 +13,7 @@
   },
   "devDependencies": {
     "@lit-labs/context": "^0.5.1",
-    "@playwright/test": "^1.51.1",
+    "@playwright/test": "^1.54.2",
     "@prosemirror-adapter/lit": "workspace:*",
     "@prosemirror-adapter/react": "workspace:*",
     "@prosemirror-adapter/solid": "workspace:*",
@@ -39,6 +39,6 @@
     "svelte": "^5.38.1",
     "vite": "^6.3.5",
     "vite-plugin-solid": "^2.11.8",
-    "vue": "3.5.13"
+    "vue": "^3.5.18"
   }
 }

@@ -22,15 +22,22 @@ testAll(() => {
     const h4 = page.locator('.editor [data-node-view-root="true"] h4')
     const h5 = page.locator('.editor [data-node-view-root="true"] h5')
 
-    await h3.click()
-    await page.keyboard.press('Control+a')
-    await page.keyboard.press('ArrowLeft')
-    await page.keyboard.press('ControlOrMeta+[')
-    await expect(h4).toBeVisible()
+    await expect(h3).toBeVisible()
+    await expect(h4).not.toBeVisible()
+    await expect(h5).not.toBeVisible()
 
-    await page.keyboard.press('Control+a')
-    await page.keyboard.press('ArrowLeft')
+    await h3.click()
     await page.keyboard.press('ControlOrMeta+[')
+
+    await expect(h3).not.toBeVisible()
+    await expect(h4).toBeVisible()
+    await expect(h5).not.toBeVisible()
+
+    await h4.click()
+    await page.keyboard.press('ControlOrMeta+[')
+
+    await expect(h3).not.toBeVisible()
+    await expect(h4).not.toBeVisible()
     await expect(h5).toBeVisible()
   })
 })
