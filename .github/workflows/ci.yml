@@ -16,9 +16,6 @@ jobs:
 
       - uses: ./.github/actions/setup
 
-      - name: Lint
-        run: pnpm run lint
-
       - name: Install browsers
         run: pnpm run test:install
 
@@ -31,6 +28,21 @@ jobs:
           name: playwright-report
           path: e2e/playwright-report/
           retention-days: 7
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: ./.github/actions/setup
+
+      - name: Lint
+        run: pnpm run lint
+
+      - name: Typecheck
+        run: pnpm run typecheck
 
   preview-release:
     runs-on: ubuntu-latest
