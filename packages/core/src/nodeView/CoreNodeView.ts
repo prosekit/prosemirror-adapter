@@ -145,14 +145,13 @@ export class CoreNodeView<ComponentType> implements NodeView {
   }
 
   setAttrs = (attr: Attrs) => {
-    const { dispatch, state } = this.view
     const pos = this.getPos()
 
     if (typeof pos !== 'number')
       return
 
-    return dispatch(
-      state.tr.setNodeMarkup(pos, undefined, {
+    return this.view.dispatch(
+      this.view.state.tr.setNodeMarkup(pos, undefined, {
         ...this.node.attrs,
         ...attr,
       }),
