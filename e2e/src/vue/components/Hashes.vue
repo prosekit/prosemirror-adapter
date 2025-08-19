@@ -3,7 +3,9 @@ import { useWidgetViewContext } from '@prosemirror-adapter/vue'
 
 const { spec } = useWidgetViewContext()
 const level = spec?.level
-const hashes = Array(level || 0).fill('#').join('')
+const hashes = Array(level || 0)
+  .fill('#')
+  .join('')
 </script>
 
 <template>

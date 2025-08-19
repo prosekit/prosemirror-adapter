@@ -9,7 +9,10 @@ import { mount } from '../mount'
 import type { SveltePluginViewComponent } from './SveltePluginViewOptions'
 import type { PluginViewContext, PluginViewContextMap } from './pluginViewContext'
 
-export class SveltePluginView extends CorePluginView<SveltePluginViewComponent> implements SvelteRenderer<PluginViewContextMap> {
+export class SveltePluginView
+  extends CorePluginView<SveltePluginViewComponent>
+  implements SvelteRenderer<PluginViewContextMap>
+{
   key: string = nanoid()
 
   _context: PluginViewContext = {
@@ -26,7 +29,7 @@ export class SveltePluginView extends CorePluginView<SveltePluginViewComponent> 
     }
     Object.entries(original).forEach(([key, value]) => {
       const mapKey = key as keyof typeof original
-      const writable = this.context.get(mapKey) as Writable<typeof original[typeof mapKey]>
+      const writable = this.context.get(mapKey) as Writable<(typeof original)[typeof mapKey]>
       writable.set(value)
     })
   }

@@ -6,7 +6,10 @@ import type { ReactRendererResult } from '../ReactRenderer'
 import { ReactNodeView } from './ReactNodeView'
 import type { ReactNodeViewUserOptions } from './ReactNodeViewOptions'
 
-export function useReactNodeViewCreator(renderReactRenderer: ReactRendererResult['renderReactRenderer'], removeReactRenderer: ReactRendererResult['removeReactRenderer']) {
+export function useReactNodeViewCreator(
+  renderReactRenderer: ReactRendererResult['renderReactRenderer'],
+  removeReactRenderer: ReactRendererResult['removeReactRenderer'],
+) {
   const createReactNodeView = useCallback(
     (options: ReactNodeViewUserOptions): NodeViewConstructor =>
       (node, view, getPos, decorations, innerDecorations) => {

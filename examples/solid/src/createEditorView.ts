@@ -10,10 +10,13 @@ import 'prosemirror-view/style/prosemirror.css'
 import 'prosemirror-example-setup/style/style.css'
 import 'prosemirror-menu/style/menu.css'
 
-export function createEditorView(element: HTMLElement, nodeViews: Record<string, NodeViewConstructor>, plugins: Plugin[]) {
+export function createEditorView(
+  element: HTMLElement,
+  nodeViews: Record<string, NodeViewConstructor>,
+  plugins: Plugin[],
+) {
   const content = document.querySelector('#content')
-  if (!content)
-    throw new Error('Content element not found')
+  if (!content) throw new Error('Content element not found')
 
   return new EditorView(element, {
     state: EditorState.create({
@@ -25,14 +28,11 @@ export function createEditorView(element: HTMLElement, nodeViews: Record<string,
           'Mod-[': (state, dispatch) => {
             const { selection } = state
             const node = selection.$from.node()
-            if (node.type.name !== 'heading')
-              return false
+            if (node.type.name !== 'heading') return false
 
             let level = (node.attrs.level as number) || 1
-            if (level >= 6)
-              level = 1
-            else
-              level += 1
+            if (level >= 6) level = 1
+            else level += 1
 
             dispatch?.(
               state.tr.setNodeMarkup(selection.$from.before(), null, {

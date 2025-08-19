@@ -2,7 +2,7 @@ import type { CoreMarkViewSpec, CoreMarkViewUserOptions } from '@prosemirror-ada
 
 import type { SvelteComponentConstructor } from '../types'
 
-export type SvelteMarkViewComponent = SvelteComponentConstructor 
+export type SvelteMarkViewComponent = SvelteComponentConstructor
 
 export type SvelteMarkViewSpec = CoreMarkViewSpec<SvelteMarkViewComponent>
 

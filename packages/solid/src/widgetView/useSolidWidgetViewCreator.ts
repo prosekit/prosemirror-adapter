@@ -1,7 +1,4 @@
-import type {
-  WidgetDecorationFactory,
-  WidgetDecorationSpec,
-} from '@prosemirror-adapter/core'
+import type { WidgetDecorationFactory, WidgetDecorationSpec } from '@prosemirror-adapter/core'
 import { Decoration } from 'prosemirror-view'
 
 import type { SolidRendererResult } from '../SolidRenderer'
@@ -13,9 +10,7 @@ export function useSolidWidgetViewCreator(
   renderSolidRenderer: SolidRendererResult['renderSolidRenderer'],
   removeSolidRenderer: SolidRendererResult['removeSolidRenderer'],
 ) {
-  const createWidgetPluginView = (
-    options: SolidWidgetViewUserOptions,
-  ): WidgetDecorationFactory => {
+  const createWidgetPluginView = (options: SolidWidgetViewUserOptions): WidgetDecorationFactory => {
     return (pos, userSpec = {}) => {
       const widgetView = new SolidWidgetView({
         pos,

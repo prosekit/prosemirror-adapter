@@ -9,8 +9,7 @@ export class Paragraph extends ShallowLitElement {
 
   override render() {
     const ctx = this.nodeViewContext.value
-    if (!ctx)
-      return
+    if (!ctx) return
     const { contentRef, selected } = ctx
     return html`<div class="${selected ? 'selected' : nothing}" ${ref(contentRef)}></div>`
   }

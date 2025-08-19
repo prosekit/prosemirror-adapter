@@ -29,8 +29,7 @@ export class PluginViewDOMProvider extends ShallowLitElement {
 
   constructor(pluginView: LitPluginView) {
     super()
-    if (!pluginView)
-      return
+    if (!pluginView) return
 
     this.pluginView = pluginView
     this.provider = new ContextProvider(this, pluginViewContextKey, this.pluginView.context)

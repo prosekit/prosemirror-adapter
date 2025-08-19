@@ -32,19 +32,16 @@ export function useReactRenderer(): ReactRendererResult {
   }, [])
 
   const maybeFlushSync = useCallback((fn: () => void) => {
-    if (mountedRef.current)
-      flushSync(fn)
-
+    if (mountedRef.current) flushSync(fn)
     else fn()
   }, [])
 
   const renderReactRenderer = useCallback(
     (nodeView: ReactRenderer<unknown>, update = true) => {
       maybeFlushSync(() => {
-        if (update)
-          nodeView.updateContext()
+        if (update) nodeView.updateContext()
 
-        setPortals(prev => ({
+        setPortals((prev) => ({
           ...prev,
           [nodeView.key]: nodeView.render(),
         }))

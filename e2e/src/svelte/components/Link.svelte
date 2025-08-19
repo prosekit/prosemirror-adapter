@@ -4,7 +4,7 @@
   const colors = [
     '#f06292',
     '#ba68c8',
-    '#9575cd', 
+    '#9575cd',
     '#7986cb',
     '#64b5f6',
     '#4fc3f7',
@@ -37,13 +37,7 @@
     }, 1000)
 
     return () => clearInterval(interval)
-})
+  })
 </script>
 
-<a 
-  {href}
-  {title}
-  aria-label={title}
-  use:contentRef
-  style="color: {color}; transition: color 1s ease-in-out"
-></a>
+<a {href} {title} aria-label={title} use:contentRef style="color: {color}; transition: color 1s ease-in-out"></a>

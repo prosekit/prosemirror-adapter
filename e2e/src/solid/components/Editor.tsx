@@ -22,8 +22,7 @@ export function Editor() {
   const pluginViewFactory = usePluginViewFactory()
 
   const editorRef = (element: HTMLDivElement) => {
-    if (element.firstChild)
-      return
+    if (element.firstChild) return
 
     const getHashWidget = widgetViewFactory({
       as: 'i',
@@ -58,8 +57,7 @@ export function Editor() {
             decorations(state) {
               const { $from } = state.selection
               const node = $from.node()
-              if (node.type.name !== 'heading')
-                return DecorationSet.empty
+              if (node.type.name !== 'heading') return DecorationSet.empty
 
               const widget = getHashWidget($from.before() + 1, {
                 side: -1,

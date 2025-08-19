@@ -13,7 +13,9 @@ export interface PluginViewContext {
   prevState: ShallowRef<EditorState | undefined>
 }
 
-export const pluginViewContext: InjectionKey<Readonly<PluginViewContext>> = Symbol('[ProsemirrorAdapter]nodeViewContext')
+export const pluginViewContext: InjectionKey<Readonly<PluginViewContext>> = Symbol(
+  '[ProsemirrorAdapter]nodeViewContext',
+)
 
 export const usePluginViewContext = () => inject(pluginViewContext) as Readonly<PluginViewContext>
 

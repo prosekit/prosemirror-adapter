@@ -16,7 +16,9 @@ export interface MarkViewContext {
 
 export type MarkViewContextMap = Obj2Map<MarkViewContext>
 
-export const useMarkViewContext = <Key extends keyof MarkViewContext>(key: Key): MarkViewContext[Key] => getContext(key)
+export function useMarkViewContext<Key extends keyof MarkViewContext>(key: Key): MarkViewContext[Key] {
+  return getContext(key)
+}
 
 export const markViewFactoryKey = '[ProsemirrorAdapter]useMarkViewFactory'
 export type MarkViewFactory = (options: SvelteMarkViewUserOptions) => MarkViewConstructor

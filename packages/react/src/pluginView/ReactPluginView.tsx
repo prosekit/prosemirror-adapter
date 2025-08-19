@@ -9,7 +9,10 @@ import type { ReactPluginViewComponent } from './ReactPluginViewOptions'
 import type { PluginViewContext } from './pluginViewContext'
 import { pluginViewContext } from './pluginViewContext'
 
-export class ReactPluginView extends CorePluginView<ReactPluginViewComponent> implements ReactRenderer<PluginViewContext> {
+export class ReactPluginView
+  extends CorePluginView<ReactPluginViewComponent>
+  implements ReactRenderer<PluginViewContext>
+{
   key: string = nanoid()
 
   context: PluginViewContext = {

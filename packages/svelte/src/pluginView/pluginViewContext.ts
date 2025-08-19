@@ -17,7 +17,9 @@ export interface PluginViewContext {
 
 export type PluginViewContextMap = Obj2Map<PluginViewContext>
 
-export const usePluginViewContext = <Key extends keyof PluginViewContext>(key: Key): PluginViewContext[Key] => getContext(key)
+export function usePluginViewContext<Key extends keyof PluginViewContext>(key: Key): PluginViewContext[Key] {
+  return getContext(key)
+}
 
 export type PluginViewFactory = (options: SveltePluginViewUserOptions) => PluginViewSpec
 export const pluginViewFactoryKey = '[ProsemirrorAdapter]usePluginViewFactory'

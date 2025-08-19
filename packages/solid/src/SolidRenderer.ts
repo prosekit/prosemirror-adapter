@@ -10,24 +10,17 @@ export interface SolidRenderer<Context> {
 
 export interface SolidRendererResult {
   readonly portals: Record<string, JSX.Element>
-  readonly renderSolidRenderer: (
-    nodeView: SolidRenderer<unknown>,
-    update?: boolean
-  ) => void
+  readonly renderSolidRenderer: (nodeView: SolidRenderer<unknown>, update?: boolean) => void
   readonly removeSolidRenderer: (nodeView: SolidRenderer<unknown>) => void
 }
 
 export function useSolidRenderer(): SolidRendererResult {
   const [portals, setPortals] = createSignal<Record<string, JSX.Element>>({})
   const owner = getOwner()
-  const renderSolidRenderer = (
-    nodeView: SolidRenderer<unknown>,
-    update = true,
-  ) => {
-    if (update)
-      nodeView.updateContext()
+  const renderSolidRenderer = (nodeView: SolidRenderer<unknown>, update = true) => {
+    if (update) nodeView.updateContext()
 
-    setPortals(prev => ({
+    setPortals((prev) => ({
       ...prev,
       [nodeView.key]: runWithOwner(owner, () => nodeView.render()),
     }))

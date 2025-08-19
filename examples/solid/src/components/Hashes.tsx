@@ -6,9 +6,5 @@ export function Hashes() {
   const level = createMemo(() => context().spec?.level as number)
   const hashes = createMemo(() => new Array(level() || 0).fill('#').join(''))
 
-  return (
-    <span style={{ 'color': 'blue', 'margin-right': '6px' }}>
-      {hashes()}
-    </span>
-  )
+  return <span style={{ color: 'blue', 'margin-right': '6px' }}>{hashes()}</span>
 }

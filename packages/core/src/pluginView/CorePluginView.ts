@@ -20,8 +20,7 @@ export class CorePluginView<ComponentType> implements PluginView {
   get root() {
     let root = this.options.root?.(this.view.dom)
 
-    if (!root)
-      root = this.view.dom.parentElement ?? document.body
+    if (!root) root = this.view.dom.parentElement ?? document.body
 
     return root
   }

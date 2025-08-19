@@ -23,42 +23,45 @@ const editorRef = ref<HTMLDivElement | null>(null)
 watchEffect((onCleanup) => {
   const el = editorRef.value
   if (!el) {
-    return 
+    return
   }
 
-  const view = createEditorView(el, {
-    paragraph: nodeViewFactory({
-      component: Paragraph,
-      as: 'div',
-      contentAs: 'p',
-    }),
-    heading: nodeViewFactory({
-      component: Heading,
-    }),
-  }, [
-    new Plugin({
-      view: pluginViewFactory({
-        component: Size,
+  const view = createEditorView(
+    el,
+    {
+      paragraph: nodeViewFactory({
+        component: Paragraph,
+        as: 'div',
+        contentAs: 'p',
       }),
-    }),
-    new Plugin({
-      props: {
-        decorations(state) {
-          const { $from } = state.selection
-          const node = $from.node()
-          if (node.type.name !== 'heading')
-            return DecorationSet.empty
+      heading: nodeViewFactory({
+        component: Heading,
+      }),
+    },
+    [
+      new Plugin({
+        view: pluginViewFactory({
+          component: Size,
+        }),
+      }),
+      new Plugin({
+        props: {
+          decorations(state) {
+            const { $from } = state.selection
+            const node = $from.node()
+            if (node.type.name !== 'heading') return DecorationSet.empty
 
-          const widget = getHashWidget($from.before() + 1, {
-            side: -1,
-            level: node.attrs.level,
-          })
+            const widget = getHashWidget($from.before() + 1, {
+              side: -1,
+              level: node.attrs.level,
+            })
 
-          return DecorationSet.create(state.doc, [widget])
+            return DecorationSet.create(state.doc, [widget])
+          },
         },
-      },
-    }),
-  ])
+      }),
+    ],
+  )
 
   onCleanup(() => {
     view.destroy()
@@ -72,14 +75,14 @@ watchEffect((onCleanup) => {
 
 <style>
 .editor {
-    background: white;
-    color: black;
-    background-clip: padding-box;
-    border-radius: 4px;
-    border: 2px solid rgba(0, 0, 0, 0.2);
-    padding: 5px 0;
-    margin-bottom: 23px;
-    position: relative;
+  background: white;
+  color: black;
+  background-clip: padding-box;
+  border-radius: 4px;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  padding: 5px 0;
+  margin-bottom: 23px;
+  position: relative;
 }
 
 .ProseMirror p:first-child,
@@ -89,14 +92,16 @@ watchEffect((onCleanup) => {
 .ProseMirror h4:first-child,
 .ProseMirror h5:first-child,
 .ProseMirror h6:first-child {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 .ProseMirror {
-    padding: 4px 8px 4px 14px;
-    line-height: 1.2;
-    outline: none;
+  padding: 4px 8px 4px 14px;
+  line-height: 1.2;
+  outline: none;
 }
 
-.ProseMirror p { margin-bottom: 1em }
+.ProseMirror p {
+  margin-bottom: 1em;
+}
 </style>

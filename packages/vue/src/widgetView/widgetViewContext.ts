@@ -11,7 +11,9 @@ export interface WidgetViewContext {
   spec?: WidgetDecorationSpec
 }
 
-export const widgetViewContext: InjectionKey<Readonly<WidgetViewContext>> = Symbol('[ProsemirrorAdapter]widgetViewContext')
+export const widgetViewContext: InjectionKey<Readonly<WidgetViewContext>> = Symbol(
+  '[ProsemirrorAdapter]widgetViewContext',
+)
 
 export const useWidgetViewContext = () => inject(widgetViewContext) as Readonly<WidgetViewContext>
 

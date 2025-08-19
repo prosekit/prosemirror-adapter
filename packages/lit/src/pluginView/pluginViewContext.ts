@@ -13,9 +13,13 @@ export interface PluginViewContext {
 
 export const pluginViewContextKey = createContext<PluginViewContext>('[ProsemirrorAdapter]nodeViewContext')
 export type ConsumePluginViewContext = ContextConsumer<typeof pluginViewContextKey, LitElement>
-export const usePluginViewContext = (element: LitElement): ConsumePluginViewContext => new ContextConsumer(element, pluginViewContextKey, undefined, true)
+export function usePluginViewContext(element: LitElement): ConsumePluginViewContext {
+  return new ContextConsumer(element, pluginViewContextKey, undefined, true)
+}
 
 export type PluginViewFactory = (options: LitPluginViewUserOptions) => PluginViewSpec
 export const pluginViewFactoryKey = createContext<PluginViewFactory>('[ProsemirrorAdapter]usePluginViewFactory')
 export type ConsumePluginViewFactory = ContextConsumer<typeof pluginViewFactoryKey, LitElement>
-export const usePluginViewFactory = (element: LitElement): ConsumePluginViewFactory => new ContextConsumer(element, pluginViewFactoryKey, undefined, true)
+export function usePluginViewFactory(element: LitElement): ConsumePluginViewFactory {
+  return new ContextConsumer(element, pluginViewFactoryKey, undefined, true)
+}

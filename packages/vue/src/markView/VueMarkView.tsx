@@ -1,4 +1,3 @@
-
 import { CoreMarkView } from '@prosemirror-adapter/core'
 import { nanoid } from 'nanoid'
 import { defineComponent, markRaw, provide, shallowRef, Teleport } from 'vue'
@@ -9,19 +8,12 @@ import type { VueMarkViewComponent } from './VueMarkViewOptions'
 import type { MarkViewContext } from './markViewContext'
 import { markViewContext } from './markViewContext'
 
-export class VueMarkView
-  extends CoreMarkView<VueMarkViewComponent>
-  implements VueRenderer<MarkViewContext> {
+export class VueMarkView extends CoreMarkView<VueMarkViewComponent> implements VueRenderer<MarkViewContext> {
   key: string = nanoid()
 
   context: MarkViewContext = {
     contentRef: (element) => {
-      if (
-        element
-        && element instanceof HTMLElement
-        && this.contentDOM
-        && element.firstChild !== this.contentDOM
-      ) {
+      if (element && element instanceof HTMLElement && this.contentDOM && element.firstChild !== this.contentDOM) {
         element.appendChild(this.contentDOM)
       }
     },
@@ -34,8 +26,7 @@ export class VueMarkView
       mark: this.mark,
     }).forEach(([key, value]) => {
       const prev = this.context[key as 'mark']
-      if (prev.value !== value)
-        prev.value = value
+      if (prev.value !== value) prev.value = value
     })
   }
 

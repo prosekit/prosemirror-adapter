@@ -2,7 +2,7 @@ import type { CoreWidgetViewSpec, CoreWidgetViewUserOptions } from '@prosemirror
 
 import type { SvelteComponentConstructor } from '../types'
 
-export type SvelteWidgetViewComponent = SvelteComponentConstructor 
+export type SvelteWidgetViewComponent = SvelteComponentConstructor
 
 export type SvelteWidgetViewSpec = CoreWidgetViewSpec<SvelteWidgetViewComponent>
 

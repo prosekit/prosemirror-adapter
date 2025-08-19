@@ -70,11 +70,9 @@ export class CoreNodeView<ComponentType> implements NodeView {
   }
 
   shouldUpdate: (node: Node) => boolean = (node) => {
-    if (node.type !== this.node.type)
-      return false
+    if (node.type !== this.node.type) return false
 
-    if (node.sameMarkup(this.node) && node.content.eq(this.node.content))
-      return false
+    if (node.sameMarkup(this.node) && node.content.eq(this.node.content)) return false
 
     return true
   }
@@ -86,54 +84,43 @@ export class CoreNodeView<ComponentType> implements NodeView {
   ) => {
     const userUpdate = this.options.update
     let result
-    if (userUpdate)
-      result = userUpdate(node, decorations, innerDecorations)
+    if (userUpdate) result = userUpdate(node, decorations, innerDecorations)
 
-    if (typeof result !== 'boolean')
-      result = this.shouldUpdate(node)
+    if (typeof result !== 'boolean') result = this.shouldUpdate(node)
 
     this.node = node
     this.decorations = decorations
     this.innerDecorations = innerDecorations
 
-    if (result)
-      this.options.onUpdate?.()
+    if (result) this.options.onUpdate?.()
 
     return result
   }
 
   shouldIgnoreMutation: (mutation: ViewMutationRecord) => boolean = (mutation) => {
-    if (!this.dom || !this.contentDOM)
-      return true
+    if (!this.dom || !this.contentDOM) return true
 
-    if (this.node.isLeaf || this.node.isAtom)
-      return true
+    if (this.node.isLeaf || this.node.isAtom) return true
 
-    if (mutation.type === 'selection')
-      return false
+    if (mutation.type === 'selection') return false
 
-    if (this.contentDOM === mutation.target && mutation.type === 'attributes')
-      return true
+    if (this.contentDOM === mutation.target && mutation.type === 'attributes') return true
 
-    if (this.contentDOM.contains(mutation.target))
-      return false
+    if (this.contentDOM.contains(mutation.target)) return false
 
     return true
   }
 
   ignoreMutation: (mutation: ViewMutationRecord) => boolean = (mutation) => {
-    if (!this.dom || !this.contentDOM)
-      return true
+    if (!this.dom || !this.contentDOM) return true
 
     let result
 
     const userIgnoreMutation = this.options.ignoreMutation
 
-    if (userIgnoreMutation)
-      result = userIgnoreMutation(mutation)
+    if (userIgnoreMutation) result = userIgnoreMutation(mutation)
 
-    if (typeof result !== 'boolean')
-      result = this.shouldIgnoreMutation(mutation)
+    if (typeof result !== 'boolean') result = this.shouldIgnoreMutation(mutation)
 
     return result
   }
@@ -147,8 +134,7 @@ export class CoreNodeView<ComponentType> implements NodeView {
   setAttrs = (attr: Attrs) => {
     const pos = this.getPos()
 
-    if (typeof pos !== 'number')
-      return
+    if (typeof pos !== 'number') return
 
     return this.view.dispatch(
       this.view.state.tr.setNodeMarkup(pos, undefined, {

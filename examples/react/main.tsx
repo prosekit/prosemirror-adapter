@@ -5,8 +5,7 @@ import { createRoot } from 'react-dom/client'
 import { Editor } from './components/Editor'
 
 const root$ = document.getElementById('app')
-if (!root$)
-  throw new Error('No root element found')
+if (!root$) throw new Error('No root element found')
 
 const root = createRoot(root$)
 

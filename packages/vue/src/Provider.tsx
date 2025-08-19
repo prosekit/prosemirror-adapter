@@ -1,8 +1,4 @@
-import {
-  defineComponent,
-  h,
-  provide,
-} from 'vue'
+import { defineComponent, h, provide } from 'vue'
 
 import { useVueRenderer } from './VueRenderer'
 import { markViewFactoryKey } from './markView'
@@ -38,7 +34,7 @@ export const ProsemirrorAdapterProvider = defineComponent({
       return (
         <>
           {slots.default?.()}
-          {Object.values(portals.value).map(x => h(x))}
+          {Object.values(portals.value).map((x) => h(x))}
         </>
       )
     }

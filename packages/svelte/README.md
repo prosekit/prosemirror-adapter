@@ -20,9 +20,9 @@ npm install @prosemirror-adapter/svelte
 
 ```html
 <script lang="ts">
-import { useProsemirrorAdapterProvider } from "@prosemirror-adapter/svelte";
+  import { useProsemirrorAdapterProvider } from '@prosemirror-adapter/svelte'
 
-useProsemirrorAdapterProvider();
+  useProsemirrorAdapterProvider()
 </script>
 
 <YourAwesomeEditor />
@@ -42,23 +42,22 @@ In this section we will implement a node view for paragraph node.
 
 ```html
 <script lang="ts">
-import { useNodeViewContext } from "@prosemirror-adapter/svelte";
-let selected = false;
+  import { useNodeViewContext } from '@prosemirror-adapter/svelte'
+  let selected = false
 
-const contentRef = useNodeViewContext('contentRef');
-const selectedStore = useNodeViewContext('selected');
-selectedStore.subscribe((value) => {
-  selected = value;
-})
-
+  const contentRef = useNodeViewContext('contentRef')
+  const selectedStore = useNodeViewContext('selected')
+  selectedStore.subscribe((value) => {
+    selected = value
+  })
 </script>
 
-<div use:contentRef class:selected={selected} />
+<div use:contentRef class:selected="{selected}" />
 
 <style>
-.selected {
-  outline: blue solid 1px;
-}
+  .selected {
+    outline: blue solid 1px;
+  }
 </style>
 ```
 
@@ -66,24 +65,24 @@ selectedStore.subscribe((value) => {
 
 ```html
 <script lang="ts">
-import { useNodeViewFactory } from '@prosemirror-adapter/svelte'
-import Paragraph from './Paragraph.svelte'
+  import { useNodeViewFactory } from '@prosemirror-adapter/svelte'
+  import Paragraph from './Paragraph.svelte'
 
-const nodeViewFactory = useNodeViewFactory()
+  const nodeViewFactory = useNodeViewFactory()
 
-const editor = (element: HTMLElement) => {
-  const editorView = new EditorView(element, {
-    state: YourProsemirrorEditorState,
-    nodeViews: {
-      paragraph: nodeViewFactory({
-        component: Paragraph,
-        // Optional: add some options
-        as: 'div',
-        contentAs: 'p',
-      }),
-    },
-  })
-}
+  const editor = (element: HTMLElement) => {
+    const editorView = new EditorView(element, {
+      state: YourProsemirrorEditorState,
+      nodeViews: {
+        paragraph: nodeViewFactory({
+          component: Paragraph,
+          // Optional: add some options
+          as: 'div',
+          contentAs: 'p',
+        }),
+      },
+    })
+  }
 </script>
 
 <div use:editor />
@@ -107,77 +106,83 @@ In this section we will implement a mark view for links that changes color perio
 
 ```svelte
 <script lang="ts">
-import { onMount, onDestroy } from 'svelte'
-import { useMarkViewContext } from '@prosemirror-adapter/svelte'
+  import { onMount, onDestroy } from 'svelte'
+  import { useMarkViewContext } from '@prosemirror-adapter/svelte'
 
-const colors = [
-  '#f06292', '#ba68c8', '#9575cd', '#7986cb', '#64b5f6',
-  '#4fc3f7', '#4dd0e1', '#4db6ac', '#81c784', '#aed581',
-  '#ffb74d', '#ffa726', '#ff8a65', '#d4e157', '#ffd54f',
-  '#ffecb3',
-]
+  const colors = [
+    '#f06292',
+    '#ba68c8',
+    '#9575cd',
+    '#7986cb',
+    '#64b5f6',
+    '#4fc3f7',
+    '#4dd0e1',
+    '#4db6ac',
+    '#81c784',
+    '#aed581',
+    '#ffb74d',
+    '#ffa726',
+    '#ff8a65',
+    '#d4e157',
+    '#ffd54f',
+    '#ffecb3',
+  ]
 
-function pickRandomColor() {
-  return colors[Math.floor(Math.random() * colors.length)]
-}
+  function pickRandomColor() {
+    return colors[Math.floor(Math.random() * colors.length)]
+  }
 
-const { mark, contentRef } = useMarkViewContext()
-let color = colors[0]
-const href = $mark.attrs.href as string
-const title = $mark.attrs.title as string | null
+  const { mark, contentRef } = useMarkViewContext()
+  let color = colors[0]
+  const href = $mark.attrs.href as string
+  const title = $mark.attrs.title as string | null
 
-let interval: ReturnType<typeof setInterval>
+  let interval: ReturnType<typeof setInterval>
 
-onMount(() => {
-  interval = setInterval(() => {
-    color = pickRandomColor()
-  }, 1000)
-})
+  onMount(() => {
+    interval = setInterval(() => {
+      color = pickRandomColor()
+    }, 1000)
+  })
 
-onDestroy(() => {
-  clearInterval(interval)
-})
+  onDestroy(() => {
+    clearInterval(interval)
+  })
 </script>
 
-<a
-  {href}
-  use:contentRef
-  style="color: {color}; transition: color 1s ease-in-out"
-  title={title || undefined}
-/>
+<a {href} use:contentRef style="color: {color}; transition: color 1s ease-in-out" title={title || undefined} />
 ```
 
 #### Bind mark view components with prosemirror
 
 ```svelte
 <script lang="ts">
-import { useMarkViewFactory } from '@prosemirror-adapter/svelte'
-import { Plugin } from 'prosemirror-state'
-import Link from './Link.svelte'
+  import { useMarkViewFactory } from '@prosemirror-adapter/svelte'
+  import { Plugin } from 'prosemirror-state'
+  import Link from './Link.svelte'
 
-const markViewFactory = useMarkViewFactory()
+  const markViewFactory = useMarkViewFactory()
 
-function editorRef(element: HTMLElement) {
-  if (!element || element.firstChild)
-    return
+  function editorRef(element: HTMLElement) {
+    if (!element || element.firstChild) return
 
-  const editorView = new EditorView(element, {
-    state: EditorState.create({
-      schema: YourProsemirrorSchema,
-      plugins: [
-        new Plugin({
-          props: {
-            markViews: {
-              link: markViewFactory({
-                component: Link,
-              }),
+    const editorView = new EditorView(element, {
+      state: EditorState.create({
+        schema: YourProsemirrorSchema,
+        plugins: [
+          new Plugin({
+            props: {
+              markViews: {
+                link: markViewFactory({
+                  component: Link,
+                }),
+              },
             },
-          },
-        }),
-      ]
+          }),
+        ],
+      }),
     })
-  })
-}
+  }
 </script>
 
 <div class="editor" bind:this={editorRef} />
@@ -201,13 +206,13 @@ In this section we will implement a plugin view that will display the size of th
 
 ```html
 <script lang="ts">
-import { usePluginViewContext } from '@prosemirror-adapter/svelte'
-const viewStore = usePluginViewContext('view');
-let size = 0;
+  import { usePluginViewContext } from '@prosemirror-adapter/svelte'
+  const viewStore = usePluginViewContext('view')
+  let size = 0
 
-viewStore.subscribe(view => {
-  size = view.state.doc.nodeSize;
-})
+  viewStore.subscribe((view) => {
+    size = view.state.doc.nodeSize
+  })
 </script>
 
 <div>Size for document: { size }</div>
@@ -217,26 +222,26 @@ viewStore.subscribe(view => {
 
 ```html
 <script lang="ts">
-import { usePluginViewFactory } from '@prosemirror-adapter/svelte'
-import { Plugin } from 'prosemirror-state'
-import Size from './Size.svelte'
+  import { usePluginViewFactory } from '@prosemirror-adapter/svelte'
+  import { Plugin } from 'prosemirror-state'
+  import Size from './Size.svelte'
 
-const pluginViewFactory = usePluginViewFactory()
+  const pluginViewFactory = usePluginViewFactory()
 
-const editor = (element: HTMLElement) => {
-  const editorView = new EditorView(element, {
-    state: EditorState.create({
-      schema: YourProsemirrorSchema,
-      plugins: [
-        new Plugin({
-          view: pluginViewFactory({
-            component: Size,
+  const editor = (element: HTMLElement) => {
+    const editorView = new EditorView(element, {
+      state: EditorState.create({
+        schema: YourProsemirrorSchema,
+        plugins: [
+          new Plugin({
+            view: pluginViewFactory({
+              component: Size,
+            }),
           }),
-        }),
-      ]
+        ],
+      }),
     })
-  })
-}
+  }
 </script>
 
 <div use:editor />
@@ -264,7 +269,9 @@ In this section we will implement a widget view that will add hashes for heading
 
   const spec = useWidgetViewContext('spec')
   const level = spec?.level
-  const hashes = Array(level || 0).fill('#').join('')
+  const hashes = Array(level || 0)
+    .fill('#')
+    .join('')
 </script>
 
 <span class="hash">{hashes}</span>
@@ -281,43 +288,42 @@ In this section we will implement a widget view that will add hashes for heading
 
 ```html
 <script lang="ts">
-import { useWidgetViewFactory } from '@prosemirror-adapter/svelte'
-import { Plugin } from 'prosemirror-state'
-import Hashes from './Hashes.svelte'
+  import { useWidgetViewFactory } from '@prosemirror-adapter/svelte'
+  import { Plugin } from 'prosemirror-state'
+  import Hashes from './Hashes.svelte'
 
-const widgetViewFactory = useWidgetViewFactory()
+  const widgetViewFactory = useWidgetViewFactory()
 
-const editor = (element: HTMLElement) => {
-  const getHashWidget = widgetViewFactory({
-    as: 'i',
-    component: Hashes,
-  })
-
-  const editorView = new EditorView(element, {
-    state: EditorState.create({
-      schema: YourProsemirrorSchema,
-      plugins: [
-        new Plugin({
-          props: {
-            decorations(state) {
-              const { $from } = state.selection
-              const node = $from.node()
-              if (node.type.name !== 'heading')
-                return DecorationSet.empty
-
-              const widget = getHashWidget($from.before() + 1, {
-                side: -1,
-                level: node.attrs.level,
-              })
-
-              return DecorationSet.create(state.doc, [widget])
-            },
-          },
-        }),
-      ]
+  const editor = (element: HTMLElement) => {
+    const getHashWidget = widgetViewFactory({
+      as: 'i',
+      component: Hashes,
     })
-  })
-}
+
+    const editorView = new EditorView(element, {
+      state: EditorState.create({
+        schema: YourProsemirrorSchema,
+        plugins: [
+          new Plugin({
+            props: {
+              decorations(state) {
+                const { $from } = state.selection
+                const node = $from.node()
+                if (node.type.name !== 'heading') return DecorationSet.empty
+
+                const widget = getHashWidget($from.before() + 1, {
+                  side: -1,
+                  level: node.attrs.level,
+                })
+
+                return DecorationSet.create(state.doc, [widget])
+              },
+            },
+          }),
+        ],
+      }),
+    })
+  }
 </script>
 
 <div use:editor />
@@ -340,7 +346,6 @@ const editor = (element: HTMLElement) => {
 #### useNodeViewFactory: () => (options: NodeViewFactoryOptions) => NodeView
 
 ```ts
-
 type DOMSpec = string | HTMLElement | ((node: Node) => HTMLElement)
 
 interface NodeViewFactoryOptions {
@@ -369,7 +374,6 @@ interface NodeViewFactoryOptions {
 #### useNodeViewContext: () => NodeViewContext
 
 ```ts
-
 interface NodeViewContext {
   // The DOM element that contains the content of the node.
   contentRef: NodeViewContentRef
@@ -440,7 +444,7 @@ interface MarkViewContext {
   // The prosemirror mark for current mark view
   mark: Writable<Mark>
 
-  // Whether the mark is inline 
+  // Whether the mark is inline
   inline: Writable<boolean>
 }
 ```
@@ -458,7 +462,6 @@ interface MarkViewContext {
 #### usePluginViewFactory: () => (options: PluginViewFactoryOptions) => PluginView
 
 ```ts
-
 interface PluginViewFactoryOptions {
   // Component
   component: SvelteComponent
@@ -477,7 +480,6 @@ interface PluginViewFactoryOptions {
 #### usePluginViewContext: () => PluginViewContext
 
 ```ts
-
 interface PluginViewContext {
   // The prosemirror editor view.
   view: Writable<EditorView>
@@ -501,7 +503,6 @@ interface PluginViewContext {
 #### useWidgetViewFactory: () => (options: WidgetViewFactoryOptions) => WidgetDecorationFactory
 
 ```ts
-
 type WidgetDecorationFactory = (pos: number, spec?: WidgetDecorationSpec) => Decoration
 
 interface WidgetViewFactoryOptions {
@@ -513,11 +514,9 @@ interface WidgetViewFactoryOptions {
 }
 ```
 
-
 #### useWidgetViewContext: () => WidgetViewContext
 
 ```ts
-
 interface WidgetViewContext {
   // The prosemirror editor view.
   view: EditorView

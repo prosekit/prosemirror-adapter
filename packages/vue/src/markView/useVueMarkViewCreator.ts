@@ -7,24 +7,23 @@ export function useVueMarkViewCreator(
   renderVueRenderer: VueRendererResult['renderVueRenderer'],
   removeVueRenderer: VueRendererResult['removeVueRenderer'],
 ) {
-  const createVueMarkView: MarkViewFactory
-    = options => (mark, view, inline) => {
-      const nodeView = new VueMarkView({
-        mark,
-        view,
-        inline,
-        options: {
-          ...options,
-          destroy() {
-            options.destroy?.()
-            removeVueRenderer(nodeView)
-          },
+  const createVueMarkView: MarkViewFactory = (options) => (mark, view, inline) => {
+    const nodeView = new VueMarkView({
+      mark,
+      view,
+      inline,
+      options: {
+        ...options,
+        destroy() {
+          options.destroy?.()
+          removeVueRenderer(nodeView)
         },
-      })
-      renderVueRenderer(nodeView)
+      },
+    })
+    renderVueRenderer(nodeView)
 
-      return nodeView
-    }
+    return nodeView
+  }
 
   return createVueMarkView
 }

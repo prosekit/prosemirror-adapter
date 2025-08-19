@@ -1,4 +1,3 @@
-
 import { CoreNodeView } from '@prosemirror-adapter/core'
 import { nanoid } from 'nanoid'
 import type { Writable } from 'svelte/store'
@@ -10,17 +9,15 @@ import { mount } from '../mount'
 import type { SvelteNodeViewComponent } from './SvelteNodeViewOptions'
 import type { NodeViewContext, NodeViewContextMap } from './nodeViewContext'
 
-export class SvelteNodeView extends CoreNodeView<SvelteNodeViewComponent> implements SvelteRenderer<NodeViewContextMap> {
+export class SvelteNodeView
+  extends CoreNodeView<SvelteNodeViewComponent>
+  implements SvelteRenderer<NodeViewContextMap>
+{
   key: string = nanoid()
 
   _context: NodeViewContext = {
     contentRef: (element) => {
-      if (
-        element
-        && element instanceof HTMLElement
-        && this.contentDOM
-        && element.firstChild !== this.contentDOM
-      ) {
+      if (element && element instanceof HTMLElement && this.contentDOM && element.firstChild !== this.contentDOM) {
         element.appendChild(this.contentDOM)
       }
     },
@@ -45,7 +42,7 @@ export class SvelteNodeView extends CoreNodeView<SvelteNodeViewComponent> implem
     }
     Object.entries(original).forEach(([key, value]) => {
       const mapKey = key as keyof typeof original
-      const writable = this.context.get(mapKey) as Writable<typeof original[typeof mapKey]>
+      const writable = this.context.get(mapKey) as Writable<(typeof original)[typeof mapKey]>
       writable.set(value)
     })
   }

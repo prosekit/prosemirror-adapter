@@ -23,7 +23,9 @@ export interface NodeViewContext {
 
 export type NodeViewContextMap = Obj2Map<NodeViewContext>
 
-export const useNodeViewContext = <Key extends keyof NodeViewContext>(key: Key): NodeViewContext[Key] => getContext(key)
+export function useNodeViewContext<Key extends keyof NodeViewContext>(key: Key): NodeViewContext[Key] {
+  return getContext(key)
+}
 
 export const nodeViewFactoryKey = '[ProsemirrorAdapter]useNodeViewFactory'
 export type NodeViewFactory = (options: SvelteNodeViewUserOptions) => NodeViewConstructor

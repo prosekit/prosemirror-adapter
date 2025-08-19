@@ -8,7 +8,7 @@ export function App() {
   return (
     <StrictMode>
       <h1>Prosemirror Adapter React</h1>
-      <button onClick={() => setCounter(c => c + 1)}>rerender</button>
+      <button onClick={() => setCounter((c) => c + 1)}>rerender</button>
       <ProsemirrorAdapterProvider key={counter}>
         <Editor />
       </ProsemirrorAdapterProvider>

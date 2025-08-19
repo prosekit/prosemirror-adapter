@@ -13,34 +13,25 @@ import { useReactWidgetViewCreator } from './widgetView/useReactWidgetViewCreato
 
 export type CreateReactNodeView = ReturnType<typeof useReactNodeViewCreator>
 export type CreateReactMarkView = ReturnType<typeof useReactMarkViewCreator>
-export type CreateReactPluginView = ReturnType<
-  typeof useReactPluginViewCreator
->
-export type CreateReactWidgetView = ReturnType<
-  typeof useReactWidgetViewCreator
->
+export type CreateReactPluginView = ReturnType<typeof useReactPluginViewCreator>
+export type CreateReactWidgetView = ReturnType<typeof useReactWidgetViewCreator>
 
-export const ProsemirrorAdapterProvider: FC<{ children: ReactNode }> = ({
-  children,
-}) => {
-  const { renderReactRenderer, removeReactRenderer, portals }
-    = useReactRenderer()
+export const ProsemirrorAdapterProvider: FC<{ children: ReactNode }> = ({ children }) => {
+  const { renderReactRenderer, removeReactRenderer, portals } = useReactRenderer()
 
-  const createReactNodeView: CreateReactNodeView = useReactNodeViewCreator(
+  const createReactNodeView: CreateReactNodeView = useReactNodeViewCreator(renderReactRenderer, removeReactRenderer)
+
+  const createReactMarkView: CreateReactMarkView = useReactMarkViewCreator(renderReactRenderer, removeReactRenderer)
+
+  const createReactPluginView: CreateReactPluginView = useReactPluginViewCreator(
     renderReactRenderer,
     removeReactRenderer,
   )
 
-  const createReactMarkView: CreateReactMarkView = useReactMarkViewCreator(
+  const createReactWidgetView: CreateReactWidgetView = useReactWidgetViewCreator(
     renderReactRenderer,
     removeReactRenderer,
   )
-
-  const createReactPluginView: CreateReactPluginView
-    = useReactPluginViewCreator(renderReactRenderer, removeReactRenderer)
-
-  const createReactWidgetView: CreateReactWidgetView
-    = useReactWidgetViewCreator(renderReactRenderer, removeReactRenderer)
 
   const memoizedPortals = useMemo(() => Object.values(portals), [portals])
 

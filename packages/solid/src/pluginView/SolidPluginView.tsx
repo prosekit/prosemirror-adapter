@@ -9,15 +9,13 @@ import type { SolidRenderer } from '../SolidRenderer'
 import { hidePortalDiv } from '../utils/hidePortalDiv'
 
 import type { SolidPluginViewComponent } from './SolidPluginViewOptions'
-import type {
-  PluginViewContext,
-  PluginViewContextProps,
-} from './pluginViewContext'
+import type { PluginViewContext, PluginViewContextProps } from './pluginViewContext'
 import { pluginViewContext } from './pluginViewContext'
 
 export class SolidPluginView
   extends CorePluginView<SolidPluginViewComponent>
-  implements SolidRenderer<PluginViewContext> {
+  implements SolidRenderer<PluginViewContext>
+{
   key: string = nanoid()
 
   context: PluginViewContext
@@ -45,7 +43,7 @@ export class SolidPluginView
     const UserComponent = this.component
 
     return (
-      <Portal mount={this.root} ref={el => hidePortalDiv(el)}>
+      <Portal mount={this.root} ref={(el) => hidePortalDiv(el)}>
         <pluginViewContext.Provider value={this.context}>
           <Dynamic component={UserComponent} />
         </pluginViewContext.Provider>

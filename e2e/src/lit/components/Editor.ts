@@ -31,8 +31,7 @@ export class MyEditor extends ShallowLitElement {
   editorView!: EditorView
 
   editorRef: RefOrCallback = (element) => {
-    if (!element || element.firstChild || !(element instanceof HTMLElement))
-      return
+    if (!element || element.firstChild || !(element instanceof HTMLElement)) return
 
     const nodeViewFactory = this.nodeViewFactory.value!
     const markViewFactory = this.markViewFactory.value!
@@ -43,43 +42,47 @@ export class MyEditor extends ShallowLitElement {
       component: Hashes,
     })
 
-    this.editorView = createEditorView(element, {
-      paragraph: nodeViewFactory({
-        component: Paragraph,
-        as: 'div',
-        contentAs: 'p',
-      }),
-      heading: nodeViewFactory({
-        component: Heading,
-      }),
-    }, {
-      link: markViewFactory({
-        component: Link,
-      }),
-    }, [
-      new Plugin({
-        view: pluginViewFactory({
-          component: Size,
+    this.editorView = createEditorView(
+      element,
+      {
+        paragraph: nodeViewFactory({
+          component: Paragraph,
+          as: 'div',
+          contentAs: 'p',
         }),
-      }),
-      new Plugin({
-        props: {
-          decorations(state) {
-            const { $from } = state.selection
-            const node = $from.node()
-            if (node.type.name !== 'heading')
-              return DecorationSet.empty
+        heading: nodeViewFactory({
+          component: Heading,
+        }),
+      },
+      {
+        link: markViewFactory({
+          component: Link,
+        }),
+      },
+      [
+        new Plugin({
+          view: pluginViewFactory({
+            component: Size,
+          }),
+        }),
+        new Plugin({
+          props: {
+            decorations(state) {
+              const { $from } = state.selection
+              const node = $from.node()
+              if (node.type.name !== 'heading') return DecorationSet.empty
 
-            const widget = getHashWidget($from.before() + 1, {
-              side: -1,
-              level: node.attrs.level as number,
-            })
+              const widget = getHashWidget($from.before() + 1, {
+                side: -1,
+                level: node.attrs.level as number,
+              })
 
-            return DecorationSet.create(state.doc, [widget])
+              return DecorationSet.create(state.doc, [widget])
+            },
           },
-        },
-      }),
-    ])
+        }),
+      ],
+    )
   }
 
   override disconnectedCallback() {

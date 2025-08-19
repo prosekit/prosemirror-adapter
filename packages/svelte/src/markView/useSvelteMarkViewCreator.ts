@@ -7,24 +7,23 @@ export function useSvelteMarkViewCreator(
   renderSvelteRenderer: SvelteRendererResult['renderSvelteRenderer'],
   removeSvelteRenderer: SvelteRendererResult['removeSvelteRenderer'],
 ) {
-  const createSvelteMarkView: MarkViewFactory
-    = options => (mark, view, inline) => {
-      const markView = new SvelteMarkView({
-        mark,
-        view,
-        inline,
-        options: {
-          ...options,
-          destroy() {
-            options.destroy?.()
-            removeSvelteRenderer(markView)
-          },
+  const createSvelteMarkView: MarkViewFactory = (options) => (mark, view, inline) => {
+    const markView = new SvelteMarkView({
+      mark,
+      view,
+      inline,
+      options: {
+        ...options,
+        destroy() {
+          options.destroy?.()
+          removeSvelteRenderer(markView)
         },
-      })
-      renderSvelteRenderer(markView)
+      },
+    })
+    renderSvelteRenderer(markView)
 
-      return markView
-    }
+    return markView
+  }
 
   return createSvelteMarkView
 }

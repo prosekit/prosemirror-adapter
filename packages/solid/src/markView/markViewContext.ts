@@ -25,12 +25,12 @@ export const markViewContext = createContext<MarkViewContext>(() => ({
 
 export const useMarkViewContext = () => useContext(markViewContext)
 
-export const createMarkViewContext = createContext<
-  (options: SolidMarkViewUserOptions) => MarkViewConstructor
->((_options) => {
-      throw new Error(
-        'No ProsemirrorAdapterProvider detected, maybe you need to wrap the component with the Editor with ProsemirrorAdapterProvider?',
-      )
-    })
+export const createMarkViewContext = createContext<(options: SolidMarkViewUserOptions) => MarkViewConstructor>(
+  (_options) => {
+    throw new Error(
+      'No ProsemirrorAdapterProvider detected, maybe you need to wrap the component with the Editor with ProsemirrorAdapterProvider?',
+    )
+  },
+)
 
 export const useMarkViewFactory = () => useContext(createMarkViewContext)

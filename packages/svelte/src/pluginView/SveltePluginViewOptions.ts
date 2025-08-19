@@ -2,7 +2,7 @@ import type { CorePluginViewSpec, CorePluginViewUserOptions } from '@prosemirror
 
 import type { SvelteComponentConstructor } from '../types'
 
-export type SveltePluginViewComponent = SvelteComponentConstructor 
+export type SveltePluginViewComponent = SvelteComponentConstructor
 
 export type SveltePluginViewSpec = CorePluginViewSpec<SveltePluginViewComponent>
 

@@ -10,6 +10,6 @@ const { contentRef, selected } = useNodeViewContext()
 
 <style scoped>
 .selected {
-    outline: blue solid 1px;
+  outline: blue solid 1px;
 }
 </style>
