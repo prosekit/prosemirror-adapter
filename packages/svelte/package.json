@@ -26,7 +26,7 @@
   },
   "dependencies": {
     "@prosemirror-adapter/core": "workspace:*",
-    "nanoid": "^5.1.4",
+    "nanoid": "^5.1.5",
     "prosemirror-model": "^1.24.1",
     "prosemirror-state": "^1.4.3",
     "prosemirror-view": "^1.38.1",
@@ -41,7 +41,7 @@
     }
   },
   "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "^5.0.0",
+    "@sveltejs/vite-plugin-svelte": "^5.1.1",
     "svelte": "^5.23.1",
     "tsdown": "^0.14.1"
   },

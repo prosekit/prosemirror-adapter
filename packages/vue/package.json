@@ -26,7 +26,7 @@
   },
   "dependencies": {
     "@prosemirror-adapter/core": "workspace:*",
-    "nanoid": "^5.1.4",
+    "nanoid": "^5.1.5",
     "prosemirror-keymap": "^1.2.2",
     "prosemirror-model": "^1.24.1",
     "prosemirror-state": "^1.4.3",

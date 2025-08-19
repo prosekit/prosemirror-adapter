@@ -26,7 +26,7 @@
   },
   "dependencies": {
     "@prosemirror-adapter/core": "workspace:*",
-    "nanoid": "^5.1.4",
+    "nanoid": "^5.1.5",
     "prosemirror-model": "^1.24.1",
     "prosemirror-state": "^1.4.3",
     "prosemirror-view": "^1.38.1",
@@ -42,7 +42,7 @@
   },
   "devDependencies": {
     "tsdown": "^0.14.1",
-    "vite": "^6.0.0",
+    "vite": "^6.3.5",
     "vite-plugin-solid": "^2.11.8"
   },
   "publishConfig": {
