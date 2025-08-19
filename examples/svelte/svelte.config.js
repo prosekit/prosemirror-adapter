@@ -12,21 +12,6 @@ const config = {
     // If your environment is not supported, or you settled on a specific environment, switch out the adapter.
     // See https://svelte.dev/docs/kit/adapters for more information about adapters.
     adapter: adapter(),
-
-    typescript: {
-      config: (config) => {
-        /** @type {string[]} */
-        const include = config.include
-
-        if (!Array.isArray(include)) {
-          throw new TypeError('include in tsconfig.json should be an array')
-        }
-
-        if (!include.includes('../svelte.config.js')) {
-          include.push('../svelte.config.js')
-        }
-      },
-    },
   },
 }
 

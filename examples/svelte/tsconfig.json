@@ -4,8 +4,11 @@
     "skipLibCheck": true,
     "composite": true,
     "noEmit": false,
-    "outDir": "./node_modules/.cache/svelte-kit-tsconfig"
+    "allowJs": true,
+    "outDir": "./node_modules/.cache/tsconfig/out",
+    "tsBuildInfoFile": "./node_modules/.cache/tsconfig/build"
   },
+  "include": ["./*", "./src", "./tests", "./src/**/*.svelte", "./tests/**/*.svelte"],
   "references": [
     {
       "path": "../../packages/svelte/tsconfig.json"
