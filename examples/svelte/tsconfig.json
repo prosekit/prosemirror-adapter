@@ -1,8 +1,3 @@
 {
-  "extends": "@ocavue/tsconfig/dom/app.json",
-  "references": [
-    {
-      "path": "../../packages/svelte/tsconfig.json"
-    }
-  ]
+  "extends": "./.svelte-kit/tsconfig.json"
 }
