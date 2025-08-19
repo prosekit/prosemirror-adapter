@@ -1,6 +1,6 @@
 {
   "name": "@examples/react",
-  "description": "React example for prosemirror-adapter",
+  "description": "React example for ProseMirror Adapter",
   "type": "module",
   "private": true,
   "license": "MIT",
