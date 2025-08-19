@@ -20,7 +20,7 @@ import { Size } from './Size'
 import './Editor.css'
 
 export const Editor: FC = () => {
-  const viewRef = useRef<EditorView>()
+  const viewRef = useRef<EditorView | null>(null)
   const nodeViewFactory = useNodeViewFactory()
   const markViewFactory = useMarkViewFactory()
   const pluginViewFactory = usePluginViewFactory()
