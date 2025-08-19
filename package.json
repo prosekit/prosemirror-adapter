@@ -42,10 +42,5 @@
     "prosemirror-view": "^1.38.1",
     "typescript": "~5.7.3",
     "vite": "^6.3.5"
-  },
-  "pnpm": {
-    "overrides": {
-      "svelte": "5.38.1"
-    }
   }
 }
