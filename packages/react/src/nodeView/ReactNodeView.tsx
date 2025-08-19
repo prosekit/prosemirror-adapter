@@ -1,6 +1,5 @@
 import { CoreNodeView } from '@prosemirror-adapter/core'
 import { nanoid } from 'nanoid'
-
 import { createPortal } from 'react-dom'
 
 import type { ReactRenderer } from '../ReactRenderer'
