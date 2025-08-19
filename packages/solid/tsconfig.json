@@ -4,5 +4,4 @@
     "jsx": "preserve",
     "jsxImportSource": "solid-js"
   },
-  "include": ["src/**/*.ts","src/**/*.tsx", "./*.json", "./*.js"]
 }

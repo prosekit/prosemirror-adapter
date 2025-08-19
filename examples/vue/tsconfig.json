@@ -1,7 +1,6 @@
 {
-  "extends": "@type-config/strict",
+  "extends": "@ocavue/tsconfig/dom/app.json",
   "compilerOptions": {
     "jsx": "preserve",
-    "noPropertyAccessFromIndexSignature": false
   }
 }
