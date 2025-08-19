@@ -1,5 +1,6 @@
 {
   "name": "@examples/vue",
+  "description": "Vue example for prosemirror-adapter",
   "type": "module",
   "private": true,
   "license": "MIT",

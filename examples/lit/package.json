@@ -1,8 +1,8 @@
 {
   "name": "@examples/lit",
-  "description": "Lit example",
   "type": "module",
   "private": true,
+  "description": "Lit example for prosemirror-adapter",
   "scripts": {
     "start": "vite",
     "build": "vite build"

@@ -1,5 +1,6 @@
 {
 	"name": "@examples/svelte",
+	"description": "Svelte example for prosemirror-adapter",
 	"type": "module",
 	"private": true,
 	"scripts": {

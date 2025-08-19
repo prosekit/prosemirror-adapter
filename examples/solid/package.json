@@ -1,5 +1,6 @@
 {
   "name": "@example/solid",
+  "description": "Solid example for prosemirror-adapter",
   "type": "module",
   "version": "0.0.0",
   "private": true,

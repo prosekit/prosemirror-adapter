@@ -23,8 +23,8 @@ export class VuePluginView extends CorePluginView<VuePluginViewComponent> implem
     }).forEach(([key, value]) => {
       const prev = this.context[key as 'view' | 'prevState']
       if (key === 'view') {
-        const clone = Object.assign(Object.create(Object.getPrototypeOf(value)), value)
-        prev.value = clone
+        const clone = Object.assign(Object.create(Object.getPrototypeOf(value as object) as object | null), value as object)
+        prev.value = clone as any
         return
       }
 
