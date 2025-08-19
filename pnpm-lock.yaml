@@ -113,12 +113,24 @@ importers:
       prosemirror-example-setup:
         specifier: ^1.2.3
         version: 1.2.3
+      prosemirror-keymap:
+        specifier: ^1.2.2
+        version: 1.2.2
       prosemirror-menu:
         specifier: ^1.2.4
         version: 1.2.4
+      prosemirror-model:
+        specifier: ^1.24.1
+        version: 1.24.1
       prosemirror-schema-basic:
         specifier: ^1.2.3
         version: 1.2.3
+      prosemirror-state:
+        specifier: ^1.4.3
+        version: 1.4.3
+      prosemirror-view:
+        specifier: ^1.38.1
+        version: 1.38.1
       react:
         specifier: ^18.3.1
         version: 18.3.1
