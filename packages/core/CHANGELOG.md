@@ -1,5 +1,11 @@
 # @prosemirror-adapter/core
 
+## 0.4.2
+
+### Patch Changes
+
+- 72d8679: Update ProseMirror packages.
+
 ## 0.4.0
 
 ### Minor Changes
