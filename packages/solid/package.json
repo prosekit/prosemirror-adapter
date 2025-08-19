@@ -29,8 +29,7 @@
     "nanoid": "^5.1.5",
     "prosemirror-model": "^1.24.1",
     "prosemirror-state": "^1.4.3",
-    "prosemirror-view": "^1.38.1",
-    "tslib": "^2.8.1"
+    "prosemirror-view": "^1.38.1"
   },
   "peerDependencies": {
     "solid-js": "^1.8.22"
