@@ -1,3 +1,20 @@
 {
-  "extends": "@ocavue/tsconfig/dom/app.json",
+"extends": "@ocavue/tsconfig/dom/app.json",
+"references": [
+    {
+        "path": "../packages/lit/tsconfig.json"
+    },
+    {
+        "path": "../packages/react/tsconfig.json"
+    },
+    {
+        "path": "../packages/solid/tsconfig.json"
+    },
+    {
+        "path": "../packages/svelte/tsconfig.json"
+    },
+    {
+        "path": "../packages/vue/tsconfig.json"
+    }
+],
 }

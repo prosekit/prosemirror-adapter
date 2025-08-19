@@ -2,22 +2,40 @@
   "extends": "@ocavue/tsconfig/es/root.json",
   "references": [
     {
-      "path": "./packages/core"
+        "path": "./e2e/tsconfig.json"
     },
     {
-      "path": "./packages/lit"
+        "path": "./examples/lit/tsconfig.json"
     },
     {
-      "path": "./packages/react"
+        "path": "./examples/react/tsconfig.json"
     },
     {
-      "path": "./packages/solid"
+        "path": "./examples/solid/tsconfig.json"
     },
     {
-      "path": "./packages/svelte"
+        "path": "./examples/svelte/tsconfig.json"
     },
     {
-      "path": "./packages/vue"
+        "path": "./examples/vue/tsconfig.json"
+    },
+    {
+        "path": "./packages/core/tsconfig.json"
+    },
+    {
+        "path": "./packages/lit/tsconfig.json"
+    },
+    {
+        "path": "./packages/react/tsconfig.json"
+    },
+    {
+        "path": "./packages/solid/tsconfig.json"
+    },
+    {
+        "path": "./packages/svelte/tsconfig.json"
+    },
+    {
+        "path": "./packages/vue/tsconfig.json"
     }
-  ]
+]
 }

@@ -3,5 +3,10 @@
   "compilerOptions": {
     "jsx": "preserve",
     "jsxImportSource": "vue"
-  }
+},
+"references": [
+    {
+        "path": "../core/tsconfig.json"
+    }
+]
 }

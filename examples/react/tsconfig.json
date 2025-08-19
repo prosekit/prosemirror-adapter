@@ -3,6 +3,11 @@
   "compilerOptions": {
     "jsx": "react-jsx",
     "noPropertyAccessFromIndexSignature": false
-  }
+},
+"references": [
+    {
+        "path": "../../packages/react/tsconfig.json"
+    }
+]
 }
 

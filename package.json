@@ -17,7 +17,7 @@
     "test:install": "pnpm --filter=e2e test:install",
     "changeset": "changeset",
     "lint": "eslint .",
-    "fix": "eslint . --fix",
+    "fix": "monorepo-typescript-references fix && eslint . --fix",
     "release": "changeset publish",
     "prepare": "husky"
   },
@@ -32,6 +32,7 @@
     "git-cz": "^4.9.0",
     "husky": "^9.1.7",
     "lint-staged": "^15.5.0",
+    "monorepo-typescript-references": "^1.1.0",
     "pkg-pr-new": "^0.0.41",
     "prosemirror-keymap": "^1.2.2",
     "prosemirror-model": "^1.24.1",
