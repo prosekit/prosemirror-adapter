@@ -3,9 +3,8 @@ import { defineConfig } from 'vite'
 import solid from 'vite-plugin-solid'
 
 import packageJson from './package.json' with { type: 'json' }
-// 
-export default defineConfig({
 
+export default defineConfig({
   build: {
     emptyOutDir: false,
     lib: {
@@ -22,5 +21,5 @@ export default defineConfig({
       ],
     },
   },
-  plugins: [ solid() ]
+  plugins: [solid()]
 })
