@@ -8,7 +8,6 @@
   },
   "dependencies": {
     "@prosemirror-adapter/vue": "*",
-    "@type-config/strict": "^1.2.1",
     "@vitejs/plugin-vue": "^5.2.3",
     "prosemirror-example-setup": "^1.2.3",
     "prosemirror-keymap": "^1.2.2",
