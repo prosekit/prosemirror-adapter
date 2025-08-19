@@ -2,7 +2,7 @@
   "name": "@prosemirror-adapter/monorepo",
   "type": "commonjs",
   "private": true,
-  "packageManager": "pnpm@10.13.1",
+  "packageManager": "pnpm@10.15.0",
   "description": "Monorepo for ProseMirror Adapter",
   "license": "MIT",
   "engines": {
@@ -31,12 +31,12 @@
     "eslint": "^9.33.0",
     "git-cz": "^4.9.0",
     "husky": "^9.1.7",
-    "lint-staged": "^16.1.2",
+    "lint-staged": "^16.1.5",
     "monorepo-typescript-references": "^1.1.0",
     "pkg-pr-new": "^0.0.56",
     "prettier": "^3.6.2",
     "prettier-plugin-svelte": "^3.4.0",
-    "typescript": "~5.7.3",
+    "typescript": "~5.8.3",
     "vite": "^6.3.5"
   }
 }
