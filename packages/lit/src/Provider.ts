@@ -14,10 +14,10 @@ import { useLitWidgetViewCreator } from './widgetView/useLitWidgetViewCreator'
 
 @customElement('prosemirror-adapter-provider')
 export class ProsemirrorAdapterProvider extends ShallowLitElement {
-  createLitNodeView: ContextProvider<typeof nodeViewFactoryKey>
-  createLitMarkView: ContextProvider<typeof markViewFactoryKey>
-  createLitPluginView: ContextProvider<typeof pluginViewFactoryKey>
-  createLitWidgetView: ContextProvider<typeof widgetViewFactoryKey>
+  declare createLitNodeView: ContextProvider<typeof nodeViewFactoryKey>
+  declare createLitMarkView: ContextProvider<typeof markViewFactoryKey>
+  declare createLitPluginView: ContextProvider<typeof pluginViewFactoryKey>
+  declare createLitWidgetView: ContextProvider<typeof widgetViewFactoryKey>
   constructor() {
     super()
     const { renderLitRenderer, removeLitRenderer } = useLitRenderer()
