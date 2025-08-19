@@ -27,10 +27,10 @@
   "dependencies": {
     "@prosemirror-adapter/core": "workspace:*",
     "nanoid": "^5.1.5",
-    "prosemirror-keymap": "^1.2.2",
-    "prosemirror-model": "^1.24.1",
+    "prosemirror-keymap": "^1.2.3",
+    "prosemirror-model": "^1.25.3",
     "prosemirror-state": "^1.4.3",
-    "prosemirror-view": "^1.38.1"
+    "prosemirror-view": "^1.40.1"
   },
   "peerDependencies": {
     "vue": "^3.0.0"

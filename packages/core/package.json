@@ -24,9 +24,9 @@
     "build": "tsdown"
   },
   "dependencies": {
-    "prosemirror-model": "^1.24.1",
+    "prosemirror-model": "^1.25.3",
     "prosemirror-state": "^1.4.3",
-    "prosemirror-view": "^1.38.1"
+    "prosemirror-view": "^1.40.1"
   },
   "devDependencies": {
     "tsdown": "^0.14.1"
