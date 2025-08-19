@@ -1,8 +1,8 @@
 import type { CoreMarkViewSpec, CoreMarkViewUserOptions } from '@prosemirror-adapter/core'
+
 import type { SvelteComponentConstructor } from '../types'
 
-interface EmptyProps {}
-export type SvelteMarkViewComponent = SvelteComponentConstructor<EmptyProps>
+export type SvelteMarkViewComponent = SvelteComponentConstructor 
 
 export type SvelteMarkViewSpec = CoreMarkViewSpec<SvelteMarkViewComponent>
 

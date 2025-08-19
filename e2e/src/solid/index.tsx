@@ -1,7 +1,8 @@
-import { ProsemirrorAdapterProvider } from '@prosemirror-adapter/solid'
-
 /* @refresh reload */
+
+import { ProsemirrorAdapterProvider } from '@prosemirror-adapter/solid'
 import { render } from 'solid-js/web'
+
 import { Editor } from './components/Editor'
 import './index.css'
 
@@ -23,5 +24,5 @@ render(
       </ProsemirrorAdapterProvider>
     </>
   ),
-  root!,
+  root,
 )

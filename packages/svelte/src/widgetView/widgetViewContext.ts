@@ -1,8 +1,10 @@
 import type { WidgetDecorationFactory, WidgetDecorationSpec } from '@prosemirror-adapter/core'
 import type { EditorView } from 'prosemirror-view'
-import type { Obj2Map } from '../types'
-import type { SvelteWidgetViewUserOptions } from './SvelteWidgetViewOptions'
 import { getContext } from 'svelte'
+
+import type { Obj2Map } from '../types'
+
+import type { SvelteWidgetViewUserOptions } from './SvelteWidgetViewOptions'
 
 export interface WidgetViewContext {
   view: EditorView

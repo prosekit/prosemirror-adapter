@@ -1,12 +1,13 @@
-import type { EditorView } from 'prosemirror-view'
 
-import type { FC } from 'react'
 import { useNodeViewFactory, usePluginViewFactory, useWidgetViewFactory } from '@prosemirror-adapter/react'
 import { Plugin } from 'prosemirror-state'
+import type { EditorView } from 'prosemirror-view'
 import { DecorationSet } from 'prosemirror-view'
+import type { FC } from 'react'
 import { useCallback, useRef } from 'react'
 
 import { createEditorView } from '../createEditorView'
+
 import { Hashes } from './Hashes'
 import { Heading } from './Heading'
 import { Paragraph } from './Paragraph'
@@ -57,7 +58,7 @@ export const Editor: FC = () => {
 
               const widget = getHashWidget($from.before() + 1, {
                 side: -1,
-                level: node.attrs.level,
+                level: node.attrs.level as number,
               })
 
               return DecorationSet.create(state.doc, [widget])

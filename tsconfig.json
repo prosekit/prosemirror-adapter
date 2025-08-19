@@ -1,8 +1,41 @@
 {
-  "extends": "./tsconfig.base.json",
-  "compilerOptions": {
-    "emitDeclarationOnly": false,
-    "noEmit": true
-  },
-  "exclude": ["node_modules", "lib"]
+  "extends": "@ocavue/tsconfig/es/root.json",
+  "references": [
+    {
+      "path": "./e2e/tsconfig.json"
+    },
+    {
+      "path": "./examples/lit/tsconfig.json"
+    },
+    {
+      "path": "./examples/react/tsconfig.json"
+    },
+    {
+      "path": "./examples/solid/tsconfig.json"
+    },
+    {
+      "path": "./examples/svelte/tsconfig.json"
+    },
+    {
+      "path": "./examples/vue/tsconfig.json"
+    },
+    {
+      "path": "./packages/core/tsconfig.json"
+    },
+    {
+      "path": "./packages/lit/tsconfig.json"
+    },
+    {
+      "path": "./packages/react/tsconfig.json"
+    },
+    {
+      "path": "./packages/solid/tsconfig.json"
+    },
+    {
+      "path": "./packages/svelte/tsconfig.json"
+    },
+    {
+      "path": "./packages/vue/tsconfig.json"
+    }
+  ]
 }

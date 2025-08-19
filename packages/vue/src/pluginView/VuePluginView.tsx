@@ -1,9 +1,11 @@
-import type { VueRenderer, VueRendererComponent } from '../VueRenderer'
-import type { PluginViewContext } from './pluginViewContext'
-import type { VuePluginViewComponent } from './VuePluginViewOptions'
 import { CorePluginView } from '@prosemirror-adapter/core'
 import { nanoid } from 'nanoid'
 import { defineComponent, markRaw, provide, shallowRef, Teleport } from 'vue'
+
+import type { VueRenderer, VueRendererComponent } from '../VueRenderer'
+
+import type { VuePluginViewComponent } from './VuePluginViewOptions'
+import type { PluginViewContext } from './pluginViewContext'
 import { pluginViewContext } from './pluginViewContext'
 
 export class VuePluginView extends CorePluginView<VuePluginViewComponent> implements VueRenderer<PluginViewContext> {
@@ -21,7 +23,9 @@ export class VuePluginView extends CorePluginView<VuePluginViewComponent> implem
     }).forEach(([key, value]) => {
       const prev = this.context[key as 'view' | 'prevState']
       if (key === 'view') {
-        const clone = Object.assign(Object.create(Object.getPrototypeOf(value)), value)
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+        const clone = Object.assign(Object.create(Object.getPrototypeOf(value) as object | null), value)
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         prev.value = clone
         return
       }

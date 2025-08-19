@@ -1,6 +1,7 @@
 import type { LitRendererResult } from '../LitRenderer'
-import type { PluginViewFactory } from './pluginViewContext'
+
 import { LitPluginView } from './LitPluginView'
+import type { PluginViewFactory } from './pluginViewContext'
 
 export function useLitPluginViewCreator(renderLitRenderer: LitRendererResult['renderLitRenderer'], removeLitRenderer: LitRendererResult['removeLitRenderer']) {
   const createLitPluginView: PluginViewFactory = options => (view) => {

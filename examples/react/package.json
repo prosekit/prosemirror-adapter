@@ -1,6 +1,8 @@
 {
   "name": "@examples/react",
+  "type": "module",
   "private": true,
+  "description": "React example for ProseMirror Adapter",
   "license": "MIT",
   "scripts": {
     "start": "vite",
@@ -8,7 +10,6 @@
   },
   "dependencies": {
     "@prosemirror-adapter/react": "*",
-    "@type-config/strict": "^1.2.1",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
     "@vitejs/plugin-react": "^4.3.4",

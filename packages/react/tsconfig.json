@@ -1,9 +1,11 @@
 {
-  "extends": "../../tsconfig.base.json",
+  "extends": "@ocavue/tsconfig/dom/app.json",
   "compilerOptions": {
-    "jsx": "react",
-    "rootDir": "src",
-    "outDir": "lib"
+    "jsx": "react"
   },
-  "include": ["src"]
+  "references": [
+    {
+      "path": "../core/tsconfig.json"
+    }
+  ]
 }

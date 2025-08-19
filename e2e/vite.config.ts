@@ -1,4 +1,5 @@
 import { resolve } from 'node:path'
+
 import { svelte } from '@sveltejs/vite-plugin-svelte'
 import react from '@vitejs/plugin-react'
 import vue from '@vitejs/plugin-vue'

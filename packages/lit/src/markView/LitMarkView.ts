@@ -1,13 +1,14 @@
 import type { Context } from '@lit-labs/context'
-import type { LitRenderer } from '../LitRenderer'
-import type { LitMarkViewComponent } from './LitMarkViewOptions'
-import type { MarkViewContext } from './markViewContext'
 import { ContextProvider } from '@lit-labs/context'
-
 import { CoreMarkView } from '@prosemirror-adapter/core'
 import { customElement } from 'lit/decorators.js'
 import { nanoid } from 'nanoid'
+
+import type { LitRenderer } from '../LitRenderer'
 import { ShallowLitElement } from '../utils'
+
+import type { LitMarkViewComponent } from './LitMarkViewOptions'
+import type { MarkViewContext } from './markViewContext'
 import { markViewContextKey } from './markViewContext'
 
 declare global {

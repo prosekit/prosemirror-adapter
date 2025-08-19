@@ -1,8 +1,9 @@
+import { ContextConsumer, createContext } from '@lit-labs/context'
 import type { WidgetDecorationFactory, WidgetDecorationSpec } from '@prosemirror-adapter/core'
 import type { LitElement } from 'lit'
 import type { EditorView } from 'prosemirror-view'
+
 import type { LitWidgetViewUserOptions } from './LitWidgetViewOptions'
-import { ContextConsumer, createContext } from '@lit-labs/context'
 
 export interface WidgetViewContext {
   view: EditorView

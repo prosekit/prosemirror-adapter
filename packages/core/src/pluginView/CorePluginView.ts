@@ -1,5 +1,6 @@
 import type { EditorState, PluginView } from 'prosemirror-state'
 import type { EditorView } from 'prosemirror-view'
+
 import type { CorePluginViewSpec, CorePluginViewUserOptions } from './CorePluginViewOptions'
 
 export class CorePluginView<ComponentType> implements PluginView {

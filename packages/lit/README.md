@@ -80,7 +80,8 @@ import {
   ShallowLitElement,
   useNodeViewFactory,
 } from '@prosemirror-adapter/lit'
-import { RefOrCallback, ref } from 'lit/directives/ref.js'
+import type { RefOrCallback} from 'lit/directives/ref.js';
+import { ref } from 'lit/directives/ref.js'
 import Paragraph from './Paragraph.ts'
 
 @customElement('my-editor')
@@ -260,7 +261,8 @@ import {
   ShallowLitElement,
   usePluginViewFactory,
 } from '@prosemirror-adapter/lit'
-import { RefOrCallback, ref } from 'lit/directives/ref.js'
+import type { RefOrCallback} from 'lit/directives/ref.js';
+import { ref } from 'lit/directives/ref.js'
 import { Plugin } from 'prosemirror-state'
 import Size from './Size.ts'
 
@@ -337,7 +339,8 @@ import {
   ShallowLitElement,
   useWidgetViewFactory,
 } from '@prosemirror-adapter/lit'
-import { RefOrCallback, ref } from 'lit/directives/ref.js'
+import type { RefOrCallback} from 'lit/directives/ref.js';
+import { ref } from 'lit/directives/ref.js'
 import { Plugin } from 'prosemirror-state'
 import { Hashes } from './Hashes'
 

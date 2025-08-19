@@ -1,11 +1,12 @@
-import type { ReactRenderer } from '../ReactRenderer'
-import type { MarkViewContext } from './markViewContext'
-import type { ReactMarkViewComponent } from './ReactMarkViewOptions'
 import { CoreMarkView } from '@prosemirror-adapter/core'
-
 import { nanoid } from 'nanoid'
 import React from 'react'
 import { createPortal } from 'react-dom'
+
+import type { ReactRenderer } from '../ReactRenderer'
+
+import type { ReactMarkViewComponent } from './ReactMarkViewOptions'
+import type { MarkViewContext } from './markViewContext'
 import { markViewContext } from './markViewContext'
 
 export class ReactMarkView

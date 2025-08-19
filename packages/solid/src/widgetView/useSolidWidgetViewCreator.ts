@@ -2,10 +2,12 @@ import type {
   WidgetDecorationFactory,
   WidgetDecorationSpec,
 } from '@prosemirror-adapter/core'
-import type { SolidRendererResult } from '../SolidRenderer'
-import type { SolidWidgetViewUserOptions } from './SolidWidgetViewOptions'
 import { Decoration } from 'prosemirror-view'
+
+import type { SolidRendererResult } from '../SolidRenderer'
+
 import { SolidWidgetView } from './SolidWidgetView'
+import type { SolidWidgetViewUserOptions } from './SolidWidgetViewOptions'
 
 export function useSolidWidgetViewCreator(
   renderSolidRenderer: SolidRendererResult['renderSolidRenderer'],

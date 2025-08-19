@@ -1,6 +1,7 @@
 import type { VueRendererResult } from '../VueRenderer'
-import type { PluginViewFactory } from './pluginViewContext'
+
 import { VuePluginView } from './VuePluginView'
+import type { PluginViewFactory } from './pluginViewContext'
 
 export function useVuePluginViewCreator(renderVueRenderer: VueRendererResult['renderVueRenderer'], removeVueRenderer: VueRendererResult['removeVueRenderer']) {
   const createVuePluginView: PluginViewFactory = options => (view) => {

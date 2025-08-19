@@ -1,23 +1,8 @@
 {
-  "compilerOptions": {
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "useDefineForClassFields": false,
-    "experimentalDecorators": true,
-    "module": "ESNext",
-    "moduleResolution": "Node",
-    "strict": true,
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitReturns": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "declaration": true,
-    "emitDeclarationOnly": true,
-    "outDir": "./types",
-    "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true,
-    "isolatedModules": true,
-    "skipLibCheck": true
-  },
-  "references": [{ "path": "./tsconfig.node.json" }],
-  "include": ["src/**/*.ts"]
+  "extends": "@ocavue/tsconfig/dom/app.json",
+  "references": [
+    {
+      "path": "../../packages/lit/tsconfig.json"
+    }
+  ]
 }

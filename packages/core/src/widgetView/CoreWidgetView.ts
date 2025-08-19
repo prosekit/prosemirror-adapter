@@ -1,4 +1,5 @@
 import type { EditorView } from 'prosemirror-view'
+
 import type { CoreWidgetViewSpec, CoreWidgetViewUserOptions, WidgetDecorationSpec } from './CoreWidgetViewOptions'
 
 export class CoreWidgetView<Component> {

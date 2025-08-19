@@ -3,14 +3,14 @@ import {
   h,
   provide,
 } from 'vue'
+
+import { useVueRenderer } from './VueRenderer'
 import { markViewFactoryKey } from './markView'
 import { useVueMarkViewCreator } from './markView/useVueMarkViewCreator'
 import { nodeViewFactoryKey } from './nodeView'
 import { useVueNodeViewCreator } from './nodeView/useVueNodeViewCreator'
-
 import { pluginViewFactoryKey } from './pluginView'
 import { useVuePluginViewCreator } from './pluginView/useVuePluginViewCreator'
-import { useVueRenderer } from './VueRenderer'
 import { useVueWidgetViewCreator } from './widgetView/useVueWidgetViewCreator'
 import { widgetViewFactoryKey } from './widgetView/widgetViewContext'
 

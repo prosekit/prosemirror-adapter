@@ -3,8 +3,9 @@ import type {
   WidgetDecorationSpec,
 } from '@prosemirror-adapter/core'
 import type { EditorView } from 'prosemirror-view'
-import type { SolidWidgetViewUserOptions } from './SolidWidgetViewOptions'
 import { type Accessor, createContext, useContext } from 'solid-js'
+
+import type { SolidWidgetViewUserOptions } from './SolidWidgetViewOptions'
 
 export interface WidgetViewContextProps {
   view: EditorView

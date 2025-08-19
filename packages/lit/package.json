@@ -2,28 +2,35 @@
   "name": "@prosemirror-adapter/lit",
   "type": "module",
   "version": "0.4.1",
+  "description": "Lit package for ProseMirror Adapter",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Saul-Mirone/prosemirror-adapter.git",
-    "directory": "packages/vue"
+    "directory": "packages/lit"
   },
   "keywords": [
     "prosemirror-adapter",
     "lit"
   ],
   "sideEffects": false,
-  "main": "./lib/index.es.js",
-  "types": "./lib/index.d.ts",
+  "main": "./dist/index.js",
+  "types": "./src/index.ts",
   "files": [
-    "lib",
+    "dist",
     "src"
   ],
   "scripts": {
-    "start": "concurrently -n es,dts \"vite build --watch\"  \"tsc --emitDeclarationOnly --watch\"",
     "test": "vitest",
-    "tsc": "tsc --noEmit && echo",
-    "build": "tsc --emitDeclarationOnly && vite build"
+    "build": "tsdown && vite build"
+  },
+  "dependencies": {
+    "@prosemirror-adapter/core": "workspace:*",
+    "nanoid": "^5.1.4",
+    "prosemirror-model": "^1.24.1",
+    "prosemirror-state": "^1.4.3",
+    "prosemirror-view": "^1.38.1",
+    "tslib": "^2.8.1"
   },
   "peerDependencies": {
     "@lit-labs/context": "^0.5.0",
@@ -37,13 +44,14 @@
       "optional": true
     }
   },
-  "dependencies": {
-    "@prosemirror-adapter/core": "workspace:*",
-    "nanoid": "^5.1.4",
-    "tslib": "^2.8.1"
-  },
   "devDependencies": {
     "@lit-labs/context": "^0.5.1",
-    "lit": "^3.2.1"
+    "lit": "^3.2.1",
+    "tsdown": "^0.14.1",
+    "vite": "^5.4.14"
+  },
+  "publishConfig": {
+    "types": "./dist/index.d.ts",
+    "main": "./dist/index.js"
   }
 }

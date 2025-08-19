@@ -3,7 +3,7 @@ import { createMemo } from 'solid-js'
 
 export function Hashes() {
   const context = useWidgetViewContext()
-  const level = createMemo(() => context().spec?.level)
+  const level = createMemo(() => context().spec?.level as number)
   const hashes = createMemo(() => new Array(level() || 0).fill('#').join(''))
 
   return (

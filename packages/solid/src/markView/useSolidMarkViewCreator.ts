@@ -1,7 +1,9 @@
 import type { MarkViewConstructor } from 'prosemirror-view'
+
 import type { SolidRendererResult } from '../SolidRenderer'
-import type { SolidMarkViewUserOptions } from './SolidMarkViewOptions'
+
 import { SolidMarkView } from './SolidMarkView'
+import type { SolidMarkViewUserOptions } from './SolidMarkViewOptions'
 
 export function useSolidMarkViewCreator(
   renderSolidRenderer: SolidRendererResult['renderSolidRenderer'],

@@ -1,9 +1,10 @@
+import { ContextConsumer, createContext } from '@lit-labs/context'
 import type { LitElement } from 'lit'
 import type { RefOrCallback } from 'lit/directives/ref.js'
 import type { Attrs, Node } from 'prosemirror-model'
 import type { Decoration, DecorationSource, EditorView, NodeViewConstructor } from 'prosemirror-view'
+
 import type { LitNodeViewUserOptions } from './LitNodeViewOptions'
-import { ContextConsumer, createContext } from '@lit-labs/context'
 
 export interface NodeViewContext {
   // won't change

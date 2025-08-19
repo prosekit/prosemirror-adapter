@@ -5,7 +5,9 @@ import {
 } from '@prosemirror-adapter/solid'
 import { Plugin } from 'prosemirror-state'
 import { DecorationSet } from 'prosemirror-view'
+
 import { createEditorView } from '../createEditorView'
+
 import { Hashes } from './Hashes'
 import { Heading } from './Heading'
 import { Paragraph } from './Paragraph'
@@ -53,7 +55,7 @@ export function Editor() {
 
               const widget = getHashWidget($from.before() + 1, {
                 side: -1,
-                level: node.attrs.level,
+                level: node.attrs.level as number,
               })
 
               return DecorationSet.create(state.doc, [widget])

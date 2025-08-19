@@ -1,11 +1,13 @@
-import type { Writable } from 'svelte/store'
-import type { SvelteRenderer } from '../SvelteRenderer'
-import type { PluginViewContext, PluginViewContextMap } from './pluginViewContext'
-import type { SveltePluginViewComponent } from './SveltePluginViewOptions'
 import { CorePluginView } from '@prosemirror-adapter/core'
 import { nanoid } from 'nanoid'
+import type { Writable } from 'svelte/store'
 import { writable } from 'svelte/store'
+
+import type { SvelteRenderer } from '../SvelteRenderer'
 import { mount } from '../mount'
+
+import type { SveltePluginViewComponent } from './SveltePluginViewOptions'
+import type { PluginViewContext, PluginViewContextMap } from './pluginViewContext'
 
 export class SveltePluginView extends CorePluginView<SveltePluginViewComponent> implements SvelteRenderer<PluginViewContextMap> {
   key: string = nanoid()

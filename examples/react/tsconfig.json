@@ -1,7 +1,12 @@
 {
-  "extends": "@type-config/strict",
+  "extends": "@ocavue/tsconfig/dom/app.json",
   "compilerOptions": {
     "jsx": "react-jsx",
     "noPropertyAccessFromIndexSignature": false
-  }
+  },
+  "references": [
+    {
+      "path": "../../packages/react/tsconfig.json"
+    }
+  ]
 }

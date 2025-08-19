@@ -1,8 +1,10 @@
 import type { WidgetDecorationFactory, WidgetDecorationSpec } from '@prosemirror-adapter/core'
-import type { VueRendererResult } from '../VueRenderer'
-import type { VueWidgetViewUserOptions } from './VueWidgetViewOptions'
 import { Decoration } from 'prosemirror-view'
+
+import type { VueRendererResult } from '../VueRenderer'
+
 import { VueWidgetView } from './VueWidgetView'
+import type { VueWidgetViewUserOptions } from './VueWidgetViewOptions'
 
 export function useVueWidgetViewCreator(renderVueRenderer: VueRendererResult['renderVueRenderer'], removeVueRenderer: VueRendererResult['removeVueRenderer']) {
   const createWidgetPluginView = (options: VueWidgetViewUserOptions): WidgetDecorationFactory => {

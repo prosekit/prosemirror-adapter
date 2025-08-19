@@ -1,11 +1,12 @@
 import { setContext } from 'svelte'
+
+import { useSvelteRenderer } from './SvelteRenderer'
 import { markViewFactoryKey } from './markView'
 import { useSvelteMarkViewCreator } from './markView/useSvelteMarkViewCreator'
 import { nodeViewFactoryKey } from './nodeView'
 import { useSvelteNodeViewCreator } from './nodeView/useSvelteNodeViewCreator'
 import { pluginViewFactoryKey } from './pluginView'
 import { useSveltePluginViewCreator } from './pluginView/useSveltePluginViewCreator'
-import { useSvelteRenderer } from './SvelteRenderer'
 import { widgetViewFactoryKey } from './widgetView'
 import { useSvelteWidgetViewCreator } from './widgetView/useSvelteWidgetViewCreator'
 

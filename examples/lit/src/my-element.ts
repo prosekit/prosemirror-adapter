@@ -29,7 +29,7 @@ export class MyElement extends ShallowLitElement {
     `
   }
 
-  private _onClick() {
+  private _onClick = () => {
     this.editorId += 1
   }
 }

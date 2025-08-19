@@ -1,7 +1,9 @@
 {
   "name": "@example/solid",
+  "type": "module",
   "version": "0.0.0",
   "private": true,
+  "description": "Solid example for ProseMirror Adapter",
   "license": "MIT",
   "scripts": {
     "start": "vite",
@@ -17,12 +19,12 @@
     "prosemirror-schema-basic": "^1.2.3",
     "prosemirror-state": "^1.4.3",
     "prosemirror-view": "^1.38.1",
-    "solid-js": "^1.9.5"
+    "solid-js": "^1.9.9"
   },
   "devDependencies": {
-    "solid-devtools": "^0.33.0",
+    "solid-devtools": "^0.34.3",
     "typescript": "~5.7.3",
     "vite": "^5.4.14",
-    "vite-plugin-solid": "^2.11.6"
+    "vite-plugin-solid": "^2.11.8"
   }
 }

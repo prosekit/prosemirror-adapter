@@ -1,4 +1,5 @@
 import { expect, test } from '@playwright/test'
+
 import { testAll } from './helpers'
 
 testAll(
@@ -16,7 +17,7 @@ testAll(
       await expect(locator).toBeVisible()
 
       async function getStyleColor(): Promise<string> {
-        return locator.evaluate(el =>
+        return await locator.evaluate(el =>
           window.getComputedStyle(el).getPropertyValue('color'),
         )
       }

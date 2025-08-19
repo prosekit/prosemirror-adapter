@@ -1,15 +1,12 @@
 {
+  "extends": "@ocavue/tsconfig/dom/app.json",
   "compilerOptions": {
-    "target": "ESNext",
     "jsx": "preserve",
-    "jsxImportSource": "solid-js",
-    "module": "ESNext",
-    "moduleResolution": "node",
-    "types": ["vite/client"],
-    "strict": true,
-    "noEmit": true,
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "isolatedModules": true
-  }
+    "jsxImportSource": "solid-js"
+  },
+  "references": [
+    {
+      "path": "../../packages/solid/tsconfig.json"
+    }
+  ]
 }

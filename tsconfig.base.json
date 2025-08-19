@@ -1,9 +1,0 @@
-{
-  "extends": "@type-config/strict",
-  "compilerOptions": {
-    "lib": ["dom", "es2017", "es2018", "es2019", "es2020", "es2021"],
-    "preserveWatchOutput": true,
-    "noPropertyAccessFromIndexSignature": false,
-    "declarationMap": true
-  }
-}

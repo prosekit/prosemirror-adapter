@@ -2,6 +2,7 @@
   "name": "e2e",
   "type": "module",
   "private": true,
+  "description": "End-to-end tests for ProseMirror Adapter",
   "license": "MIT",
   "scripts": {
     "start": "vite --host",
@@ -26,13 +27,18 @@
     "@vitejs/plugin-vue": "^5.2.3",
     "lit": "^3.2.1",
     "prosemirror-example-setup": "^1.2.3",
+    "prosemirror-keymap": "^1.2.2",
     "prosemirror-menu": "^1.2.4",
+    "prosemirror-model": "^1.24.1",
     "prosemirror-schema-basic": "^1.2.3",
+    "prosemirror-state": "^1.4.3",
+    "prosemirror-view": "^1.38.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "solid-js": "^1.9.5",
+    "solid-js": "^1.9.9",
     "svelte": "^5.23.1",
-    "vite-plugin-solid": "^2.11.6",
+    "vite": "^5.4.14",
+    "vite-plugin-solid": "^2.11.8",
     "vue": "3.5.13"
   }
 }

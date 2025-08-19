@@ -1,6 +1,7 @@
 import type { SvelteRendererResult } from '../SvelteRenderer'
-import type { MarkViewFactory } from './markViewContext'
+
 import { SvelteMarkView } from './SvelteMarkView'
+import type { MarkViewFactory } from './markViewContext'
 
 export function useSvelteMarkViewCreator(
   renderSvelteRenderer: SvelteRendererResult['renderSvelteRenderer'],

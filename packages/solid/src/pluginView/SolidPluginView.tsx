@@ -1,17 +1,18 @@
 import type { CorePluginViewSpec } from '@prosemirror-adapter/core'
+import { CorePluginView } from '@prosemirror-adapter/core'
+import { nanoid } from 'nanoid'
 import type { JSX, Setter } from 'solid-js'
+import { createSignal } from 'solid-js'
+import { Dynamic, Portal } from 'solid-js/web'
+
 import type { SolidRenderer } from '../SolidRenderer'
+import { hidePortalDiv } from '../utils/hidePortalDiv'
+
+import type { SolidPluginViewComponent } from './SolidPluginViewOptions'
 import type {
   PluginViewContext,
   PluginViewContextProps,
 } from './pluginViewContext'
-import type { SolidPluginViewComponent } from './SolidPluginViewOptions'
-
-import { CorePluginView } from '@prosemirror-adapter/core'
-import { nanoid } from 'nanoid'
-import { createSignal } from 'solid-js'
-import { Dynamic, Portal } from 'solid-js/web'
-import { hidePortalDiv } from '../utils/hidePortalDiv'
 import { pluginViewContext } from './pluginViewContext'
 
 export class SolidPluginView

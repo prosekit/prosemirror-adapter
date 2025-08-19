@@ -1,9 +1,12 @@
 {
-  "extends": "../../tsconfig.base.json",
+  "extends": "@ocavue/tsconfig/dom/app.json",
   "compilerOptions": {
     "jsx": "preserve",
-    "rootDir": "src",
-    "outDir": "lib"
+    "jsxImportSource": "vue"
   },
-  "include": ["src"]
+  "references": [
+    {
+      "path": "../core/tsconfig.json"
+    }
+  ]
 }

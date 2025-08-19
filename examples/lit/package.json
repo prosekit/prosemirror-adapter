@@ -2,6 +2,7 @@
   "name": "@examples/lit",
   "type": "module",
   "private": true,
+  "description": "Lit example for ProseMirror Adapter",
   "scripts": {
     "start": "vite",
     "build": "vite build"
