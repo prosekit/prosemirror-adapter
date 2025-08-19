@@ -14,7 +14,7 @@
     "lit"
   ],
   "sideEffects": false,
-  "main": "./src/index.ts",
+  "main": "./dist/index.js",
   "types": "./src/index.ts",
   "files": [
     "dist",
@@ -22,7 +22,7 @@
   ],
   "scripts": {
     "test": "vitest",
-    "build": "tsdown"
+    "build": "tsdown && vite build"
   },
   "dependencies": {
     "@prosemirror-adapter/core": "workspace:*",
@@ -47,7 +47,8 @@
   "devDependencies": {
     "@lit-labs/context": "^0.5.1",
     "lit": "^3.2.1",
-    "tsdown": "^0.14.1"
+    "tsdown": "^0.14.1",
+    "vite": "^5.4.14"
   },
   "publishConfig": {
     "types": "./dist/index.d.ts",
