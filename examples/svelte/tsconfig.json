@@ -1,6 +1,7 @@
 {
   "extends": "./.svelte-kit/tsconfig.json",
   "compilerOptions": {
+    "skipLibCheck": true,
     "composite": true,
     "noEmit": false,
     "outDir": "./node_modules/.cache/svelte-kit-tsconfig"
