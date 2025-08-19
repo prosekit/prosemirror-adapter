@@ -1,8 +1,9 @@
 import type { WidgetDecorationFactory, WidgetDecorationSpec } from '@prosemirror-adapter/core'
 import type { EditorView } from 'prosemirror-view'
 import type { InjectionKey } from 'vue'
-import type { VueWidgetViewUserOptions } from './VueWidgetViewOptions'
 import { inject } from 'vue'
+
+import type { VueWidgetViewUserOptions } from './VueWidgetViewOptions'
 
 export interface WidgetViewContext {
   view: EditorView

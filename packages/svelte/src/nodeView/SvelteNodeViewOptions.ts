@@ -1,4 +1,5 @@
 import type { CoreNodeViewSpec, CoreNodeViewUserOptions } from '@prosemirror-adapter/core'
+
 import type { SvelteComponentConstructor } from '../types'
 
 interface EmptyProps {}

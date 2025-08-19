@@ -1,5 +1,3 @@
-import type { RefOrCallback } from 'lit/directives/ref.js'
-import type { EditorView } from 'prosemirror-view'
 import {
   ShallowLitElement,
   useMarkViewFactory,
@@ -9,10 +7,14 @@ import {
 } from '@prosemirror-adapter/lit'
 import { html } from 'lit'
 import { customElement } from 'lit/decorators.js'
+import type { RefOrCallback } from 'lit/directives/ref.js'
 import { ref } from 'lit/directives/ref.js'
 import { Plugin } from 'prosemirror-state'
+import type { EditorView } from 'prosemirror-view'
 import { DecorationSet } from 'prosemirror-view'
+
 import { createEditorView } from '../../createEditorView'
+
 import { Hashes } from './Hashes'
 import { Heading } from './Heading'
 import { Link } from './Link'

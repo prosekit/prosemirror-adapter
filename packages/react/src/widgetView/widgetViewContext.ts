@@ -1,7 +1,8 @@
 import type { WidgetDecorationFactory, WidgetDecorationSpec } from '@prosemirror-adapter/core'
 import type { EditorView } from 'prosemirror-view'
-import type { ReactWidgetViewUserOptions } from './ReactWidgetViewOptions'
 import { createContext, useContext } from 'react'
+
+import type { ReactWidgetViewUserOptions } from './ReactWidgetViewOptions'
 
 export interface WidgetViewContext {
   view: EditorView

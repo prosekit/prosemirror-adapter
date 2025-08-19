@@ -1,9 +1,11 @@
-import type { VueRenderer, VueRendererComponent } from '../VueRenderer'
-import type { VueWidgetViewComponent } from './VueWidgetViewOptions'
-import type { WidgetViewContext } from './widgetViewContext'
 import { CoreWidgetView } from '@prosemirror-adapter/core'
 import { nanoid } from 'nanoid'
 import { defineComponent, markRaw, provide, Teleport } from 'vue'
+
+import type { VueRenderer, VueRendererComponent } from '../VueRenderer'
+
+import type { VueWidgetViewComponent } from './VueWidgetViewOptions'
+import type { WidgetViewContext } from './widgetViewContext'
 import { widgetViewContext } from './widgetViewContext'
 
 export class VueWidgetView extends CoreWidgetView<VueWidgetViewComponent> implements VueRenderer<WidgetViewContext> {

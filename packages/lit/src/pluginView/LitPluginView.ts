@@ -1,12 +1,14 @@
 import type { Context } from '@lit-labs/context'
-import type { LitRenderer } from '../LitRenderer'
-import type { LitPluginViewComponent } from './LitPluginViewOptions'
-import type { PluginViewContext } from './pluginViewContext'
 import { ContextProvider } from '@lit-labs/context'
 import { CorePluginView } from '@prosemirror-adapter/core'
 import { customElement } from 'lit/decorators.js'
 import { nanoid } from 'nanoid'
+
+import type { LitRenderer } from '../LitRenderer'
 import { ShallowLitElement } from '../utils'
+
+import type { LitPluginViewComponent } from './LitPluginViewOptions'
+import type { PluginViewContext } from './pluginViewContext'
 import { pluginViewContextKey } from './pluginViewContext'
 
 declare global {

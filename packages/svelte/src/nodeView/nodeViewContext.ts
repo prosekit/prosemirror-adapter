@@ -1,9 +1,11 @@
 import type { Attrs, Node } from 'prosemirror-model'
 import type { Decoration, DecorationSource, EditorView, NodeViewConstructor } from 'prosemirror-view'
-import type { Writable } from 'svelte/store'
-import type { Obj2Map } from '../types'
-import type { SvelteNodeViewUserOptions } from './SvelteNodeViewOptions'
 import { getContext } from 'svelte'
+import type { Writable } from 'svelte/store'
+
+import type { Obj2Map } from '../types'
+
+import type { SvelteNodeViewUserOptions } from './SvelteNodeViewOptions'
 
 export interface NodeViewContext {
   // won't change

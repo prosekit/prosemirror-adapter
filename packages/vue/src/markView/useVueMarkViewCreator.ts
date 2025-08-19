@@ -1,6 +1,7 @@
 import type { VueRendererResult } from '../VueRenderer'
-import type { MarkViewFactory } from './markViewContext'
+
 import { VueMarkView } from './VueMarkView'
+import type { MarkViewFactory } from './markViewContext'
 
 export function useVueMarkViewCreator(
   renderVueRenderer: VueRendererResult['renderVueRenderer'],

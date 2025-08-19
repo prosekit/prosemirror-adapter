@@ -5,7 +5,9 @@ import {
 } from '@prosemirror-adapter/solid'
 import { Plugin } from 'prosemirror-state'
 import { DecorationSet } from 'prosemirror-view'
+
 import { createEditorView } from '../createEditorView'
+
 import { Hashes } from './Hashes'
 import { Heading } from './Heading'
 import { Paragraph } from './Paragraph'

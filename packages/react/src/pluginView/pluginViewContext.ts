@@ -1,8 +1,9 @@
 import type { PluginViewSpec } from '@prosemirror-adapter/core'
 import type { EditorState } from 'prosemirror-state'
 import type { EditorView } from 'prosemirror-view'
-import type { ReactPluginViewUserOptions } from './ReactPluginViewOptions'
 import { createContext, useContext } from 'react'
+
+import type { ReactPluginViewUserOptions } from './ReactPluginViewOptions'
 
 export type PluginViewContentRef = (element: HTMLElement | null) => void
 

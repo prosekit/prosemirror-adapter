@@ -22,7 +22,7 @@ export class CoreNodeView<ComponentType> implements NodeView {
       ? document.createElement(node.isInline ? 'span' : 'div')
       : as instanceof HTMLElement
         ? as
-        : as instanceof Function
+        : typeof as === 'function'
           ? as(node)
           : document.createElement(as)
   }

@@ -1,8 +1,10 @@
 import type { MarkViewConstructor } from 'prosemirror-view'
-import type { ReactRendererResult } from '../ReactRenderer'
-import type { ReactMarkViewUserOptions } from './ReactMarkViewOptions'
 import { useCallback } from 'react'
+
+import type { ReactRendererResult } from '../ReactRenderer'
+
 import { ReactMarkView } from './ReactMarkView'
+import type { ReactMarkViewUserOptions } from './ReactMarkViewOptions'
 
 export function useReactMarkViewCreator(
   renderReactRenderer: ReactRendererResult['renderReactRenderer'],

@@ -1,7 +1,9 @@
 import type { PluginViewSpec } from '@prosemirror-adapter/core'
+
 import type { SolidRendererResult } from '../SolidRenderer'
-import type { SolidPluginViewUserOptions } from './SolidPluginViewOptions'
+
 import { SolidPluginView } from './SolidPluginView'
+import type { SolidPluginViewUserOptions } from './SolidPluginViewOptions'
 
 export function useSolidPluginViewCreator(
   renderSolidRenderer: SolidRendererResult['renderSolidRenderer'],

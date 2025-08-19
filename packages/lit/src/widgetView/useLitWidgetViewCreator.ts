@@ -1,8 +1,10 @@
 import type { WidgetDecorationFactory, WidgetDecorationSpec } from '@prosemirror-adapter/core'
-import type { LitRendererResult } from '../LitRenderer'
-import type { LitWidgetViewUserOptions } from './LitWidgetViewOptions'
 import { Decoration } from 'prosemirror-view'
+
+import type { LitRendererResult } from '../LitRenderer'
+
 import { LitWidgetView } from './LitWidgetView'
+import type { LitWidgetViewUserOptions } from './LitWidgetViewOptions'
 
 export function useLitWidgetViewCreator(renderLitRenderer: LitRendererResult['renderLitRenderer'], removeLitRenderer: LitRendererResult['removeLitRenderer']) {
   const createWidgetPluginView = (options: LitWidgetViewUserOptions): WidgetDecorationFactory => {

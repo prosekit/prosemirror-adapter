@@ -1,7 +1,9 @@
 {
   "name": "@prosemirror-adapter/monorepo",
+  "type": "commonjs",
   "private": true,
   "packageManager": "pnpm@9.15.9",
+  "description": "Monorepo for ProseMirror Adapter",
   "license": "MIT",
   "engines": {
     "node": ">=20"
@@ -19,18 +21,14 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@antfu/eslint-config": "^3.16.0",
     "@changesets/cli": "^2.28.1",
     "@commitlint/cli": "^19.8.0",
     "@commitlint/config-conventional": "^19.8.0",
-    "@eslint/compat": "^1.2.6",
-    "@eslint/eslintrc": "^3.2.0",
+    "@ocavue/eslint-config": "^3.3.1",
     "@type-config/strict": "^1.2.1",
     "@types/rollup-plugin-auto-external": "^2.0.5",
     "concurrently": "^9.1.2",
-    "eslint": "^9.20.1",
-    "eslint-plugin-react": "^7.37.4",
-    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint": "^9.29.1",
     "git-cz": "^4.9.0",
     "husky": "^9.1.7",
     "lint-staged": "^15.5.0",

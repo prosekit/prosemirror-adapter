@@ -5,8 +5,9 @@ import type {
   EditorView,
   NodeViewConstructor,
 } from 'prosemirror-view'
-import type { SolidNodeViewUserOptions } from './SolidNodeViewOptions'
 import { type Accessor, createContext, useContext } from 'solid-js'
+
+import type { SolidNodeViewUserOptions } from './SolidNodeViewOptions'
 
 export type NodeViewContentRef = (element: HTMLElement | null) => void
 

@@ -23,7 +23,7 @@ npm install @prosemirror-adapter/react
 import { ProsemirrorAdapterProvider } from '@prosemirror-adapter/react'
 import { YourAwesomeEditor } from 'somewhere'
 
-export const Component = () => {
+export function Component () {
   return (
     <ProsemirrorAdapterProvider>
       <YourAwesomeEditor />
@@ -48,7 +48,7 @@ In this section we will implement a node view for paragraph node.
 
 import { useNodeViewContext } from '@prosemirror-adapter/react'
 
-const Paragraph = () => {
+function Paragraph () {
   const { contentRef, selected } = useNodeViewContext()
   return <div style={{ outline: selected ? 'blue solid 1px' : 'none' }} role="presentation" ref={contentRef} />
 }
@@ -206,7 +206,7 @@ In this section we will implement a plugin view that will display the size of th
 
 import { usePluginViewContext } from '@prosemirror-adapter/react'
 
-const Size = () => {
+function Size () {
   const { view } = usePluginViewContext()
   const size = view.state.doc.nodeSize
   return <div>Size for document: {size}</div>
@@ -272,7 +272,7 @@ In this section we will implement a widget view that will add hashes for heading
 
 import { useWidgetViewContext } from '@prosemirror-adapter/react'
 
-export const Hashes = () => {
+export function Hashes () {
   const { spec } = useWidgetViewContext()
   const level = spec?.level
   const hashes = Array(level || 0).fill('#').join('')

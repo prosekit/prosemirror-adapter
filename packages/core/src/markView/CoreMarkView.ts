@@ -21,7 +21,7 @@ export class CoreMarkView<ComponentType> implements MarkView {
       ? document.createElement(inline ? 'span' : 'div')
       : as instanceof HTMLElement
         ? as
-        : as instanceof Function
+        : typeof as === 'function'
           ? as(mark)
           : document.createElement(as)
   }

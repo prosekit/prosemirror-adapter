@@ -1,10 +1,12 @@
-import type { ReactRenderer } from '../ReactRenderer'
-import type { ReactWidgetViewComponent } from './ReactWidgetViewOptions'
-import type { WidgetViewContext } from './widgetViewContext'
 import { CoreWidgetView } from '@prosemirror-adapter/core'
 import { nanoid } from 'nanoid'
 import React from 'react'
 import { createPortal } from 'react-dom'
+
+import type { ReactRenderer } from '../ReactRenderer'
+
+import type { ReactWidgetViewComponent } from './ReactWidgetViewOptions'
+import type { WidgetViewContext } from './widgetViewContext'
 import { widgetViewContext } from './widgetViewContext'
 
 export class ReactWidgetView extends CoreWidgetView<ReactWidgetViewComponent> implements ReactRenderer<WidgetViewContext> {

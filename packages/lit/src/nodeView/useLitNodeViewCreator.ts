@@ -1,6 +1,7 @@
 import type { LitRendererResult } from '../LitRenderer'
-import type { NodeViewFactory } from './nodeViewContext'
+
 import { LitNodeView } from './LitNodeView'
+import type { NodeViewFactory } from './nodeViewContext'
 
 export function useLitNodeViewCreator(renderLitRenderer: LitRendererResult['renderLitRenderer'], removeLitRenderer: LitRendererResult['removeLitRenderer']) {
   const createLitNodeView: NodeViewFactory = options => (node, view, getPos, decorations, innerDecorations) => {

@@ -1,12 +1,13 @@
-import type { EditorView } from 'prosemirror-view'
 
-import type { FC } from 'react'
 import { useMarkViewFactory, useNodeViewFactory, usePluginViewFactory, useWidgetViewFactory } from '@prosemirror-adapter/react'
 import { Plugin } from 'prosemirror-state'
+import type { EditorView } from 'prosemirror-view'
 import { DecorationSet } from 'prosemirror-view'
+import type { FC } from 'react'
 import { useEffect, useRef } from 'react'
 
 import { createEditorView } from '../../createEditorView'
+
 import { Hashes } from './Hashes'
 import { Heading } from './Heading'
 import { Link } from './Link'

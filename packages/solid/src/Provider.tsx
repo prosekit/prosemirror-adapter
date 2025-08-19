@@ -1,11 +1,12 @@
 import { type Component, For, type ParentProps } from 'solid-js'
+
+import { useSolidRenderer } from './SolidRenderer'
 import { createMarkViewContext } from './markView'
 import { useSolidMarkViewCreator } from './markView/useSolidMarkViewCreator'
 import { createNodeViewContext } from './nodeView'
 import { useSolidNodeViewCreator } from './nodeView/useSolidNodeViewCreator'
 import { createPluginViewContext } from './pluginView'
 import { useSolidPluginViewCreator } from './pluginView/useSolidPluginViewCreator'
-import { useSolidRenderer } from './SolidRenderer'
 import { createWidgetViewContext } from './widgetView'
 import { useSolidWidgetViewCreator } from './widgetView/useSolidWidgetViewCreator'
 

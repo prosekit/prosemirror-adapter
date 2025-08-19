@@ -1,8 +1,10 @@
 import type { NodeViewConstructor } from 'prosemirror-view'
-import type { ReactRendererResult } from '../ReactRenderer'
-import type { ReactNodeViewUserOptions } from './ReactNodeViewOptions'
 import { useCallback } from 'react'
+
+import type { ReactRendererResult } from '../ReactRenderer'
+
 import { ReactNodeView } from './ReactNodeView'
+import type { ReactNodeViewUserOptions } from './ReactNodeViewOptions'
 
 export function useReactNodeViewCreator(renderReactRenderer: ReactRendererResult['renderReactRenderer'], removeReactRenderer: ReactRendererResult['removeReactRenderer']) {
   const createReactNodeView = useCallback(

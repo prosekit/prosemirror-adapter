@@ -1,11 +1,10 @@
-import type { Plugin } from 'prosemirror-state'
-import type { NodeViewConstructor } from 'prosemirror-view'
 import { exampleSetup } from 'prosemirror-example-setup'
-
 import { keymap } from 'prosemirror-keymap'
 import { DOMParser } from 'prosemirror-model'
 import { schema } from 'prosemirror-schema-basic'
+import type { Plugin } from 'prosemirror-state'
 import { EditorState } from 'prosemirror-state'
+import type { NodeViewConstructor } from 'prosemirror-view'
 import { EditorView } from 'prosemirror-view'
 import 'prosemirror-view/style/prosemirror.css'
 import 'prosemirror-example-setup/style/style.css'

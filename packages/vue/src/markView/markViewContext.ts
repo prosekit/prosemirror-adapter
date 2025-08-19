@@ -1,8 +1,9 @@
 import type { Mark } from 'prosemirror-model'
 import type { EditorView, MarkViewConstructor } from 'prosemirror-view'
 import type { InjectionKey, ShallowRef, VNodeRef } from 'vue'
-import type { VueMarkViewUserOptions } from './VueMarkViewOptions'
 import { inject } from 'vue'
+
+import type { VueMarkViewUserOptions } from './VueMarkViewOptions'
 
 export interface MarkViewContext {
   // won't change

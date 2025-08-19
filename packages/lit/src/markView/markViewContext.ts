@@ -1,9 +1,10 @@
+import { ContextConsumer, createContext } from '@lit-labs/context'
 import type { LitElement } from 'lit'
 import type { RefOrCallback } from 'lit/directives/ref.js'
 import type { Mark } from 'prosemirror-model'
 import type { EditorView, MarkViewConstructor } from 'prosemirror-view'
+
 import type { LitMarkViewUserOptions } from './LitMarkViewOptions'
-import { ContextConsumer, createContext } from '@lit-labs/context'
 
 export interface MarkViewContext {
   // won't change

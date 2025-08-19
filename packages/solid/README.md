@@ -22,7 +22,7 @@ npm install @prosemirror-adapter/solid
 import { ProsemirrorAdapterProvider } from '@prosemirror-adapter/solid'
 import { YourAwesomeEditor } from 'somewhere'
 
-export const Component = () => {
+export function Component () {
   return (
     <ProsemirrorAdapterProvider>
       <YourAwesomeEditor />
@@ -46,7 +46,7 @@ In this section we will implement a node view for paragraph node.
 ```tsx
 import { useNodeViewContext } from '@prosemirror-adapter/solid'
 
-const Paragraph = () => {
+function Paragraph () {
   const { contentRef, selected } = useNodeViewContext()
   return (
     <div

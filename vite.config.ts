@@ -1,6 +1,7 @@
 import { readFileSync } from 'node:fs'
 import { basename, dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
+
 import type { BuildOptions, UserConfig } from 'vite'
 import { defineConfig } from 'vite'
 
@@ -13,7 +14,7 @@ function isObject(item: unknown): item is Record<string, unknown> {
 }
 
 function mergeDeep<T>(target: T, ...sources: T[]): T {
-  if (!sources.length)
+  if (sources.length === 0)
     return target
   const source = sources.shift()
 

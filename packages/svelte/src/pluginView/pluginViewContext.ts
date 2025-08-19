@@ -1,10 +1,12 @@
 import type { PluginViewSpec } from '@prosemirror-adapter/core'
 import type { EditorState } from 'prosemirror-state'
 import type { EditorView } from 'prosemirror-view'
-import type { Writable } from 'svelte/store'
-import type { Obj2Map } from '../types'
-import type { SveltePluginViewUserOptions } from './SveltePluginViewOptions'
 import { getContext } from 'svelte'
+import type { Writable } from 'svelte/store'
+
+import type { Obj2Map } from '../types'
+
+import type { SveltePluginViewUserOptions } from './SveltePluginViewOptions'
 
 export type PluginViewContentRef = (element: HTMLElement | null) => void
 

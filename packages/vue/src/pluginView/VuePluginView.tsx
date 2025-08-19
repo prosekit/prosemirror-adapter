@@ -1,9 +1,11 @@
-import type { VueRenderer, VueRendererComponent } from '../VueRenderer'
-import type { PluginViewContext } from './pluginViewContext'
-import type { VuePluginViewComponent } from './VuePluginViewOptions'
 import { CorePluginView } from '@prosemirror-adapter/core'
 import { nanoid } from 'nanoid'
 import { defineComponent, markRaw, provide, shallowRef, Teleport } from 'vue'
+
+import type { VueRenderer, VueRendererComponent } from '../VueRenderer'
+
+import type { VuePluginViewComponent } from './VuePluginViewOptions'
+import type { PluginViewContext } from './pluginViewContext'
 import { pluginViewContext } from './pluginViewContext'
 
 export class VuePluginView extends CorePluginView<VuePluginViewComponent> implements VueRenderer<PluginViewContext> {

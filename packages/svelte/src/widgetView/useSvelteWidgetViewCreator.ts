@@ -1,8 +1,10 @@
 import type { WidgetDecorationFactory, WidgetDecorationSpec } from '@prosemirror-adapter/core'
-import type { SvelteRendererResult } from '../SvelteRenderer'
-import type { SvelteWidgetViewUserOptions } from './SvelteWidgetViewOptions'
 import { Decoration } from 'prosemirror-view'
+
+import type { SvelteRendererResult } from '../SvelteRenderer'
+
 import { SvelteWidgetView } from './SvelteWidgetView'
+import type { SvelteWidgetViewUserOptions } from './SvelteWidgetViewOptions'
 
 export function useSvelteWidgetViewCreator(renderSvelteRenderer: SvelteRendererResult['renderSvelteRenderer'], removeSvelteRenderer: SvelteRendererResult['removeSvelteRenderer']) {
   const createWidgetPluginView = (options: SvelteWidgetViewUserOptions): WidgetDecorationFactory => {
