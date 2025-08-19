@@ -143,6 +143,9 @@ importers:
       svelte:
         specifier: ^5.23.1
         version: 5.23.1
+      vite:
+        specifier: ^5.4.14
+        version: 5.4.14(@types/node@22.10.1)(terser@5.43.1)
       vite-plugin-solid:
         specifier: ^2.11.8
         version: 2.11.8(solid-js@1.9.9)(vite@5.4.14(@types/node@22.10.1)(terser@5.43.1))
