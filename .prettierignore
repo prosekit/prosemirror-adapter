@@ -5,6 +5,8 @@ build
 .env
 .env.*
 !.env.example
+playwright-report
+dist
 
 # Ignore files for PNPM, NPM and YARN
 pnpm-lock.yaml
