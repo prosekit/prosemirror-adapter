@@ -1,7 +1,7 @@
 {
   "name": "@prosemirror-adapter/svelte",
   "type": "module",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "description": "Svelte package for ProseMirror Adapter",
   "license": "MIT",
   "repository": {

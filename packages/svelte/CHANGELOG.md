@@ -1,5 +1,11 @@
 # @prosemirror-adapter/svelte
 
+## 0.4.3
+
+### Patch Changes
+
+- e8d9cc0: Fix Svelte component type declaration.
+
 ## 0.4.2
 
 ### Patch Changes
