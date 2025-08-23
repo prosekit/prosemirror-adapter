@@ -19,7 +19,7 @@
     "prosemirror-state": "^1.4.3",
     "prosemirror-view": "^1.40.1",
     "typescript": "~5.8.3",
-    "vite": "^6.3.5",
+    "vite": "^7.0.6",
     "vue": "^3.5.18"
   }
 }
