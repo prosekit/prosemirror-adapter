@@ -1,5 +1,11 @@
 # @prosemirror-adapter/react
 
+## 0.4.4
+
+### Patch Changes
+
+- b870f56: Properly cancel animation frame.
+
 ## 0.4.2
 
 ### Patch Changes
