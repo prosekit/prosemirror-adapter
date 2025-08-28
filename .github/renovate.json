@@ -1,4 +1,23 @@
 {
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "dependencyDashboard": true,
-  "extends": ["github>ocavue/config-renovate"]
+  "extends": ["github>ocavue/config-renovate"],
+  "packageRules": [
+    {
+      "matchDepNames": ["svelte", "/@sveltejs/"],
+      "groupName": "svelte"
+    },
+    {
+      "matchDepNames": ["react", "react-dom", "@types/react", "@types/react-dom"],
+      "groupName": "react"
+    },
+    {
+      "matchDepNames": ["vue", "/@vue/"],
+      "groupName": "vue"
+    },
+    {
+      "matchDepNames": ["vite", "/@vitejs/"],
+      "groupName": "vite"
+    }
+  ]
 }
