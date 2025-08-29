@@ -1,6 +1,6 @@
 import { CoreNodeView } from '@prosemirror-adapter/core'
 import { nanoid } from 'nanoid'
-import { defineComponent, markRaw, provide, shallowRef, Teleport } from 'vue'
+import { defineComponent, h, markRaw, provide, shallowRef, Teleport } from 'vue'
 
 import type { VueRenderer, VueRendererComponent } from '../VueRenderer'
 
@@ -47,11 +47,7 @@ export class VueNodeView extends CoreNodeView<VueNodeViewComponent> implements V
         name: 'ProsemirrorNodeView',
         setup: () => {
           provide(nodeViewContext, this.context)
-          return () => (
-            <Teleport key={this.key} to={this.dom}>
-              <UserComponent />
-            </Teleport>
-          )
+          return () => h(Teleport, { key: this.key, to: this.dom }, [h(UserComponent)])
         },
       }),
     ) as VueRendererComponent
