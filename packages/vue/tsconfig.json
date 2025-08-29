@@ -1,9 +1,5 @@
 {
   "extends": "@ocavue/tsconfig/dom/app.json",
-  "compilerOptions": {
-    "jsx": "preserve",
-    "jsxImportSource": "vue"
-  },
   "references": [
     {
       "path": "../core/tsconfig.json"
