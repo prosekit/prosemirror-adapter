@@ -10,8 +10,8 @@
   },
   "dependencies": {
     "@prosemirror-adapter/react": "*",
-    "@types/react": "^19.1.10",
-    "@types/react-dom": "^19.1.7",
+    "@types/react": "^19.1.12",
+    "@types/react-dom": "^19.1.9",
     "@vitejs/plugin-react": "^5.0.2",
     "prosemirror-example-setup": "^1.2.3",
     "prosemirror-keymap": "^1.2.3",
