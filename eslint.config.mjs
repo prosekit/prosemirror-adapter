@@ -5,6 +5,9 @@ export default defineESLintConfig(
     react: {
       files: ['**/react/**/*.tsx', '**/react/**/*.ts'],
     },
+    preact: {
+      files: ['**/preact/**/*.tsx', '**/preact/**/*.ts'],
+    },
     markdown: false,
   },
   [
