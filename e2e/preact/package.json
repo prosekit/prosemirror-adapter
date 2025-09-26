@@ -1,0 +1,24 @@
+{
+  "name": "@e2e/preact",
+  "type": "module",
+  "private": true,
+  "description": "Preact e2e tests for ProseMirror Adapter",
+  "scripts": {
+    "start": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "@prosemirror-adapter/preact": "workspace:*",
+    "@preact/preset-vite": "^2.8.2",
+    "prosemirror-example-setup": "^1.2.3",
+    "prosemirror-keymap": "^1.2.3",
+    "prosemirror-menu": "^1.2.5",
+    "prosemirror-model": "^1.25.3",
+    "prosemirror-schema-basic": "^1.2.4",
+    "prosemirror-state": "^1.4.3",
+    "prosemirror-view": "^1.41.1",
+    "preact": "^10.25.1",
+    "typescript": "~5.9.2",
+    "vite": "^7.1.3"
+  }
+}

@@ -29,10 +29,10 @@ This file tracks the progress of adding Preact support to the repository.
   - [x] Update dependencies and Vite configuration for Preact.
   - [x] Ensure the example runs and works correctly.
 
-- [ ] **Step 5: Add E2E Tests for `preact`**
-  - [ ] Create a new test file in `e2e/tests` for Preact, likely by copying and adapting `node-view.spec.ts`.
-  - [ ] Add a new `e2e/preact` project that uses these tests.
-  - [ ] Ensure the E2E tests pass with `pnpm run test`.
+- [x] **Step 5: Add E2E Tests for `preact`** (Finished at: Fri Sep 26 08:47:52 UTC 2025)
+  - [x] Create a new test file in `e2e/tests` for Preact, likely by copying and adapting `node-view.spec.ts`.
+  - [x] Add a new `e2e/preact` project that uses these tests.
+  - [x] Ensure the E2E tests pass with `pnpm run test`.
 
 - [ ] **Step 6: Documentation**
   - [ ] Update the root `README.md` to include Preact.
