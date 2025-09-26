@@ -13,6 +13,7 @@ export default defineConfig({
     port: 7001,
   },
   redirects: {
+    '/preact': '/stories/preact/app/preact',
     '/lit': '/stories/lit/app/lit',
     '/react': '/stories/react/app/react',
     '/solid': '/stories/solid/app/solid',
