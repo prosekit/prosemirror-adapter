@@ -9,7 +9,7 @@ export default defineESLintConfig(
   },
   [
     {
-      ignores: ['**/.svelte-kit', 'packages/preact', 'e2e/preact'],
+      ignores: ['**/.svelte-kit'],
     },
   ],
 )
