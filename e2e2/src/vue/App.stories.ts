@@ -4,6 +4,6 @@ export default {
   component: App,
 }
 
-export const Default = {
+export const Vue = {
   args: {},
 }
