@@ -7,6 +7,8 @@ import vue from '@astrojs/vue'
 import { defineConfig } from 'astro/config'
 import astrobook from 'astrobook'
 
+import lit from '@astrojs/lit';
+
 // https://astro.build/config
 export default defineConfig({
   integrations: [
@@ -16,5 +18,6 @@ export default defineConfig({
     svelte(),
     vue(),
     astrobook({ directory: 'src' }),
+    lit(),
   ],
 })

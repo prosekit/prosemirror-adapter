@@ -1,14 +1,44 @@
 {
   "extends": "@ocavue/tsconfig/dom/app.json",
   "include": [
+    "./tests",
+    "./*",
+    "src/svelte.config.js",
     ".astro/types.d.ts",
-    "**/*"
   ],
-  "exclude": [
-    "dist",
-    "node_modules"
-  ],
-  "compilerOptions": {
-    "jsx": "preserve"
-  }
+  "references": [
+    {
+      "path": "./src/lit/tsconfig.json"
+    },
+    {
+      "path": "./src/react/tsconfig.json"
+    },
+    {
+      "path": "./src/solid/tsconfig.json"
+    },
+    {
+      "path": "./src/svelte/tsconfig.json"
+    },
+    {
+      "path": "./src/vue/tsconfig.json"
+    },
+    {
+      "path": "./src/shared/tsconfig.json"
+    },
+    {
+      "path": "../packages/lit/tsconfig.json"
+    },
+    {
+      "path": "../packages/react/tsconfig.json"
+    },
+    {
+      "path": "../packages/solid/tsconfig.json"
+    },
+    {
+      "path": "../packages/svelte/tsconfig.json"
+    },
+    {
+      "path": "../packages/vue/tsconfig.json"
+    }
+  ]
 }

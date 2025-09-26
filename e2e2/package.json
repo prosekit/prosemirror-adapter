@@ -10,6 +10,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/lit": "^4.3.0",
     "@astrojs/preact": "^4.1.1",
     "@astrojs/react": "^4.4.0",
     "@astrojs/solid-js": "^5.1.1",
@@ -22,6 +23,8 @@
     "@prosemirror-adapter/vue": "workspace:*",
     "@types/react": "^19.1.13",
     "@types/react-dom": "^19.1.9",
+    "@webcomponents/template-shadowroot": "^0.2.1",
+    "lit": "^3.3.1",
     "preact": "^10.27.2",
     "prosemirror-example-setup": "^1.2.3",
     "prosemirror-keymap": "^1.2.3",
