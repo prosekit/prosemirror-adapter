@@ -23,6 +23,7 @@
     "@astrojs/vue": "^5.1.1",
     "@playwright/test": "^1.55.1",
     "@prosemirror-adapter/lit": "workspace:*",
+    "@prosemirror-adapter/preact": "workspace:*",
     "@prosemirror-adapter/react": "workspace:*",
     "@prosemirror-adapter/solid": "workspace:*",
     "@prosemirror-adapter/svelte": "workspace:*",

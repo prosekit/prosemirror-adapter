@@ -23,6 +23,7 @@ You'll need this adapter if you want to use Prosemirror to build a rich text edi
 ### What's on the plan?
 
 - [x] Support Popular UI Frameworks
+  - [x] [Preact](https://preactjs.com/)
   - [x] [React](https://reactjs.org/)
   - [x] [Vue](https://vuejs.org/)
   - [x] [Svelte](https://svelte.dev/)
@@ -48,6 +49,7 @@ So something out of this scope will not be considered. For example:
 
 <table>
   <tr>
+    <th>preact</th>
     <th>react</th>
     <th>vue</th>
     <th>svelte</th>
@@ -55,6 +57,11 @@ So something out of this scope will not be considered. For example:
     <th>solid</th>
   </tr>
   <tr>
+    <td>
+      <a align="center" title="preact" href="/packages/preact">
+        <img src="/assets/preact.svg" width="100" height="100" alt="preact">
+      </a>
+    </td>
     <td>
       <a align="center" title="react" href="/packages/react">
         <img src="/assets/react.svg" width="100" height="100" alt="react">
@@ -71,7 +78,7 @@ So something out of this scope will not be considered. For example:
       </a>
     </td>
     <td>
-      <a align="center" title="svelte" href="/packages/lit">
+      <a align="center" title="lit" href="/packages/lit">
         <img src="/assets/lit.svg" width="100" height="100" alt="lit">
       </a>
     </td>

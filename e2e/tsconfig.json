@@ -6,6 +6,9 @@
       "path": "./src/lit/tsconfig.json"
     },
     {
+      "path": "./src/preact/tsconfig.json"
+    },
+    {
       "path": "./src/react/tsconfig.json"
     },
     {
@@ -22,6 +25,9 @@
     },
     {
       "path": "../packages/lit/tsconfig.json"
+    },
+    {
+      "path": "../packages/preact/tsconfig.json"
     },
     {
       "path": "../packages/react/tsconfig.json"
