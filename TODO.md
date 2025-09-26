@@ -6,17 +6,16 @@ This file tracks the progress of adding Preact support to the repository.
 
 ## Plan
 
-- [ ] **Step 1: Branch & PR Setup**
-  - [ ] Create and switch to a new git branch `feat/add-preact-support`.
-  - [ ] Create this `TODO.md` file.
-  - [ ] Commit and push `TODO.md`.
-  - [ ] Create a draft Pull Request on GitHub.
+- [x] **Step 1: Branch & PR Setup** (Finished at: Fri Sep 26 08:18:32 UTC 2025)
+  - [x] Create and switch to a new git branch `feat/add-preact-support`.
+  - [x] Create this `TODO.md` file.
+  - [x] Commit and push `TODO.md`.
+  - [x] Create a draft Pull Request on GitHub.
 
-- [ ] **Step 2: Scaffold `packages/preact`**
-  - [ ] Create the directory `packages/preact/src`.
-  - [ ] Create and adapt `packages/preact/package.json` from the `react` version.
-  - [ ] Create and adapt `packages/preact/tsconfig.json` from the `react` version.
-  - [ ] Add `preact` to `pnpm-workspace.yaml`.
+- [x] **Step 2: Scaffold `packages/preact`** (Finished at: Fri Sep 26 08:21:19 UTC 2025)
+  - [x] Create the directory `packages/preact/src`.
+  - [x] Create and adapt `packages/preact/package.json` from the `react` version.
+  - [x] Create and adapt `packages/preact/tsconfig.json` from the `react` version.
 
 - [ ] **Step 3: Implement Core `preact` Logic**
   - [ ] Copy `packages/react/src/**/*.ts*` to `packages/preact/src`.
