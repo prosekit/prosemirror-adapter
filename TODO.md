@@ -23,11 +23,11 @@ This file tracks the progress of adding Preact support to the repository.
   - [x] Adapt the source code for Preact (imports, types, etc.).
   - [x] Ensure the package builds successfully with `pnpm run build`.
 
-- [ ] **Step 4: Scaffold `examples/preact`**
-  - [ ] Create the directory `examples/preact`.
-  - [ ] Copy and adapt the `react` example.
-  - [ ] Update dependencies and Vite configuration for Preact.
-  - [ ] Ensure the example runs and works correctly.
+- [x] **Step 4: Scaffold `examples/preact`** (Finished at: Fri Sep 26 08:41:49 UTC 2025)
+  - [x] Create the directory `examples/preact`.
+  - [x] Copy and adapt the `react` example.
+  - [x] Update dependencies and Vite configuration for Preact.
+  - [x] Ensure the example runs and works correctly.
 
 - [ ] **Step 5: Add E2E Tests for `preact`**
   - [ ] Create a new test file in `e2e/tests` for Preact, likely by copying and adapting `node-view.spec.ts`.
