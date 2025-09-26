@@ -34,9 +34,12 @@ This file tracks the progress of adding Preact support to the repository.
   - [x] Add a new `e2e/preact` project that uses these tests.
   - [x] Ensure the E2E tests pass with `pnpm run test`.
 
-- [ ] **Step 6: Documentation**
-  - [ ] Update the root `README.md` to include Preact.
-  - [ ] Add a `README.md` for `packages/preact`.
+- [x] **Step 6: Documentation** (Finished at: Fri Sep 26 09:18:30 UTC 2025)
+  - [x] Update the root `README.md` to include Preact.
+  - [x] Add a `README.md` for `packages/preact`.
+
+- [ ] **Step 6.5: Address ESLint Issues**
+  - [ ] Properly configure ESLint for Preact files to pass without errors or warnings.
 
 - [ ] **Step 7: Finalization**
   - [ ] Run all checks: `pnpm run build`, `pnpm run test`, `pnpm run lint`.
