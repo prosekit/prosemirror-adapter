@@ -8,12 +8,12 @@ import type { FunctionComponent } from 'preact'
 import { useEffect, useRef } from 'preact/hooks'
 import { Plugin } from 'prosemirror-state'
 import type { EditorView } from 'prosemirror-view'
-import { DecorationSet } from 'prosemirror-view'
+import { DecorationSet } = 'prosemirror-view'
 
 import { createEditorView } from '../../shared/createEditorView'
 
 import { Hashes } from './Hashes'
-import { Heading } from './Heading'
+import { Heading }n from './Heading'
 import { Link } from './Link'
 import { Paragraph } from './Paragraph'
 import { Size } from './Size'
@@ -25,7 +25,7 @@ export const Editor: FunctionComponent = () => {
   const markViewFactory = useMarkViewFactory()
   const pluginViewFactory = usePluginViewFactory()
   const widgetViewFactory = useWidgetViewFactory()
-  const editorRef = useRef<HTMLDivElement>(null)
+  const editorRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
     const element = editorRef.current
@@ -36,10 +36,10 @@ export const Editor: FunctionComponent = () => {
     const getHashWidget = widgetViewFactory({
       as: 'i',
       component: Hashes,
-    })
+    }) as (pos: number, userSpec: Record<string, any>) => any
 
     viewRef.current = createEditorView(
-      element,
+      element as HTMLElement,
       {
         paragraph: nodeViewFactory({
           component: Paragraph,

@@ -20,12 +20,12 @@ const colors = [
   '#ffecb3',
 ]
 
-function pickRandomColor() {
+function pickRandomColor(): string {
   return colors[Math.floor(Math.random() * colors.length)]
 }
 
 export function Link() {
-  const [color, setColor] = useState(colors[0])
+  const [color, setColor] = useState<string>(colors[0])
   const { mark, contentRef } = useMarkViewContext()
   const href = mark.attrs.href as string
   const title = mark.attrs.title as string | null

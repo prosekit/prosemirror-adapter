@@ -5,4 +5,4 @@ import { App } from './App'
 const root$ = document.getElementById('app')
 if (!root$) throw new Error('No root element found')
 
-render(<App />, root$)
+render(<App /> as preact.FunctionComponent, root$)
