@@ -2,8 +2,11 @@
   "name": "e2e",
   "type": "module",
   "version": "0.0.0",
+  "private": true,
   "description": "End-to-end tests for ProseMirror Adapter",
+  "license": "MIT",
   "scripts": {
+    "start": "astro dev",
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
