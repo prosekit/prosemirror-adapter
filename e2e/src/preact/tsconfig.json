@@ -1,0 +1,15 @@
+{
+  "extends": "@ocavue/tsconfig/dom/app.json",
+  "references": [
+    {
+      "path": "../shared/"
+    },
+    {
+      "path": "../../../packages/preact/tsconfig.json"
+    }
+  ],
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact"
+  }
+}
