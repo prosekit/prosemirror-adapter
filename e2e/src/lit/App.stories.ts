@@ -1,7 +1,9 @@
 import App from './App.astro'
 
+const component = App
+
 export default {
-  component: App,
+  component,
 }
 
 export const Lit = {

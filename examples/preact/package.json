@@ -1,0 +1,25 @@
+{
+  "name": "@examples/preact",
+  "type": "module",
+  "private": true,
+  "description": "Preact example for ProseMirror Adapter",
+  "license": "MIT",
+  "scripts": {
+    "start": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "@preact/preset-vite": "^2.10.0",
+    "@prosemirror-adapter/preact": "*",
+    "preact": "^10.27.2",
+    "prosemirror-example-setup": "^1.2.3",
+    "prosemirror-keymap": "^1.2.3",
+    "prosemirror-menu": "^1.2.5",
+    "prosemirror-model": "^1.25.3",
+    "prosemirror-schema-basic": "^1.2.4",
+    "prosemirror-state": "^1.4.3",
+    "prosemirror-view": "^1.41.1",
+    "typescript": "~5.9.2",
+    "vite": "^7.1.3"
+  }
+}
