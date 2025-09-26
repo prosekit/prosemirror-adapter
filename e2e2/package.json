@@ -7,7 +7,9 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "test": "playwright test",
+    "test:install": "playwright install --with-deps"
   },
   "dependencies": {
     "@astrojs/lit": "^4.3.0",
@@ -16,6 +18,7 @@
     "@astrojs/solid-js": "^5.1.1",
     "@astrojs/svelte": "^7.2.0",
     "@astrojs/vue": "^5.1.1",
+    "@playwright/test": "^1.55.1",
     "@prosemirror-adapter/lit": "workspace:*",
     "@prosemirror-adapter/react": "workspace:*",
     "@prosemirror-adapter/solid": "workspace:*",
