@@ -2,6 +2,7 @@ import { ShallowLitElement } from '@prosemirror-adapter/lit'
 import { html } from 'lit'
 import { customElement, state } from 'lit/decorators.js'
 import { keyed } from 'lit/directives/keyed.js'
+import './style.css'
 
 export * from './components/Editor'
 export { ProsemirrorAdapterProvider } from '@prosemirror-adapter/lit'

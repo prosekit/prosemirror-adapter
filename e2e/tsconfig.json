@@ -1,6 +1,6 @@
 {
   "extends": "@ocavue/tsconfig/dom/app.json",
-  "include": ["./tests", "./*", "src/svelte.config.js"],
+  "include": ["./tests", "./*", "src/svelte.config.js", ".astro/types.d.ts"],
   "references": [
     {
       "path": "./src/lit/tsconfig.json"
@@ -20,7 +20,6 @@
     {
       "path": "./src/shared/tsconfig.json"
     },
-
     {
       "path": "../packages/lit/tsconfig.json"
     },

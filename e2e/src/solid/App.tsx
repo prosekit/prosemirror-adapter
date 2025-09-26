@@ -1,21 +1,12 @@
 /* @refresh reload */
 
 import { ProsemirrorAdapterProvider } from '@prosemirror-adapter/solid'
-import { render } from 'solid-js/web'
 
 import { Editor } from './components/Editor'
 import './index.css'
 
-const root = document.getElementById('root')
-
-if (!(root instanceof HTMLElement)) {
-  throw new TypeError(
-    'Root element not found. Did you forget to add it to your index.html? Or maybe the id attribute got misspelled?',
-  )
-}
-
-render(
-  () => (
+export function App() {
+  return (
     <>
       <h1>Prosemirror Adapter Solid</h1>
 
@@ -23,6 +14,5 @@ render(
         <Editor />
       </ProsemirrorAdapterProvider>
     </>
-  ),
-  root,
-)
+  )
+}
