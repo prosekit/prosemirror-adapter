@@ -13,11 +13,11 @@ export default defineConfig({
     port: 7001,
   },
   redirects: {
-    "/lit": "/stories/lit/app/lit",
-    "/react": "/stories/react/app/react",
-    "/solid": "/stories/solid/app/solid",
-    "/svelte": "/stories/svelte/app/svelte",
-    "/vue": "/stories/vue/app/vue",
+    '/lit': '/stories/lit/app/lit',
+    '/react': '/stories/react/app/react',
+    '/solid': '/stories/solid/app/solid',
+    '/svelte': '/stories/svelte/app/svelte',
+    '/vue': '/stories/vue/app/vue',
   },
   integrations: [
     react({ include: ['src/react/**/*'] }),
