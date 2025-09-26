@@ -4,9 +4,6 @@
     {
       "path": "../shared/"
     },
-    {
-      "path": "../../../packages/preact/tsconfig.json"
-    }
   ],
   "compilerOptions": {
     "jsx": "react-jsx",
