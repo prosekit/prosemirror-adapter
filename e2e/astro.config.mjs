@@ -13,6 +13,7 @@ export default defineConfig({
     port: 7001,
   },
   redirects: {
+    '/preact': '/stories/preact/app/preact',
     '/lit': '/stories/lit/app/lit',
     '/react': '/stories/react/app/react',
     '/solid': '/stories/solid/app/solid',
@@ -20,9 +21,9 @@ export default defineConfig({
     '/vue': '/stories/vue/app/vue',
   },
   integrations: [
-    react({ include: ['src/react/**/*'] }),
-    preact({ include: ['src/preact/**/*'] }),
-    solidJs({ include: ['src/solid/**/*'] }),
+    preact({ include: ['src/preact/**/*.tsx'] }),
+    react({ include: ['src/react/**/*.tsx'] }),
+    solidJs({ include: ['src/solid/**/*.tsx'] }),
     svelte(),
     vue(),
     astrobook({ directory: 'src' }),

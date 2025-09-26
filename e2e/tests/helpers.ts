@@ -1,6 +1,6 @@
 import { test } from '@playwright/test'
 
-const FRAMEWORKS = ['lit', 'react', 'solid', 'svelte', 'vue']
+const FRAMEWORKS = ['lit', 'preact', 'react', 'solid', 'svelte', 'vue']
 
 export function testAll(fn: VoidFunction, frameworks: string[] = FRAMEWORKS) {
   for (const framework of frameworks) {
