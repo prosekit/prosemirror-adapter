@@ -5,9 +5,6 @@
       "path": "./e2e/tsconfig.json"
     },
     {
-      "path": "./e2e2/tsconfig.json"
-    },
-    {
       "path": "./examples/lit/tsconfig.json"
     },
     {

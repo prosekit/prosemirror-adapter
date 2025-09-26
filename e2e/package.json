@@ -1,5 +1,5 @@
 {
-  "name": "e2e2",
+  "name": "e2e",
   "type": "module",
   "version": "0.0.0",
   "description": "End-to-end tests for ProseMirror Adapter",
