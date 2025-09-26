@@ -1,6 +1,6 @@
 import type { WidgetDecorationFactory, WidgetDecorationSpec } from '@prosemirror-adapter/core'
-import { Decoration } from 'prosemirror-view'
 import { useCallback } from 'preact/hooks'
+import { Decoration } from 'prosemirror-view'
 
 import type { PreactRendererResult } from '../PreactRenderer'
 

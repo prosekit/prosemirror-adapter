@@ -1,7 +1,7 @@
-import type { Attrs, Node } from 'prosemirror-model'
-import type { Decoration, DecorationSource, EditorView, NodeViewConstructor } from 'prosemirror-view'
 import { createContext } from 'preact'
 import { useContext } from 'preact/hooks'
+import type { Attrs, Node } from 'prosemirror-model'
+import type { Decoration, DecorationSource, EditorView, NodeViewConstructor } from 'prosemirror-view'
 
 import type { PreactNodeViewUserOptions } from './PreactNodeViewOptions'
 
@@ -42,7 +42,7 @@ export const useNodeViewContext = () => useContext(nodeViewContext)
 export const createNodeViewContext = createContext<(options: PreactNodeViewUserOptions) => NodeViewConstructor>(
   (_options) => {
     throw new Error(
-      'No ProsemirrorAdapterProvider detected, maybe you need to wrap the component with the Editor with ProsemirrorAdapterProvider?'
+      'No ProsemirrorAdapterProvider detected, maybe you need to wrap the component with the Editor with ProsemirrorAdapterProvider?',
     )
   },
 )

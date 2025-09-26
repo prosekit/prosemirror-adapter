@@ -1,8 +1,8 @@
 import type { PluginViewSpec } from '@prosemirror-adapter/core'
-import type { EditorState } from 'prosemirror-state'
-import type { EditorView } from 'prosemirror-view'
 import { createContext } from 'preact'
 import { useContext } from 'preact/hooks'
+import type { EditorState } from 'prosemirror-state'
+import type { EditorView } from 'prosemirror-view'
 
 import type { PreactPluginViewUserOptions } from './PreactPluginViewOptions'
 

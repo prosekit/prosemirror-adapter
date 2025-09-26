@@ -1,5 +1,5 @@
-import type { NodeViewConstructor } from 'prosemirror-view'
 import { useCallback } from 'preact/hooks'
+import type { NodeViewConstructor } from 'prosemirror-view'
 
 import type { PreactRendererResult } from '../PreactRenderer'
 

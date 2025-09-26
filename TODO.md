@@ -17,11 +17,11 @@ This file tracks the progress of adding Preact support to the repository.
   - [x] Create and adapt `packages/preact/package.json` from the `react` version.
   - [x] Create and adapt `packages/preact/tsconfig.json` from the `react` version.
 
-- [ ] **Step 3: Implement Core `preact` Logic**
-  - [ ] Copy `packages/react/src/**/*.ts*` to `packages/preact/src`.
-  - [ ] Rename files to use `Preact` prefix instead of `React`.
-  - [ ] Adapt the source code for Preact (imports, types, etc.).
-  - [ ] Ensure the package builds successfully with `pnpm run build`.
+- [x] **Step 3: Implement Core `preact` Logic** (Finished at: Fri Sep 26 08:29:24 UTC 2025)
+  - [x] Copy `packages/react/src/**/*.ts*` to `packages/preact/src`.
+  - [x] Rename files to use `Preact` prefix instead of `React`.
+  - [x] Adapt the source code for Preact (imports, types, etc.).
+  - [x] Ensure the package builds successfully with `pnpm run build`.
 
 - [ ] **Step 4: Scaffold `examples/preact`**
   - [ ] Create the directory `examples/preact`.

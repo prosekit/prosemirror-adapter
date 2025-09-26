@@ -1,7 +1,7 @@
 import type { WidgetDecorationFactory, WidgetDecorationSpec } from '@prosemirror-adapter/core'
-import type { EditorView } from 'prosemirror-view'
 import { createContext } from 'preact'
 import { useContext } from 'preact/hooks'
+import type { EditorView } from 'prosemirror-view'
 
 import type { PreactWidgetViewUserOptions } from './PreactWidgetViewOptions'
 

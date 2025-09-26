@@ -1,7 +1,7 @@
-import type { Mark } from 'prosemirror-model'
-import type { EditorView, MarkViewConstructor } from 'prosemirror-view'
 import { createContext } from 'preact'
 import { useContext } from 'preact/hooks'
+import type { Mark } from 'prosemirror-model'
+import type { EditorView, MarkViewConstructor } from 'prosemirror-view'
 
 import type { PreactMarkViewUserOptions } from './PreactMarkViewOptions'
 
@@ -27,7 +27,7 @@ export const useMarkViewContext = () => useContext(markViewContext)
 export const createMarkViewContext = createContext<(options: PreactMarkViewUserOptions) => MarkViewConstructor>(
   (_options) => {
     throw new Error(
-      'No ProsemirrorAdapterProvider detected, maybe you need to wrap the component with the Editor with ProsemirrorAdapterProvider?'
+      'No ProsemirrorAdapterProvider detected, maybe you need to wrap the component with the Editor with ProsemirrorAdapterProvider?',
     )
   },
 )

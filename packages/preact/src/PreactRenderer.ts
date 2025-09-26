@@ -1,5 +1,5 @@
 import type { ComponentChild } from 'preact'
-import { useCallback, useEffect, useRef, useState } from 'preact/hooks'
+import { useCallback, useState } from 'preact/hooks'
 
 export interface PreactRenderer<Context> {
   key: string
@@ -20,28 +20,22 @@ export interface PreactRendererResult {
 export function usePreactRenderer(): PreactRendererResult {
   const [portals, setPortals] = useState<Record<string, ComponentChild>>({})
 
-  const renderPreactRenderer = useCallback(
-    (nodeView: PreactRenderer<unknown>, update = true) => {
-      if (update) nodeView.updateContext()
+  const renderPreactRenderer = useCallback((nodeView: PreactRenderer<unknown>, update = true) => {
+    if (update) nodeView.updateContext()
 
-      setPortals((prev) => ({
-        ...prev,
-        [nodeView.key]: nodeView.render(),
-      }))
-    },
-    [],
-  )
+    setPortals((prev) => ({
+      ...prev,
+      [nodeView.key]: nodeView.render(),
+    }))
+  }, [])
 
-  const removePreactRenderer = useCallback(
-    (nodeView: PreactRenderer<unknown>) => {
-      setPortals((prev) => {
-        const next = { ...prev }
-        delete next[nodeView.key]
-        return next
-      })
-    },
-    [],
-  )
+  const removePreactRenderer = useCallback((nodeView: PreactRenderer<unknown>) => {
+    setPortals((prev) => {
+      const next = { ...prev }
+      delete next[nodeView.key]
+      return next
+    })
+  }, [])
 
   return {
     portals,
