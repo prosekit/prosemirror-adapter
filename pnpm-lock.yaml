@@ -146,9 +146,28 @@ importers:
 
   e2e2:
     dependencies:
+      '@astrojs/react':
+        specifier: ^4.4.0
+        version: 4.4.0(@types/node@22.17.2)(@types/react-dom@19.1.9(@types/react@19.1.13))(@types/react@19.1.13)(jiti@2.5.1)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(terser@5.43.1)(yaml@2.8.1)
+      '@types/react':
+        specifier: ^19.1.13
+        version: 19.1.13
+      '@types/react-dom':
+        specifier: ^19.1.9
+        version: 19.1.9(@types/react@19.1.13)
+      react:
+        specifier: ^19.1.1
+        version: 19.1.1
+      react-dom:
+        specifier: ^19.1.1
+        version: 19.1.1(react@19.1.1)
+    devDependencies:
       astro:
         specifier: ^5.14.0
         version: 5.14.0(@types/node@22.17.2)(jiti@2.5.1)(rollup@4.46.3)(terser@5.43.1)(typescript@5.9.2)(yaml@2.8.1)
+      astrobook:
+        specifier: ^0.9.0
+        version: 0.9.0(astro@5.14.0(@types/node@22.17.2)(jiti@2.5.1)(rollup@4.46.3)(terser@5.43.1)(typescript@5.9.2)(yaml@2.8.1))
 
   examples/lit:
     dependencies:
@@ -565,6 +584,25 @@ packages:
     resolution: {integrity: sha512-30iZtAPgz+LTIYoeivqYo853f02jBYSd5uGnGpkFV0M3xOt9aN73erkgYAmZU43x4VfqcnLxW9Kpg3R5LC4YYw==}
     engines: {node: '>=6.0.0'}
 
+  '@astrobook/core@0.9.0':
+    resolution: {integrity: sha512-LOqjlGgEarNxaiREs/O0hpS9htZHjJsKHXemTUe7n5ZyQ4ZLHUPZb0oh2QdjAPVx9y+4Omnq63FRLjLq9ja2Uw==}
+
+  '@astrobook/types@0.9.0':
+    resolution: {integrity: sha512-ITpb3xEfQd2mH+D6uG0o+4JGm9li1kUiYYKwV5QdK1jj07wzZU3UPMvtBSJVfcvvS1rqtqd2fc9v7IFMS+ewtA==}
+    peerDependencies:
+      astro: '>=4.0.0'
+    peerDependenciesMeta:
+      astro:
+        optional: true
+
+  '@astrobook/ui@0.9.0':
+    resolution: {integrity: sha512-Eml3FiR+qLX4a4+PsdqZ1A/qHZ3SAacpjxV/o/glUNKJNxIUbg+2b4jLHYfS7X+21qokP0CvXk6cBIcJpJpTNg==}
+    peerDependencies:
+      astro: '>=5.0.0'
+    peerDependenciesMeta:
+      astro:
+        optional: true
+
   '@astrojs/compiler@2.13.0':
     resolution: {integrity: sha512-mqVORhUJViA28fwHYaWmsXSzLO9osbdZ5ImUfxBarqsYdMlPbqAqGJCxsNzvppp1BEzc1mJNjOVvQqeDN8Vspw==}
 
@@ -577,6 +615,15 @@ packages:
   '@astrojs/prism@3.3.0':
     resolution: {integrity: sha512-q8VwfU/fDZNoDOf+r7jUnMC2//H2l0TuQ6FkGJL8vD8nw/q5KiL3DS1KKBI3QhI9UQhpJ5dc7AtqfbXWuOgLCQ==}
     engines: {node: 18.20.8 || ^20.3.0 || >=22.0.0}
+
+  '@astrojs/react@4.4.0':
+    resolution: {integrity: sha512-RzblkVImAFdV1C0AWsSWzS70Z0FMtW2p0XXkNYu3QePfyVJta3JIy8m8jY8271etaCZtpFjsE2UaiHGZIBm6nw==}
+    engines: {node: 18.20.8 || ^20.3.0 || >=22.0.0}
+    peerDependencies:
+      '@types/react': ^17.0.50 || ^18.0.21 || ^19.0.0
+      '@types/react-dom': ^17.0.17 || ^18.0.6 || ^19.0.0
+      react: ^17.0.2 || ^18.0.0 || ^19.0.0
+      react-dom: ^17.0.2 || ^18.0.0 || ^19.0.0
 
   '@astrojs/telemetry@3.3.0':
     resolution: {integrity: sha512-UFBgfeldP06qu6khs/yY+q1cDAaArM2/7AEIqQ9Cuvf7B1hNLq0xDrZkct+QoIGyjq56y8IaE2I3CTvG99mlhQ==}
@@ -1472,6 +1519,9 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  '@rolldown/pluginutils@1.0.0-beta.27':
+    resolution: {integrity: sha512-+d0F4MKMCbeVUJwG96uQ4SgAznZNSq93I3V+9NHA4OpvqG8mRCpGdKmK8l/dl02h2CCDHwW2FqilnTyDcAnqjA==}
+
   '@rolldown/pluginutils@1.0.0-beta.29':
     resolution: {integrity: sha512-NIJgOsMjbxAXvoGq/X0gD7VPMQ8j9g0BiDaNjVNVjvl+iKXxL3Jre0v31RmBYeLEmkbj2s02v8vFTbUXi5XS2Q==}
 
@@ -1782,6 +1832,9 @@ packages:
   '@types/react@19.1.12':
     resolution: {integrity: sha512-cMoR+FoAf/Jyq6+Df2/Z41jISvGZZ2eTlnsaJRptmZ76Caldwy1odD4xTr/gNV9VLj0AWgg/nmkevIyUfIIq5w==}
 
+  '@types/react@19.1.13':
+    resolution: {integrity: sha512-hHkbU/eoO3EG5/MZkuFSKmYqPbSVk5byPFa3e7y/8TybHiLMACgI8seVYlicwk7H5K/rI2px9xrQp/C+AUDTiQ==}
+
   '@types/trusted-types@2.0.3':
     resolution: {integrity: sha512-NfQ4gyz38SL8sDNrSixxU2Os1a5xcdFxipAFxYEuLUlvU2uDwS4NUpsImcf1//SlWItCVMMLiylsxbmNMToV/g==}
 
@@ -1964,6 +2017,12 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  '@vitejs/plugin-react@4.7.0':
+    resolution: {integrity: sha512-gUu9hwfWvvEDBBmgtAowQCojwZmJ5mcLn3aufeCsitijs3+f2NsrPtlAWIR6OPiqljl96GVCUbLe0HyqIpVaoA==}
+    engines: {node: ^14.18.0 || >=16.0.0}
+    peerDependencies:
+      vite: ^4.2.0 || ^5.0.0 || ^6.0.0 || ^7.0.0
+
   '@vitejs/plugin-react@5.0.2':
     resolution: {integrity: sha512-tmyFgixPZCx2+e6VO9TNITWcCQl8+Nl/E8YbAyPVv85QCc7/A3JrdfG2A8gIzvVhWuzMOVrFW1aReaNxrI6tbw==}
     engines: {node: ^20.19.0 || >=22.12.0}
@@ -2132,10 +2191,21 @@ packages:
     resolution: {integrity: sha512-cl76xfBQM6pztbrFWRnxbrDm9EOqDr1BF6+qQnnDZG2Co2LjyUktkN9GTJfBAfdae+DbT2nJf2nCGAdDDN7W2g==}
     engines: {node: '>=20.18.0'}
 
+  astro-theme-toggle@0.7.0:
+    resolution: {integrity: sha512-HKZdtAWh8/IFvMS9yctF+ou51iFNtVaAjpa7Uw4dQMn591WWgFru7f4vmZwQUTttenSto01FjucPG9snDuBRhg==}
+
   astro@5.14.0:
     resolution: {integrity: sha512-p41jPzs9XhcVBPzp8ZwjU4SgxSyjgkzMq3NToRIn4CPbE/f9rb1cba5+N6TRk4A8yBudEU6MFzCMFWer7kjW3Q==}
     engines: {node: 18.20.8 || ^20.3.0 || >=22.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
+
+  astrobook@0.9.0:
+    resolution: {integrity: sha512-DM27cK9Kz3YIdHkuL+42LPjHUFLQyzWia/Vg868k1pmFgOXNA09NiC48DDkmWp3SsK09zzNQYNb2WaNGfDUs+w==}
+    peerDependencies:
+      astro: '>=4.0.0'
+    peerDependenciesMeta:
+      astro:
+        optional: true
 
   available-typed-arrays@1.0.7:
     resolution: {integrity: sha512-wvUjBtSGN7+7SjNpq/9M2Tg350UZD3q62IFZLbRAR1bSMlCo1ZaeW+BJ+D090e4hIIZLBcTDWe4Mh4jvUDajzQ==}
@@ -3399,6 +3469,9 @@ packages:
     resolution: {integrity: sha512-fYQHZTZ8jSfmWZ0iyzfwiU4WDX4HpHbMCZ3gPlWYiCl3BoeOTsqKBqnTVfH2rYT7eP5c3sVbeSPHnnJOaTrWiw==}
     engines: {node: '>=4.0'}
 
+  just-group-by@2.2.0:
+    resolution: {integrity: sha512-brZocDSmkvDYc+FOr07GiTar4cp7K6OB9huVOrj5LX+iXfCe3hTvn2KGM811LE/SBQkCzuYDDEcG8HA/dKDrnw==}
+
   keyv@4.5.4:
     resolution: {integrity: sha512-oxVHkHR/EJf2CNXnWxRLW6mg7JyCCUcG0DtEGmL2ctUo1PNTin1PUil+r/+4r5MpVgC/fn1kjsx7mjSujKqIpw==}
 
@@ -4334,6 +4407,10 @@ packages:
     resolution: {integrity: sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==}
     engines: {node: '>=8'}
 
+  slash@5.1.0:
+    resolution: {integrity: sha512-ZA6oR3T/pEyuqwMgAKT0/hAv8oAXckzbkmR0UkUosQ+Mc4RxGoJkRmwHgHufaenlyAgE1Mxgpdcrf75y6XcnDg==}
+    engines: {node: '>=14.16'}
+
   slice-ansi@7.1.0:
     resolution: {integrity: sha512-bSiSngZ/jWeX93BqeIAbImyTbEihizcwNjFoRUIY/T1wWQsfsm2Vw1agPKylXvQTU7iASGdHhyqRlqQzfz+Htg==}
     engines: {node: '>=18'}
@@ -5091,6 +5168,31 @@ snapshots:
       '@jridgewell/gen-mapping': 0.3.13
       '@jridgewell/trace-mapping': 0.3.30
 
+  '@astrobook/core@0.9.0(astro@5.14.0(@types/node@22.17.2)(jiti@2.5.1)(rollup@4.46.3)(terser@5.43.1)(typescript@5.9.2)(yaml@2.8.1))':
+    dependencies:
+      '@astrobook/types': 0.9.0(astro@5.14.0(@types/node@22.17.2)(jiti@2.5.1)(rollup@4.46.3)(terser@5.43.1)(typescript@5.9.2)(yaml@2.8.1))
+      '@sveltejs/acorn-typescript': 1.0.5(acorn@8.15.0)
+      acorn: 8.15.0
+      fdir: 6.5.0(picomatch@4.0.3)
+      picomatch: 4.0.3
+      slash: 5.1.0
+      yoctocolors: 2.1.2
+    transitivePeerDependencies:
+      - astro
+
+  '@astrobook/types@0.9.0(astro@5.14.0(@types/node@22.17.2)(jiti@2.5.1)(rollup@4.46.3)(terser@5.43.1)(typescript@5.9.2)(yaml@2.8.1))':
+    optionalDependencies:
+      astro: 5.14.0(@types/node@22.17.2)(jiti@2.5.1)(rollup@4.46.3)(terser@5.43.1)(typescript@5.9.2)(yaml@2.8.1)
+
+  '@astrobook/ui@0.9.0(astro@5.14.0(@types/node@22.17.2)(jiti@2.5.1)(rollup@4.46.3)(terser@5.43.1)(typescript@5.9.2)(yaml@2.8.1))':
+    dependencies:
+      '@astrobook/core': 0.9.0(astro@5.14.0(@types/node@22.17.2)(jiti@2.5.1)(rollup@4.46.3)(terser@5.43.1)(typescript@5.9.2)(yaml@2.8.1))
+      '@astrobook/types': 0.9.0(astro@5.14.0(@types/node@22.17.2)(jiti@2.5.1)(rollup@4.46.3)(terser@5.43.1)(typescript@5.9.2)(yaml@2.8.1))
+      astro-theme-toggle: 0.7.0
+      just-group-by: 2.2.0
+    optionalDependencies:
+      astro: 5.14.0(@types/node@22.17.2)(jiti@2.5.1)(rollup@4.46.3)(terser@5.43.1)(typescript@5.9.2)(yaml@2.8.1)
+
   '@astrojs/compiler@2.13.0': {}
 
   '@astrojs/internal-helpers@0.7.3': {}
@@ -5124,6 +5226,29 @@ snapshots:
   '@astrojs/prism@3.3.0':
     dependencies:
       prismjs: 1.30.0
+
+  '@astrojs/react@4.4.0(@types/node@22.17.2)(@types/react-dom@19.1.9(@types/react@19.1.13))(@types/react@19.1.13)(jiti@2.5.1)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(terser@5.43.1)(yaml@2.8.1)':
+    dependencies:
+      '@types/react': 19.1.13
+      '@types/react-dom': 19.1.9(@types/react@19.1.13)
+      '@vitejs/plugin-react': 4.7.0(vite@6.3.6(@types/node@22.17.2)(jiti@2.5.1)(terser@5.43.1)(yaml@2.8.1))
+      react: 19.1.1
+      react-dom: 19.1.1(react@19.1.1)
+      ultrahtml: 1.6.0
+      vite: 6.3.6(@types/node@22.17.2)(jiti@2.5.1)(terser@5.43.1)(yaml@2.8.1)
+    transitivePeerDependencies:
+      - '@types/node'
+      - jiti
+      - less
+      - lightningcss
+      - sass
+      - sass-embedded
+      - stylus
+      - sugarss
+      - supports-color
+      - terser
+      - tsx
+      - yaml
 
   '@astrojs/telemetry@3.3.0':
     dependencies:
@@ -6138,6 +6263,8 @@ snapshots:
   '@rolldown/binding-win32-x64-msvc@1.0.0-beta.40':
     optional: true
 
+  '@rolldown/pluginutils@1.0.0-beta.27': {}
+
   '@rolldown/pluginutils@1.0.0-beta.29': {}
 
   '@rolldown/pluginutils@1.0.0-beta.34': {}
@@ -6461,7 +6588,15 @@ snapshots:
     dependencies:
       '@types/react': 19.1.12
 
+  '@types/react-dom@19.1.9(@types/react@19.1.13)':
+    dependencies:
+      '@types/react': 19.1.13
+
   '@types/react@19.1.12':
+    dependencies:
+      csstype: 3.1.3
+
+  '@types/react@19.1.13':
     dependencies:
       csstype: 3.1.3
 
@@ -6655,6 +6790,18 @@ snapshots:
 
   '@unrs/resolver-binding-win32-x64-msvc@1.11.1':
     optional: true
+
+  '@vitejs/plugin-react@4.7.0(vite@6.3.6(@types/node@22.17.2)(jiti@2.5.1)(terser@5.43.1)(yaml@2.8.1))':
+    dependencies:
+      '@babel/core': 7.28.3
+      '@babel/plugin-transform-react-jsx-self': 7.27.1(@babel/core@7.28.3)
+      '@babel/plugin-transform-react-jsx-source': 7.27.1(@babel/core@7.28.3)
+      '@rolldown/pluginutils': 1.0.0-beta.27
+      '@types/babel__core': 7.20.5
+      react-refresh: 0.17.0
+      vite: 6.3.6(@types/node@22.17.2)(jiti@2.5.1)(terser@5.43.1)(yaml@2.8.1)
+    transitivePeerDependencies:
+      - supports-color
 
   '@vitejs/plugin-react@5.0.2(vite@7.1.3(@types/node@22.17.2)(jiti@2.5.1)(terser@5.43.1)(yaml@2.8.1))':
     dependencies:
@@ -6888,6 +7035,8 @@ snapshots:
       '@babel/parser': 7.28.4
       pathe: 2.0.3
 
+  astro-theme-toggle@0.7.0: {}
+
   astro@5.14.0(@types/node@22.17.2)(jiti@2.5.1)(rollup@4.46.3)(terser@5.43.1)(typescript@5.9.2)(yaml@2.8.1):
     dependencies:
       '@astrojs/compiler': 2.13.0
@@ -6989,6 +7138,14 @@ snapshots:
       - typescript
       - uploadthing
       - yaml
+
+  astrobook@0.9.0(astro@5.14.0(@types/node@22.17.2)(jiti@2.5.1)(rollup@4.46.3)(terser@5.43.1)(typescript@5.9.2)(yaml@2.8.1)):
+    dependencies:
+      '@astrobook/core': 0.9.0(astro@5.14.0(@types/node@22.17.2)(jiti@2.5.1)(rollup@4.46.3)(terser@5.43.1)(typescript@5.9.2)(yaml@2.8.1))
+      '@astrobook/types': 0.9.0(astro@5.14.0(@types/node@22.17.2)(jiti@2.5.1)(rollup@4.46.3)(terser@5.43.1)(typescript@5.9.2)(yaml@2.8.1))
+      '@astrobook/ui': 0.9.0(astro@5.14.0(@types/node@22.17.2)(jiti@2.5.1)(rollup@4.46.3)(terser@5.43.1)(typescript@5.9.2)(yaml@2.8.1))
+    optionalDependencies:
+      astro: 5.14.0(@types/node@22.17.2)(jiti@2.5.1)(rollup@4.46.3)(terser@5.43.1)(typescript@5.9.2)(yaml@2.8.1)
 
   available-typed-arrays@1.0.7:
     dependencies:
@@ -8370,6 +8527,8 @@ snapshots:
       array-includes: 3.1.8
       object.assign: 4.1.5
 
+  just-group-by@2.2.0: {}
+
   keyv@4.5.4:
     dependencies:
       json-buffer: 3.0.1
@@ -9646,6 +9805,8 @@ snapshots:
   sisteransi@1.0.5: {}
 
   slash@3.0.0: {}
+
+  slash@5.1.0: {}
 
   slice-ansi@7.1.0:
     dependencies:
