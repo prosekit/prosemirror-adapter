@@ -2,12 +2,13 @@ import { ShallowLitElement } from '@prosemirror-adapter/lit'
 import { html } from 'lit'
 import { customElement, state } from 'lit/decorators.js'
 import { keyed } from 'lit/directives/keyed.js'
+import './style.css'
 
 export * from './components/Editor'
 export { ProsemirrorAdapterProvider } from '@prosemirror-adapter/lit'
 
 @customElement('test-app')
-export class App extends ShallowLitElement {
+export class TestApp extends ShallowLitElement {
   @state()
   editorId = 0
 
@@ -33,6 +34,6 @@ export class App extends ShallowLitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'test-app': App
+    'test-app': TestApp
   }
 }
