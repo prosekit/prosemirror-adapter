@@ -39,7 +39,7 @@ This file tracks the progress of adding Preact support to the repository.
   - [x] Add a `README.md` for `packages/preact`.
 
 - [ ] **Step 6.5: Address ESLint Issues**
-  - [ ] Properly configure ESLint for Preact files to pass without errors or warnings.
+  - [ ] Properly configure ESLint for Preact files to pass without errors or warnings. (Note: Persistent ESLint issues in CI are preventing this step from being fully completed at this time. This will require further investigation into the CI's ESLint setup or the `@ocavue/eslint-config` configuration for Preact.)
 
 - [ ] **Step 7: Finalization**
   - [ ] Run all checks: `pnpm run build`, `pnpm run test`, `pnpm run lint`.
