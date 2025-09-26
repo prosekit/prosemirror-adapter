@@ -9,5 +9,5 @@ import astrobook from 'astrobook'
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [react(), preact(), svelte(), solidJs(), vue(), astrobook()],
+  integrations: [react(), preact(), svelte(), solidJs(), vue(), astrobook({})],
 })

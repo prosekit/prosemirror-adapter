@@ -18,6 +18,8 @@
     "@types/react": "^19.1.13",
     "@types/react-dom": "^19.1.9",
     "preact": "^10.27.2",
+    "prosemirror-state": "^1.4.3",
+    "prosemirror-view": "^1.41.1",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "solid-js": "^1.9.9",
