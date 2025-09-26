@@ -12,9 +12,9 @@ export default defineConfig({
   integrations: [
     react({ include: ['src/react/**/*'] }),
     preact({ include: ['src/preact/**/*'] }),
-    svelte({ include: ['src/svelte/**/*'] }),
     solidJs({ include: ['src/solid/**/*'] }),
-    vue({ include: ['src/vue/**/*'] }),
+    svelte(),
+    vue(),
     astrobook({ directory: 'src' }),
   ],
 })
