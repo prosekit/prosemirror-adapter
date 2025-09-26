@@ -1,5 +1,5 @@
 import { useNodeViewContext } from '@prosemirror-adapter/preact'
-import { FunctionComponent } from 'preact'
+import type { FunctionComponent } from 'preact'
 import { useMemo } from 'preact/hooks'
 
 export const Heading: FunctionComponent = () => {

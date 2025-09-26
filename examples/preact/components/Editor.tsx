@@ -1,9 +1,9 @@
 import { useNodeViewFactory, usePluginViewFactory, useWidgetViewFactory } from '@prosemirror-adapter/preact'
+import type { FunctionComponent } from 'preact'
+import { useCallback, useRef } from 'preact/hooks'
 import { Plugin } from 'prosemirror-state'
 import type { EditorView } from 'prosemirror-view'
 import { DecorationSet } from 'prosemirror-view'
-import type { FunctionComponent } from 'preact'
-import { useCallback, useRef } from 'preact/hooks'
 
 import { createEditorView } from '../createEditorView'
 

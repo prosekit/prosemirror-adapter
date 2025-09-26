@@ -8,6 +8,9 @@
       "path": "./examples/lit/tsconfig.json"
     },
     {
+      "path": "./examples/preact/tsconfig.json"
+    },
+    {
       "path": "./examples/react/tsconfig.json"
     },
     {
