@@ -3,7 +3,7 @@
   "references": [
     {
       "path": "../shared/"
-    },
+    }
   ],
   "compilerOptions": {
     "jsx": "react-jsx",
