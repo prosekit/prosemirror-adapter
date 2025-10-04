@@ -35,7 +35,6 @@ export class PreactWidgetView
     return createPortal(
       h(widgetViewContext.Provider, { value: this.context }, h(UserComponent, {})),
       this.dom,
-      this.key,
     )
   }
 }

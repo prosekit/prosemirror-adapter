@@ -38,6 +38,6 @@ export class PreactNodeView extends CoreNodeView<PreactNodeViewComponent> implem
   render = () => {
     const UserComponent = this.component
 
-    return createPortal(h(nodeViewContext.Provider, { value: this.context }, h(UserComponent, {})), this.dom, this.key)
+    return createPortal(h(nodeViewContext.Provider, { value: this.context }, h(UserComponent, {})), this.dom)
   }
 }

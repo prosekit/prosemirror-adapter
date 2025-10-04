@@ -1,39 +1,46 @@
+import type { WidgetDecorationFactory, WidgetDecorationSpec } from '@prosemirror-adapter/core'
 import { useCallback } from 'preact/hooks'
+import { Decoration } from 'prosemirror-view'
 
 import type { PreactRendererResult } from '../PreactRenderer'
 
 import { PreactWidgetView } from './PreactWidgetView'
-import type { PreactWidgetViewSpec, PreactWidgetViewUserOptions } from './PreactWidgetViewOptions'
+import type { PreactWidgetViewUserOptions } from './PreactWidgetViewOptions'
 
 export function usePreactWidgetViewCreator(
   renderPreactRenderer: PreactRendererResult['renderPreactRenderer'],
   removePreactRenderer: PreactRendererResult['removePreactRenderer'],
 ) {
-  const createPreactWidgetView = useCallback(
-    (options: PreactWidgetViewUserOptions): PreactWidgetViewSpec => {
-      return {
-        ...options,
-        toDOM: (getPos, view) => {
-          const widgetView = new PreactWidgetView({
-            getPos,
-            view,
-            options: {
-              ...options,
-              destroy() {
-                options.destroy?.()
-                removePreactRenderer(widgetView)
-              },
-            },
-          })
+  const createWidgetPluginView = useCallback(
+    (options: PreactWidgetViewUserOptions): WidgetDecorationFactory => {
+      return (pos, userSpec = {}) => {
+        const widgetView = new PreactWidgetView({
+          pos,
+          options,
+        })
+        const spec: WidgetDecorationSpec = {
+          ...userSpec,
+          destroy: (node) => {
+            userSpec.destroy?.(node)
+            removePreactRenderer(widgetView)
+          },
+        }
+        widgetView.spec = spec
 
-          renderPreactRenderer(widgetView, false)
+        return Decoration.widget(
+          pos,
+          (view, getPos) => {
+            widgetView.bind(view, getPos)
+            renderPreactRenderer(widgetView)
 
-          return widgetView.dom
-        },
-      } as PreactWidgetViewSpec
+            return widgetView.dom
+          },
+          spec,
+        )
+      }
     },
     [removePreactRenderer, renderPreactRenderer],
   )
 
-  return createPreactWidgetView
+  return createWidgetPluginView
 }

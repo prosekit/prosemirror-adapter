@@ -33,7 +33,6 @@ export class PreactPluginView
     return createPortal(
       h(pluginViewContext.Provider, { value: this.context }, h(UserComponent, {})),
       this.root,
-      this.key,
     )
   }
 }

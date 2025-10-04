@@ -1,8 +1,8 @@
 import { useNodeViewFactory, usePluginViewFactory, useWidgetViewFactory } from '@prosemirror-adapter/preact'
+import { useCallback, useRef } from 'preact/hooks'
 import { Plugin } from 'prosemirror-state'
 import type { EditorView } from 'prosemirror-view'
 import { DecorationSet } from 'prosemirror-view'
-import { useCallback, useRef } from 'preact/hooks'
 
 import { createEditorView } from '../createEditorView'
 
@@ -12,7 +12,7 @@ import { Paragraph } from './Paragraph'
 import { Size } from './Size'
 import './Editor.css'
 
-export const Editor = () => {
+export function Editor () {
   const viewRef = useRef<EditorView | null>(null)
   const nodeViewFactory = useNodeViewFactory()
   const pluginViewFactory = usePluginViewFactory()

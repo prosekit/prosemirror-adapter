@@ -1,5 +1,5 @@
+import type { PluginViewSpec } from '@prosemirror-adapter/core'
 import { useCallback } from 'preact/hooks'
-import type { PluginView } from 'prosemirror-state'
 
 import type { PreactRendererResult } from '../PreactRenderer'
 
@@ -11,19 +11,17 @@ export function usePreactPluginViewCreator(
   removePreactRenderer: PreactRendererResult['removePreactRenderer'],
 ) {
   const createPreactPluginView = useCallback(
-    (options: PreactPluginViewUserOptions): PluginView =>
-      (view) => {
+    (options: PreactPluginViewUserOptions): PluginViewSpec => {
+      return (view) => {
         const pluginView = new PreactPluginView({
           view,
           options: {
             ...options,
-            update(view, prevState) {
-              pluginView.view = view
-              pluginView.prevState = prevState
+            update: (view, prevState) => {
               options.update?.(view, prevState)
               renderPreactRenderer(pluginView)
             },
-            destroy() {
+            destroy: () => {
               options.destroy?.()
               removePreactRenderer(pluginView)
             },
@@ -33,7 +31,8 @@ export function usePreactPluginViewCreator(
         renderPreactRenderer(pluginView, false)
 
         return pluginView
-      },
+      }
+    },
     [removePreactRenderer, renderPreactRenderer],
   )
 

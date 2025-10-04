@@ -4,6 +4,7 @@
     "jsx": "react-jsx",
     "jsxImportSource": "preact"
   },
+  "include": ["**/*.ts", "**/*.tsx"],
   "references": [
     {
       "path": "../../packages/preact/tsconfig.json"

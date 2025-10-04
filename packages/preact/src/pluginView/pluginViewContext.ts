@@ -1,6 +1,7 @@
+import type { PluginViewSpec } from '@prosemirror-adapter/core'
 import { createContext } from 'preact'
 import { useContext } from 'preact/hooks'
-import type { EditorState, PluginView } from 'prosemirror-state'
+import type { EditorState } from 'prosemirror-state'
 import type { EditorView } from 'prosemirror-view'
 
 import type { PreactPluginViewUserOptions } from './PreactPluginViewOptions'
@@ -17,7 +18,7 @@ export const pluginViewContext = createContext<PluginViewContext>({
 
 export const usePluginViewContext = () => useContext(pluginViewContext)
 
-export const createPluginViewContext = createContext<(options: PreactPluginViewUserOptions) => PluginView>(
+export const createPluginViewContext = createContext<(options: PreactPluginViewUserOptions) => PluginViewSpec>(
   (_options) => {
     throw new Error(
       'No ProsemirrorAdapterProvider detected, maybe you need to wrap the component with the Editor with ProsemirrorAdapterProvider?',
