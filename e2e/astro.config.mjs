@@ -14,6 +14,7 @@ export default defineConfig({
   },
   redirects: {
     '/lit': '/stories/lit/app/lit',
+    '/preact': '/stories/preact/app/preact',
     '/react': '/stories/react/app/react',
     '/solid': '/stories/solid/app/solid',
     '/svelte': '/stories/svelte/app/svelte',
