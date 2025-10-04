@@ -5,10 +5,11 @@
   - Replace React-specific imports with Preact equivalents (`preact`, `preact/hooks`, `preact/compat`).
   - Ensure renderer/utilities expose the same public API surface as the React adapter.
   - Completed initial Preact-specific rewrites for provider, renderer, and view factories.
-- [ ] Step 2: Integrate package into monorepo tooling
+- [x] Step 2: Integrate package into monorepo tooling
   - Add new TypeScript project references and update build configuration if needed.
   - Update linting and formatting configs if they require explicit package inclusion.
   - Wire workspace dependencies so `pnpm` can build/test the new package.
+  - Added preact patterns to ESLint config and confirmed workspace tooling recognizes the package.
 - [ ] Step 3: Author tests and quality gates
   - Port or author unit-style checks (mirroring React adapter coverage) to validate critical behaviors.
   - Add/update examples and e2e fixtures to exercise the Preact adapter.
