@@ -75,6 +75,8 @@ Add Preact support to prosemirror-adapter, following the existing patterns estab
 - [ ] Create `/e2e/src/preact/` directory
 - [ ] Set up test components matching other frameworks
 - [ ] Create test pages for Astro integration
+  - Note: Requires additional investigation - Astro/astrobook SSR tries to use React to render Preact VNodes, causing "Objects are not valid as a React child" error
+  - May need custom Astro component wrapper or astrobook configuration
 - [ ] Update playwright tests to include Preact
 - [ ] Ensure all test scenarios pass:
   - [ ] Node view rendering and updates

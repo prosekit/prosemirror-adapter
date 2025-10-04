@@ -83,6 +83,9 @@ importers:
       '@prosemirror-adapter/lit':
         specifier: workspace:*
         version: link:../packages/lit
+      '@prosemirror-adapter/preact':
+        specifier: workspace:*
+        version: link:../packages/preact
       '@prosemirror-adapter/react':
         specifier: workspace:*
         version: link:../packages/react
