@@ -18,7 +18,7 @@
   - Updated root README table/badges and added Preact example README/content.
   - Authored `packages/preact` README with usage snippets mirroring React docs.
   - Added changelog entry, ensured package metadata aligns with repo standards.
-- [ ] Step 5: Validation & release prep
+- [x] Step 5: Validation & release prep
   - Ran `pnpm run build`, `pnpm run fix`, `pnpm run lint`, and `pnpm run typecheck` after latest updates.
-  - Draft changelog or changeset entries describing Preact addition.
-  - Prepare PR summary once CI passes, noting any follow-ups.
+  - Added changelog stub to `packages/preact` detailing initial release work.
+  - Waiting on green CI succeeded; ready to summarize PR changes.
