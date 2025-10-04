@@ -12,7 +12,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "test": "playwright test",
-    "test:install": "playwright install --with-deps"
+    "test:install": "playwright install"
   },
   "dependencies": {
     "@astrojs/lit": "^4.3.0",
