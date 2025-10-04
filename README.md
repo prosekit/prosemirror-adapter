@@ -28,6 +28,7 @@ You'll need this adapter if you want to use Prosemirror to build a rich text edi
   - [x] [Svelte](https://svelte.dev/)
   - [x] [Lit](https://lit.dev/)
   - [x] [Solid](https://solidjs.com/)
+  - [x] [Preact](https://preactjs.com/)
   - [ ] 🚀 coming soon...
 - [x] Add out of box support for prosemirror features
   - [x] [Prosemirror Node View](https://prosemirror.net/docs/ref/#view.NodeView)
@@ -53,6 +54,7 @@ So something out of this scope will not be considered. For example:
     <th>svelte</th>
     <th>lit</th>
     <th>solid</th>
+    <th>preact</th>
   </tr>
   <tr>
     <td>
@@ -78,6 +80,11 @@ So something out of this scope will not be considered. For example:
     <td>
       <a align="center" title="solid" href="/packages/solid">
         <img src="/assets/solid.svg" width="100" height="100" alt="solid">
+      </a>
+    </td>
+    <td>
+      <a align="center" title="preact" href="/packages/preact">
+        <img src="/assets/preact.svg" width="100" height="100" alt="preact">
       </a>
     </td>
   </tr>
