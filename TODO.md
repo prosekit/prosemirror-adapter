@@ -58,18 +58,17 @@ Add Preact support to prosemirror-adapter, following the existing patterns estab
 - [x] Configure portal rendering system
 - [x] Export public API in `index.ts`
 
-### Step 8: Add Preact Examples
+### Step 8: Add Preact Examples ✅
 
-- [ ] Create `/examples/preact/` directory
-- [ ] Set up Vite configuration
-- [ ] Create basic editor example with all view types
-- [ ] Add components demonstrating each feature:
-  - [ ] Heading node view
-  - [ ] Paragraph node view
-  - [ ] Bold mark view
-  - [ ] Menu plugin view
-  - [ ] Emoji widget view
-- [ ] Style components to match existing examples
+- [x] Create `/examples/preact/` directory
+- [x] Set up Vite configuration
+- [x] Create basic editor example with all view types
+- [x] Add components demonstrating each feature:
+  - [x] Heading node view
+  - [x] Paragraph node view
+  - [x] Hash widget view
+  - [x] Size plugin view
+- [x] Style components to match existing examples
 
 ### Step 9: Add E2E Tests for Preact
 
