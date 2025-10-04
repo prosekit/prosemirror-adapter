@@ -1,0 +1,23 @@
+# Preact Support Plan
+
+- [x] Step 1: Scaffold `@prosemirror-adapter/preact`
+  - Copy React adapter structure as baseline (package.json, tsconfig, src layout).
+  - Replace React-specific imports with Preact equivalents (`preact`, `preact/hooks`, `preact/compat`).
+  - Ensure renderer/utilities expose the same public API surface as the React adapter.
+  - Completed initial Preact-specific rewrites for provider, renderer, and view factories.
+- [ ] Step 2: Integrate package into monorepo tooling
+  - Add new TypeScript project references and update build configuration if needed.
+  - Update linting and formatting configs if they require explicit package inclusion.
+  - Wire workspace dependencies so `pnpm` can build/test the new package.
+- [ ] Step 3: Author tests and quality gates
+  - Port or author unit-style checks (mirroring React adapter coverage) to validate critical behaviors.
+  - Add/update examples and e2e fixtures to exercise the Preact adapter.
+  - Document usage expectations/edge cases discovered during test design.
+- [ ] Step 4: Documentation & DX polish
+  - Update READMEs, root docs, and badges to advertise Preact support.
+  - Provide usage snippets within `packages/preact` README and `examples/preact` sandbox.
+  - Confirm publication metadata (package keywords, changelog stub) meets repo conventions.
+- [ ] Step 5: Validation & release prep
+  - Run `pnpm run build`, `pnpm run fix`, `pnpm run lint`, and `pnpm run typecheck`.
+  - Draft changelog or changeset entries describing Preact addition.
+  - Prepare PR summary once CI passes, noting any follow-ups.
