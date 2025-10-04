@@ -80,10 +80,7 @@ export class CoreNodeView<ComponentType> implements NodeView {
     decorations,
     innerDecorations,
   ) => {
-    const userUpdate = this.options.update
-    let result = userUpdate?.(node, decorations, innerDecorations)
-
-    if (typeof result !== 'boolean') result = this.shouldUpdate(node)
+    const result = this.options.update?.(node, decorations, innerDecorations) ?? this.shouldUpdate(node)
 
     this.node = node
     this.decorations = decorations
