@@ -30,14 +30,6 @@ export class PreactMarkView extends CoreMarkView<PreactMarkViewComponent> implem
   render = () => {
     const UserComponent = this.component
 
-    return createPortal(
-      h(
-        markViewContext.Provider,
-        { value: this.context },
-        h(UserComponent, {}),
-      ),
-      this.dom,
-      this.key,
-    )
+    return createPortal(h(markViewContext.Provider, { value: this.context }, h(UserComponent, {})), this.dom, this.key)
   }
 }

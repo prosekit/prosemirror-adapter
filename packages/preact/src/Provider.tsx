@@ -16,12 +16,18 @@ export type CreatePreactMarkView = ReturnType<typeof usePreactMarkViewCreator>
 export type CreatePreactPluginView = ReturnType<typeof usePreactPluginViewCreator>
 export type CreatePreactWidgetView = ReturnType<typeof usePreactWidgetViewCreator>
 
-export function ProsemirrorAdapterProvider ({ children }: { children: ComponentChildren }) {
+export function ProsemirrorAdapterProvider({ children }: { children: ComponentChildren }) {
   const { renderPreactRenderer, removePreactRenderer, portals } = usePreactRenderer()
 
-  const createPreactNodeView: CreatePreactNodeView = usePreactNodeViewCreator(renderPreactRenderer, removePreactRenderer)
+  const createPreactNodeView: CreatePreactNodeView = usePreactNodeViewCreator(
+    renderPreactRenderer,
+    removePreactRenderer,
+  )
 
-  const createPreactMarkView: CreatePreactMarkView = usePreactMarkViewCreator(renderPreactRenderer, removePreactRenderer)
+  const createPreactMarkView: CreatePreactMarkView = usePreactMarkViewCreator(
+    renderPreactRenderer,
+    removePreactRenderer,
+  )
 
   const createPreactPluginView: CreatePreactPluginView = usePreactPluginViewCreator(
     renderPreactRenderer,

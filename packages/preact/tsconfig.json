@@ -4,5 +4,10 @@
     "jsx": "react-jsx",
     "jsxImportSource": "preact"
   },
-  "include": ["src"]
+  "include": ["src"],
+  "references": [
+    {
+      "path": "../core/tsconfig.json"
+    }
+  ]
 }

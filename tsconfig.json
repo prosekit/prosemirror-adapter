@@ -26,6 +26,9 @@
       "path": "./packages/lit/tsconfig.json"
     },
     {
+      "path": "./packages/preact/tsconfig.json"
+    },
+    {
       "path": "./packages/react/tsconfig.json"
     },
     {
