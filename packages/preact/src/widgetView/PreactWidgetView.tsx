@@ -32,9 +32,6 @@ export class PreactWidgetView
   render = () => {
     const UserComponent = this.component
 
-    return createPortal(
-      h(widgetViewContext.Provider, { value: this.context }, h(UserComponent, {})),
-      this.dom,
-    )
+    return createPortal(h(widgetViewContext.Provider, { value: this.context }, h(UserComponent, {})), this.dom)
   }
 }

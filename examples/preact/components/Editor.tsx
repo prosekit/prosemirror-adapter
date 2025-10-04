@@ -12,7 +12,7 @@ import { Paragraph } from './Paragraph'
 import { Size } from './Size'
 import './Editor.css'
 
-export function Editor () {
+export function Editor() {
   const viewRef = useRef<EditorView | null>(null)
   const nodeViewFactory = useNodeViewFactory()
   const pluginViewFactory = usePluginViewFactory()

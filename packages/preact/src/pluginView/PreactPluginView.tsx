@@ -30,9 +30,6 @@ export class PreactPluginView
   render = () => {
     const UserComponent = this.component
 
-    return createPortal(
-      h(pluginViewContext.Provider, { value: this.context }, h(UserComponent, {})),
-      this.root,
-    )
+    return createPortal(h(pluginViewContext.Provider, { value: this.context }, h(UserComponent, {})), this.root)
   }
 }
