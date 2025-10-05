@@ -5,8 +5,9 @@
       "path": "../shared/"
     }
   ],
+
   "compilerOptions": {
-    "jsx": "preserve",
-    "experimentalDecorators": true
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact"
   }
 }
