@@ -14,14 +14,15 @@ export default defineConfig({
   },
   redirects: {
     '/lit': '/stories/lit/app/lit',
+    '/preact': '/stories/preact/app/preact',
     '/react': '/stories/react/app/react',
     '/solid': '/stories/solid/app/solid',
     '/svelte': '/stories/svelte/app/svelte',
     '/vue': '/stories/vue/app/vue',
   },
   integrations: [
-    react({ include: ['src/react/**/*'] }),
-    preact({ include: ['src/preact/**/*'] }),
+    preact({ include: ['src/preact/**/*.tsx'] }),
+    react({ include: ['src/react/**/*.tsx'] }),
     solidJs({ include: ['src/solid/**/*'] }),
     svelte(),
     vue(),
