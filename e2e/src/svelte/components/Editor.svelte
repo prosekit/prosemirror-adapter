@@ -25,7 +25,7 @@
     as: 'i',
   })
 
-  let editorView: EditorView
+  let editorView: EditorView | undefined
 
   function editor(element: HTMLElement) {
     editorView = createEditorView(
@@ -75,7 +75,7 @@
   }
 
   onDestroy(() => {
-    editorView.destroy()
+    editorView?.destroy()
   })
 </script>
 

@@ -1,9 +1,12 @@
 {
-  "extends": "@ocavue/tsconfig/dom/app.json",
-  "include": ["./tests", "./*", "src/svelte.config.js"],
+  "extends": "@ocavue/tsconfig/dom/root.json",
+  "include": ["./tests", "./*.js", "./*.mjs", "./*.ts", ".astro/types.d.ts"],
   "references": [
     {
       "path": "./src/lit/tsconfig.json"
+    },
+    {
+      "path": "./src/preact/tsconfig.json"
     },
     {
       "path": "./src/react/tsconfig.json"
@@ -20,9 +23,11 @@
     {
       "path": "./src/shared/tsconfig.json"
     },
-
     {
       "path": "../packages/lit/tsconfig.json"
+    },
+    {
+      "path": "../packages/preact/tsconfig.json"
     },
     {
       "path": "../packages/react/tsconfig.json"

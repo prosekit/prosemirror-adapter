@@ -69,12 +69,10 @@ export class CoreNodeView<ComponentType> implements NodeView {
     this.options.deselectNode?.()
   }
 
+  // Return true if the current node view instance can handle the update.
+  // Return false if a new node view instance should be created.
   shouldUpdate: (node: Node) => boolean = (node) => {
-    if (node.type !== this.node.type) return false
-
-    if (node.sameMarkup(this.node) && node.content.eq(this.node.content)) return false
-
-    return true
+    return node.type === this.node.type
   }
 
   update: (node: Node, decorations: readonly Decoration[], innerDecorations: DecorationSource) => boolean = (
@@ -82,11 +80,7 @@ export class CoreNodeView<ComponentType> implements NodeView {
     decorations,
     innerDecorations,
   ) => {
-    const userUpdate = this.options.update
-    let result
-    if (userUpdate) result = userUpdate(node, decorations, innerDecorations)
-
-    if (typeof result !== 'boolean') result = this.shouldUpdate(node)
+    const result = this.options.update?.(node, decorations, innerDecorations) ?? this.shouldUpdate(node)
 
     this.node = node
     this.decorations = decorations

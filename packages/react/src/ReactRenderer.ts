@@ -23,10 +23,11 @@ export function useReactRenderer(): ReactRendererResult {
   const mountedRef = useRef(false)
 
   useEffect(() => {
-    requestAnimationFrame(() => {
+    const id = requestAnimationFrame(() => {
       mountedRef.current = true
     })
     return () => {
+      cancelAnimationFrame(id)
       mountedRef.current = false
     }
   }, [])

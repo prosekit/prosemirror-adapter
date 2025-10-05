@@ -26,11 +26,11 @@
   },
   "dependencies": {
     "@prosemirror-adapter/core": "workspace:*",
-    "nanoid": "^5.1.5",
+    "nanoid": "^5.1.6",
     "prosemirror-keymap": "^1.2.3",
     "prosemirror-model": "^1.25.3",
     "prosemirror-state": "^1.4.3",
-    "prosemirror-view": "^1.40.1"
+    "prosemirror-view": "^1.41.1"
   },
   "peerDependencies": {
     "vue": "^3.0.0"
@@ -41,9 +41,9 @@
     }
   },
   "devDependencies": {
-    "@vitejs/plugin-vue-jsx": "^5.0.1",
-    "tsdown": "^0.14.1",
-    "vue": "^3.5.18"
+    "@vitejs/plugin-vue-jsx": "^5.1.1",
+    "tsdown": "^0.15.4",
+    "vue": "^3.5.20"
   },
   "publishConfig": {
     "types": "./dist/index.d.ts",
