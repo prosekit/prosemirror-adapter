@@ -1,5 +1,5 @@
 ---
-'@prosemirror-adapter/preact': minor
+'@prosemirror-adapter/preact': patch
 ---
 
 Initial release.
