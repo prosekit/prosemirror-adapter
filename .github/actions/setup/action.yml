@@ -5,20 +5,17 @@ inputs:
   node-version:
     description: The version of node.js
     required: false
-    default: '20'
+    default: '24'
 
 runs:
   using: composite
   steps:
-    - uses: pnpm/action-setup@v4.1.0
-      with:
-        run_install: false
+    - uses: pnpm/action-setup@v4
 
     - name: Setup node
-      uses: actions/setup-node@v4
+      uses: actions/setup-node@v5
       with:
         node-version: ${{ inputs.node-version }}
-        cache: pnpm
         registry-url: 'https://registry.npmjs.org'
 
     - name: Install
