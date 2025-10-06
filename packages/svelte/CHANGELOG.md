@@ -1,5 +1,12 @@
 # @prosemirror-adapter/svelte
 
+## 0.4.5
+
+### Patch Changes
+
+- Updated dependencies [2f35522]
+  - @prosemirror-adapter/core@0.4.5
+
 ## 0.4.3
 
 ### Patch Changes

@@ -1,7 +1,7 @@
 {
   "name": "@prosemirror-adapter/preact",
   "type": "module",
-  "version": "0.0.0",
+  "version": "0.4.5",
   "description": "Preact package for ProseMirror Adapter",
   "license": "MIT",
   "repository": {
