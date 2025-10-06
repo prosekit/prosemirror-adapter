@@ -1,5 +1,11 @@
 # @prosemirror-adapter/core
 
+## 0.4.5
+
+### Patch Changes
+
+- 2f35522: Don't destory the node view when the associated node's decorations are updated.
+
 ## 0.4.2
 
 ### Patch Changes
