@@ -1,7 +1,7 @@
 {
   "name": "@prosemirror-adapter/vue",
   "type": "module",
-  "version": "0.4.5",
+  "version": "0.4.6",
   "description": "Vue package for ProseMirror Adapter",
   "license": "MIT",
   "repository": {
