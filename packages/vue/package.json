@@ -6,7 +6,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Saul-Mirone/prosemirror-adapter.git",
+    "url": "git+https://github.com/prosekit/prosemirror-adapter.git",
     "directory": "packages/vue"
   },
   "keywords": [
