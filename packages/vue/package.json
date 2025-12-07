@@ -28,9 +28,9 @@
     "@prosemirror-adapter/core": "workspace:*",
     "nanoid": "^5.1.6",
     "prosemirror-keymap": "^1.2.3",
-    "prosemirror-model": "^1.25.3",
-    "prosemirror-state": "^1.4.3",
-    "prosemirror-view": "^1.41.1"
+    "prosemirror-model": "^1.25.4",
+    "prosemirror-state": "^1.4.4",
+    "prosemirror-view": "^1.41.4"
   },
   "peerDependencies": {
     "vue": "^3.0.0"
