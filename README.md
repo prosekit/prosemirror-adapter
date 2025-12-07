@@ -11,7 +11,7 @@
 Universal adapter for [ProseMirror](https://prosemirror.net/) to use it with modern UI frameworks.
 
 ![npm](https://img.shields.io/npm/v/@prosemirror-adapter/core)
-[![ci](https://github.com/Saul-Mirone/prosemirror-adapter/actions/workflows/ci.yml/badge.svg)](https://github.com/Saul-Mirone/prosemirror-adapter/actions/workflows/ci.yml)
+[![ci](https://github.com/prosekit/prosemirror-adapter/actions/workflows/ci.yml/badge.svg)](https://github.com/prosekit/prosemirror-adapter/actions/workflows/ci.yml)
 
 ## What is this?
 

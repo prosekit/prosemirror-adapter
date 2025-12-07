@@ -1,12 +1,12 @@
 {
   "name": "@prosemirror-adapter/lit",
   "type": "module",
-  "version": "0.4.2",
+  "version": "0.4.6",
   "description": "Lit package for ProseMirror Adapter",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Saul-Mirone/prosemirror-adapter.git",
+    "url": "git+https://github.com/prosekit/prosemirror-adapter.git",
     "directory": "packages/lit"
   },
   "keywords": [
@@ -22,14 +22,14 @@
   ],
   "scripts": {
     "test": "vitest",
-    "build": "tsdown && vite build"
+    "build": "tsdown --platform browser && vite build"
   },
   "dependencies": {
     "@prosemirror-adapter/core": "workspace:*",
     "nanoid": "^5.1.6",
-    "prosemirror-model": "^1.25.3",
-    "prosemirror-state": "^1.4.3",
-    "prosemirror-view": "^1.41.1"
+    "prosemirror-model": "^1.25.4",
+    "prosemirror-state": "^1.4.4",
+    "prosemirror-view": "^1.41.4"
   },
   "peerDependencies": {
     "@lit-labs/context": "^0.5.0",
@@ -46,8 +46,8 @@
   "devDependencies": {
     "@lit-labs/context": "^0.5.1",
     "lit": "^3.3.1",
-    "tsdown": "^0.15.4",
-    "vite": "^7.1.3"
+    "tsdown": "^0.17.0",
+    "vite": "^7.2.6"
   },
   "publishConfig": {
     "types": "./dist/index.d.ts",

@@ -1,5 +1,17 @@
 # @prosemirror-adapter/core
 
+## 0.4.6
+
+### Patch Changes
+
+- 46bd457: Release packages with new NPM OpenID Connect (OIDC) authentication. There are no changes to the API.
+
+## 0.4.5
+
+### Patch Changes
+
+- 2f35522: Don't destory the node view when the associated node's decorations are updated.
+
 ## 0.4.2
 
 ### Patch Changes

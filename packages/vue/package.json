@@ -1,12 +1,12 @@
 {
   "name": "@prosemirror-adapter/vue",
   "type": "module",
-  "version": "0.4.2",
+  "version": "0.4.6",
   "description": "Vue package for ProseMirror Adapter",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Saul-Mirone/prosemirror-adapter.git",
+    "url": "git+https://github.com/prosekit/prosemirror-adapter.git",
     "directory": "packages/vue"
   },
   "keywords": [
@@ -22,15 +22,15 @@
   ],
   "scripts": {
     "test": "vitest",
-    "build": "tsdown"
+    "build": "tsdown --platform browser"
   },
   "dependencies": {
     "@prosemirror-adapter/core": "workspace:*",
     "nanoid": "^5.1.6",
     "prosemirror-keymap": "^1.2.3",
-    "prosemirror-model": "^1.25.3",
-    "prosemirror-state": "^1.4.3",
-    "prosemirror-view": "^1.41.1"
+    "prosemirror-model": "^1.25.4",
+    "prosemirror-state": "^1.4.4",
+    "prosemirror-view": "^1.41.4"
   },
   "peerDependencies": {
     "vue": "^3.0.0"
@@ -41,9 +41,9 @@
     }
   },
   "devDependencies": {
-    "@vitejs/plugin-vue-jsx": "^5.1.1",
-    "tsdown": "^0.15.4",
-    "vue": "^3.5.20"
+    "@vitejs/plugin-vue-jsx": "^5.1.2",
+    "tsdown": "^0.17.0",
+    "vue": "^3.5.25"
   },
   "publishConfig": {
     "types": "./dist/index.d.ts",

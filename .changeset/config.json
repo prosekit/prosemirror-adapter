@@ -3,10 +3,10 @@
   "changelog": "@changesets/cli/changelog",
   "commit": false,
   "linked": [["@prosemirror-adapter/*"]],
+  "ignore": ["e2e"],
   "access": "public",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
-  "ignore": [],
   "___experimentalUnsafeOptions_WILL_CHANGE_IN_PATCH": {
     "onlyUpdatePeerDependentsWhenOutOfRange": true
   }

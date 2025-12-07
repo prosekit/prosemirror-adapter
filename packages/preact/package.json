@@ -1,12 +1,12 @@
 {
   "name": "@prosemirror-adapter/preact",
   "type": "module",
-  "version": "0.0.0",
+  "version": "0.4.6",
   "description": "Preact package for ProseMirror Adapter",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Saul-Mirone/prosemirror-adapter.git",
+    "url": "git+https://github.com/prosekit/prosemirror-adapter.git",
     "directory": "packages/preact"
   },
   "keywords": [
@@ -22,14 +22,14 @@
   ],
   "scripts": {
     "test": "vitest",
-    "build": "tsdown"
+    "build": "tsdown --platform browser"
   },
   "dependencies": {
     "@prosemirror-adapter/core": "workspace:*",
     "nanoid": "^5.1.6",
-    "prosemirror-model": "^1.25.3",
-    "prosemirror-state": "^1.4.3",
-    "prosemirror-view": "^1.41.1"
+    "prosemirror-model": "^1.25.4",
+    "prosemirror-state": "^1.4.4",
+    "prosemirror-view": "^1.41.4"
   },
   "peerDependencies": {
     "preact": "^10.0.0"
@@ -40,8 +40,8 @@
     }
   },
   "devDependencies": {
-    "preact": "^10.24.3",
-    "tsdown": "^0.15.4"
+    "preact": "^10.28.0",
+    "tsdown": "^0.17.0"
   },
   "publishConfig": {
     "types": "./dist/index.d.ts",
