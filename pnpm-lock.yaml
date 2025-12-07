@@ -45,11 +45,11 @@ importers:
         specifier: ^0.0.60
         version: 0.0.60
       prettier:
-        specifier: ^3.6.2
-        version: 3.6.2
+        specifier: ^3.7.4
+        version: 3.7.4
       prettier-plugin-svelte:
         specifier: ^3.4.0
-        version: 3.4.0(prettier@3.6.2)(svelte@5.39.6)
+        version: 3.4.0(prettier@3.7.4)(svelte@5.39.6)
       typescript:
         specifier: ~5.9.2
         version: 5.9.2
@@ -541,10 +541,10 @@ importers:
       prosemirror-view:
         specifier: ^1.41.1
         version: 1.41.1
-      solid-js:
-        specifier: ^1.8.22
-        version: 1.9.9
     devDependencies:
+      solid-js:
+        specifier: ^1.9.9
+        version: 1.9.9
       tsdown:
         specifier: ^0.15.4
         version: 0.15.4(typescript@5.9.2)
@@ -4398,8 +4398,8 @@ packages:
     engines: {node: '>=10.13.0'}
     hasBin: true
 
-  prettier@3.6.2:
-    resolution: {integrity: sha512-I7AIg5boAr5R0FFtJ6rCfD+LFsWHp81dolrFD8S79U9tb8Az2nGrJncnMSnys+bpQJfRUzqs9hnA81OAA3hCuQ==}
+  prettier@3.7.4:
+    resolution: {integrity: sha512-v6UNi1+3hSlVvv8fSaoUbggEM5VErKmmpGA7Pl3HF8V6uKY7rvClBOJlH6yNwQtfTueNkGVpOv/mtWL9L4bgRA==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -10161,14 +10161,14 @@ snapshots:
 
   prelude-ls@1.2.1: {}
 
-  prettier-plugin-svelte@3.4.0(prettier@3.6.2)(svelte@5.39.6):
+  prettier-plugin-svelte@3.4.0(prettier@3.7.4)(svelte@5.39.6):
     dependencies:
-      prettier: 3.6.2
+      prettier: 3.7.4
       svelte: 5.39.6
 
   prettier@2.8.7: {}
 
-  prettier@3.6.2: {}
+  prettier@3.7.4: {}
 
   pretty-ms@9.3.0:
     dependencies:
