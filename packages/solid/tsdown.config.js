@@ -5,5 +5,6 @@ export default defineConfig({
   outDir: 'dist',
   format: 'esm',
   dts: true,
+  platform: 'browser',
   tsconfig: 'tsconfig.json',
 })

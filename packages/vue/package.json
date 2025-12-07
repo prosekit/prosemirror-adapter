@@ -22,7 +22,7 @@
   ],
   "scripts": {
     "test": "vitest",
-    "build": "tsdown"
+    "build": "tsdown --platform browser"
   },
   "dependencies": {
     "@prosemirror-adapter/core": "workspace:*",
@@ -42,7 +42,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue-jsx": "^5.1.1",
-    "tsdown": "^0.15.4",
+    "tsdown": "^0.17.0",
     "vue": "^3.5.20"
   },
   "publishConfig": {

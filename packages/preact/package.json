@@ -22,7 +22,7 @@
   ],
   "scripts": {
     "test": "vitest",
-    "build": "tsdown"
+    "build": "tsdown --platform browser"
   },
   "dependencies": {
     "@prosemirror-adapter/core": "workspace:*",
@@ -41,7 +41,7 @@
   },
   "devDependencies": {
     "preact": "^10.24.3",
-    "tsdown": "^0.15.4"
+    "tsdown": "^0.17.0"
   },
   "publishConfig": {
     "types": "./dist/index.d.ts",
