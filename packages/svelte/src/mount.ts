@@ -15,7 +15,7 @@ function mountFunctionComponent(UserComponent: SvelteComponentConstructor, optio
   // Unlike `new UserComponent()` in Svelte v4, `mount()` in Svelte v5 doesn't
   // call `onMount()` and action functions automatically. So we need to call
   // `flushSync()` to ensure they run.
-  // svelte.flushSync()
+  svelte.flushSync()
   return () => svelte.unmount(component)
 }
 

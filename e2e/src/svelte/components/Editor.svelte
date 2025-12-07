@@ -63,7 +63,6 @@
               const widget = getHashWidget($from.before() + 1, {
                 side: -1,
                 level: node.attrs.level,
-                ignoreSelection: true,
               })
 
               return DecorationSet.create(state.doc, [widget])
