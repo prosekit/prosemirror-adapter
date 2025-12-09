@@ -1,6 +1,6 @@
 import type { VNode } from 'preact'
 import { flushSync } from 'preact/compat'
-import { useCallback, useEffect, useRef, useState } from 'preact/hooks'
+import { useCallback, useLayoutEffect, useRef, useState } from 'preact/hooks'
 
 export interface PreactRenderer<Context> {
   key: string
@@ -22,12 +22,9 @@ export function usePreactRenderer(): PreactRendererResult {
   const [portals, setPortals] = useState<Record<string, VNode>>({})
   const mountedRef = useRef(false)
 
-  useEffect(() => {
-    const id = requestAnimationFrame(() => {
-      mountedRef.current = true
-    })
+  useLayoutEffect(() => {
+    mountedRef.current = true
     return () => {
-      cancelAnimationFrame(id)
       mountedRef.current = false
     }
   }, [])
