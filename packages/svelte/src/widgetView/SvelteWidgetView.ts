@@ -5,39 +5,34 @@ import type { SvelteRenderer } from '../SvelteRenderer'
 import { mount } from '../mount'
 
 import type { SvelteWidgetViewComponent } from './SvelteWidgetViewOptions'
-import type { WidgetViewContext, WidgetViewContextMap } from './widgetViewContext'
+import type { WidgetViewContext } from './widgetViewContext'
 
 export class SvelteWidgetView
   extends CoreWidgetView<SvelteWidgetViewComponent>
-  implements SvelteRenderer<WidgetViewContextMap>
+  implements SvelteRenderer<WidgetViewContext>
 {
   key: string = nanoid()
 
-  _context: WidgetViewContext = {
+  context: WidgetViewContext = {
     view: this.view!,
     getPos: this.getPos!,
     spec: this.spec,
   }
 
-  context: WidgetViewContextMap = new Map(Object.entries(this._context)) as WidgetViewContextMap
-
   updateContext = () => {
-    const original = {
-      view: this.view,
-      getPos: this.getPos,
-      spec: this.spec,
-    }
-    Object.entries(original).forEach(([key, value]) => {
-      this.context.set(key as keyof typeof original, value)
-    })
+    this.context.view = this.view!
+    this.context.getPos = this.getPos!
+    this.context.spec = this.spec
   }
 
   render = () => {
     const UserComponent = this.component
 
+    const context = new Map(Object.entries(this.context))
+
     return mount(UserComponent, {
       target: this.dom,
-      context: this.context,
+      context: context,
     })
   }
 }
