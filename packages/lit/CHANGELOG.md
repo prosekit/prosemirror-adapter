@@ -1,5 +1,11 @@
 # @prosemirror-adapter/lit
 
+## 0.5.0
+
+### Minor Changes
+
+- b2c109c: `@prosemirror-adapter/lit` now uses `@lit/context` instead of `@lit-labs/context` as the context provider.
+
 ## 0.4.6
 
 ### Patch Changes
