@@ -4,6 +4,7 @@ import { writable } from 'svelte/store'
 
 import type { SvelteRenderer } from '../SvelteRenderer'
 import { mount } from '../mount'
+import type { SvelteRenderOptions } from '../types'
 
 import type { SvelteNodeViewComponent } from './SvelteNodeViewOptions'
 import type { NodeViewContext } from './nodeViewContext'
@@ -34,7 +35,7 @@ export class SvelteNodeView extends CoreNodeView<SvelteNodeViewComponent> implem
     this.context.innerDecorations.set(this.innerDecorations)
   }
 
-  render = () => {
+  render = (options: SvelteRenderOptions) => {
     const UserComponent = this.component
 
     const context = new Map(Object.entries(this.context))
