@@ -3,8 +3,6 @@ import type { Decoration, DecorationSource, EditorView, NodeViewConstructor } fr
 import { getContext } from 'svelte'
 import type { Writable } from 'svelte/store'
 
-import type { Obj2Map } from '../types'
-
 import type { SvelteNodeViewUserOptions } from './SvelteNodeViewOptions'
 
 export interface NodeViewContext {
@@ -20,8 +18,6 @@ export interface NodeViewContext {
   decorations: Writable<readonly Decoration[]>
   innerDecorations: Writable<DecorationSource>
 }
-
-export type NodeViewContextMap = Obj2Map<NodeViewContext>
 
 export function useNodeViewContext<Key extends keyof NodeViewContext>(key: Key): NodeViewContext[Key] {
   return getContext(key)

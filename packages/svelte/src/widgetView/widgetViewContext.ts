@@ -2,8 +2,6 @@ import type { WidgetDecorationFactory, WidgetDecorationSpec } from '@prosemirror
 import type { EditorView } from 'prosemirror-view'
 import { getContext } from 'svelte'
 
-import type { Obj2Map } from '../types'
-
 import type { SvelteWidgetViewUserOptions } from './SvelteWidgetViewOptions'
 
 export interface WidgetViewContext {
@@ -11,8 +9,6 @@ export interface WidgetViewContext {
   getPos: () => number | undefined
   spec?: WidgetDecorationSpec
 }
-
-export type WidgetViewContextMap = Obj2Map<WidgetViewContext>
 
 export function useWidgetViewContext<Key extends keyof WidgetViewContext>(key: Key): WidgetViewContext[Key] {
   return getContext(key)
