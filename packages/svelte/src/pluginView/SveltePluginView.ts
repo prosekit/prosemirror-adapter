@@ -3,7 +3,7 @@ import { nanoid } from 'nanoid'
 import { writable } from 'svelte/store'
 
 import type { SvelteRenderer } from '../SvelteRenderer'
-import { updateContextMap } from '../context'
+import { createContextMap } from '../context'
 import { mount } from '../mount'
 import type { SvelteRenderOptions } from '../types'
 
@@ -21,8 +21,6 @@ export class SveltePluginView
     prevState: writable(this.prevState),
   }
 
-  private _contextMap = new Map<unknown, unknown>()
-
   updateContext = () => {
     this.context.view.set(this.view)
     this.context.prevState.set(this.prevState)
@@ -31,11 +29,11 @@ export class SveltePluginView
   render = (options: SvelteRenderOptions) => {
     const UserComponent = this.component
 
-    updateContextMap(this._contextMap, options.context, this.context)
+    const context = createContextMap(options.context, this.context)
 
     return mount(UserComponent, {
       target: this.root,
-      context: this._contextMap,
+      context,
     })
   }
 }

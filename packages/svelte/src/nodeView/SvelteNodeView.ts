@@ -3,7 +3,7 @@ import { nanoid } from 'nanoid'
 import { writable } from 'svelte/store'
 
 import type { SvelteRenderer } from '../SvelteRenderer'
-import { updateContextMap } from '../context'
+import { createContextMap } from '../context'
 import { mount } from '../mount'
 import type { SvelteRenderOptions } from '../types'
 
@@ -29,8 +29,6 @@ export class SvelteNodeView extends CoreNodeView<SvelteNodeViewComponent> implem
     innerDecorations: writable(this.innerDecorations),
   }
 
-  private _contextMap = new Map<unknown, unknown>()
-
   updateContext = () => {
     this.context.node.set(this.node)
     this.context.selected.set(this.selected)
@@ -41,11 +39,11 @@ export class SvelteNodeView extends CoreNodeView<SvelteNodeViewComponent> implem
   render = (options: SvelteRenderOptions) => {
     const UserComponent = this.component
 
-    updateContextMap(this._contextMap, options.context, this.context)
+    const context = createContextMap(options.context, this.context)
 
     return mount(UserComponent, {
       target: this.dom,
-      context: this._contextMap,
+      context,
     })
   }
 }

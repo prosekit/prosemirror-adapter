@@ -2,7 +2,7 @@ import { CoreWidgetView } from '@prosemirror-adapter/core'
 import { nanoid } from 'nanoid'
 
 import type { SvelteRenderer } from '../SvelteRenderer'
-import { updateContextMap } from '../context'
+import { createContextMap } from '../context'
 import { mount } from '../mount'
 import type { SvelteRenderOptions } from '../types'
 
@@ -21,8 +21,6 @@ export class SvelteWidgetView
     spec: this.spec,
   }
 
-  private _contextMap = new Map<unknown, unknown>()
-
   updateContext = () => {
     this.context.view = this.view!
     this.context.getPos = this.getPos!
@@ -32,11 +30,11 @@ export class SvelteWidgetView
   render = (options: SvelteRenderOptions) => {
     const UserComponent = this.component
 
-    updateContextMap(this._contextMap, options.context, this.context)
+    const context = createContextMap(options.context, this.context)
 
     return mount(UserComponent, {
       target: this.dom,
-      context: this._contextMap,
+      context,
     })
   }
 }
