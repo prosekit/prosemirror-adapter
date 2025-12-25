@@ -14,6 +14,7 @@ import { Heading } from './Heading'
 import { Link } from './Link'
 import { Paragraph } from './Paragraph'
 import { Size } from './Size'
+import { Now } from './Now'
 
 export function Editor() {
   const nodeViewFactory = useNodeViewFactory()
@@ -50,6 +51,11 @@ export function Editor() {
         new Plugin({
           view: pluginViewFactory({
             component: Size,
+          }),
+        }),
+        new Plugin({
+          view: pluginViewFactory({
+            component: Now,
           }),
         }),
         new Plugin({
