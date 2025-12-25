@@ -15,19 +15,25 @@ export function updateContextMap(
     ...Object.entries(prosemirrorAdapterContext),
   ])
 
-  for (const [key, oldValue] of current.entries()) {
-    if (newContext.has(key)) {
-      if (oldValue !== newContext.get(key)) {
-        current.set(key, newContext.get(key))
-      }
-    } else {
-      current.delete(key)
+  const toDelete: unknown[] = []
+  const toSet: [unknown, unknown][] = []
+
+  for (const key of current.keys()) {
+    if (!newContext.has(key)) {
+      toDelete.push(key)
     }
   }
 
   for (const [key, newValue] of newContext.entries()) {
-    if (!current.has(key)) {
-      current.set(key, newValue)
+    if (!current.has(key) || current.get(key) !== newValue) {
+      toSet.push([key, newValue])
     }
+  }
+
+  for (const key of toDelete) {
+    current.delete(key)
+  }
+  for (const [key, value] of toSet) {
+    current.set(key, value)
   }
 }
