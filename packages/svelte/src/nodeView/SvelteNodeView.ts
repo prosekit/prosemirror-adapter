@@ -41,7 +41,8 @@ export class SvelteNodeView extends CoreNodeView<SvelteNodeViewComponent> implem
     const context = new Map<unknown, unknown>([
       // Context from other parent Svelte components
       ...options.context.entries(),
-      // Context from prosemirror-adapter
+      // Context from prosemirror-adapter. Put it last so that it can override
+      // if there are key conflicts.
       ...Object.entries(this.context),
     ])
 
