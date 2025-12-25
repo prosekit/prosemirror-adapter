@@ -1,4 +1,4 @@
-import { ContextProvider } from '@lit-labs/context'
+import { ContextProvider } from '@lit/context'
 import { customElement } from 'lit/decorators.js'
 
 import { useLitRenderer } from './LitRenderer'

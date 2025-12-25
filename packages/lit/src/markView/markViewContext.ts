@@ -1,4 +1,4 @@
-import { ContextConsumer, createContext } from '@lit-labs/context'
+import { ContextConsumer, createContext } from '@lit/context'
 import type { LitElement } from 'lit'
 import type { RefOrCallback } from 'lit/directives/ref.js'
 import type { Mark } from 'prosemirror-model'

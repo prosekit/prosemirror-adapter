@@ -2,7 +2,7 @@ import { expect, test } from '@playwright/test'
 
 import { testAll } from './helpers'
 
-testAll(({ framework }) => {
+testAll(() => {
   test('Size plugin view render', async ({ page }) => {
     const editor = page.locator('.editor')
     await expect(editor).toBeVisible()
@@ -19,8 +19,6 @@ testAll(({ framework }) => {
   })
 
   test('Render context from parent component', async ({ page }) => {
-    test.fixme(framework === 'lit', 'Lit context does not work yet')
-
     const editor = page.locator('.editor')
     await expect(editor).toBeVisible()
 

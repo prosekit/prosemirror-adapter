@@ -165,9 +165,9 @@ importers:
 
   examples/lit:
     dependencies:
-      '@lit-labs/context':
-        specifier: ^0.5.1
-        version: 0.5.1
+      '@lit/context':
+        specifier: ^1.0.0
+        version: 1.1.6
       '@prosemirror-adapter/lit':
         specifier: '*'
         version: link:../../packages/lit
@@ -455,9 +455,9 @@ importers:
         specifier: ^1.41.4
         version: 1.41.4
     devDependencies:
-      '@lit-labs/context':
-        specifier: ^0.5.1
-        version: 0.5.1
+      '@lit/context':
+        specifier: ^1.0.0
+        version: 1.1.6
       lit:
         specifier: ^3.3.1
         version: 3.3.1
@@ -1424,9 +1424,6 @@ packages:
   '@jsdevtools/ez-spawn@3.0.4':
     resolution: {integrity: sha512-f5DRIOZf7wxogefH03RjMPMdBF7ADTWUMoOs9kaJo06EfwF+aFhMZMDZxHg/Xe12hptN9xoZjGso2fdjapBRIA==}
     engines: {node: '>=10'}
-
-  '@lit-labs/context@0.5.1':
-    resolution: {integrity: sha512-ELR50iyIFb0mOTkzR7bSUamipLY8QzbiXzTElJr+fInBhUpUbe4bx7Z2ekPO+WbunQRB2Bc3z/V7lIPTN+tbVQ==}
 
   '@lit-labs/ssr-client@1.1.7':
     resolution: {integrity: sha512-VvqhY/iif3FHrlhkzEPsuX/7h/NqnfxLwVf0p8ghNIlKegRyRqgeaJevZ57s/u/LiFyKgqksRP5n+LmNvpxN+A==}
@@ -6645,10 +6642,6 @@ snapshots:
       cross-spawn: 7.0.6
       string-argv: 0.3.2
       type-detect: 4.1.0
-
-  '@lit-labs/context@0.5.1':
-    dependencies:
-      '@lit/context': 1.1.6
 
   '@lit-labs/ssr-client@1.1.7':
     dependencies:

@@ -15,7 +15,6 @@ export { ProsemirrorAdapterProvider } from '@prosemirror-adapter/lit'
 @customElement('test-app')
 export class TestApp extends ShallowLitElement {
   @provide({ context: extraContext })
-  @state()
   now = ''
 
   @state()
