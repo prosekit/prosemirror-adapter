@@ -1,6 +1,5 @@
 import { CoreMarkView } from '@prosemirror-adapter/core'
 import { nanoid } from 'nanoid'
-import { getAllContexts } from 'svelte'
 import { writable } from 'svelte/store'
 
 import type { SvelteRenderer } from '../SvelteRenderer'
@@ -28,9 +27,7 @@ export class SvelteMarkView extends CoreMarkView<SvelteMarkViewComponent> implem
 
   render = () => {
     const UserComponent = this.component
-
-    const context = new Map([...getAllContexts().entries(), ...Object.entries(this.context)])
-
+    const context = new Map(Object.entries(this.context))
     return mount(UserComponent, {
       target: this.dom,
       context: context,

@@ -6,7 +6,7 @@ const isSvelte5 = !!svelte.mount && !!svelte.flushSync
 
 interface MountOptions {
   target: HTMLElement
-  context: Map<unknown, unknown>
+  context: Map<string, unknown>
 }
 
 function mountFunctionComponent(UserComponent: SvelteComponentConstructor, options: MountOptions): VoidFunction {

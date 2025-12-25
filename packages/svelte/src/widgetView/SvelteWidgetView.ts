@@ -1,6 +1,5 @@
 import { CoreWidgetView } from '@prosemirror-adapter/core'
 import { nanoid } from 'nanoid'
-import { getAllContexts } from 'svelte'
 
 import type { SvelteRenderer } from '../SvelteRenderer'
 import { mount } from '../mount'
@@ -29,7 +28,7 @@ export class SvelteWidgetView
   render = () => {
     const UserComponent = this.component
 
-    const context = new Map([...getAllContexts().entries(), ...Object.entries(this.context)])
+    const context = new Map(Object.entries(this.context))
 
     return mount(UserComponent, {
       target: this.dom,
