@@ -7,5 +7,6 @@
   ],
   "compilerOptions": {
     "jsx": "preserve"
-  }
+  },
+  "include": ["./**/*.ts", "./**/*.svelte"]
 }
