@@ -3,12 +3,14 @@ import { ShallowLitElement } from '@prosemirror-adapter/lit'
 import { html } from 'lit'
 import { customElement, state } from 'lit/decorators.js'
 import { keyed } from 'lit/directives/keyed.js'
+
 import { getNow } from '../shared/utils'
+
 import './style.css'
+import { extraContext } from './components/context'
 
 export * from './components/Editor'
 export { ProsemirrorAdapterProvider } from '@prosemirror-adapter/lit'
-import { extraContext } from './components/context'
 
 @customElement('test-app')
 export class TestApp extends ShallowLitElement {

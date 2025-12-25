@@ -12,9 +12,9 @@ import { createEditorView } from '../../shared/createEditorView'
 import { Hashes } from './Hashes'
 import { Heading } from './Heading'
 import { Link } from './Link'
+import { Now } from './Now'
 import { Paragraph } from './Paragraph'
 import { Size } from './Size'
-import { Now } from './Now'
 
 export function Editor() {
   const nodeViewFactory = useNodeViewFactory()
