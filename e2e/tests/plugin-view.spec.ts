@@ -7,7 +7,7 @@ testAll(() => {
     const editor = page.locator('.editor')
     await expect(editor).toBeVisible()
 
-    const locator = editor.getByTestId("size-view-plugin")
+    const locator = editor.locator("[data-test-id='size-view-plugin']")
     await expect(locator).toContainText('Size for document: 523')
 
     await editor.locator('p').first().click()
@@ -22,9 +22,9 @@ testAll(() => {
     const editor = page.locator('.editor')
     await expect(editor).toBeVisible()
 
-    const locator = editor.getByTestId("now-view-plugin")
-
+    
     // Expect the <Now> component itself to render
+    const locator = editor.locator("[data-test-id='now-view-plugin']")
     await expect(locator).toBeVisible()
     await expect(locator).toContainText(/Now/)
 
