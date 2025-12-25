@@ -38,7 +38,12 @@ export class SvelteNodeView extends CoreNodeView<SvelteNodeViewComponent> implem
   render = (options: SvelteRenderOptions) => {
     const UserComponent = this.component
 
-    const context = new Map(Object.entries(this.context))
+    const context = new Map<unknown, unknown>([
+      // Context from other parent Svelte components
+      ...options.context.entries(),
+      // Context from prosemirror-adapter
+      ...Object.entries(this.context),
+    ])
 
     return mount(UserComponent, {
       target: this.dom,
