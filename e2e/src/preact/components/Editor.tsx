@@ -15,6 +15,7 @@ import { createEditorView } from '../../shared/createEditorView'
 import { Hashes } from './Hashes'
 import { Heading } from './Heading'
 import { Link } from './Link'
+import { Now } from './Now'
 import { Paragraph } from './Paragraph'
 import { Size } from './Size'
 import './Editor.css'
@@ -59,6 +60,11 @@ export const Editor: FunctionalComponent = () => {
         new Plugin({
           view: pluginViewFactory({
             component: Size,
+          }),
+        }),
+        new Plugin({
+          view: pluginViewFactory({
+            component: Now,
           }),
         }),
         new Plugin({
