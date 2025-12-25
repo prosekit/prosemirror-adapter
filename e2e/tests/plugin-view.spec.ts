@@ -22,7 +22,6 @@ testAll(() => {
     const editor = page.locator('.editor')
     await expect(editor).toBeVisible()
 
-    
     // Expect the <Now> component itself to render
     const locator = editor.locator("[data-test-id='now-view-plugin']")
     await expect(locator).toBeVisible()
