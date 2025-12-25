@@ -1,5 +1,5 @@
-import type { Context } from '@lit-labs/context'
-import { ContextProvider } from '@lit-labs/context'
+import type { Context } from '@lit/context'
+import { ContextProvider } from '@lit/context'
 import { CorePluginView } from '@prosemirror-adapter/core'
 import { customElement } from 'lit/decorators.js'
 import { nanoid } from 'nanoid'
