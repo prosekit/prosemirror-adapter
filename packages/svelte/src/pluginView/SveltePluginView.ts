@@ -4,6 +4,7 @@ import { writable } from 'svelte/store'
 
 import type { SvelteRenderer } from '../SvelteRenderer'
 import { mount } from '../mount'
+import type { SvelteRenderOptions } from '../types'
 
 import type { SveltePluginViewComponent } from './SveltePluginViewOptions'
 import type { PluginViewContext } from './pluginViewContext'
@@ -24,10 +25,16 @@ export class SveltePluginView
     this.context.prevState.set(this.prevState)
   }
 
-  render = () => {
+  render = (options: SvelteRenderOptions) => {
     const UserComponent = this.component
 
-    const context = new Map(Object.entries(this.context))
+    const context = new Map<unknown, unknown>([
+      // Context from other parent Svelte components
+      ...options.context.entries(),
+      // Context from prosemirror-adapter. Put it last so that it can override
+      // if there are key conflicts.
+      ...Object.entries(this.context),
+    ])
 
     return mount(UserComponent, {
       target: this.root,
