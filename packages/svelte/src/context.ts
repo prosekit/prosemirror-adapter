@@ -7,7 +7,7 @@ export function updateContextMap(
 
   /** Context required by prosemirror-adapter */
   prosemirrorAdapterContext: object,
-) {
+): void {
   const newContext = new Map<unknown, unknown>([
     ...allContext.entries(),
 
