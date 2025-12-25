@@ -1,5 +1,20 @@
 # @prosemirror-adapter/svelte
 
+## 0.5.0
+
+### Minor Changes
+
+- 6d8d3fd: Remove the following types from `@prosemirror-adapter/svelte`:
+  - `MarkViewContextMap`
+  - `NodeViewContextMap`
+  - `PluginViewContextMap`
+  - `WidgetViewContextMap`
+
+### Patch Changes
+
+- 4a33565: Fix an issue where the component rendered by `@prosemirror-adapter/svelte` was
+  not receiving the correct context from the parent component.
+
 ## 0.4.6
 
 ### Patch Changes
