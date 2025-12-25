@@ -1,15 +1,8 @@
 import { createContext, useContext, useEffect, useState } from 'react'
 
-const ExtraContext = createContext<string>('')
+import { getNow } from '../../shared/utils'
 
-function getNow(): string {
-  return new Date().toLocaleTimeString(undefined, {
-    hour: '2-digit',
-    minute: '2-digit',
-    second: '2-digit',
-    hour12: false,
-  })
-}
+const ExtraContext = createContext<string>('')
 
 export function ExtraContextProvider({ children }: { children: React.ReactNode }) {
   const [now, setNow] = useState('')
