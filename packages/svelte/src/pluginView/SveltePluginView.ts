@@ -3,6 +3,7 @@ import { nanoid } from 'nanoid'
 import { writable } from 'svelte/store'
 
 import type { SvelteRenderer } from '../SvelteRenderer'
+import { createContextMap } from '../context'
 import { mount } from '../mount'
 import type { SvelteRenderOptions } from '../types'
 
@@ -28,17 +29,11 @@ export class SveltePluginView
   render = (options: SvelteRenderOptions) => {
     const UserComponent = this.component
 
-    const context = new Map<unknown, unknown>([
-      // Context from other parent Svelte components
-      ...options.context.entries(),
-      // Context from prosemirror-adapter. Put it last so that it can override
-      // if there are key conflicts.
-      ...Object.entries(this.context),
-    ])
+    const context = createContextMap(options.context, this.context)
 
     return mount(UserComponent, {
       target: this.root,
-      context: context,
+      context,
     })
   }
 }
