@@ -1,6 +1,5 @@
 import { CorePluginView } from '@prosemirror-adapter/core'
 import { nanoid } from 'nanoid'
-import type { Writable } from 'svelte/store'
 import { writable } from 'svelte/store'
 
 import type { SvelteRenderer } from '../SvelteRenderer'
