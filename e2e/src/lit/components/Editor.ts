@@ -20,6 +20,7 @@ import { Heading } from './Heading'
 import { Link } from './Link'
 import { Paragraph } from './Paragraph'
 import { Size } from './Size'
+import { Now } from './Now'
 
 @customElement('my-editor')
 export class MyEditor extends ShallowLitElement {
@@ -63,6 +64,11 @@ export class MyEditor extends ShallowLitElement {
         new Plugin({
           view: pluginViewFactory({
             component: Size,
+          }),
+        }),
+        new Plugin({
+          view: pluginViewFactory({
+            component: Now,
           }),
         }),
         new Plugin({

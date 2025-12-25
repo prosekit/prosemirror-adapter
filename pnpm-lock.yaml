@@ -77,6 +77,9 @@ importers:
       '@astrojs/vue':
         specifier: ^5.1.3
         version: 5.1.3(@types/node@22.17.2)(astro@5.16.4(@types/node@22.17.2)(jiti@2.6.1)(rollup@4.46.3)(terser@5.43.1)(typescript@5.9.3)(yaml@2.8.1))(jiti@2.6.1)(rollup@4.46.3)(terser@5.43.1)(vue@3.5.25(typescript@5.9.3))(yaml@2.8.1)
+      '@lit/context':
+        specifier: ^1.1.6
+        version: 1.1.6
       '@playwright/test':
         specifier: ^1.57.0
         version: 1.57.0
@@ -1435,8 +1438,8 @@ packages:
     resolution: {integrity: sha512-JlF1PempxvzrGEpRFrF+Ki0MHzR3HA51SK8Zv0cFpW9p0bPW4k0FeCwrElCu371UEpXF7RcaE2wgYaE1az0XKg==}
     engines: {node: '>=13.9.0'}
 
-  '@lit/context@1.0.0':
-    resolution: {integrity: sha512-bdqj6z6Mj+TpYfo2seHy1mlBzYrW+CyHnDQLD0DI7iQLELs2Fk6icZwvbvbskR0E94QG4aO/35j6PTJ9wWTv0Q==}
+  '@lit/context@1.1.6':
+    resolution: {integrity: sha512-M26qDE6UkQbZA2mQ3RjJ3Gzd8TxP+/0obMgE5HfkfLhEEyYE3Bui4A5XHiGPjy0MUGAyxB3QgVuw2ciS0kHn6A==}
 
   '@lit/reactive-element@2.1.1':
     resolution: {integrity: sha512-N+dm5PAYdQ8e6UlywyyrgI2t++wFGXfHx+dSJ1oBrg6FAxUj40jId++EaRm80MKX5JnlH1sBsyZ5h0bcZKemCg==}
@@ -6645,7 +6648,7 @@ snapshots:
 
   '@lit-labs/context@0.5.1':
     dependencies:
-      '@lit/context': 1.0.0
+      '@lit/context': 1.1.6
 
   '@lit-labs/ssr-client@1.1.7':
     dependencies:
@@ -6669,10 +6672,9 @@ snapshots:
       node-fetch: 3.3.2
       parse5: 7.3.0
 
-  '@lit/context@1.0.0':
+  '@lit/context@1.1.6':
     dependencies:
       '@lit/reactive-element': 2.1.1
-      lit: 3.3.1
 
   '@lit/reactive-element@2.1.1':
     dependencies:

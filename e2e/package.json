@@ -45,6 +45,7 @@
     "solid-js": "^1.9.10",
     "svelte": "^5.45.6",
     "typescript": "^5.9.3",
+    "@lit/context": "^1.1.6",
     "vue": "^3.5.25"
   },
   "devDependencies": {
