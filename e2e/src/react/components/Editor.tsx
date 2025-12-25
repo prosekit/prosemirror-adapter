@@ -17,6 +17,7 @@ import { Heading } from './Heading'
 import { Link } from './Link'
 import { Paragraph } from './Paragraph'
 import { Size } from './Size'
+import { Now } from './Now'
 import './Editor.css'
 
 export const Editor: FC = () => {
@@ -59,6 +60,11 @@ export const Editor: FC = () => {
         new Plugin({
           view: pluginViewFactory({
             component: Size,
+          }),
+        }),
+        new Plugin({
+          view: pluginViewFactory({
+            component: Now,
           }),
         }),
         new Plugin({
