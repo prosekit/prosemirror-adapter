@@ -13,4 +13,10 @@ testAll(() => {
     await page.keyboard.press('Backspace')
     await expect(page.locator('.editor [data-test-id="size-view-plugin"]')).toContainText('Size for document: 524')
   })
+
+  test('Render context from parent component', async ({ page }) => {
+    const locator = page.locator('.editor [data-test-id="now-view-plugin"]')
+    await expect(locator).toContainText(/Now/)
+    await expect(locator).toContainText(/\d{2}:\d{2}:\d{2}/)
+  })
 })
