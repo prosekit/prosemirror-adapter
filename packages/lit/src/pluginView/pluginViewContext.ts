@@ -1,4 +1,4 @@
-import { ContextConsumer, createContext } from '@lit-labs/context'
+import { ContextConsumer, createContext } from '@lit/context'
 import type { PluginViewSpec } from '@prosemirror-adapter/core'
 import type { LitElement } from 'lit'
 import type { EditorState } from 'prosemirror-state'

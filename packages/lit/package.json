@@ -32,11 +32,11 @@
     "prosemirror-view": "^1.41.4"
   },
   "peerDependencies": {
-    "@lit-labs/context": "^0.5.0",
+    "@lit/context": "^1.0.0",
     "lit": "^3.0.0"
   },
   "peerDependenciesMeta": {
-    "@lit-labs/context": {
+    "@lit/context": {
       "optional": true
     },
     "lit": {
@@ -44,7 +44,7 @@
     }
   },
   "devDependencies": {
-    "@lit-labs/context": "^0.5.1",
+    "@lit/context": "^1.0.0",
     "lit": "^3.3.1",
     "tsdown": "^0.17.0",
     "vite": "^7.2.6"
