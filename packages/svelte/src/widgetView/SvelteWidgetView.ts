@@ -2,6 +2,7 @@ import { CoreWidgetView } from '@prosemirror-adapter/core'
 import { nanoid } from 'nanoid'
 
 import type { SvelteRenderer } from '../SvelteRenderer'
+import { updateContextMap } from '../context'
 import { mount } from '../mount'
 import type { SvelteRenderOptions } from '../types'
 
@@ -20,6 +21,8 @@ export class SvelteWidgetView
     spec: this.spec,
   }
 
+  private _contextMap = new Map<unknown, unknown>()
+
   updateContext = () => {
     this.context.view = this.view!
     this.context.getPos = this.getPos!
@@ -29,17 +32,11 @@ export class SvelteWidgetView
   render = (options: SvelteRenderOptions) => {
     const UserComponent = this.component
 
-    const context = new Map<unknown, unknown>([
-      // Context from other parent Svelte components
-      ...options.context.entries(),
-      // Context from prosemirror-adapter. Put it last so that it can override
-      // if there are key conflicts.
-      ...Object.entries(this.context),
-    ])
+    updateContextMap(this._contextMap, options.context, this.context)
 
     return mount(UserComponent, {
       target: this.dom,
-      context: context,
+      context: this._contextMap,
     })
   }
 }

@@ -3,6 +3,7 @@ import { nanoid } from 'nanoid'
 import { writable } from 'svelte/store'
 
 import type { SvelteRenderer } from '../SvelteRenderer'
+import { updateContextMap } from '../context'
 import { mount } from '../mount'
 import type { SvelteRenderOptions } from '../types'
 
@@ -22,6 +23,8 @@ export class SvelteMarkView extends CoreMarkView<SvelteMarkViewComponent> implem
     mark: writable(this.mark),
   }
 
+  private _contextMap = new Map<unknown, unknown>()
+
   updateContext = () => {
     this.context.mark.set(this.mark)
   }
@@ -29,17 +32,11 @@ export class SvelteMarkView extends CoreMarkView<SvelteMarkViewComponent> implem
   render = (options: SvelteRenderOptions) => {
     const UserComponent = this.component
 
-    const context = new Map<unknown, unknown>([
-      // Context from other parent Svelte components
-      ...options.context.entries(),
-      // Context from prosemirror-adapter. Put it last so that it can override
-      // if there are key conflicts.
-      ...Object.entries(this.context),
-    ])
+    updateContextMap(this._contextMap, options.context, this.context)
 
     return mount(UserComponent, {
       target: this.dom,
-      context: context,
+      context: this._contextMap,
     })
   }
 }
