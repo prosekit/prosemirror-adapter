@@ -12,7 +12,7 @@
     "@prosemirror-adapter/react": "*",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^5.1.1",
+    "@vitejs/plugin-react": "^5.1.2",
     "prosemirror-example-setup": "^1.2.3",
     "prosemirror-keymap": "^1.2.3",
     "prosemirror-menu": "^1.2.5",
@@ -20,9 +20,9 @@
     "prosemirror-schema-basic": "^1.2.4",
     "prosemirror-state": "^1.4.4",
     "prosemirror-view": "^1.41.4",
-    "react": "^19.2.1",
-    "react-dom": "^19.2.1",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
     "typescript": "~5.9.3",
-    "vite": "^7.2.6"
+    "vite": "^7.3.0"
   }
 }

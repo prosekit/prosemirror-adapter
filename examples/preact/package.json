@@ -11,7 +11,7 @@
   "dependencies": {
     "@preact/preset-vite": "^2.10.2",
     "@prosemirror-adapter/preact": "*",
-    "preact": "^10.28.0",
+    "preact": "^10.28.1",
     "prosemirror-example-setup": "^1.2.3",
     "prosemirror-keymap": "^1.2.3",
     "prosemirror-menu": "^1.2.5",
@@ -20,6 +20,6 @@
     "prosemirror-state": "^1.4.4",
     "prosemirror-view": "^1.41.4",
     "typescript": "~5.9.3",
-    "vite": "^7.2.6"
+    "vite": "^7.3.0"
   }
 }
