@@ -3,8 +3,6 @@ import type { EditorView, MarkViewConstructor } from 'prosemirror-view'
 import { getContext } from 'svelte'
 import type { Writable } from 'svelte/store'
 
-import type { Obj2Map } from '../types'
-
 import type { SvelteMarkViewUserOptions } from './SvelteMarkViewOptions'
 
 export interface MarkViewContext {
@@ -13,8 +11,6 @@ export interface MarkViewContext {
   view: EditorView
   mark: Writable<Mark>
 }
-
-export type MarkViewContextMap = Obj2Map<MarkViewContext>
 
 export function useMarkViewContext<Key extends keyof MarkViewContext>(key: Key): MarkViewContext[Key] {
   return getContext(key)

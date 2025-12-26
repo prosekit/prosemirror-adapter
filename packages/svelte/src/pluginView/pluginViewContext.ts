@@ -4,8 +4,6 @@ import type { EditorView } from 'prosemirror-view'
 import { getContext } from 'svelte'
 import type { Writable } from 'svelte/store'
 
-import type { Obj2Map } from '../types'
-
 import type { SveltePluginViewUserOptions } from './SveltePluginViewOptions'
 
 export type PluginViewContentRef = (element: HTMLElement | null) => void
@@ -14,8 +12,6 @@ export interface PluginViewContext {
   view: Writable<EditorView>
   prevState: Writable<EditorState | undefined>
 }
-
-export type PluginViewContextMap = Obj2Map<PluginViewContext>
 
 export function usePluginViewContext<Key extends keyof PluginViewContext>(key: Key): PluginViewContext[Key] {
   return getContext(key)

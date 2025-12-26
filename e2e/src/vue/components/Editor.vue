@@ -14,6 +14,7 @@ import Heading from './Heading.vue'
 import Size from './Size.vue'
 import Hashes from './Hashes.vue'
 import Link from './Link.vue'
+import Now from './Now.vue'
 
 const nodeViewFactory = useNodeViewFactory()
 const markViewFactory = useMarkViewFactory()
@@ -54,6 +55,11 @@ watchEffect((onCleanup) => {
       new Plugin({
         view: pluginViewFactory({
           component: Size,
+        }),
+      }),
+      new Plugin({
+        view: pluginViewFactory({
+          component: Now,
         }),
       }),
       new Plugin({

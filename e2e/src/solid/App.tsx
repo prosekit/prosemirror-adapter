@@ -3,6 +3,7 @@
 import { ProsemirrorAdapterProvider } from '@prosemirror-adapter/solid'
 
 import { Editor } from './components/Editor'
+import { ExtraContextProvider } from './components/context'
 import './index.css'
 
 export function App() {
@@ -10,9 +11,11 @@ export function App() {
     <>
       <h1>Prosemirror Adapter Solid</h1>
 
-      <ProsemirrorAdapterProvider>
-        <Editor />
-      </ProsemirrorAdapterProvider>
+      <ExtraContextProvider>
+        <ProsemirrorAdapterProvider>
+          <Editor />
+        </ProsemirrorAdapterProvider>
+      </ExtraContextProvider>
     </>
   )
 }

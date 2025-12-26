@@ -14,6 +14,7 @@
   import Heading from './Heading.svelte'
   import Size from './Size.svelte'
   import Link from './Link.svelte'
+  import Now from './Now.svelte'
 
   const nodeViewFactory = useNodeViewFactory()
   const markViewFactory = useMarkViewFactory()
@@ -51,6 +52,11 @@
         new Plugin({
           view: pluginViewFactory({
             component: Size,
+          }),
+        }),
+        new Plugin({
+          view: pluginViewFactory({
+            component: Now,
           }),
         }),
         new Plugin({

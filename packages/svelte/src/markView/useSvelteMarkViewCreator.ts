@@ -1,3 +1,5 @@
+import { getAllContexts } from 'svelte'
+
 import type { SvelteRendererResult } from '../SvelteRenderer'
 
 import { SvelteMarkView } from './SvelteMarkView'
@@ -7,6 +9,8 @@ export function useSvelteMarkViewCreator(
   renderSvelteRenderer: SvelteRendererResult['renderSvelteRenderer'],
   removeSvelteRenderer: SvelteRendererResult['removeSvelteRenderer'],
 ) {
+  const context = getAllContexts()
+
   const createSvelteMarkView: MarkViewFactory = (options) => (mark, view, inline) => {
     const markView = new SvelteMarkView({
       mark,
@@ -20,7 +24,7 @@ export function useSvelteMarkViewCreator(
         },
       },
     })
-    renderSvelteRenderer(markView)
+    renderSvelteRenderer(markView, { context })
 
     return markView
   }

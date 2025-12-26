@@ -1,21 +1,19 @@
 import { CoreNodeView } from '@prosemirror-adapter/core'
 import { nanoid } from 'nanoid'
-import type { Writable } from 'svelte/store'
 import { writable } from 'svelte/store'
 
 import type { SvelteRenderer } from '../SvelteRenderer'
+import { createContextMap } from '../context'
 import { mount } from '../mount'
+import type { SvelteRenderOptions } from '../types'
 
 import type { SvelteNodeViewComponent } from './SvelteNodeViewOptions'
-import type { NodeViewContext, NodeViewContextMap } from './nodeViewContext'
+import type { NodeViewContext } from './nodeViewContext'
 
-export class SvelteNodeView
-  extends CoreNodeView<SvelteNodeViewComponent>
-  implements SvelteRenderer<NodeViewContextMap>
-{
+export class SvelteNodeView extends CoreNodeView<SvelteNodeViewComponent> implements SvelteRenderer<NodeViewContext> {
   key: string = nanoid()
 
-  _context: NodeViewContext = {
+  context: NodeViewContext = {
     contentRef: (element) => {
       if (element && element instanceof HTMLElement && this.contentDOM && element.firstChild !== this.contentDOM) {
         element.appendChild(this.contentDOM)
@@ -31,28 +29,21 @@ export class SvelteNodeView
     innerDecorations: writable(this.innerDecorations),
   }
 
-  context: NodeViewContextMap = new Map(Object.entries(this._context)) as NodeViewContextMap
-
   updateContext = () => {
-    const original = {
-      node: this.node,
-      selected: this.selected,
-      decorations: this.decorations,
-      innerDecorations: this.innerDecorations,
-    }
-    Object.entries(original).forEach(([key, value]) => {
-      const mapKey = key as keyof typeof original
-      const writable = this.context.get(mapKey) as Writable<(typeof original)[typeof mapKey]>
-      writable.set(value)
-    })
+    this.context.node.set(this.node)
+    this.context.selected.set(this.selected)
+    this.context.decorations.set(this.decorations)
+    this.context.innerDecorations.set(this.innerDecorations)
   }
 
-  render = () => {
+  render = (options: SvelteRenderOptions) => {
     const UserComponent = this.component
+
+    const context = createContextMap(options.context, this.context)
 
     return mount(UserComponent, {
       target: this.dom,
-      context: this.context,
+      context,
     })
   }
 }

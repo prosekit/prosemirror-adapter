@@ -6,4 +6,11 @@ export type SvelteClassComponentConstructor<T extends AnyRecord = any> = new (
 ) => SvelteComponent
 export type SvelteComponentConstructor<T extends AnyRecord = any> = SvelteClassComponentConstructor<T> | Component<T>
 
-export type Obj2Map<T extends AnyRecord> = Map<keyof T, T[keyof T]>
+/**
+ * @internal
+ */
+export interface SvelteRenderOptions {
+  // The whole context map that belongs to the closest parent component.
+  // Returned by `getAllContexts` from `svelte`.
+  context: Map<unknown, unknown>
+}
