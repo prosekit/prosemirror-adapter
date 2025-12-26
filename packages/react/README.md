@@ -546,6 +546,11 @@ interface WidgetViewContext {
 
 <summary>I'm getting an error: "flushSync was called from inside a lifecycle method"</summary>
 
+
+This can happen if you're adding or removing a plugin to the editor inside a lifecycle method (e.g. `useEffect` and `useLayoutEffect`), like the code block above.
+
+
+
 ```tsx
 import { addPlugin, removePlugin, nodeViewPlugin } from './utils'
 
@@ -557,7 +562,8 @@ function MyEditor() {
 
     const view = viewRef.current
 
-    // Add or remove a new plugin to the editor, which renders node view using React components.
+    // Add or remove a new plugin to the editor, which renders node view using React components by
+    // using `prosemirror-adapter` under the hood.
     addPlugin(view, nodeViewPlugin)
     return () => removePlugin(view, nodeViewPlugin)
   }, [enablePlugin])
@@ -566,9 +572,10 @@ function MyEditor() {
 }
 ```
 
-This is because you're adding or removing a plugin to the editor inside a lifecycle method (e.g. `useEffect` and `useLayoutEffect`). When updating such plugin, ProseMirror might need to redraw some nodes using (or not using) React components. During this process, ProseMirror will first stop the DOMObserver, redraw the nodes, and then resume the DOMObserver. This process is synchronous, so we need to call `React.flushSync` to ensure the React components are updated before the DOMObserver resumes. 
 
-Back to the code block above, this is equivalent to:
+When updating such plugin, ProseMirror might need to redraw some nodes using (or not using) React components. During this process, ProseMirror will first [stop](https://github.com/ProseMirror/prosemirror-view/blob/76c7c47f03730b18397b94bd269ece8a9cb7f486/src/index.ts#L185) the DOMObserver, redraw the nodes, and then [resume](https://github.com/ProseMirror/prosemirror-view/blob/76c7c47f03730b18397b94bd269ece8a9cb7f486/src/index.ts#L185) the DOMObserver. This process is synchronous, so we need to call `React.flushSync` to ensure the React components are updated before the DOMObserver resumes. 
+
+Back to the code block above, this is roughly equivalent to:
 
 ```tsx
 useEffect(() => {
@@ -580,7 +587,7 @@ useEffect(() => {
 
 This pattern violates React's rules.
 
-To fix this, put the plugin update logic inside a _task_ (via `setTimeout`) or _microtask_ (via `queueMicrotask`).
+To fix this, put the plugin update logic inside a _[task](https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API/Microtask_guide#tasks)_ (via `setTimeout`) or _[microtask](https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API/Microtask_guide#microtasks)_ (via `queueMicrotask`).
 
 The example code above can be fixed by:
 
