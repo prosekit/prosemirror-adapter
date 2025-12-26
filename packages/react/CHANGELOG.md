@@ -1,5 +1,11 @@
 # @prosemirror-adapter/react
 
+## 0.5.1
+
+### Patch Changes
+
+- 3cbcb90: Improve lifecycle handling to avoid warnings like "flushSync was called from inside a lifecycle method" in race conditions.
+
 ## 0.4.6
 
 ### Patch Changes
