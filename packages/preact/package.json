@@ -41,7 +41,7 @@
   },
   "devDependencies": {
     "preact": "^10.28.1",
-    "tsdown": "^0.17.2"
+    "tsdown": "^0.18.3"
   },
   "publishConfig": {
     "types": "./dist/index.d.ts",
