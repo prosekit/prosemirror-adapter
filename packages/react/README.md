@@ -569,9 +569,9 @@ function MyEditor() {
 }
 ```
 
-When updating such plugin, ProseMirror might need to redraw some nodes using (or not using) React components. During this process, ProseMirror will first [stop](https://github.com/ProseMirror/prosemirror-view/blob/1.41.4/src/index.ts#L185) the DOMObserver, redraw the nodes, and then [resume](https://github.com/ProseMirror/prosemirror-view/blob/1.41.4/src/index.ts#L219) the DOMObserver. This process is synchronous, so we need to call `React.flushSync` to ensure the React components are updated before the DOMObserver resumes.
+When updating such a plugin, ProseMirror might need to redraw some nodes using (or not using) React components. During this process, ProseMirror will first [stop](https://github.com/ProseMirror/prosemirror-view/blob/1.41.4/src/index.ts#L185) the `DOMObserver`, redraw the nodes, and then [resume](https://github.com/ProseMirror/prosemirror-view/blob/1.41.4/src/index.ts#L219) the `DOMObserver`. This process is synchronous, so `React.flushSync` is called internally to ensure the React components are updated before the `DOMObserver` resumes.
 
-Back to the code block above, this is roughly equivalent to:
+This is roughly equivalent to:
 
 ```tsx
 useEffect(() => {
