@@ -40,8 +40,8 @@
     }
   },
   "devDependencies": {
-    "preact": "^10.28.0",
-    "tsdown": "^0.17.0"
+    "preact": "^10.28.1",
+    "tsdown": "^0.18.3"
   },
   "publishConfig": {
     "types": "./dist/index.d.ts",
