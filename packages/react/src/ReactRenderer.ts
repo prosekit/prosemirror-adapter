@@ -1,5 +1,5 @@
 import type { ReactPortal } from 'react'
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useLayoutEffect, useRef, useState } from 'react'
 import { flushSync } from 'react-dom'
 
 export interface ReactRenderer<Context> {
@@ -22,12 +22,9 @@ export function useReactRenderer(): ReactRendererResult {
   const [portals, setPortals] = useState<Record<string, ReactPortal>>({})
   const mountedRef = useRef(false)
 
-  useEffect(() => {
-    const id = requestAnimationFrame(() => {
-      mountedRef.current = true
-    })
+  useLayoutEffect(() => {
+    mountedRef.current = true
     return () => {
-      cancelAnimationFrame(id)
       mountedRef.current = false
     }
   }, [])

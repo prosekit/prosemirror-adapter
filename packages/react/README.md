@@ -540,6 +540,74 @@ interface WidgetViewContext {
 
 </details>
 
+## Troubleshooting
+
+<details>
+
+<summary>I'm getting an error: "flushSync was called from inside a lifecycle method"</summary>
+
+This can happen if you're adding or removing a plugin to the editor inside a lifecycle method (e.g. `useEffect` and `useLayoutEffect`), like the code block below.
+
+```tsx
+import { addPlugin, removePlugin, nodeViewPlugin } from './utils'
+
+function MyEditor() {
+  const [enablePlugin, setEnablePlugin] = useState(true)
+
+  useEffect(() => {
+    if (!enablePlugin) return
+
+    const view = viewRef.current
+
+    // Add or remove a new plugin to the editor, which renders node view using React components by
+    // using `prosemirror-adapter` under the hood.
+    addPlugin(view, nodeViewPlugin)
+    return () => removePlugin(view, nodeViewPlugin)
+  }, [enablePlugin])
+
+  // ...
+}
+```
+
+When updating such a plugin, ProseMirror might need to redraw some nodes using (or not using) React components. During this process, ProseMirror will first [stop](https://github.com/ProseMirror/prosemirror-view/blob/1.41.4/src/index.ts#L185) the `DOMObserver`, redraw the nodes, and then [resume](https://github.com/ProseMirror/prosemirror-view/blob/1.41.4/src/index.ts#L219) the `DOMObserver`. This process is synchronous, so `React.flushSync` is called internally to ensure the React components are updated before the `DOMObserver` resumes.
+
+This is roughly equivalent to:
+
+```tsx
+useEffect(() => {
+  React.flushSync(() => {
+    setSomething(newValue)
+  })
+}, [])
+```
+
+This pattern violates [React's rules](https://react.dev/reference/react-dom/flushSync#im-getting-an-error-flushsync-was-called-from-inside-a-lifecycle-method).
+
+To fix this, put the plugin update logic inside a _[task](https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API/Microtask_guide#tasks)_ (via `setTimeout`) or _[microtask](https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API/Microtask_guide#microtasks)_ (via `queueMicrotask`).
+
+The example code above can be fixed by:
+
+```tsx
+import { addPlugin, removePlugin, nodeViewPlugin } from './utils'
+
+function MyEditor() {
+  const [enablePlugin, setEnablePlugin] = useState(true)
+
+  useEffect(() => {
+    if (!enablePlugin) return
+
+    const view = viewRef.current
+
+    queueMicrotask(() => addPlugin(view, nodeViewPlugin))
+    return () => queueMicrotask(() => removePlugin(view, nodeViewPlugin))
+  }, [enablePlugin])
+
+  // ...
+}
+```
+
+</details>
+
 ## Contributing
 
 Follow our [contribution guide](../../CONTRIBUTING.md) to learn how to contribute to prosemirror-adapter.
