@@ -11,5 +11,10 @@ export default defineESLintConfig(
     {
       ignores: ['**/.svelte-kit'],
     },
+    {
+      rules: {
+        '@eslint-react/naming-convention/context-name': 'off',
+      },
+    }
   ],
 )
