@@ -1,5 +1,4 @@
 import { CoreNodeView } from '@prosemirror-adapter/core'
-import { nanoid } from 'nanoid'
 import { defineComponent, h, markRaw, provide, shallowRef, Teleport } from 'vue'
 
 import type { VueRenderer, VueRendererComponent } from '../VueRenderer'
@@ -9,14 +8,8 @@ import { nodeViewContext } from './nodeViewContext'
 import type { VueNodeViewComponent } from './VueNodeViewOptions'
 
 export class VueNodeView extends CoreNodeView<VueNodeViewComponent> implements VueRenderer<NodeViewContext> {
-  key: string = nanoid()
-
   context: NodeViewContext = {
-    contentRef: (element) => {
-      if (element && element instanceof HTMLElement && this.contentDOM && element.firstChild !== this.contentDOM) {
-        element.appendChild(this.contentDOM)
-      }
-    },
+    contentRef: this.contentRef,
     view: this.view,
     getPos: this.getPos,
     setAttrs: this.setAttrs,

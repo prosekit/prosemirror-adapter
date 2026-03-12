@@ -1,6 +1,5 @@
 import type { CoreWidgetViewSpec } from '@prosemirror-adapter/core'
 import { CoreWidgetView } from '@prosemirror-adapter/core'
-import { nanoid } from 'nanoid'
 import type { JSX, Setter } from 'solid-js'
 import { createSignal } from 'solid-js'
 import { Dynamic, Portal } from 'solid-js/web'
@@ -16,8 +15,6 @@ export class SolidWidgetView
   extends CoreWidgetView<SolidWidgetViewComponent>
   implements SolidRenderer<WidgetViewContext>
 {
-  key: string = nanoid()
-
   context: WidgetViewContext
 
   private setContext: Setter<WidgetViewContextProps>

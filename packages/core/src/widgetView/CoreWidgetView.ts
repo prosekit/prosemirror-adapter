@@ -1,8 +1,11 @@
 import type { EditorView } from 'prosemirror-view'
 
+import { createKey } from '../create-key'
+
 import type { CoreWidgetViewSpec, CoreWidgetViewUserOptions, WidgetDecorationSpec } from './CoreWidgetViewOptions'
 
 export class CoreWidgetView<Component> {
+  readonly key: string
   dom: HTMLElement
   pos: number
   view?: EditorView
@@ -16,6 +19,8 @@ export class CoreWidgetView<Component> {
   }
 
   constructor({ pos, spec, options }: CoreWidgetViewSpec<Component>) {
+    this.key = createKey()
+
     this.pos = pos
     this.options = options
     this.spec = spec

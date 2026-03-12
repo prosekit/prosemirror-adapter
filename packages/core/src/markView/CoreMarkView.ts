@@ -1,9 +1,12 @@
 import type { Mark } from 'prosemirror-model'
 import type { EditorView, MarkView, ViewMutationRecord } from 'prosemirror-view'
 
+import { createKey } from '../create-key'
+
 import type { CoreMarkViewSpec, CoreMarkViewUserOptions, MarkViewDOMSpec } from './CoreMarkViewOptions'
 
 export class CoreMarkView<ComponentType> implements MarkView {
+  readonly key: string
   dom: HTMLElement
   contentDOM: HTMLElement
   mark: Mark
@@ -31,6 +34,8 @@ export class CoreMarkView<ComponentType> implements MarkView {
   }
 
   constructor({ mark, view, inline, options }: CoreMarkViewSpec<ComponentType>) {
+    this.key = createKey()
+
     this.mark = mark
     this.view = view
     this.inline = inline
@@ -45,6 +50,12 @@ export class CoreMarkView<ComponentType> implements MarkView {
 
   get component() {
     return this.options.component
+  }
+
+  protected contentRef = (element: unknown): void => {
+    if (element instanceof HTMLElement && this.contentDOM && element.firstChild !== this.contentDOM) {
+      element.appendChild(this.contentDOM)
+    }
   }
 
   shouldIgnoreMutation: (mutation: ViewMutationRecord) => boolean = (mutation) => {

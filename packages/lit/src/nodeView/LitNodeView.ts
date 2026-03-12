@@ -2,7 +2,6 @@ import type { Context } from '@lit/context'
 import { ContextProvider } from '@lit/context'
 import { CoreNodeView } from '@prosemirror-adapter/core'
 import { customElement } from 'lit/decorators.js'
-import { nanoid } from 'nanoid'
 
 import type { LitRenderer } from '../LitRenderer'
 import { ShallowLitElement } from '../utils'
@@ -49,16 +48,10 @@ export class NodeViewDOMProvider extends ShallowLitElement {
 }
 
 export class LitNodeView extends CoreNodeView<LitNodeViewComponent> implements LitRenderer<NodeViewContext> {
-  key: string = nanoid()
-
   provider!: NodeViewDOMProvider
 
   context: NodeViewContext = {
-    contentRef: (element) => {
-      if (element && element instanceof HTMLElement && this.contentDOM && element.firstChild !== this.contentDOM) {
-        element.appendChild(this.contentDOM)
-      }
-    },
+    contentRef: this.contentRef,
     view: this.view,
     getPos: this.getPos,
     setAttrs: this.setAttrs,

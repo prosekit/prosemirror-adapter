@@ -1,9 +1,12 @@
 import type { Attrs, Node } from 'prosemirror-model'
 import type { Decoration, DecorationSource, EditorView, NodeView, ViewMutationRecord } from 'prosemirror-view'
 
+import { createKey } from '../create-key'
+
 import type { CoreNodeViewSpec, CoreNodeViewUserOptions, NodeViewDOMSpec } from './CoreNodeViewOptions'
 
 export class CoreNodeView<ComponentType> implements NodeView {
+  readonly key: string
   dom: HTMLElement
   contentDOM: HTMLElement | null
   node: Node
@@ -36,6 +39,8 @@ export class CoreNodeView<ComponentType> implements NodeView {
   }
 
   constructor({ node, view, getPos, decorations, innerDecorations, options }: CoreNodeViewSpec<ComponentType>) {
+    this.key = createKey()
+
     this.node = node
     this.view = view
     this.getPos = getPos
@@ -57,6 +62,12 @@ export class CoreNodeView<ComponentType> implements NodeView {
 
   get component() {
     return this.options.component
+  }
+
+  protected contentRef = (element: unknown): void => {
+    if (element instanceof HTMLElement && this.contentDOM && element.firstChild !== this.contentDOM) {
+      element.appendChild(this.contentDOM)
+    }
   }
 
   selectNode = () => {
