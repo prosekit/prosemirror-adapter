@@ -1,6 +1,6 @@
 import type { VNode } from 'preact'
-import { flushSync } from 'preact/compat'
-import { useCallback, useLayoutEffect, useRef, useState } from 'preact/hooks'
+import { createElement, flushSync, Fragment } from 'preact/compat'
+import { useCallback, useLayoutEffect, useMemo, useRef, useState } from 'preact/hooks'
 
 /**
  * @internal
@@ -19,16 +19,49 @@ export interface PreactRenderer<Context> {
  * @internal
  */
 export interface PreactRendererResult {
-  readonly portals: Record<string, VNode>
+  readonly portal: VNode
   readonly renderPreactRenderer: (nodeView: PreactRenderer<unknown>, update?: boolean) => void
   readonly removePreactRenderer: (nodeView: PreactRenderer<unknown>) => void
+}
+
+type PortalState = [keys: string[], nodes: VNode[]]
+
+function updateRenderer(state: PortalState, renderer: PreactRenderer<unknown>): PortalState {
+  const [keys, nodes] = state
+  const newKey = renderer.key
+  const newNode: VNode = createElement(Fragment, { key: newKey }, renderer.render())
+
+  const index = keys.indexOf(newKey)
+  if (index === -1) {
+    return [
+      [...keys, newKey],
+      [...nodes, newNode],
+    ]
+  } else {
+    const newKeys = [...keys]
+    const newNodes = [...nodes]
+    newKeys[index] = newKey
+    newNodes[index] = newNode
+    return [newKeys, newNodes]
+  }
+}
+
+function removeRenderer(state: PortalState, renderer: PreactRenderer<unknown>): PortalState {
+  const [keys, nodes] = state
+  const index = keys.indexOf(renderer.key)
+  if (index === -1) return state
+  const newKeys = [...keys]
+  const newNodes = [...nodes]
+  newKeys.splice(index, 1)
+  newNodes.splice(index, 1)
+  return [newKeys, newNodes]
 }
 
 /**
  * @internal
  */
 export function usePreactRenderer(): PreactRendererResult {
-  const [portals, setPortals] = useState<Record<string, VNode>>({})
+  const [portalState, setPortalState] = useState<PortalState>([[], []])
   const mountedRef = useRef(false)
 
   useLayoutEffect(() => {
@@ -47,11 +80,7 @@ export function usePreactRenderer(): PreactRendererResult {
     (nodeView: PreactRenderer<unknown>, update = true) => {
       maybeFlushSync(() => {
         if (update) nodeView.updateContext()
-
-        setPortals((prev) => ({
-          ...prev,
-          [nodeView.key]: nodeView.render(),
-        }))
+        return setPortalState((prev) => updateRenderer(prev, nodeView))
       })
     },
     [maybeFlushSync],
@@ -60,18 +89,19 @@ export function usePreactRenderer(): PreactRendererResult {
   const removePreactRenderer = useCallback(
     (nodeView: PreactRenderer<unknown>) => {
       maybeFlushSync(() => {
-        setPortals((prev) => {
-          const next = { ...prev }
-          delete next[nodeView.key]
-          return next
-        })
+        return setPortalState((prev) => removeRenderer(prev, nodeView))
       })
     },
     [maybeFlushSync],
   )
 
+  const nodes = portalState[1]
+  const portal = useMemo(() => {
+    return createElement(Fragment, null, nodes)
+  }, [nodes])
+
   return {
-    portals,
+    portal,
     renderPreactRenderer,
     removePreactRenderer,
   } as const

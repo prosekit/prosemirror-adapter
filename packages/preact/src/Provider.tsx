@@ -1,5 +1,4 @@
-import type { ComponentChildren, FunctionalComponent } from 'preact'
-import { useMemo } from 'preact/hooks'
+import { Fragment, type ComponentChildren, type FunctionalComponent } from 'preact'
 
 import { createMarkViewContext } from './markView'
 import { usePreactMarkViewCreator } from './markView/usePreactMarkViewCreator'
@@ -17,7 +16,7 @@ export type CreatePreactPluginView = ReturnType<typeof usePreactPluginViewCreato
 export type CreatePreactWidgetView = ReturnType<typeof usePreactWidgetViewCreator>
 
 export const ProsemirrorAdapterProvider: FunctionalComponent<{ children: ComponentChildren }> = ({ children }) => {
-  const { renderPreactRenderer, removePreactRenderer, portals } = usePreactRenderer()
+  const { renderPreactRenderer, removePreactRenderer, portal } = usePreactRenderer()
 
   const createPreactNodeView: CreatePreactNodeView = usePreactNodeViewCreator(
     renderPreactRenderer,
@@ -39,15 +38,13 @@ export const ProsemirrorAdapterProvider: FunctionalComponent<{ children: Compone
     removePreactRenderer,
   )
 
-  const memoizedPortals = useMemo(() => Object.values(portals), [portals])
-
   return (
     <createNodeViewContext.Provider value={createPreactNodeView}>
       <createMarkViewContext.Provider value={createPreactMarkView}>
         <createPluginViewContext.Provider value={createPreactPluginView}>
           <createWidgetViewContext.Provider value={createPreactWidgetView}>
-            {children}
-            {memoizedPortals}
+            <Fragment key={1}>{children}</Fragment>
+            <Fragment key={2}>{portal}</Fragment>
           </createWidgetViewContext.Provider>
         </createPluginViewContext.Provider>
       </createMarkViewContext.Provider>
