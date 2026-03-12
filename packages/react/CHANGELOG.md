@@ -1,5 +1,13 @@
 # @prosemirror-adapter/react
 
+## 0.6.0
+
+### Patch Changes
+
+- a9460fa: Move shared logic to core.
+- Updated dependencies [a9460fa]
+  - @prosemirror-adapter/core@0.6.0
+
 ## 0.5.1
 
 ### Patch Changes
