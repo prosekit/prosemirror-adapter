@@ -1,5 +1,5 @@
-import type { JSX } from 'solid-js'
-import { createSignal, getOwner, onCleanup, runWithOwner } from 'solid-js'
+import type { Accessor, JSX } from 'solid-js'
+import { createMemo, createSignal, getOwner, onCleanup, runWithOwner } from 'solid-js'
 
 /**
  * @internal
@@ -15,40 +15,66 @@ export interface SolidRenderer<Context> {
  * @internal
  */
 export interface SolidRendererResult {
-  readonly portals: Record<string, JSX.Element>
+  readonly portal: Accessor<JSX.Element[]>
   readonly renderSolidRenderer: (nodeView: SolidRenderer<unknown>, update?: boolean) => void
   readonly removeSolidRenderer: (nodeView: SolidRenderer<unknown>) => void
+}
+
+type PortalState = [keys: string[], nodes: JSX.Element[]]
+
+function updateRenderer(state: PortalState, renderer: SolidRenderer<unknown>): PortalState {
+  const [keys, nodes] = state
+  const newKey = renderer.key
+  const newNode = renderer.render()
+
+  const index = keys.indexOf(newKey)
+  if (index === -1) {
+    return [
+      [...keys, newKey],
+      [...nodes, newNode],
+    ]
+  } else {
+    const newNodes = [...nodes]
+    newNodes[index] = newNode
+    return [keys, newNodes]
+  }
+}
+
+function removeRenderer(state: PortalState, renderer: SolidRenderer<unknown>): PortalState {
+  const [keys, nodes] = state
+  const index = keys.indexOf(renderer.key)
+  if (index === -1) return state
+  const newKeys = [...keys]
+  const newNodes = [...nodes]
+  newKeys.splice(index, 1)
+  newNodes.splice(index, 1)
+  return [newKeys, newNodes]
 }
 
 /**
  * @internal
  */
 export function useSolidRenderer(): SolidRendererResult {
-  const [portals, setPortals] = createSignal<Record<string, JSX.Element>>({})
+  const [portalState, setPortalState] = createSignal<PortalState>([[], []])
   const owner = getOwner()
+
   const renderSolidRenderer = (nodeView: SolidRenderer<unknown>, update = true) => {
     if (update) nodeView.updateContext()
-
-    setPortals((prev) => ({
-      ...prev,
-      [nodeView.key]: runWithOwner(owner, () => nodeView.render()),
-    }))
+    setPortalState((prev) => runWithOwner(owner, () => updateRenderer(prev, nodeView))!)
   }
 
   const removeSolidRenderer = (nodeView: SolidRenderer<unknown>) => {
-    setPortals((prev) => {
-      const next = { ...prev }
-      delete next[nodeView.key]
-      return next
-    })
+    setPortalState((prev) => removeRenderer(prev, nodeView))
   }
 
   onCleanup(() => {
-    setPortals({})
+    setPortalState([[], []])
   })
 
+  const portal = createMemo(() => portalState()[1])
+
   return {
-    portals: portals(),
+    portal,
     renderSolidRenderer,
     removeSolidRenderer,
   } as const
