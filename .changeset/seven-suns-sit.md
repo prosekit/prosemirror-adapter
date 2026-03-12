@@ -8,4 +8,4 @@
 '@prosemirror-adapter/vue': patch
 ---
 
-Move shared logic to core。
+Move shared logic to core.
