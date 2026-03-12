@@ -1,2 +1,2 @@
-export * from './CoreNodeView'
-export * from './CoreNodeViewOptions'
+export { CoreNodeView } from './CoreNodeView'
+export { type CoreNodeViewSpec, type CoreNodeViewUserOptions, type NodeViewDOMSpec } from './CoreNodeViewOptions'
