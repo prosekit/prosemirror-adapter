@@ -16,7 +16,7 @@ export type CreatePreactPluginView = ReturnType<typeof usePreactPluginViewCreato
 export type CreatePreactWidgetView = ReturnType<typeof usePreactWidgetViewCreator>
 
 export const ProsemirrorAdapterProvider: FunctionalComponent<{ children: ComponentChildren }> = ({ children }) => {
-  const { renderPreactRenderer, removePreactRenderer, portal } = usePreactRenderer()
+  const { renderPreactRenderer, removePreactRenderer, render } = usePreactRenderer()
 
   const createPreactNodeView: CreatePreactNodeView = usePreactNodeViewCreator(
     renderPreactRenderer,
@@ -44,7 +44,7 @@ export const ProsemirrorAdapterProvider: FunctionalComponent<{ children: Compone
         <createPluginViewContext.Provider value={createPreactPluginView}>
           <createWidgetViewContext.Provider value={createPreactWidgetView}>
             <Fragment key={1}>{children}</Fragment>
-            <Fragment key={2}>{portal}</Fragment>
+            <Fragment key={2}>{render()}</Fragment>
           </createWidgetViewContext.Provider>
         </createPluginViewContext.Provider>
       </createMarkViewContext.Provider>

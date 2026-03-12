@@ -1,6 +1,6 @@
 import type { VNode } from 'preact'
 import { createElement, flushSync, Fragment } from 'preact/compat'
-import { useCallback, useLayoutEffect, useMemo, useRef, useState } from 'preact/hooks'
+import { useCallback, useLayoutEffect, useRef, useState } from 'preact/hooks'
 
 /**
  * @internal
@@ -19,7 +19,7 @@ export interface PreactRenderer<Context> {
  * @internal
  */
 export interface PreactRendererResult {
-  readonly portal: VNode
+  readonly render: () => VNode[]
   readonly renderPreactRenderer: (nodeView: PreactRenderer<unknown>, update?: boolean) => void
   readonly removePreactRenderer: (nodeView: PreactRenderer<unknown>) => void
 }
@@ -93,13 +93,8 @@ export function usePreactRenderer(): PreactRendererResult {
     [maybeFlushSync],
   )
 
-  const nodes = portalState[1]
-  const portal = useMemo(() => {
-    return createElement(Fragment, null, nodes)
-  }, [nodes])
-
   return {
-    portal,
+    render: () => portalState[1],
     renderPreactRenderer,
     removePreactRenderer,
   } as const
