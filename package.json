@@ -28,7 +28,7 @@
     "@ocavue/eslint-config": "^3.8.2",
     "@ocavue/tsconfig": "^0.6.2",
     "concurrently": "^9.2.1",
-    "eslint": "^9.39.2",
+    "eslint": "^10.0.0",
     "git-cz": "^4.9.0",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.7",
