@@ -7,8 +7,4 @@ export {
   useNodeViewFactory,
 } from './nodeViewContext'
 export { ReactNodeView } from './ReactNodeView'
-export type {
-  ReactNodeViewComponent,
-  ReactNodeViewSpec,
-  ReactNodeViewUserOptions,
-} from './ReactNodeViewOptions'
+export type { ReactNodeViewComponent, ReactNodeViewSpec, ReactNodeViewUserOptions } from './ReactNodeViewOptions'

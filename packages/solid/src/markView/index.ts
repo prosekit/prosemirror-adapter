@@ -8,8 +8,4 @@ export {
   useMarkViewFactory,
 } from './markViewContext'
 export { SolidMarkView } from './SolidMarkView'
-export type {
-  SolidMarkViewComponent,
-  SolidMarkViewSpec,
-  SolidMarkViewUserOptions,
-} from './SolidMarkViewOptions'
+export type { SolidMarkViewComponent, SolidMarkViewSpec, SolidMarkViewUserOptions } from './SolidMarkViewOptions'

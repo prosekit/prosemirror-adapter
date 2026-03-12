@@ -8,8 +8,4 @@ export {
   usePluginViewFactory,
 } from './pluginViewContext'
 export { VuePluginView } from './VuePluginView'
-export type {
-  VuePluginViewComponent,
-  VuePluginViewSpec,
-  VuePluginViewUserOptions,
-} from './VuePluginViewOptions'
+export type { VuePluginViewComponent, VuePluginViewSpec, VuePluginViewUserOptions } from './VuePluginViewOptions'

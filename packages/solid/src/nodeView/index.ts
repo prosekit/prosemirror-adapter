@@ -8,8 +8,4 @@ export {
   useNodeViewFactory,
 } from './nodeViewContext'
 export { SolidNodeView } from './SolidNodeView'
-export type {
-  SolidNodeViewComponent,
-  SolidNodeViewSpec,
-  SolidNodeViewUserOptions,
-} from './SolidNodeViewOptions'
+export type { SolidNodeViewComponent, SolidNodeViewSpec, SolidNodeViewUserOptions } from './SolidNodeViewOptions'
