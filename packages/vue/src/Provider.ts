@@ -31,7 +31,13 @@ export const ProsemirrorAdapterProvider = defineComponent({
     provide(widgetViewFactoryKey, createVueWidgetView)
 
     return () => {
-      return h(Fragment, null, [slots.default?.(), Object.values(portals.value).map((x) => h(x))])
+      const childrenPart = h(Fragment, { key: 1 }, slots.default?.())
+      const portalsPart = h(
+        Fragment,
+        { key: 2 },
+        Object.values(portals.value).map((x) => h(x)),
+      )
+      return h(Fragment, null, [childrenPart, portalsPart])
     }
   },
 })
