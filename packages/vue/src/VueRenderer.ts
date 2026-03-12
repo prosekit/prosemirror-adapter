@@ -55,7 +55,7 @@ export function useVueRenderer(): VueRendererResult {
   }
 
   const removeVueRenderer = (renderer: VueRenderer<unknown>) => {
-    portals.value.delete(renderer.key)  
+    portals.value.delete(renderer.key)
   }
 
   const render = () => {
