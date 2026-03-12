@@ -1,6 +1,9 @@
 import type { JSX } from 'solid-js'
 import { createSignal, getOwner, onCleanup, runWithOwner } from 'solid-js'
 
+/**
+ * @internal
+ */
 export interface SolidRenderer<Context> {
   key: string
   context: Context
@@ -8,12 +11,18 @@ export interface SolidRenderer<Context> {
   updateContext: () => void
 }
 
+/**
+ * @internal
+ */
 export interface SolidRendererResult {
   readonly portals: Record<string, JSX.Element>
   readonly renderSolidRenderer: (nodeView: SolidRenderer<unknown>, update?: boolean) => void
   readonly removeSolidRenderer: (nodeView: SolidRenderer<unknown>) => void
 }
 
+/**
+ * @internal
+ */
 export function useSolidRenderer(): SolidRendererResult {
   const [portals, setPortals] = createSignal<Record<string, JSX.Element>>({})
   const owner = getOwner()

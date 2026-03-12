@@ -41,6 +41,7 @@ export {
   type CreateReactPluginView,
   type CreateReactWidgetView,
 } from './Provider'
+export { useReactRenderer, type ReactRenderer, type ReactRendererResult } from './ReactRenderer'
 export {
   createWidgetViewContext,
   ReactWidgetView,

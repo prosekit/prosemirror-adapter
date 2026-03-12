@@ -38,6 +38,7 @@ export {
   type SolidPluginViewUserOptions,
 } from './pluginView'
 export { ProsemirrorAdapterProvider } from './Provider'
+export { useSolidRenderer, type SolidRenderer, type SolidRendererResult } from './SolidRenderer'
 export {
   createWidgetViewContext,
   SolidWidgetView,
