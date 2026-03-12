@@ -2,7 +2,7 @@ export {
   createMarkViewContext,
   markViewContext,
   ReactMarkView,
-    ReactHeadlessMarkView,
+  ReactHeadlessMarkView,
   useMarkViewContext,
   useMarkViewFactory,
   type MarkViewContentRef,
