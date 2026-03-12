@@ -2,6 +2,9 @@ import type { ReactPortal } from 'react'
 import { useCallback, useLayoutEffect, useRef, useState } from 'react'
 import { flushSync } from 'react-dom'
 
+/**
+ * @internal
+ */
 export interface ReactRenderer<Context> {
   key: string
 
@@ -12,12 +15,18 @@ export interface ReactRenderer<Context> {
   updateContext: () => void
 }
 
+/**
+ * @internal
+ */
 export interface ReactRendererResult {
   readonly portals: Record<string, ReactPortal>
   readonly renderReactRenderer: (nodeView: ReactRenderer<unknown>, update?: boolean) => void
   readonly removeReactRenderer: (nodeView: ReactRenderer<unknown>) => void
 }
 
+/**
+ * @internal
+ */
 export function useReactRenderer(): ReactRendererResult {
   const [portals, setPortals] = useState<Record<string, ReactPortal>>({})
   const mountedRef = useRef(false)
