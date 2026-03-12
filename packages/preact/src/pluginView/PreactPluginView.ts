@@ -1,4 +1,5 @@
 import { CorePluginView } from '@prosemirror-adapter/core'
+import { createElement } from 'preact'
 import { createPortal } from 'preact/compat'
 
 import type { PreactRenderer } from '../PreactRenderer'
@@ -27,9 +28,7 @@ export class PreactPluginView
     const UserComponent = this.component
 
     return createPortal(
-      <pluginViewContext.Provider value={this.context}>
-        <UserComponent />
-      </pluginViewContext.Provider>,
+      createElement(pluginViewContext.Provider, { value: this.context }, createElement(UserComponent, null)),
       this.root,
     )
   }

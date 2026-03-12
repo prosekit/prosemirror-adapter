@@ -1,4 +1,5 @@
 import { CoreWidgetView } from '@prosemirror-adapter/core'
+import { createElement } from 'preact'
 import { createPortal } from 'preact/compat'
 
 import type { PreactRenderer } from '../PreactRenderer'
@@ -29,9 +30,7 @@ export class PreactWidgetView
     const UserComponent = this.component
 
     return createPortal(
-      <widgetViewContext.Provider value={this.context}>
-        <UserComponent />
-      </widgetViewContext.Provider>,
+      createElement(widgetViewContext.Provider, { value: this.context }, createElement(UserComponent, null)),
       this.dom,
     )
   }

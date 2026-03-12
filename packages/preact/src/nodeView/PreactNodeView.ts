@@ -1,4 +1,5 @@
 import { CoreNodeView } from '@prosemirror-adapter/core'
+import { createElement } from 'preact'
 import { createPortal } from 'preact/compat'
 
 import type { PreactRenderer } from '../PreactRenderer'
@@ -41,9 +42,7 @@ export class PreactNodeView
     const UserComponent = this.component
 
     return createPortal(
-      <nodeViewContext.Provider value={this.context}>
-        <UserComponent />
-      </nodeViewContext.Provider>,
+      createElement(nodeViewContext.Provider, { value: this.context }, createElement(UserComponent, null)),
       this.dom,
     )
   }
