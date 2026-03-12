@@ -32,7 +32,7 @@ export interface VueRendererResult {
  * @internal
  */
 export function useVueRenderer(): VueRendererResult {
-  const portals = ref<Record<string, VueRendererComponent>>({})
+  const portals = ref<Map<string, VueRendererComponent>>(new Map())
   const instance = getCurrentInstance()
   const update = markRaw<{ updater?: () => void }>({})
 
@@ -47,7 +47,7 @@ export function useVueRenderer(): VueRendererResult {
   })
 
   const renderVueRenderer = (renderer: VueRenderer<unknown>) => {
-    portals.value[renderer.key] = renderer.render()
+    portals.value.set(renderer.key, renderer.render())
 
     // Force update the vue component to render
     // Cursor won't move to new node without this
@@ -55,14 +55,13 @@ export function useVueRenderer(): VueRendererResult {
   }
 
   const removeVueRenderer = (renderer: VueRenderer<unknown>) => {
-    delete portals.value[renderer.key]
+    portals.value.delete(renderer.key)  
   }
 
   const render = () => {
     const children: VNode[] = []
-    for (const key in portals.value) {
-      const Portal = portals.value[key]
-      children.push(h(Portal, { key }))
+    for (const [key, Comp] of portals.value.entries()) {
+      children.push(h(Comp, { key }))
     }
     return children
   }
