@@ -15,7 +15,7 @@ export interface SolidRenderer<Context> {
  * @internal
  */
 export interface SolidRendererResult {
-  readonly portal: Accessor<JSX.Element[]>
+  readonly render: Accessor<JSX.Element[]>
   readonly renderSolidRenderer: (nodeView: SolidRenderer<unknown>, update?: boolean) => void
   readonly removeSolidRenderer: (nodeView: SolidRenderer<unknown>) => void
 }
@@ -71,10 +71,10 @@ export function useSolidRenderer(): SolidRendererResult {
     setPortalState([[], []])
   })
 
-  const portal = createMemo(() => portalState()[1])
+  const render = createMemo(() => portalState()[1])
 
   return {
-    portal,
+    render,
     renderSolidRenderer,
     removeSolidRenderer,
   } as const
