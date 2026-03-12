@@ -7,7 +7,10 @@ import type { NodeViewContext } from './nodeViewContext'
 import { nodeViewContext } from './nodeViewContext'
 import type { ReactNodeViewComponent } from './ReactNodeViewOptions'
 
-export class ReactNodeView extends CoreNodeView<ReactNodeViewComponent> implements ReactRenderer<NodeViewContext> {
+/**
+ * @internal
+ */
+export class ReactHeadlessNodeView<ComponentType> extends CoreNodeView<ComponentType> {
   context: NodeViewContext = {
     contentRef: this.contentRef,
     view: this.view,
@@ -28,7 +31,12 @@ export class ReactNodeView extends CoreNodeView<ReactNodeViewComponent> implemen
       innerDecorations: this.innerDecorations,
     })
   }
+}
 
+export class ReactNodeView
+  extends ReactHeadlessNodeView<ReactNodeViewComponent>
+  implements ReactRenderer<NodeViewContext>
+{
   render = () => {
     const UserComponent = this.component
 

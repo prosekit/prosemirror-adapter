@@ -7,7 +7,10 @@ import type { MarkViewContext } from './markViewContext'
 import { markViewContext } from './markViewContext'
 import type { VueMarkViewComponent } from './VueMarkViewOptions'
 
-export class VueMarkView extends CoreMarkView<VueMarkViewComponent> implements VueRenderer<MarkViewContext> {
+/**
+ * @internal
+ */
+export class VueHeadlessMarkView<ComponentType> extends CoreMarkView<ComponentType> {
   context: MarkViewContext = {
     contentRef: this.contentRef,
     view: this.view,
@@ -18,7 +21,9 @@ export class VueMarkView extends CoreMarkView<VueMarkViewComponent> implements V
     const ctx = this.context
     if (ctx.mark.value !== this.mark) ctx.mark.value = this.mark
   }
+}
 
+export class VueMarkView extends VueHeadlessMarkView<VueMarkViewComponent> implements VueRenderer<MarkViewContext> {
   render = () => {
     const UserComponent = this.component
 

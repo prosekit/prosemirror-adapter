@@ -10,12 +10,15 @@ import type { NodeViewContext, NodeViewContextProps } from './nodeViewContext'
 import { nodeViewContext } from './nodeViewContext'
 import type { SolidNodeViewComponent } from './SolidNodeViewOptions'
 
-export class SolidNodeView extends CoreNodeView<SolidNodeViewComponent> implements SolidRenderer<NodeViewContext> {
+/**
+ * @internal
+ */
+export class SolidHeadlessNodeView<ComponentType> extends CoreNodeView<ComponentType> {
   context: NodeViewContext
 
-  private setContext: Setter<NodeViewContextProps>
+  protected setContext: Setter<NodeViewContextProps>
 
-  constructor(spec: CoreNodeViewSpec<SolidNodeViewComponent>) {
+  constructor(spec: CoreNodeViewSpec<ComponentType>) {
     super(spec)
     const [context, setContext] = createSignal<NodeViewContextProps>({
       contentRef: this.contentRef,
@@ -41,7 +44,12 @@ export class SolidNodeView extends CoreNodeView<SolidNodeViewComponent> implemen
       innerDecorations: this.innerDecorations,
     }))
   }
+}
 
+export class SolidNodeView
+  extends SolidHeadlessNodeView<SolidNodeViewComponent>
+  implements SolidRenderer<NodeViewContext>
+{
   render = () => {
     const UserComponent = this.component
 

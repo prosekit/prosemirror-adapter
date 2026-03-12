@@ -7,7 +7,10 @@ import type { NodeViewContext } from './nodeViewContext'
 import { nodeViewContext } from './nodeViewContext'
 import type { PreactNodeViewComponent } from './PreactNodeViewOptions'
 
-export class PreactNodeView extends CoreNodeView<PreactNodeViewComponent> implements PreactRenderer<NodeViewContext> {
+/**
+ * @internal
+ */
+export class PreactHeadlessNodeView<ComponentType> extends CoreNodeView<ComponentType> {
   context: NodeViewContext = {
     contentRef: this.contentRef,
     view: this.view,
@@ -28,7 +31,12 @@ export class PreactNodeView extends CoreNodeView<PreactNodeViewComponent> implem
       innerDecorations: this.innerDecorations,
     })
   }
+}
 
+export class PreactNodeView
+  extends PreactHeadlessNodeView<PreactNodeViewComponent>
+  implements PreactRenderer<NodeViewContext>
+{
   render = () => {
     const UserComponent = this.component
 
