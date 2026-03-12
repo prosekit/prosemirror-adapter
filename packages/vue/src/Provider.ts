@@ -32,7 +32,7 @@ export const ProsemirrorAdapterProvider = defineComponent({
 
     return () => {
       const childrenPart = h(Fragment, { key: 1 }, [slots.default?.()])
-      const portalsPart = h(Fragment, { key: 2 }, [render()])
+      const portalsPart = h(Fragment, { key: 2 }, render())
       return h(Fragment, null, [childrenPart, portalsPart])
     }
   },
