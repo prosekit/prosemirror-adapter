@@ -14,7 +14,7 @@ export interface PluginViewContext {
 }
 
 export const pluginViewContext: InjectionKey<Readonly<PluginViewContext>> = Symbol(
-  '[ProsemirrorAdapter]nodeViewContext',
+  '[ProsemirrorAdapter]pluginViewContext',
 )
 
 export const usePluginViewContext = () => inject(pluginViewContext) as Readonly<PluginViewContext>
