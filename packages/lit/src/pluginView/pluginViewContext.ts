@@ -11,7 +11,7 @@ export interface PluginViewContext {
   prevState: EditorState | undefined
 }
 
-export const pluginViewContextKey = createContext<PluginViewContext>('[ProsemirrorAdapter]nodeViewContext')
+export const pluginViewContextKey = createContext<PluginViewContext>('[ProsemirrorAdapter]pluginViewContext')
 export type ConsumePluginViewContext = ContextConsumer<typeof pluginViewContextKey, LitElement>
 export function usePluginViewContext(element: LitElement): ConsumePluginViewContext {
   return new ContextConsumer(element, pluginViewContextKey, undefined, true)

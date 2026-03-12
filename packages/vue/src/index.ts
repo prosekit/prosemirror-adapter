@@ -1,5 +1,56 @@
-export * from './markView'
-export * from './nodeView'
-export * from './pluginView'
-export * from './Provider'
-export * from './widgetView'
+export {
+  markViewContext,
+  markViewFactoryKey,
+  useMarkViewContext,
+  useMarkViewFactory,
+  VueMarkView,
+  type MarkViewContext,
+  type MarkViewFactory,
+  type VueMarkViewComponent,
+  type VueMarkViewSpec,
+  type VueMarkViewUserOptions,
+} from './markView'
+export {
+  nodeViewContext,
+  nodeViewFactoryKey,
+  useNodeViewContext,
+  useNodeViewFactory,
+  VueNodeView,
+  type NodeViewContext,
+  type NodeViewFactory,
+  type VueNodeViewComponent,
+  type VueNodeViewSpec,
+  type VueNodeViewUserOptions,
+} from './nodeView'
+export {
+  pluginViewContext,
+  pluginViewFactoryKey,
+  usePluginViewContext,
+  usePluginViewFactory,
+  VuePluginView,
+  type PluginViewContentRef,
+  type PluginViewContext,
+  type PluginViewFactory,
+  type VuePluginViewComponent,
+  type VuePluginViewSpec,
+  type VuePluginViewUserOptions,
+} from './pluginView'
+export {
+  ProsemirrorAdapterProvider,
+  type CreateVueMarkView,
+  type CreateVueNodeView,
+  type CreateVuePluginView,
+  type CreateVueWidgetView,
+} from './Provider'
+export {
+  useWidgetViewContext,
+  useWidgetViewFactory,
+  VueWidgetView,
+  widgetViewContext,
+  widgetViewFactoryKey,
+  type VueWidgetViewComponent,
+  type VueWidgetViewSpec,
+  type VueWidgetViewUserOptions,
+  type WidgetViewContext,
+  type WidgetViewFactory,
+} from './widgetView'

@@ -1,2 +1,2 @@
-export * from './CoreMarkView'
-export * from './CoreMarkViewOptions'
+export { CoreMarkView } from './CoreMarkView'
+export type { CoreMarkViewSpec, CoreMarkViewUserOptions, MarkViewDOMSpec } from './CoreMarkViewOptions'

@@ -1,3 +1,13 @@
-export * from './ReactWidgetView'
-export * from './ReactWidgetViewOptions'
-export * from './widgetViewContext'
+export { ReactWidgetView } from './ReactWidgetView'
+export type {
+  ReactWidgetViewComponent,
+  ReactWidgetViewSpec,
+  ReactWidgetViewUserOptions,
+} from './ReactWidgetViewOptions'
+export {
+  createWidgetViewContext,
+  useWidgetViewContext,
+  useWidgetViewFactory,
+  widgetViewContext,
+  type WidgetViewContext,
+} from './widgetViewContext'

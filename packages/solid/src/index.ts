@@ -1,5 +1,52 @@
-export * from './markView'
-export * from './nodeView'
-export * from './pluginView'
-export * from './Provider'
-export * from './widgetView'
+export {
+  createMarkViewContext,
+  markViewContext,
+  SolidMarkView,
+  useMarkViewContext,
+  useMarkViewFactory,
+  type MarkViewContentRef,
+  type MarkViewContext,
+  type MarkViewContextProps,
+  type SolidMarkViewComponent,
+  type SolidMarkViewSpec,
+  type SolidMarkViewUserOptions,
+} from './markView'
+export {
+  createNodeViewContext,
+  nodeViewContext,
+  SolidNodeView,
+  useNodeViewContext,
+  useNodeViewFactory,
+  type NodeViewContentRef,
+  type NodeViewContext,
+  type NodeViewContextProps,
+  type SolidNodeViewComponent,
+  type SolidNodeViewSpec,
+  type SolidNodeViewUserOptions,
+} from './nodeView'
+export {
+  createPluginViewContext,
+  pluginViewContext,
+  SolidPluginView,
+  usePluginViewContext,
+  usePluginViewFactory,
+  type PluginViewContentRef,
+  type PluginViewContext,
+  type PluginViewContextProps,
+  type SolidPluginViewComponent,
+  type SolidPluginViewSpec,
+  type SolidPluginViewUserOptions,
+} from './pluginView'
+export { ProsemirrorAdapterProvider } from './Provider'
+export {
+  createWidgetViewContext,
+  SolidWidgetView,
+  useWidgetViewContext,
+  useWidgetViewFactory,
+  widgetViewContext,
+  type SolidWidgetViewComponent,
+  type SolidWidgetViewSpec,
+  type SolidWidgetViewUserOptions,
+  type WidgetViewContext,
+  type WidgetViewContextProps,
+} from './widgetView'

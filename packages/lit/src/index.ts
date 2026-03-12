@@ -1,6 +1,62 @@
-export * from './markView'
-export * from './nodeView'
-export * from './pluginView'
-export * from './Provider'
-export * from './utils'
-export * from './widgetView'
+export {
+  LitMarkView,
+  markViewContextKey,
+  MarkViewDOMProvider,
+  markViewFactoryKey,
+  useMarkViewContext,
+  useMarkViewFactory,
+  type ConsumeMarkViewContext,
+  type ConsumeMarkViewFactory,
+  type LitMarkViewComponent,
+  type LitMarkViewSpec,
+  type LitMarkViewUserOptions,
+  type MarkViewContext,
+  type MarkViewFactory,
+} from './markView'
+export {
+  LitNodeView,
+  nodeViewContextKey,
+  NodeViewDOMProvider,
+  nodeViewFactoryKey,
+  useNodeViewContext,
+  useNodeViewFactory,
+  type ConsumeNodeViewContext,
+  type ConsumeNodeViewFactory,
+  type LitNodeViewComponent,
+  type LitNodeViewSpec,
+  type LitNodeViewUserOptions,
+  type NodeViewContext,
+  type NodeViewFactory,
+} from './nodeView'
+export {
+  LitPluginView,
+  pluginViewContextKey,
+  PluginViewDOMProvider,
+  pluginViewFactoryKey,
+  usePluginViewContext,
+  usePluginViewFactory,
+  type ConsumePluginViewContext,
+  type ConsumePluginViewFactory,
+  type LitPluginViewComponent,
+  type LitPluginViewSpec,
+  type LitPluginViewUserOptions,
+  type PluginViewContext,
+  type PluginViewFactory,
+} from './pluginView'
+export { ProsemirrorAdapterProvider } from './Provider'
+export { ShallowLitElement } from './utils'
+export {
+  LitWidgetView,
+  useWidgetViewContext,
+  useWidgetViewFactory,
+  widgetViewContextKey,
+  WidgetViewDOMProvider,
+  widgetViewFactoryKey,
+  type ConsumeWidgetViewContext,
+  type ConsumeWidgetViewFactory,
+  type LitWidgetViewComponent,
+  type LitWidgetViewSpec,
+  type LitWidgetViewUserOptions,
+  type WidgetViewContext,
+  type WidgetViewFactory,
+} from './widgetView'

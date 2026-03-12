@@ -1,1 +1,1 @@
-export * from './ShallowLitElement'
+export { ShallowLitElement } from './ShallowLitElement'

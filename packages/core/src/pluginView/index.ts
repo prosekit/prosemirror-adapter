@@ -1,2 +1,2 @@
-export * from './CorePluginView'
-export * from './CorePluginViewOptions'
+export { CorePluginView } from './CorePluginView'
+export type { CorePluginViewSpec, CorePluginViewUserOptions, PluginViewSpec } from './CorePluginViewOptions'

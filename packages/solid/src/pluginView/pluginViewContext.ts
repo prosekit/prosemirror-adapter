@@ -1,7 +1,7 @@
 import type { PluginViewSpec } from '@prosemirror-adapter/core'
 import type { EditorState } from 'prosemirror-state'
 import type { EditorView } from 'prosemirror-view'
-import { type Accessor, createContext, useContext } from 'solid-js'
+import { createContext, useContext, type Accessor } from 'solid-js'
 
 import type { SolidPluginViewUserOptions } from './SolidPluginViewOptions'
 

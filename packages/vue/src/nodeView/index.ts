@@ -1,3 +1,10 @@
-export * from './nodeViewContext'
-export * from './VueNodeView'
-export * from './VueNodeViewOptions'
+export {
+  nodeViewContext,
+  nodeViewFactoryKey,
+  useNodeViewContext,
+  useNodeViewFactory,
+  type NodeViewContext,
+  type NodeViewFactory,
+} from './nodeViewContext'
+export { VueNodeView } from './VueNodeView'
+export type { VueNodeViewComponent, VueNodeViewSpec, VueNodeViewUserOptions } from './VueNodeViewOptions'
