@@ -1,6 +1,10 @@
 {
   "$schema": "https://unpkg.com/knip@5/schema.json",
-  "workspaces": {
-    ".": {}
+   "workspaces": {
+    ".": {
+    },
+    "e2e": {
+      "entry": "src/*/*.stories.ts"
+    }
   }
 }
