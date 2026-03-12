@@ -38,11 +38,9 @@ function updateRenderer(state: PortalState, renderer: PreactRenderer<unknown>): 
       [...nodes, newNode],
     ]
   } else {
-    const newKeys = [...keys]
     const newNodes = [...nodes]
-    newKeys[index] = newKey
     newNodes[index] = newNode
-    return [newKeys, newNodes]
+    return [keys, newNodes]
   }
 }
 

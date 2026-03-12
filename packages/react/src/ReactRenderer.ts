@@ -1,4 +1,4 @@
-import type { ReactNode, ReactPortal } from 'react'
+import type { ReactElement, ReactPortal } from 'react'
 import { createElement, Fragment, useCallback, useLayoutEffect, useMemo, useRef, useState } from 'react'
 import { flushSync } from 'react-dom'
 
@@ -19,17 +19,17 @@ export interface ReactRenderer<Context> {
  * @internal
  */
 export interface ReactRendererResult {
-  readonly portal: ReactNode
+  readonly portal: ReactElement
   readonly renderReactRenderer: (nodeView: ReactRenderer<unknown>, update?: boolean) => void
   readonly removeReactRenderer: (nodeView: ReactRenderer<unknown>) => void
 }
 
-type PortalState = [keys: string[], nodes: ReactPortal[]]
+type PortalState = [keys: string[], nodes: ReactElement[]]
 
 function updateRenderer(state: PortalState, renderer: ReactRenderer<unknown>): PortalState {
   const [keys, nodes] = state
   const newKey = renderer.key
-  const newNode = renderer.render()
+  const newNode: ReactElement = createElement(Fragment, { key: newKey }, renderer.render())
 
   const index = keys.indexOf(newKey)
   if (index === -1) {
@@ -38,11 +38,9 @@ function updateRenderer(state: PortalState, renderer: ReactRenderer<unknown>): P
       [...nodes, newNode],
     ]
   } else {
-    const newKeys = [...keys]
     const newNodes = [...nodes]
-    newKeys[index] = newKey
     newNodes[index] = newNode
-    return [newKeys, newNodes]
+    return [keys, newNodes]
   }
 }
 
