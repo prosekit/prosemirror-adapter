@@ -1,5 +1,4 @@
 import { CoreNodeView } from '@prosemirror-adapter/core'
-import { nanoid } from 'nanoid'
 import { writable } from 'svelte/store'
 
 import { createContextMap } from '../context'
@@ -11,14 +10,8 @@ import type { NodeViewContext } from './nodeViewContext'
 import type { SvelteNodeViewComponent } from './SvelteNodeViewOptions'
 
 export class SvelteNodeView extends CoreNodeView<SvelteNodeViewComponent> implements SvelteRenderer<NodeViewContext> {
-  key: string = nanoid()
-
   context: NodeViewContext = {
-    contentRef: (element) => {
-      if (element && element instanceof HTMLElement && this.contentDOM && element.firstChild !== this.contentDOM) {
-        element.appendChild(this.contentDOM)
-      }
-    },
+    contentRef: this.contentRef,
     view: this.view,
     getPos: this.getPos,
     setAttrs: this.setAttrs,

@@ -1,5 +1,4 @@
 import { CoreMarkView } from '@prosemirror-adapter/core'
-import { nanoid } from 'nanoid'
 import { createPortal } from 'react-dom'
 
 import type { ReactRenderer } from '../ReactRenderer'
@@ -9,12 +8,8 @@ import { markViewContext } from './markViewContext'
 import type { ReactMarkViewComponent } from './ReactMarkViewOptions'
 
 export class ReactMarkView extends CoreMarkView<ReactMarkViewComponent> implements ReactRenderer<MarkViewContext> {
-  key: string = nanoid()
-
   context: MarkViewContext = {
-    contentRef: (element) => {
-      if (element && this.contentDOM && element.firstChild !== this.contentDOM) element.appendChild(this.contentDOM)
-    },
+    contentRef: this.contentRef,
     view: this.view,
 
     mark: this.mark,

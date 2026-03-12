@@ -1,5 +1,4 @@
 import { CoreMarkView } from '@prosemirror-adapter/core'
-import { nanoid } from 'nanoid'
 import { createPortal } from 'preact/compat'
 
 import type { PreactRenderer } from '../PreactRenderer'
@@ -9,12 +8,8 @@ import { markViewContext } from './markViewContext'
 import type { PreactMarkViewComponent } from './PreactMarkViewOptions'
 
 export class PreactMarkView extends CoreMarkView<PreactMarkViewComponent> implements PreactRenderer<MarkViewContext> {
-  key: string = nanoid()
-
   context: MarkViewContext = {
-    contentRef: (element) => {
-      if (element && this.contentDOM && element.firstChild !== this.contentDOM) element.appendChild(this.contentDOM)
-    },
+    contentRef: this.contentRef,
     view: this.view,
 
     mark: this.mark,

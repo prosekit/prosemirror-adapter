@@ -1,5 +1,4 @@
 import { CoreWidgetView } from '@prosemirror-adapter/core'
-import { nanoid } from 'nanoid'
 import { createPortal } from 'react-dom'
 
 import type { ReactRenderer } from '../ReactRenderer'
@@ -12,8 +11,6 @@ export class ReactWidgetView
   extends CoreWidgetView<ReactWidgetViewComponent>
   implements ReactRenderer<WidgetViewContext>
 {
-  key: string = nanoid()
-
   context: WidgetViewContext = {
     view: this.view!,
     getPos: this.getPos!,
