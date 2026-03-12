@@ -2,7 +2,7 @@
   "name": "@prosemirror-adapter/monorepo",
   "type": "commonjs",
   "private": true,
-  "packageManager": "pnpm@10.26.2",
+  "packageManager": "pnpm@10.32.1",
   "description": "Monorepo for ProseMirror Adapter",
   "license": "MIT",
   "engines": {
