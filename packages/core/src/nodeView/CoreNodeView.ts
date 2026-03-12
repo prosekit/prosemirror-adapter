@@ -1,3 +1,4 @@
+import { isElementLike } from '@ocavue/utils'
 import type { Attrs, Node } from 'prosemirror-model'
 import type { Decoration, DecorationSource, EditorView, NodeView, ViewMutationRecord } from 'prosemirror-view'
 
@@ -65,7 +66,7 @@ export class CoreNodeView<ComponentType> implements NodeView {
   }
 
   protected contentRef = (element: unknown): void => {
-    if (element instanceof HTMLElement && this.contentDOM && element.firstChild !== this.contentDOM) {
+    if (element && this.contentDOM && isElementLike(element) && element.firstChild !== this.contentDOM) {
       element.appendChild(this.contentDOM)
     }
   }

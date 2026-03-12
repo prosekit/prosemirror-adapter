@@ -1,3 +1,4 @@
+import { isElementLike } from '@ocavue/utils'
 import type { Mark } from 'prosemirror-model'
 import type { EditorView, MarkView, ViewMutationRecord } from 'prosemirror-view'
 
@@ -53,7 +54,7 @@ export class CoreMarkView<ComponentType> implements MarkView {
   }
 
   protected contentRef = (element: unknown): void => {
-    if (element instanceof HTMLElement && this.contentDOM && element.firstChild !== this.contentDOM) {
+    if (element && this.contentDOM && isElementLike(element) && element.firstChild !== this.contentDOM) {
       element.appendChild(this.contentDOM)
     }
   }
