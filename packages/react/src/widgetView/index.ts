@@ -1,8 +1,8 @@
 export { ReactWidgetView } from './ReactWidgetView'
-export {
-  type ReactWidgetViewComponent,
-  type ReactWidgetViewSpec,
-  type ReactWidgetViewUserOptions,
+export type {
+  ReactWidgetViewComponent,
+  ReactWidgetViewSpec,
+  ReactWidgetViewUserOptions,
 } from './ReactWidgetViewOptions'
 export {
   type WidgetViewContext,

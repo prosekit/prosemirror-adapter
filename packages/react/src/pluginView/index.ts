@@ -7,8 +7,8 @@ export {
   usePluginViewFactory,
 } from './pluginViewContext'
 export { ReactPluginView } from './ReactPluginView'
-export {
-  type ReactPluginViewComponent,
-  type ReactPluginViewSpec,
-  type ReactPluginViewUserOptions,
+export type {
+  ReactPluginViewComponent,
+  ReactPluginViewSpec,
+  ReactPluginViewUserOptions,
 } from './ReactPluginViewOptions'

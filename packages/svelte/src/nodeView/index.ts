@@ -6,8 +6,8 @@ export {
   useNodeViewFactory,
 } from './nodeViewContext'
 export { SvelteNodeView } from './SvelteNodeView'
-export {
-  type SvelteNodeViewComponent,
-  type SvelteNodeViewSpec,
-  type SvelteNodeViewUserOptions,
+export type {
+  SvelteNodeViewComponent,
+  SvelteNodeViewSpec,
+  SvelteNodeViewUserOptions,
 } from './SvelteNodeViewOptions'

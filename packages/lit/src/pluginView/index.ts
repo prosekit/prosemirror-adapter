@@ -1,8 +1,8 @@
 export { LitPluginView, PluginViewDOMProvider } from './LitPluginView'
-export {
-  type LitPluginViewComponent,
-  type LitPluginViewSpec,
-  type LitPluginViewUserOptions,
+export type {
+  LitPluginViewComponent,
+  LitPluginViewSpec,
+  LitPluginViewUserOptions,
 } from './LitPluginViewOptions'
 export {
   type ConsumePluginViewContext,

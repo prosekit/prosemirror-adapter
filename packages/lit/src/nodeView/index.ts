@@ -1,5 +1,5 @@
 export { LitNodeView, NodeViewDOMProvider } from './LitNodeView'
-export { type LitNodeViewComponent, type LitNodeViewSpec, type LitNodeViewUserOptions } from './LitNodeViewOptions'
+export type { LitNodeViewComponent, LitNodeViewSpec, LitNodeViewUserOptions } from './LitNodeViewOptions'
 export {
   type ConsumeNodeViewContext,
   type ConsumeNodeViewFactory,

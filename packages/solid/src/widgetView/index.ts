@@ -1,8 +1,8 @@
 export { SolidWidgetView } from './SolidWidgetView'
-export {
-  type SolidWidgetViewComponent,
-  type SolidWidgetViewSpec,
-  type SolidWidgetViewUserOptions,
+export type {
+  SolidWidgetViewComponent,
+  SolidWidgetViewSpec,
+  SolidWidgetViewUserOptions,
 } from './SolidWidgetViewOptions'
 export {
   type WidgetViewContextProps,

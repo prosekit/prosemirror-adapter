@@ -7,8 +7,8 @@ export {
   usePluginViewFactory,
 } from './pluginViewContext'
 export { SveltePluginView } from './SveltePluginView'
-export {
-  type SveltePluginViewComponent,
-  type SveltePluginViewSpec,
-  type SveltePluginViewUserOptions,
+export type {
+  SveltePluginViewComponent,
+  SveltePluginViewSpec,
+  SveltePluginViewUserOptions,
 } from './SveltePluginViewOptions'

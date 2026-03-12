@@ -7,8 +7,8 @@ export {
   useMarkViewFactory,
 } from './markViewContext'
 export { ReactMarkView } from './ReactMarkView'
-export {
-  type ReactMarkViewComponent,
-  type ReactMarkViewSpec,
-  type ReactMarkViewUserOptions,
+export type {
+  ReactMarkViewComponent,
+  ReactMarkViewSpec,
+  ReactMarkViewUserOptions,
 } from './ReactMarkViewOptions'

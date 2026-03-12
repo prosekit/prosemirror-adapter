@@ -6,8 +6,8 @@ export {
   useMarkViewFactory,
 } from './markViewContext'
 export { SvelteMarkView } from './SvelteMarkView'
-export {
-  type SvelteMarkViewComponent,
-  type SvelteMarkViewSpec,
-  type SvelteMarkViewUserOptions,
+export type {
+  SvelteMarkViewComponent,
+  SvelteMarkViewSpec,
+  SvelteMarkViewUserOptions,
 } from './SvelteMarkViewOptions'

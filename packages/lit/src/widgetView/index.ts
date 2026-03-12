@@ -1,8 +1,8 @@
 export { LitWidgetView, WidgetViewDOMProvider } from './LitWidgetView'
-export {
-  type LitWidgetViewComponent,
-  type LitWidgetViewSpec,
-  type LitWidgetViewUserOptions,
+export type {
+  LitWidgetViewComponent,
+  LitWidgetViewSpec,
+  LitWidgetViewUserOptions,
 } from './LitWidgetViewOptions'
 export {
   type ConsumeWidgetViewContext,

@@ -1,8 +1,8 @@
 export { CoreWidgetView } from './CoreWidgetView'
-export {
-  type CoreWidgetViewSpec,
-  type CoreWidgetViewUserOptions,
-  type WidgetDecoration,
-  type WidgetDecorationFactory,
-  type WidgetDecorationSpec,
+export type {
+  CoreWidgetViewSpec,
+  CoreWidgetViewUserOptions,
+  WidgetDecoration,
+  WidgetDecorationFactory,
+  WidgetDecorationSpec,
 } from './CoreWidgetViewOptions'

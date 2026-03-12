@@ -1,8 +1,8 @@
 export { VueWidgetView } from './VueWidgetView'
-export {
-  type VueWidgetViewComponent,
-  type VueWidgetViewSpec,
-  type VueWidgetViewUserOptions,
+export type {
+  VueWidgetViewComponent,
+  VueWidgetViewSpec,
+  VueWidgetViewUserOptions,
 } from './VueWidgetViewOptions'
 export {
   type WidgetViewContext,

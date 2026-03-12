@@ -1,8 +1,8 @@
 export { SvelteWidgetView } from './SvelteWidgetView'
-export {
-  type SvelteWidgetViewComponent,
-  type SvelteWidgetViewSpec,
-  type SvelteWidgetViewUserOptions,
+export type {
+  SvelteWidgetViewComponent,
+  SvelteWidgetViewSpec,
+  SvelteWidgetViewUserOptions,
 } from './SvelteWidgetViewOptions'
 export {
   type WidgetViewContext,

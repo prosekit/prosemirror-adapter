@@ -7,8 +7,8 @@ export {
   useNodeViewFactory,
 } from './nodeViewContext'
 export { PreactNodeView } from './PreactNodeView'
-export {
-  type PreactNodeViewComponent,
-  type PreactNodeViewSpec,
-  type PreactNodeViewUserOptions,
+export type {
+  PreactNodeViewComponent,
+  PreactNodeViewSpec,
+  PreactNodeViewUserOptions,
 } from './PreactNodeViewOptions'

@@ -8,8 +8,8 @@ export {
   usePluginViewFactory,
 } from './pluginViewContext'
 export { SolidPluginView } from './SolidPluginView'
-export {
-  type SolidPluginViewComponent,
-  type SolidPluginViewSpec,
-  type SolidPluginViewUserOptions,
+export type {
+  SolidPluginViewComponent,
+  SolidPluginViewSpec,
+  SolidPluginViewUserOptions,
 } from './SolidPluginViewOptions'

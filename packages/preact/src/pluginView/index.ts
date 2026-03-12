@@ -7,8 +7,8 @@ export {
   usePluginViewFactory,
 } from './pluginViewContext'
 export { PreactPluginView } from './PreactPluginView'
-export {
-  type PreactPluginViewComponent,
-  type PreactPluginViewSpec,
-  type PreactPluginViewUserOptions,
+export type {
+  PreactPluginViewComponent,
+  PreactPluginViewSpec,
+  PreactPluginViewUserOptions,
 } from './PreactPluginViewOptions'

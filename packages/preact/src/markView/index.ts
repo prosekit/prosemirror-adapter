@@ -7,8 +7,8 @@ export {
   useMarkViewFactory,
 } from './markViewContext'
 export { PreactMarkView } from './PreactMarkView'
-export {
-  type PreactMarkViewComponent,
-  type PreactMarkViewSpec,
-  type PreactMarkViewUserOptions,
+export type {
+  PreactMarkViewComponent,
+  PreactMarkViewSpec,
+  PreactMarkViewUserOptions,
 } from './PreactMarkViewOptions'
