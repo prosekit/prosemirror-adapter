@@ -2,12 +2,6 @@
   "$schema": "https://unpkg.com/knip@5/schema.json",
   "exclude": ["optionalPeerDependencies"],
   "workspaces": {
-    ".": {
-      "ignoreDependencies": ["vite"]
-    },
-    "packages/svelte": {
-      "ignoreDependencies": ["@sveltejs/vite-plugin-svelte"]
-    },
     "e2e": {
       "entry": "src/*/*.stories.ts",
       "ignore": ["src/*/shim.d.ts", "src/lit/App.ts", "src/lit/components/Editor.ts"]
