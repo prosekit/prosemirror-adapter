@@ -17,21 +17,10 @@ export class VuePluginView extends CorePluginView<VuePluginViewComponent> implem
   }
 
   updateContext = () => {
-    Object.entries({
-      view: this.view,
-      prevState: this.prevState,
-    }).forEach(([key, value]) => {
-      const prev = this.context[key as 'view' | 'prevState']
-      if (key === 'view') {
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-        const clone = Object.assign(Object.create(Object.getPrototypeOf(value) as object | null), value)
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-        prev.value = clone
-        return
-      }
+    const ctx = this.context
 
-      prev.value = value
-    })
+    if (ctx.view.value !== this.view) ctx.view.value = this.view
+    if (ctx.prevState.value !== this.prevState) ctx.prevState.value = this.prevState
   }
 
   render = () => {

@@ -21,13 +21,9 @@ export class VueMarkView extends CoreMarkView<VueMarkViewComponent> implements V
     mark: shallowRef(this.mark),
   }
 
-  updateContext = () => {
-    Object.entries({
-      mark: this.mark,
-    }).forEach(([key, value]) => {
-      const prev = this.context[key as 'mark']
-      if (prev.value !== value) prev.value = value
-    })
+  updateContext = (): void => {
+    const ctx = this.context
+    if (ctx.mark.value !== this.mark) ctx.mark.value = this.mark
   }
 
   render = () => {
