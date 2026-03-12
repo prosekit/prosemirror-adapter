@@ -20,7 +20,6 @@
     "src"
   ],
   "scripts": {
-    "test": "vitest",
     "build": "tsdown --platform browser"
   },
   "dependencies": {
