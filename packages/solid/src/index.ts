@@ -1,5 +1,52 @@
-export { type MarkViewContentRef, type MarkViewContextProps, type MarkViewContext, markViewContext, useMarkViewContext, createMarkViewContext, useMarkViewFactory, SolidMarkView, type SolidMarkViewComponent, type SolidMarkViewSpec, type SolidMarkViewUserOptions } from './markView'
-export { type NodeViewContentRef, type NodeViewContextProps, type NodeViewContext, nodeViewContext, useNodeViewContext, createNodeViewContext, useNodeViewFactory, SolidNodeView, type SolidNodeViewComponent, type SolidNodeViewSpec, type SolidNodeViewUserOptions } from './nodeView'
-export { type PluginViewContentRef, type PluginViewContextProps, type PluginViewContext, pluginViewContext, usePluginViewContext, createPluginViewContext, usePluginViewFactory, SolidPluginView, type SolidPluginViewComponent, type SolidPluginViewSpec, type SolidPluginViewUserOptions } from './pluginView'
+export {
+  type MarkViewContentRef,
+  type MarkViewContextProps,
+  type MarkViewContext,
+  markViewContext,
+  useMarkViewContext,
+  createMarkViewContext,
+  useMarkViewFactory,
+  SolidMarkView,
+  type SolidMarkViewComponent,
+  type SolidMarkViewSpec,
+  type SolidMarkViewUserOptions,
+} from './markView'
+export {
+  type NodeViewContentRef,
+  type NodeViewContextProps,
+  type NodeViewContext,
+  nodeViewContext,
+  useNodeViewContext,
+  createNodeViewContext,
+  useNodeViewFactory,
+  SolidNodeView,
+  type SolidNodeViewComponent,
+  type SolidNodeViewSpec,
+  type SolidNodeViewUserOptions,
+} from './nodeView'
+export {
+  type PluginViewContentRef,
+  type PluginViewContextProps,
+  type PluginViewContext,
+  pluginViewContext,
+  usePluginViewContext,
+  createPluginViewContext,
+  usePluginViewFactory,
+  SolidPluginView,
+  type SolidPluginViewComponent,
+  type SolidPluginViewSpec,
+  type SolidPluginViewUserOptions,
+} from './pluginView'
 export { ProsemirrorAdapterProvider } from './Provider'
-export { SolidWidgetView, type SolidWidgetViewComponent, type SolidWidgetViewSpec, type SolidWidgetViewUserOptions, type WidgetViewContextProps, type WidgetViewContext, widgetViewContext, useWidgetViewContext, createWidgetViewContext, useWidgetViewFactory } from './widgetView'
+export {
+  SolidWidgetView,
+  type SolidWidgetViewComponent,
+  type SolidWidgetViewSpec,
+  type SolidWidgetViewUserOptions,
+  type WidgetViewContextProps,
+  type WidgetViewContext,
+  widgetViewContext,
+  useWidgetViewContext,
+  createWidgetViewContext,
+  useWidgetViewFactory,
+} from './widgetView'
