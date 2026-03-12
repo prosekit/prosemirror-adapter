@@ -1,4 +1,4 @@
-import { Fragment, type FC, type ReactNode } from 'react'
+import { Fragment, createElement, type FC, type ReactNode } from 'react'
 
 import { createMarkViewContext } from './markView'
 import { useReactMarkViewCreator } from './markView/useReactMarkViewCreator'
@@ -32,16 +32,22 @@ export const ProsemirrorAdapterProvider: FC<{ children: ReactNode }> = ({ childr
     removeReactRenderer,
   )
 
-  return (
-    <createNodeViewContext.Provider value={createReactNodeView}>
-      <createMarkViewContext.Provider value={createReactMarkView}>
-        <createPluginViewContext.Provider value={createReactPluginView}>
-          <createWidgetViewContext.Provider value={createReactWidgetView}>
-            <Fragment key={1}>{children}</Fragment>
-            <Fragment key={2}>{render()}</Fragment>
-          </createWidgetViewContext.Provider>
-        </createPluginViewContext.Provider>
-      </createMarkViewContext.Provider>
-    </createNodeViewContext.Provider>
+  return createElement(
+    createNodeViewContext.Provider,
+    { value: createReactNodeView },
+    createElement(
+      createMarkViewContext.Provider,
+      { value: createReactMarkView },
+      createElement(
+        createPluginViewContext.Provider,
+        { value: createReactPluginView },
+        createElement(
+          createWidgetViewContext.Provider,
+          { value: createReactWidgetView },
+          createElement(Fragment, { key: 1 }, children),
+          createElement(Fragment, { key: 2 }, render()),
+        ),
+      ),
+    ),
   )
 }

@@ -1,4 +1,5 @@
 import { CoreNodeView } from '@prosemirror-adapter/core'
+import { createElement } from 'react'
 import { createPortal } from 'react-dom'
 
 import type { ReactRenderer } from '../ReactRenderer'
@@ -41,9 +42,7 @@ export class ReactNodeView
     const UserComponent = this.component
 
     return createPortal(
-      <nodeViewContext.Provider value={this.context}>
-        <UserComponent />
-      </nodeViewContext.Provider>,
+      createElement(nodeViewContext.Provider, { value: this.context }, createElement(UserComponent, null)),
       this.dom,
       this.key,
     )

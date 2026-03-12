@@ -1,4 +1,5 @@
 import { CorePluginView } from '@prosemirror-adapter/core'
+import { createElement } from 'react'
 import { createPortal } from 'react-dom'
 
 import type { ReactRenderer } from '../ReactRenderer'
@@ -27,9 +28,7 @@ export class ReactPluginView
     const UserComponent = this.component
 
     return createPortal(
-      <pluginViewContext.Provider value={this.context}>
-        <UserComponent />
-      </pluginViewContext.Provider>,
+      createElement(pluginViewContext.Provider, { value: this.context }, createElement(UserComponent, null)),
       this.root,
       this.key,
     )
