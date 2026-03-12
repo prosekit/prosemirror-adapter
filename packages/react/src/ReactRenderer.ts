@@ -1,5 +1,5 @@
 import type { ReactElement, ReactPortal } from 'react'
-import { createElement, Fragment, useCallback, useLayoutEffect, useMemo, useRef, useState } from 'react'
+import { createElement, Fragment, useCallback, useLayoutEffect, useRef, useState } from 'react'
 import { flushSync } from 'react-dom'
 
 /**
@@ -19,7 +19,7 @@ export interface ReactRenderer<Context> {
  * @internal
  */
 export interface ReactRendererResult {
-  readonly portal: ReactElement
+  readonly render: () => ReactElement[]
   readonly renderReactRenderer: (nodeView: ReactRenderer<unknown>, update?: boolean) => void
   readonly removeReactRenderer: (nodeView: ReactRenderer<unknown>) => void
 }
@@ -93,13 +93,8 @@ export function useReactRenderer(): ReactRendererResult {
     [maybeFlushSync],
   )
 
-  const nodes = portalState[1]
-  const portal = useMemo(() => {
-    return createElement(Fragment, null, nodes)
-  }, [nodes])
-
   return {
-    portal,
+    render: () => portalState[1],
     renderReactRenderer,
     removeReactRenderer,
   } as const

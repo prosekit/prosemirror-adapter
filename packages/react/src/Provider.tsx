@@ -16,7 +16,7 @@ export type CreateReactPluginView = ReturnType<typeof useReactPluginViewCreator>
 export type CreateReactWidgetView = ReturnType<typeof useReactWidgetViewCreator>
 
 export const ProsemirrorAdapterProvider: FC<{ children: ReactNode }> = ({ children }) => {
-  const { renderReactRenderer, removeReactRenderer, portal } = useReactRenderer()
+  const { renderReactRenderer, removeReactRenderer, render } = useReactRenderer()
 
   const createReactNodeView: CreateReactNodeView = useReactNodeViewCreator(renderReactRenderer, removeReactRenderer)
 
@@ -38,7 +38,7 @@ export const ProsemirrorAdapterProvider: FC<{ children: ReactNode }> = ({ childr
         <createPluginViewContext.Provider value={createReactPluginView}>
           <createWidgetViewContext.Provider value={createReactWidgetView}>
             <Fragment key={1}>{children}</Fragment>
-            <Fragment key={2}>{portal}</Fragment>
+            <Fragment key={2}>{render()}</Fragment>
           </createWidgetViewContext.Provider>
         </createPluginViewContext.Provider>
       </createMarkViewContext.Provider>
