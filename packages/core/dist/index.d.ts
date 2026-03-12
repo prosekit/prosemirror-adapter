@@ -157,5 +157,5 @@ declare class CoreWidgetView<Component> {
   get component(): Component;
 }
 //#endregion
-export { CoreMarkView, CoreMarkViewSpec, CoreMarkViewUserOptions, CoreNodeView, CoreNodeViewSpec, CoreNodeViewUserOptions, CorePluginView, CorePluginViewSpec, CorePluginViewUserOptions, CoreWidgetView, CoreWidgetViewSpec, CoreWidgetViewUserOptions, MarkViewDOMSpec, NodeViewDOMSpec, PluginViewSpec, WidgetDecoration, WidgetDecorationFactory, WidgetDecorationSpec };
+export { CoreMarkView, type CoreMarkViewSpec, type CoreMarkViewUserOptions, CoreNodeView, type CoreNodeViewSpec, type CoreNodeViewUserOptions, CorePluginView, type CorePluginViewSpec, type CorePluginViewUserOptions, CoreWidgetView, type CoreWidgetViewSpec, type CoreWidgetViewUserOptions, type MarkViewDOMSpec, type NodeViewDOMSpec, type PluginViewSpec, type WidgetDecoration, type WidgetDecorationFactory, type WidgetDecorationSpec };
 //# sourceMappingURL=index.d.ts.map

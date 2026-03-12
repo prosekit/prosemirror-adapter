@@ -1,5 +1,6 @@
 import { Context, ContextConsumer, ContextProvider } from "@lit/context";
 import { CoreMarkView, CoreMarkViewSpec, CoreMarkViewUserOptions, CoreNodeView, CoreNodeViewSpec, CoreNodeViewUserOptions, CorePluginView, CorePluginViewSpec, CorePluginViewUserOptions, CoreWidgetView, CoreWidgetViewSpec, CoreWidgetViewUserOptions, PluginViewSpec, WidgetDecorationFactory, WidgetDecorationSpec } from "@prosemirror-adapter/core";
+import * as lit from "lit";
 import { LitElement } from "lit";
 import { Decoration, DecorationSource, EditorView, MarkViewConstructor, NodeViewConstructor } from "prosemirror-view";
 import { RefOrCallback } from "lit/directives/ref.js";
@@ -54,7 +55,7 @@ declare class MarkViewDOMProvider extends ShallowLitElement {
   provider: ContextProvider<Context<typeof markViewContextKey, MarkViewContext>>;
   createRenderRoot(): this;
   constructor(markView: LitMarkView);
-  create: () => any;
+  create: () => lit.LitElement;
   updateContext: () => void;
 }
 declare class LitMarkView extends CoreMarkView<LitMarkViewComponent> implements LitRenderer<MarkViewContext> {
@@ -62,7 +63,7 @@ declare class LitMarkView extends CoreMarkView<LitMarkViewComponent> implements 
   provider: MarkViewDOMProvider;
   context: MarkViewContext;
   updateContext: () => void;
-  render: () => any;
+  render: () => lit.LitElement;
 }
 //#endregion
 //#region src/nodeView/LitNodeViewOptions.d.ts
@@ -104,7 +105,7 @@ declare class NodeViewDOMProvider extends ShallowLitElement {
   provider: ContextProvider<Context<typeof nodeViewContextKey, NodeViewContext>>;
   createRenderRoot(): this;
   constructor(nodeView: LitNodeView);
-  create: () => any;
+  create: () => lit.LitElement;
   updateContext: () => void;
 }
 declare class LitNodeView extends CoreNodeView<LitNodeViewComponent> implements LitRenderer<NodeViewContext> {
@@ -112,7 +113,7 @@ declare class LitNodeView extends CoreNodeView<LitNodeViewComponent> implements 
   provider: NodeViewDOMProvider;
   context: NodeViewContext;
   updateContext: () => void;
-  render: () => any;
+  render: () => lit.LitElement;
 }
 //#endregion
 //#region src/pluginView/LitPluginViewOptions.d.ts
@@ -148,7 +149,7 @@ declare class PluginViewDOMProvider extends ShallowLitElement {
   provider: ContextProvider<Context<typeof pluginViewContextKey, PluginViewContext>>;
   createRenderRoot(): this;
   constructor(pluginView: LitPluginView);
-  create: () => any;
+  create: () => lit.LitElement;
   updateContext: () => void;
 }
 declare class LitPluginView extends CorePluginView<LitPluginViewComponent> implements LitRenderer<PluginViewContext> {
@@ -156,7 +157,7 @@ declare class LitPluginView extends CorePluginView<LitPluginViewComponent> imple
   provider: PluginViewDOMProvider;
   context: PluginViewContext;
   updateContext: () => void;
-  render: () => any;
+  render: () => lit.LitElement;
 }
 //#endregion
 //#region src/widgetView/LitWidgetViewOptions.d.ts
@@ -193,7 +194,7 @@ declare class WidgetViewDOMProvider extends ShallowLitElement {
   provider: ContextProvider<Context<typeof widgetViewContextKey, WidgetViewContext>>;
   createRenderRoot(): this;
   constructor(widgetView: LitWidgetView);
-  create: () => any;
+  create: () => lit.LitElement;
   updateContext: () => void;
 }
 declare class LitWidgetView extends CoreWidgetView<LitWidgetViewComponent> implements LitRenderer<WidgetViewContext> {
@@ -201,7 +202,7 @@ declare class LitWidgetView extends CoreWidgetView<LitWidgetViewComponent> imple
   provider: WidgetViewDOMProvider;
   context: WidgetViewContext;
   updateContext: () => void;
-  render: () => any;
+  render: () => lit.LitElement;
 }
 //#endregion
 //#region src/Provider.d.ts
@@ -218,5 +219,5 @@ declare global {
   }
 } //# sourceMappingURL=Provider.d.ts.map
 //#endregion
-export { ConsumeMarkViewContext, ConsumeMarkViewFactory, ConsumeNodeViewContext, ConsumeNodeViewFactory, ConsumePluginViewContext, ConsumePluginViewFactory, ConsumeWidgetViewContext, ConsumeWidgetViewFactory, LitMarkView, LitMarkViewComponent, LitMarkViewSpec, LitMarkViewUserOptions, LitNodeView, LitNodeViewComponent, LitNodeViewSpec, LitNodeViewUserOptions, LitPluginView, LitPluginViewComponent, LitPluginViewSpec, LitPluginViewUserOptions, LitWidgetView, LitWidgetViewComponent, LitWidgetViewSpec, LitWidgetViewUserOptions, MarkViewContext, MarkViewDOMProvider, MarkViewFactory, NodeViewContext, NodeViewDOMProvider, NodeViewFactory, PluginViewContext, PluginViewDOMProvider, PluginViewFactory, ProsemirrorAdapterProvider, ShallowLitElement, WidgetViewContext, WidgetViewDOMProvider, WidgetViewFactory, markViewContextKey, markViewFactoryKey, nodeViewContextKey, nodeViewFactoryKey, pluginViewContextKey, pluginViewFactoryKey, useMarkViewContext, useMarkViewFactory, useNodeViewContext, useNodeViewFactory, usePluginViewContext, usePluginViewFactory, useWidgetViewContext, useWidgetViewFactory, widgetViewContextKey, widgetViewFactoryKey };
+export { type ConsumeMarkViewContext, type ConsumeMarkViewFactory, type ConsumeNodeViewContext, type ConsumeNodeViewFactory, type ConsumePluginViewContext, type ConsumePluginViewFactory, type ConsumeWidgetViewContext, type ConsumeWidgetViewFactory, LitMarkView, type LitMarkViewComponent, type LitMarkViewSpec, type LitMarkViewUserOptions, LitNodeView, type LitNodeViewComponent, type LitNodeViewSpec, type LitNodeViewUserOptions, LitPluginView, type LitPluginViewComponent, type LitPluginViewSpec, type LitPluginViewUserOptions, LitWidgetView, type LitWidgetViewComponent, type LitWidgetViewSpec, type LitWidgetViewUserOptions, type MarkViewContext, MarkViewDOMProvider, type MarkViewFactory, type NodeViewContext, NodeViewDOMProvider, type NodeViewFactory, type PluginViewContext, PluginViewDOMProvider, type PluginViewFactory, ProsemirrorAdapterProvider, ShallowLitElement, type WidgetViewContext, WidgetViewDOMProvider, type WidgetViewFactory, markViewContextKey, markViewFactoryKey, nodeViewContextKey, nodeViewFactoryKey, pluginViewContextKey, pluginViewFactoryKey, useMarkViewContext, useMarkViewFactory, useNodeViewContext, useNodeViewFactory, usePluginViewContext, usePluginViewFactory, useWidgetViewContext, useWidgetViewFactory, widgetViewContextKey, widgetViewFactoryKey };
 //# sourceMappingURL=index.d.ts.map
