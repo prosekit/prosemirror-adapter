@@ -1,6 +1,6 @@
 import type { Mark } from 'prosemirror-model'
 import type { EditorView, MarkViewConstructor } from 'prosemirror-view'
-import { type Accessor, createContext, useContext } from 'solid-js'
+import { createContext, useContext, type Accessor } from 'solid-js'
 
 import type { SolidMarkViewUserOptions } from './SolidMarkViewOptions'
 

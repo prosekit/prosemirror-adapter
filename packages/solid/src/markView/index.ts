@@ -1,11 +1,11 @@
 export {
-  type MarkViewContentRef,
-  type MarkViewContextProps,
-  type MarkViewContext,
+  createMarkViewContext,
   markViewContext,
   useMarkViewContext,
-  createMarkViewContext,
   useMarkViewFactory,
+  type MarkViewContentRef,
+  type MarkViewContext,
+  type MarkViewContextProps,
 } from './markViewContext'
 export { SolidMarkView } from './SolidMarkView'
 export type { SolidMarkViewComponent, SolidMarkViewSpec, SolidMarkViewUserOptions } from './SolidMarkViewOptions'

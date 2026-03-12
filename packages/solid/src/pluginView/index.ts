@@ -1,11 +1,11 @@
 export {
-  type PluginViewContentRef,
-  type PluginViewContextProps,
-  type PluginViewContext,
+  createPluginViewContext,
   pluginViewContext,
   usePluginViewContext,
-  createPluginViewContext,
   usePluginViewFactory,
+  type PluginViewContentRef,
+  type PluginViewContext,
+  type PluginViewContextProps,
 } from './pluginViewContext'
 export { SolidPluginView } from './SolidPluginView'
 export type {

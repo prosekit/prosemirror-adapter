@@ -1,10 +1,10 @@
 export {
-  type PluginViewContentRef,
-  type PluginViewContext,
+  createPluginViewContext,
   pluginViewContext,
   usePluginViewContext,
-  createPluginViewContext,
   usePluginViewFactory,
+  type PluginViewContentRef,
+  type PluginViewContext,
 } from './pluginViewContext'
 export { PreactPluginView } from './PreactPluginView'
 export type {

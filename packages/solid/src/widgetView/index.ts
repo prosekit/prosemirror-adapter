@@ -5,10 +5,10 @@ export type {
   SolidWidgetViewUserOptions,
 } from './SolidWidgetViewOptions'
 export {
-  type WidgetViewContextProps,
-  type WidgetViewContext,
-  widgetViewContext,
-  useWidgetViewContext,
   createWidgetViewContext,
+  useWidgetViewContext,
   useWidgetViewFactory,
+  widgetViewContext,
+  type WidgetViewContext,
+  type WidgetViewContextProps,
 } from './widgetViewContext'

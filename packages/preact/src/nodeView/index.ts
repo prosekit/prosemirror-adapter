@@ -1,10 +1,10 @@
 export {
-  type NodeViewContentRef,
-  type NodeViewContext,
+  createNodeViewContext,
   nodeViewContext,
   useNodeViewContext,
-  createNodeViewContext,
   useNodeViewFactory,
+  type NodeViewContentRef,
+  type NodeViewContext,
 } from './nodeViewContext'
 export { PreactNodeView } from './PreactNodeView'
 export type { PreactNodeViewComponent, PreactNodeViewSpec, PreactNodeViewUserOptions } from './PreactNodeViewOptions'

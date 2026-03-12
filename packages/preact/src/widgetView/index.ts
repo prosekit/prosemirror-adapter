@@ -5,9 +5,9 @@ export type {
   PreactWidgetViewUserOptions,
 } from './PreactWidgetViewOptions'
 export {
-  type WidgetViewContext,
-  widgetViewContext,
-  useWidgetViewContext,
   createWidgetViewContext,
+  useWidgetViewContext,
   useWidgetViewFactory,
+  widgetViewContext,
+  type WidgetViewContext,
 } from './widgetViewContext'

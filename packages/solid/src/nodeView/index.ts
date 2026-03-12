@@ -1,11 +1,11 @@
 export {
-  type NodeViewContentRef,
-  type NodeViewContextProps,
-  type NodeViewContext,
+  createNodeViewContext,
   nodeViewContext,
   useNodeViewContext,
-  createNodeViewContext,
   useNodeViewFactory,
+  type NodeViewContentRef,
+  type NodeViewContext,
+  type NodeViewContextProps,
 } from './nodeViewContext'
 export { SolidNodeView } from './SolidNodeView'
 export type { SolidNodeViewComponent, SolidNodeViewSpec, SolidNodeViewUserOptions } from './SolidNodeViewOptions'

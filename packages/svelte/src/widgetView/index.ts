@@ -5,9 +5,9 @@ export type {
   SvelteWidgetViewUserOptions,
 } from './SvelteWidgetViewOptions'
 export {
-  type WidgetViewContext,
   useWidgetViewContext,
-  type WidgetViewFactory,
-  widgetViewFactoryKey,
   useWidgetViewFactory,
+  widgetViewFactoryKey,
+  type WidgetViewContext,
+  type WidgetViewFactory,
 } from './widgetViewContext'
