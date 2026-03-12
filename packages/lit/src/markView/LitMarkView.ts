@@ -2,7 +2,6 @@ import type { Context } from '@lit/context'
 import { ContextProvider } from '@lit/context'
 import { CoreMarkView } from '@prosemirror-adapter/core'
 import { customElement } from 'lit/decorators.js'
-import { nanoid } from 'nanoid'
 
 import type { LitRenderer } from '../LitRenderer'
 import { ShallowLitElement } from '../utils'
@@ -49,16 +48,10 @@ export class MarkViewDOMProvider extends ShallowLitElement {
 }
 
 export class LitMarkView extends CoreMarkView<LitMarkViewComponent> implements LitRenderer<MarkViewContext> {
-  key: string = nanoid()
-
   provider!: MarkViewDOMProvider
 
   context: MarkViewContext = {
-    contentRef: (element) => {
-      if (element && element instanceof HTMLElement && this.contentDOM && element.firstChild !== this.contentDOM) {
-        element.appendChild(this.contentDOM)
-      }
-    },
+    contentRef: this.contentRef,
     view: this.view,
     mark: this.mark,
   }

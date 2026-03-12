@@ -1,5 +1,4 @@
 import { CoreNodeView, type CoreNodeViewSpec } from '@prosemirror-adapter/core'
-import { nanoid } from 'nanoid'
 import type { Setter } from 'solid-js'
 import { createSignal } from 'solid-js'
 import { Dynamic, Portal } from 'solid-js/web'
@@ -12,7 +11,6 @@ import { nodeViewContext } from './nodeViewContext'
 import type { SolidNodeViewComponent } from './SolidNodeViewOptions'
 
 export class SolidNodeView extends CoreNodeView<SolidNodeViewComponent> implements SolidRenderer<NodeViewContext> {
-  key: string = nanoid()
   context: NodeViewContext
 
   private setContext: Setter<NodeViewContextProps>
@@ -20,9 +18,7 @@ export class SolidNodeView extends CoreNodeView<SolidNodeViewComponent> implemen
   constructor(spec: CoreNodeViewSpec<SolidNodeViewComponent>) {
     super(spec)
     const [context, setContext] = createSignal<NodeViewContextProps>({
-      contentRef: (element) => {
-        if (element && this.contentDOM && element.firstChild !== this.contentDOM) element.appendChild(this.contentDOM)
-      },
+      contentRef: this.contentRef,
       view: this.view,
       getPos: this.getPos,
       setAttrs: this.setAttrs,

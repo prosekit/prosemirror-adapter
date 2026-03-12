@@ -1,5 +1,4 @@
 import { CorePluginView } from '@prosemirror-adapter/core'
-import { nanoid } from 'nanoid'
 import { createPortal } from 'react-dom'
 
 import type { ReactRenderer } from '../ReactRenderer'
@@ -12,8 +11,6 @@ export class ReactPluginView
   extends CorePluginView<ReactPluginViewComponent>
   implements ReactRenderer<PluginViewContext>
 {
-  key: string = nanoid()
-
   context: PluginViewContext = {
     view: this.view,
     prevState: this.prevState,

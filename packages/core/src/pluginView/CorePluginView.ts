@@ -1,14 +1,19 @@
 import type { EditorState, PluginView } from 'prosemirror-state'
 import type { EditorView } from 'prosemirror-view'
 
+import { createKey } from '../create-key'
+
 import type { CorePluginViewSpec, CorePluginViewUserOptions } from './CorePluginViewOptions'
 
 export class CorePluginView<ComponentType> implements PluginView {
+  key: string
   view: EditorView
   prevState?: EditorState
   options: CorePluginViewUserOptions<ComponentType>
 
   constructor(spec: CorePluginViewSpec<ComponentType>) {
+    this.key = createKey()
+
     this.view = spec.view
     this.options = spec.options
   }

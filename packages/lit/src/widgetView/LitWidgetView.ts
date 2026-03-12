@@ -2,7 +2,6 @@ import type { Context } from '@lit/context'
 import { ContextProvider } from '@lit/context'
 import { CoreWidgetView } from '@prosemirror-adapter/core'
 import { customElement } from 'lit/decorators.js'
-import { nanoid } from 'nanoid'
 
 import type { LitRenderer } from '../LitRenderer'
 import { ShallowLitElement } from '../utils'
@@ -49,8 +48,6 @@ export class WidgetViewDOMProvider extends ShallowLitElement {
 }
 
 export class LitWidgetView extends CoreWidgetView<LitWidgetViewComponent> implements LitRenderer<WidgetViewContext> {
-  key: string = nanoid()
-
   provider!: WidgetViewDOMProvider
 
   context: WidgetViewContext = {

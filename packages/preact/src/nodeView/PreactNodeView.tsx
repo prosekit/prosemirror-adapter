@@ -1,5 +1,4 @@
 import { CoreNodeView } from '@prosemirror-adapter/core'
-import { nanoid } from 'nanoid'
 import { createPortal } from 'preact/compat'
 
 import type { PreactRenderer } from '../PreactRenderer'
@@ -9,12 +8,8 @@ import { nodeViewContext } from './nodeViewContext'
 import type { PreactNodeViewComponent } from './PreactNodeViewOptions'
 
 export class PreactNodeView extends CoreNodeView<PreactNodeViewComponent> implements PreactRenderer<NodeViewContext> {
-  key: string = nanoid()
-
   context: NodeViewContext = {
-    contentRef: (element) => {
-      if (element && this.contentDOM && element.firstChild !== this.contentDOM) element.appendChild(this.contentDOM)
-    },
+    contentRef: this.contentRef,
     view: this.view,
     getPos: this.getPos,
     setAttrs: this.setAttrs,

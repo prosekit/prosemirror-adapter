@@ -1,5 +1,4 @@
 import { CorePluginView } from '@prosemirror-adapter/core'
-import { nanoid } from 'nanoid'
 import { createPortal } from 'preact/compat'
 
 import type { PreactRenderer } from '../PreactRenderer'
@@ -12,8 +11,6 @@ export class PreactPluginView
   extends CorePluginView<PreactPluginViewComponent>
   implements PreactRenderer<PluginViewContext>
 {
-  key: string = nanoid()
-
   context: PluginViewContext = {
     view: this.view,
     prevState: this.prevState,
