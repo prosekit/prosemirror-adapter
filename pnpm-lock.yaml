@@ -7,7 +7,7 @@ settings:
 importers:
 
   .:
-    dependencies:
+    devDependencies:
       '@changesets/cli':
         specifier: ^2.30.0
         version: 2.30.0(@types/node@24.12.0)
@@ -17,6 +17,9 @@ importers:
       '@ocavue/tsconfig':
         specifier: ^0.7.0
         version: 0.7.0
+      '@types/node':
+        specifier: ^24.12.0
+        version: 24.12.0
       concurrently:
         specifier: ^9.2.1
         version: 9.2.1

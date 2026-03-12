@@ -27,10 +27,11 @@
     "release": "changeset publish",
     "prepare": "husky"
   },
-  "dependencies": {
+  "devDependencies": {
     "@changesets/cli": "^2.30.0",
     "@ocavue/eslint-config": "^4.3.1",
     "@ocavue/tsconfig": "^0.7.0",
+    "@types/node": "^24.12.0",
     "concurrently": "^9.2.1",
     "eslint": "^10.0.3",
     "git-cz": "^4.9.0",
