@@ -16,27 +16,31 @@
     "test": "pnpm run build && pnpm --filter=e2e test",
     "test:install": "pnpm --filter=e2e test:install",
     "changeset": "changeset",
-    "lint": "eslint .",
-    "fix": "monorepo-typescript-references fix && prettier --write . && eslint . --fix",
+    "lint": "pnpm run lint:eslint && pnpm run lint:prettier && pnpm run lint:knip",
+    "lint:eslint": "eslint .",
+    "lint:prettier": "prettier --check .",
+    "lint:knip": "knip",
+    "fix": "pnpm run fix:eslint && pnpm run fix:prettier && pnpm run fix:ts",
+    "fix:eslint": "eslint . --fix",
+    "fix:prettier": "prettier --write .",
+    "fix:ts": "monorepo-typescript-references fix",
     "release": "changeset publish",
     "prepare": "husky"
   },
-  "dependencies": {
+  "devDependencies": {
     "@changesets/cli": "^2.30.0",
-    "@commitlint/cli": "^20.4.3",
-    "@commitlint/config-conventional": "^20.4.3",
     "@ocavue/eslint-config": "^4.3.1",
     "@ocavue/tsconfig": "^0.7.0",
-    "concurrently": "^9.2.1",
+    "@types/node": "^24.12.0",
     "eslint": "^10.0.3",
     "git-cz": "^4.9.0",
     "husky": "^9.1.7",
+    "knip": "^5.86.0",
     "lint-staged": "^16.3.3",
     "monorepo-typescript-references": "^1.1.1",
     "pkg-pr-new": "^0.0.65",
     "prettier": "^3.8.1",
     "prettier-plugin-svelte": "^3.5.1",
-    "typescript": "~5.9.3",
-    "vite": "^7.3.1"
+    "typescript": "~5.9.3"
   }
 }
