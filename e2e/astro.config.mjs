@@ -21,9 +21,9 @@ export default defineConfig({
     '/vue': '/stories/vue/app/vue',
   },
   integrations: [
-    preact({ include: ['src/preact/**/*.tsx'] }),
-    react({ include: ['src/react/**/*.tsx'] }),
-    solidJs({ include: ['src/solid/**/*'] }),
+    react({ include: ['**/src/react/**/*.tsx',  '**/src/react/**/*.stories.ts'] }),
+    preact({ include: ['**/src/preact/**/*.tsx', '**/src/preact/**/*.stories.ts'] }),
+    solidJs({ include: ['**/src/solid/**/*'] }),
     svelte(),
     vue(),
     astrobook({ directory: 'src' }),
