@@ -1,7 +1,7 @@
 import type { VueRendererResult } from '../VueRenderer'
 
-import { VueNodeView } from './VueNodeView'
 import type { NodeViewFactory } from './nodeViewContext'
+import { VueNodeView } from './VueNodeView'
 
 export function useVueNodeViewCreator(
   renderVueRenderer: VueRendererResult['renderVueRenderer'],

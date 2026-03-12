@@ -8,9 +8,9 @@ import { Dynamic, Portal } from 'solid-js/web'
 import type { SolidRenderer } from '../SolidRenderer'
 import { hidePortalDiv } from '../utils/hidePortalDiv'
 
-import type { SolidPluginViewComponent } from './SolidPluginViewOptions'
 import type { PluginViewContext, PluginViewContextProps } from './pluginViewContext'
 import { pluginViewContext } from './pluginViewContext'
+import type { SolidPluginViewComponent } from './SolidPluginViewOptions'
 
 export class SolidPluginView
   extends CorePluginView<SolidPluginViewComponent>

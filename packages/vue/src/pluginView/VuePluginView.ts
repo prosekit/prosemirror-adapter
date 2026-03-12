@@ -4,9 +4,9 @@ import { defineComponent, h, markRaw, provide, shallowRef, Teleport } from 'vue'
 
 import type { VueRenderer, VueRendererComponent } from '../VueRenderer'
 
-import type { VuePluginViewComponent } from './VuePluginViewOptions'
 import type { PluginViewContext } from './pluginViewContext'
 import { pluginViewContext } from './pluginViewContext'
+import type { VuePluginViewComponent } from './VuePluginViewOptions'
 
 export class VuePluginView extends CorePluginView<VuePluginViewComponent> implements VueRenderer<PluginViewContext> {
   key: string = nanoid()

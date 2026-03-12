@@ -2,8 +2,8 @@ import { getAllContexts } from 'svelte'
 
 import type { SvelteRendererResult } from '../SvelteRenderer'
 
-import { SvelteNodeView } from './SvelteNodeView'
 import type { NodeViewFactory } from './nodeViewContext'
+import { SvelteNodeView } from './SvelteNodeView'
 
 export function useSvelteNodeViewCreator(
   renderSvelteRenderer: SvelteRendererResult['renderSvelteRenderer'],

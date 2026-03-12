@@ -1,10 +1,11 @@
 /* @refresh reload */
 
+import './index.css'
+
 import { ProsemirrorAdapterProvider } from '@prosemirror-adapter/solid'
 
-import { Editor } from './components/Editor'
 import { ExtraContextProvider } from './components/context'
-import './index.css'
+import { Editor } from './components/Editor'
 
 export function App() {
   return (

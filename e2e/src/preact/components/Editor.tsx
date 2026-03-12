@@ -1,3 +1,5 @@
+import './Editor.css'
+
 import {
   useMarkViewFactory,
   useNodeViewFactory,
@@ -18,7 +20,6 @@ import { Link } from './Link'
 import { Now } from './Now'
 import { Paragraph } from './Paragraph'
 import { Size } from './Size'
-import './Editor.css'
 
 export const Editor: FunctionalComponent = () => {
   const viewRef = useRef<EditorView | null>(null)

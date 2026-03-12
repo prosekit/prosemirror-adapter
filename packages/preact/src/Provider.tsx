@@ -1,13 +1,13 @@
 import type { ComponentChildren, FunctionalComponent } from 'preact'
 import { useMemo } from 'preact/hooks'
 
-import { usePreactRenderer } from './PreactRenderer'
 import { createMarkViewContext } from './markView'
 import { usePreactMarkViewCreator } from './markView/usePreactMarkViewCreator'
 import { createNodeViewContext } from './nodeView'
 import { usePreactNodeViewCreator } from './nodeView/usePreactNodeViewCreator'
 import { createPluginViewContext } from './pluginView/pluginViewContext'
 import { usePreactPluginViewCreator } from './pluginView/usePreactPluginViewCreator'
+import { usePreactRenderer } from './PreactRenderer'
 import { createWidgetViewContext } from './widgetView'
 import { usePreactWidgetViewCreator } from './widgetView/usePreactWidgetViewCreator'
 

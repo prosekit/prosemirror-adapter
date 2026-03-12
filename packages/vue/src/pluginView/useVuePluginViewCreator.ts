@@ -1,7 +1,7 @@
 import type { VueRendererResult } from '../VueRenderer'
 
-import { VuePluginView } from './VuePluginView'
 import type { PluginViewFactory } from './pluginViewContext'
+import { VuePluginView } from './VuePluginView'
 
 export function useVuePluginViewCreator(
   renderVueRenderer: VueRendererResult['renderVueRenderer'],

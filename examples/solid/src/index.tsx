@@ -1,10 +1,11 @@
 /* @refresh reload */
 
+import './index.css'
+
 import { ProsemirrorAdapterProvider } from '@prosemirror-adapter/solid'
 import { render } from 'solid-js/web'
 
 import { Editor } from './components/Editor'
-import './index.css'
 
 const root = document.getElementById('root')
 
