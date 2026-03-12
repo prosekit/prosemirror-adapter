@@ -14,7 +14,7 @@
     "test": "playwright test",
     "test:install": "playwright install --with-deps"
   },
-  "dependencies": {
+  "devDependencies": {
     "@astrojs/preact": "^5.0.0",
     "@astrojs/react": "^5.0.0",
     "@astrojs/solid-js": "^6.0.0",
@@ -28,6 +28,7 @@
     "@prosemirror-adapter/solid": "workspace:*",
     "@prosemirror-adapter/svelte": "workspace:*",
     "@prosemirror-adapter/vue": "workspace:*",
+    "@types/node": "^24.0.0",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@webcomponents/template-shadowroot": "^0.2.1",

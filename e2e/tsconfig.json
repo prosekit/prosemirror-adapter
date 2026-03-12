@@ -1,6 +1,9 @@
 {
   "extends": "@ocavue/tsconfig/dom/root.json",
   "include": ["./tests", "./*.js", "./*.mjs", "./*.ts", ".astro/types.d.ts"],
+  "compilerOptions": {
+    "types": ["node"]
+  },
   "references": [
     {
       "path": "./src/lit/tsconfig.json"

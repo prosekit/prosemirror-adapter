@@ -23,8 +23,6 @@
   },
   "dependencies": {
     "@changesets/cli": "^2.30.0",
-    "@commitlint/cli": "^20.4.3",
-    "@commitlint/config-conventional": "^20.4.3",
     "@ocavue/eslint-config": "^4.3.1",
     "@ocavue/tsconfig": "^0.7.0",
     "concurrently": "^9.2.1",
