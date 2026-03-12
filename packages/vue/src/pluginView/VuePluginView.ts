@@ -1,5 +1,5 @@
 import { CorePluginView } from '@prosemirror-adapter/core'
-import { defineComponent, h, markRaw, provide, shallowRef, Teleport } from 'vue'
+import { defineComponent, h, markRaw, provide, shallowRef, Teleport, triggerRef } from 'vue'
 
 import type { VueRenderer, VueRendererComponent } from '../VueRenderer'
 
@@ -14,21 +14,10 @@ export class VuePluginView extends CorePluginView<VuePluginViewComponent> implem
   }
 
   updateContext = () => {
-    Object.entries({
-      view: this.view,
-      prevState: this.prevState,
-    }).forEach(([key, value]) => {
-      const prev = this.context[key as 'view' | 'prevState']
-      if (key === 'view') {
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-        const clone = Object.assign(Object.create(Object.getPrototypeOf(value) as object | null), value)
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-        prev.value = clone
-        return
-      }
-
-      prev.value = value
-    })
+    const ctx = this.context
+    ctx.view.value = this.view
+    ctx.prevState.value = this.prevState
+    triggerRef(ctx.view)
   }
 
   render = () => {

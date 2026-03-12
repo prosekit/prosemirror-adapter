@@ -21,15 +21,11 @@ export class VueNodeView extends CoreNodeView<VueNodeViewComponent> implements V
   }
 
   updateContext = () => {
-    Object.entries({
-      node: this.node,
-      selected: this.selected,
-      decorations: this.decorations,
-      innerDecorations: this.innerDecorations,
-    }).forEach(([key, value]) => {
-      const prev = this.context[key as 'node' | 'selected' | 'decorations' | 'innerDecorations']
-      if (prev.value !== value) prev.value = value
-    })
+    const ctx = this.context
+    if (ctx.node.value !== this.node) ctx.node.value = this.node
+    if (ctx.selected.value !== this.selected) ctx.selected.value = this.selected
+    if (ctx.decorations.value !== this.decorations) ctx.decorations.value = this.decorations
+    if (ctx.innerDecorations.value !== this.innerDecorations) ctx.innerDecorations.value = this.innerDecorations
   }
 
   render = () => {
