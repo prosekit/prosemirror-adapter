@@ -1,4 +1,5 @@
 import { CoreMarkView } from '@prosemirror-adapter/core'
+import { createElement } from 'preact'
 import { createPortal } from 'preact/compat'
 
 import type { PreactRenderer } from '../PreactRenderer'
@@ -33,9 +34,7 @@ export class PreactMarkView
     const UserComponent = this.component
 
     return createPortal(
-      <markViewContext.Provider value={this.context}>
-        <UserComponent />
-      </markViewContext.Provider>,
+      createElement(markViewContext.Provider, { value: this.context }, createElement(UserComponent, null)),
       this.dom,
     )
   }

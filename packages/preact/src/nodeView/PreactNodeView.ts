@@ -1,16 +1,17 @@
 import { CoreNodeView } from '@prosemirror-adapter/core'
-import { createPortal } from 'react-dom'
+import { createElement } from 'preact'
+import { createPortal } from 'preact/compat'
 
-import type { ReactRenderer } from '../ReactRenderer'
+import type { PreactRenderer } from '../PreactRenderer'
 
 import type { NodeViewContext } from './nodeViewContext'
 import { nodeViewContext } from './nodeViewContext'
-import type { ReactNodeViewComponent } from './ReactNodeViewOptions'
+import type { PreactNodeViewComponent } from './PreactNodeViewOptions'
 
 /**
  * @internal
  */
-export class ReactHeadlessNodeView<ComponentType> extends CoreNodeView<ComponentType> {
+export class PreactHeadlessNodeView<ComponentType> extends CoreNodeView<ComponentType> {
   context: NodeViewContext = {
     contentRef: this.contentRef,
     view: this.view,
@@ -33,19 +34,16 @@ export class ReactHeadlessNodeView<ComponentType> extends CoreNodeView<Component
   }
 }
 
-export class ReactNodeView
-  extends ReactHeadlessNodeView<ReactNodeViewComponent>
-  implements ReactRenderer<NodeViewContext>
+export class PreactNodeView
+  extends PreactHeadlessNodeView<PreactNodeViewComponent>
+  implements PreactRenderer<NodeViewContext>
 {
   render = () => {
     const UserComponent = this.component
 
     return createPortal(
-      <nodeViewContext.Provider value={this.context}>
-        <UserComponent />
-      </nodeViewContext.Provider>,
+      createElement(nodeViewContext.Provider, { value: this.context }, createElement(UserComponent, null)),
       this.dom,
-      this.key,
     )
   }
 }

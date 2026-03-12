@@ -1,4 +1,5 @@
 import { Fragment, type ComponentChildren, type FunctionalComponent } from 'preact'
+import { createElement } from 'preact'
 
 import { createMarkViewContext } from './markView'
 import { usePreactMarkViewCreator } from './markView/usePreactMarkViewCreator'
@@ -38,16 +39,22 @@ export const ProsemirrorAdapterProvider: FunctionalComponent<{ children: Compone
     removePreactRenderer,
   )
 
-  return (
-    <createNodeViewContext.Provider value={createPreactNodeView}>
-      <createMarkViewContext.Provider value={createPreactMarkView}>
-        <createPluginViewContext.Provider value={createPreactPluginView}>
-          <createWidgetViewContext.Provider value={createPreactWidgetView}>
-            <Fragment key={1}>{children}</Fragment>
-            <Fragment key={2}>{render()}</Fragment>
-          </createWidgetViewContext.Provider>
-        </createPluginViewContext.Provider>
-      </createMarkViewContext.Provider>
-    </createNodeViewContext.Provider>
+  return createElement(
+    createNodeViewContext.Provider,
+    { value: createPreactNodeView },
+    createElement(
+      createMarkViewContext.Provider,
+      { value: createPreactMarkView },
+      createElement(
+        createPluginViewContext.Provider,
+        { value: createPreactPluginView },
+        createElement(
+          createWidgetViewContext.Provider,
+          { value: createPreactWidgetView },
+          createElement(Fragment, { key: 1 }, children),
+          createElement(Fragment, { key: 2 }, render()),
+        ),
+      ),
+    ),
   )
 }

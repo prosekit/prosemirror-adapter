@@ -1,15 +1,16 @@
 import { CorePluginView } from '@prosemirror-adapter/core'
-import { createPortal } from 'react-dom'
+import { createElement } from 'preact'
+import { createPortal } from 'preact/compat'
 
-import type { ReactRenderer } from '../ReactRenderer'
+import type { PreactRenderer } from '../PreactRenderer'
 
 import type { PluginViewContext } from './pluginViewContext'
 import { pluginViewContext } from './pluginViewContext'
-import type { ReactPluginViewComponent } from './ReactPluginViewOptions'
+import type { PreactPluginViewComponent } from './PreactPluginViewOptions'
 
-export class ReactPluginView
-  extends CorePluginView<ReactPluginViewComponent>
-  implements ReactRenderer<PluginViewContext>
+export class PreactPluginView
+  extends CorePluginView<PreactPluginViewComponent>
+  implements PreactRenderer<PluginViewContext>
 {
   context: PluginViewContext = {
     view: this.view,
@@ -27,11 +28,8 @@ export class ReactPluginView
     const UserComponent = this.component
 
     return createPortal(
-      <pluginViewContext.Provider value={this.context}>
-        <UserComponent />
-      </pluginViewContext.Provider>,
+      createElement(pluginViewContext.Provider, { value: this.context }, createElement(UserComponent, null)),
       this.root,
-      this.key,
     )
   }
 }
