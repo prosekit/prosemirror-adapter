@@ -1,5 +1,5 @@
-import type { DefineComponent, Ref } from 'vue'
-import { getCurrentInstance, markRaw, onBeforeMount, onUnmounted, ref } from 'vue'
+import type { DefineComponent, VNode } from 'vue'
+import { Fragment, getCurrentInstance, h, markRaw, onBeforeMount, onUnmounted, ref } from 'vue'
 
 /**
  * @internal
@@ -23,7 +23,7 @@ export interface VueRenderer<Context> {
  * @internal
  */
 export interface VueRendererResult {
-  readonly portals: Ref<Record<string, VueRendererComponent>>
+  readonly render: () => VNode
   readonly renderVueRenderer: (renderer: VueRenderer<unknown>) => void
   readonly removeVueRenderer: (renderer: VueRenderer<unknown>) => void
 }
@@ -58,8 +58,17 @@ export function useVueRenderer(): VueRendererResult {
     delete portals.value[renderer.key]
   }
 
+  const render = () => {
+    const children: VNode[] = []
+    for (const key in portals.value) {
+      const Portal = portals.value[key]
+      children.push(h(Portal, { key }))
+    }
+    return h(Fragment, null, children)
+  }
+
   return {
-    portals,
+    render,
     renderVueRenderer,
     removeVueRenderer,
   } as const

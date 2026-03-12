@@ -18,7 +18,7 @@ export type CreateVueWidgetView = ReturnType<typeof useVueWidgetViewCreator>
 export const ProsemirrorAdapterProvider = defineComponent({
   name: 'ProsemirrorAdapterProvider',
   setup: (_, { slots }) => {
-    const { portals, renderVueRenderer, removeVueRenderer } = useVueRenderer()
+    const { render, renderVueRenderer, removeVueRenderer } = useVueRenderer()
 
     const createVueNodeView: CreateVueNodeView = useVueNodeViewCreator(renderVueRenderer, removeVueRenderer)
     const createVueMarkView: CreateVueMarkView = useVueMarkViewCreator(renderVueRenderer, removeVueRenderer)
@@ -31,12 +31,8 @@ export const ProsemirrorAdapterProvider = defineComponent({
     provide(widgetViewFactoryKey, createVueWidgetView)
 
     return () => {
-      const childrenPart = h(Fragment, { key: 1 }, slots.default?.())
-      const portalsPart = h(
-        Fragment,
-        { key: 2 },
-        Object.values(portals.value).map((x) => h(x)),
-      )
+      const childrenPart = h(Fragment, { key: 1 }, [slots.default?.()])
+      const portalsPart = h(Fragment, { key: 2 }, [render()])
       return h(Fragment, null, [childrenPart, portalsPart])
     }
   },
