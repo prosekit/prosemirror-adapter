@@ -7,7 +7,10 @@ import type { MarkViewContext } from './markViewContext'
 import { markViewContext } from './markViewContext'
 import type { PreactMarkViewComponent } from './PreactMarkViewOptions'
 
-export class PreactMarkView extends CoreMarkView<PreactMarkViewComponent> implements PreactRenderer<MarkViewContext> {
+/**
+ * @internal
+ */
+export class PreactHeadlessMarkView<ComponentType> extends CoreMarkView<ComponentType> {
   context: MarkViewContext = {
     contentRef: this.contentRef,
     view: this.view,
@@ -20,7 +23,12 @@ export class PreactMarkView extends CoreMarkView<PreactMarkViewComponent> implem
       mark: this.mark,
     })
   }
+}
 
+export class PreactMarkView
+  extends PreactHeadlessMarkView<PreactMarkViewComponent>
+  implements PreactRenderer<MarkViewContext>
+{
   render = () => {
     const UserComponent = this.component
 

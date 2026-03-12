@@ -6,5 +6,5 @@ export {
   type MarkViewContext,
   type MarkViewFactory,
 } from './markViewContext'
-export { VueMarkView } from './VueMarkView'
+export { VueMarkView, VueHeadlessMarkView } from './VueMarkView'
 export type { VueMarkViewComponent, VueMarkViewSpec, VueMarkViewUserOptions } from './VueMarkViewOptions'

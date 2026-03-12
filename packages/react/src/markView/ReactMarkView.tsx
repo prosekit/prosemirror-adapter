@@ -7,7 +7,10 @@ import type { MarkViewContext } from './markViewContext'
 import { markViewContext } from './markViewContext'
 import type { ReactMarkViewComponent } from './ReactMarkViewOptions'
 
-export class ReactMarkView extends CoreMarkView<ReactMarkViewComponent> implements ReactRenderer<MarkViewContext> {
+/**
+ * @internal
+ */
+export class ReactHeadlessMarkView<ComponentType> extends CoreMarkView<ComponentType> {
   context: MarkViewContext = {
     contentRef: this.contentRef,
     view: this.view,
@@ -20,7 +23,12 @@ export class ReactMarkView extends CoreMarkView<ReactMarkViewComponent> implemen
       mark: this.mark,
     })
   }
+}
 
+export class ReactMarkView
+  extends ReactHeadlessMarkView<ReactMarkViewComponent>
+  implements ReactRenderer<MarkViewContext>
+{
   render = () => {
     const UserComponent = this.component
 

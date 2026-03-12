@@ -10,12 +10,15 @@ import type { MarkViewContext, MarkViewContextProps } from './markViewContext'
 import { markViewContext } from './markViewContext'
 import type { SolidMarkViewComponent } from './SolidMarkViewOptions'
 
-export class SolidMarkView extends CoreMarkView<SolidMarkViewComponent> implements SolidRenderer<MarkViewContext> {
+/**
+ * @internal
+ */
+export class SolidHeadlessMarkView<ComponentType> extends CoreMarkView<ComponentType> {
   context: MarkViewContext
 
-  private setContext: Setter<MarkViewContextProps>
+  protected setContext: Setter<MarkViewContextProps>
 
-  constructor(spec: CoreMarkViewSpec<SolidMarkViewComponent>) {
+  constructor(spec: CoreMarkViewSpec<ComponentType>) {
     super(spec)
     const [context, setContext] = createSignal<MarkViewContextProps>({
       contentRef: this.contentRef,
@@ -33,7 +36,12 @@ export class SolidMarkView extends CoreMarkView<SolidMarkViewComponent> implemen
       mark: this.mark,
     }))
   }
+}
 
+export class SolidMarkView
+  extends SolidHeadlessMarkView<SolidMarkViewComponent>
+  implements SolidRenderer<MarkViewContext>
+{
   render = () => {
     const UserComponent = this.component
 

@@ -6,5 +6,5 @@ export {
   type NodeViewContext,
   type NodeViewFactory,
 } from './nodeViewContext'
-export { VueNodeView } from './VueNodeView'
+export { VueNodeView, VueHeadlessNodeView } from './VueNodeView'
 export type { VueNodeViewComponent, VueNodeViewSpec, VueNodeViewUserOptions } from './VueNodeViewOptions'

@@ -7,5 +7,5 @@ export {
   type NodeViewContext,
   type NodeViewContextProps,
 } from './nodeViewContext'
-export { SolidNodeView } from './SolidNodeView'
+export { SolidNodeView, SolidHeadlessNodeView } from './SolidNodeView'
 export type { SolidNodeViewComponent, SolidNodeViewSpec, SolidNodeViewUserOptions } from './SolidNodeViewOptions'

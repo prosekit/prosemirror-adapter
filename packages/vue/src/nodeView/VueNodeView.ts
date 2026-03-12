@@ -7,7 +7,10 @@ import type { NodeViewContext } from './nodeViewContext'
 import { nodeViewContext } from './nodeViewContext'
 import type { VueNodeViewComponent } from './VueNodeViewOptions'
 
-export class VueNodeView extends CoreNodeView<VueNodeViewComponent> implements VueRenderer<NodeViewContext> {
+/**
+ * @internal
+ */
+export class VueHeadlessNodeView<ComponentType> extends CoreNodeView<ComponentType> {
   context: NodeViewContext = {
     contentRef: this.contentRef,
     view: this.view,
@@ -27,7 +30,9 @@ export class VueNodeView extends CoreNodeView<VueNodeViewComponent> implements V
     if (ctx.decorations.value !== this.decorations) ctx.decorations.value = this.decorations
     if (ctx.innerDecorations.value !== this.innerDecorations) ctx.innerDecorations.value = this.innerDecorations
   }
+}
 
+export class VueNodeView extends VueHeadlessNodeView<VueNodeViewComponent> implements VueRenderer<NodeViewContext> {
   render = () => {
     const UserComponent = this.component
 
