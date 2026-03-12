@@ -1,6 +1,5 @@
 {
   "extends": "@ocavue/tsconfig/dom/app.json",
-  "compilerOptions": {},
   "references": [
     {
       "path": "../core/tsconfig.json"
