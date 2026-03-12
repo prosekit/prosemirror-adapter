@@ -41,6 +41,7 @@ export {
   type CreatePreactPluginView,
   type CreatePreactWidgetView,
 } from './Provider'
+export { usePreactRenderer, type PreactRenderer, type PreactRendererResult } from './PreactRenderer'
 export {
   createWidgetViewContext,
   PreactWidgetView,

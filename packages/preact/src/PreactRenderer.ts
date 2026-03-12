@@ -2,6 +2,9 @@ import type { VNode } from 'preact'
 import { flushSync } from 'preact/compat'
 import { useCallback, useLayoutEffect, useRef, useState } from 'preact/hooks'
 
+/**
+ * @internal
+ */
 export interface PreactRenderer<Context> {
   key: string
 
@@ -12,12 +15,18 @@ export interface PreactRenderer<Context> {
   updateContext: () => void
 }
 
+/**
+ * @internal
+ */
 export interface PreactRendererResult {
   readonly portals: Record<string, VNode>
   readonly renderPreactRenderer: (nodeView: PreactRenderer<unknown>, update?: boolean) => void
   readonly removePreactRenderer: (nodeView: PreactRenderer<unknown>) => void
 }
 
+/**
+ * @internal
+ */
 export function usePreactRenderer(): PreactRendererResult {
   const [portals, setPortals] = useState<Record<string, VNode>>({})
   const mountedRef = useRef(false)

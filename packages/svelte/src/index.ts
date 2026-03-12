@@ -33,6 +33,7 @@ export {
   type SveltePluginViewUserOptions,
 } from './pluginView'
 export { useProsemirrorAdapterProvider } from './Provider'
+export { useSvelteRenderer, type SvelteRenderer, type SvelteRendererResult } from './SvelteRenderer'
 export {
   SvelteWidgetView,
   useWidgetViewContext,

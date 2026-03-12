@@ -3,6 +3,9 @@ import { writable } from 'svelte/store'
 
 import type { SvelteRenderOptions } from './types'
 
+/**
+ * @internal
+ */
 export interface SvelteRenderer<Context> {
   key: string
 
@@ -13,11 +16,17 @@ export interface SvelteRenderer<Context> {
   updateContext: () => void
 }
 
+/**
+ * @internal
+ */
 export interface SvelteRendererResult {
   readonly renderSvelteRenderer: (renderer: SvelteRenderer<unknown>, options: SvelteRenderOptions) => void
   readonly removeSvelteRenderer: (renderer: SvelteRenderer<unknown>) => void
 }
 
+/**
+ * @internal
+ */
 export function useSvelteRenderer(): SvelteRendererResult {
   const unmounts: Writable<Record<string, VoidFunction>> = writable({})
 

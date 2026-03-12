@@ -42,6 +42,7 @@ export {
   type CreateVuePluginView,
   type CreateVueWidgetView,
 } from './Provider'
+export { useVueRenderer, type VueRenderer, type VueRendererComponent, type VueRendererResult } from './VueRenderer'
 export {
   useWidgetViewContext,
   useWidgetViewFactory,

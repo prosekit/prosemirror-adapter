@@ -1,8 +1,14 @@
 import type { DefineComponent, Ref } from 'vue'
 import { getCurrentInstance, markRaw, onBeforeMount, onUnmounted, ref } from 'vue'
 
+/**
+ * @internal
+ */
 export type VueRendererComponent = DefineComponent<any, any, any>
 
+/**
+ * @internal
+ */
 export interface VueRenderer<Context> {
   key: string
 
@@ -13,12 +19,18 @@ export interface VueRenderer<Context> {
   updateContext: () => void
 }
 
+/**
+ * @internal
+ */
 export interface VueRendererResult {
   readonly portals: Ref<Record<string, VueRendererComponent>>
   readonly renderVueRenderer: (renderer: VueRenderer<unknown>) => void
   readonly removeVueRenderer: (renderer: VueRenderer<unknown>) => void
 }
 
+/**
+ * @internal
+ */
 export function useVueRenderer(): VueRendererResult {
   const portals = ref<Record<string, VueRendererComponent>>({})
   const instance = getCurrentInstance()
