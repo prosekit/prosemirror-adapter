@@ -1,5 +1,5 @@
-import type { ReactPortal } from 'react'
-import { useCallback, useLayoutEffect, useRef, useState } from 'react'
+import type { ReactNode, ReactPortal } from 'react'
+import { createElement, Fragment, useCallback, useLayoutEffect, useMemo, useRef, useState } from 'react'
 import { flushSync } from 'react-dom'
 
 /**
@@ -19,16 +19,49 @@ export interface ReactRenderer<Context> {
  * @internal
  */
 export interface ReactRendererResult {
-  readonly portals: Record<string, ReactPortal>
+  readonly portal: ReactNode
   readonly renderReactRenderer: (nodeView: ReactRenderer<unknown>, update?: boolean) => void
   readonly removeReactRenderer: (nodeView: ReactRenderer<unknown>) => void
+}
+
+type PortalState = [keys: string[], nodes: ReactPortal[]]
+
+function updateRenderer(state: PortalState, renderer: ReactRenderer<unknown>): PortalState {
+  const [keys, nodes] = state
+  const newKey = renderer.key
+  const newNode = renderer.render()
+
+  const index = keys.indexOf(newKey)
+  if (index === -1) {
+    return [
+      [...keys, newKey],
+      [...nodes, newNode],
+    ]
+  } else {
+    const newKeys = [...keys]
+    const newNodes = [...nodes]
+    newKeys[index] = newKey
+    newNodes[index] = newNode
+    return [newKeys, newNodes]
+  }
+}
+
+function removeRenderer(state: PortalState, renderer: ReactRenderer<unknown>): PortalState {
+  const [keys, nodes] = state
+  const index = keys.indexOf(renderer.key)
+  if (index === -1) return state
+  const newKeys = [...keys]
+  const newNodes = [...nodes]
+  newKeys.splice(index, 1)
+  newNodes.splice(index, 1)
+  return [newKeys, newNodes]
 }
 
 /**
  * @internal
  */
 export function useReactRenderer(): ReactRendererResult {
-  const [portals, setPortals] = useState<Record<string, ReactPortal>>({})
+  const [portalState, setPortalState] = useState<PortalState>([[], []])
   const mountedRef = useRef(false)
 
   useLayoutEffect(() => {
@@ -47,11 +80,7 @@ export function useReactRenderer(): ReactRendererResult {
     (nodeView: ReactRenderer<unknown>, update = true) => {
       maybeFlushSync(() => {
         if (update) nodeView.updateContext()
-
-        setPortals((prev) => ({
-          ...prev,
-          [nodeView.key]: nodeView.render(),
-        }))
+        return setPortalState((prev) => updateRenderer(prev, nodeView))
       })
     },
     [maybeFlushSync],
@@ -60,18 +89,19 @@ export function useReactRenderer(): ReactRendererResult {
   const removeReactRenderer = useCallback(
     (nodeView: ReactRenderer<unknown>) => {
       maybeFlushSync(() => {
-        setPortals((prev) => {
-          const next = { ...prev }
-          delete next[nodeView.key]
-          return next
-        })
+        return setPortalState((prev) => removeRenderer(prev, nodeView))
       })
     },
     [maybeFlushSync],
   )
 
+  const nodes = portalState[1]
+  const portal = useMemo(() => {
+    return createElement(Fragment, null, nodes)
+  }, [nodes])
+
   return {
-    portals,
+    portal,
     renderReactRenderer,
     removeReactRenderer,
   } as const
