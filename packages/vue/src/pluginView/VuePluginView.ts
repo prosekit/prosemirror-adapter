@@ -1,5 +1,5 @@
 import { CorePluginView } from '@prosemirror-adapter/core'
-import { defineComponent, h, markRaw, provide, shallowRef, Teleport } from 'vue'
+import { defineComponent, h, markRaw, provide, shallowRef, Teleport, triggerRef } from 'vue'
 
 import type { VueRenderer, VueRendererComponent } from '../VueRenderer'
 
@@ -15,9 +15,9 @@ export class VuePluginView extends CorePluginView<VuePluginViewComponent> implem
 
   updateContext = () => {
     const ctx = this.context
-
-    if (ctx.view.value !== this.view) ctx.view.value = this.view
-    if (ctx.prevState.value !== this.prevState) ctx.prevState.value = this.prevState
+    ctx.view.value = this.view
+    ctx.prevState.value = this.prevState
+    triggerRef(ctx.view)
   }
 
   render = () => {
