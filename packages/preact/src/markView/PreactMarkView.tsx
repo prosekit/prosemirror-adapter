@@ -4,9 +4,9 @@ import { createPortal } from 'preact/compat'
 
 import type { PreactRenderer } from '../PreactRenderer'
 
-import type { PreactMarkViewComponent } from './PreactMarkViewOptions'
 import type { MarkViewContext } from './markViewContext'
 import { markViewContext } from './markViewContext'
+import type { PreactMarkViewComponent } from './PreactMarkViewOptions'
 
 export class PreactMarkView extends CoreMarkView<PreactMarkViewComponent> implements PreactRenderer<MarkViewContext> {
   key: string = nanoid()

@@ -1,3 +1,5 @@
+import './Editor.css'
+
 import { useNodeViewFactory, usePluginViewFactory, useWidgetViewFactory } from '@prosemirror-adapter/preact'
 import type { FunctionalComponent } from 'preact'
 import { useCallback, useRef } from 'preact/hooks'
@@ -11,7 +13,6 @@ import { Hashes } from './Hashes'
 import { Heading } from './Heading'
 import { Paragraph } from './Paragraph'
 import { Size } from './Size'
-import './Editor.css'
 
 export const Editor: FunctionalComponent = () => {
   const viewRef = useRef<EditorView | null>(null)

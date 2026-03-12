@@ -7,9 +7,9 @@ import { Dynamic, Portal } from 'solid-js/web'
 import type { SolidRenderer } from '../SolidRenderer'
 import { hidePortalDiv } from '../utils/hidePortalDiv'
 
-import type { SolidNodeViewComponent } from './SolidNodeViewOptions'
 import type { NodeViewContext, NodeViewContextProps } from './nodeViewContext'
 import { nodeViewContext } from './nodeViewContext'
+import type { SolidNodeViewComponent } from './SolidNodeViewOptions'
 
 export class SolidNodeView extends CoreNodeView<SolidNodeViewComponent> implements SolidRenderer<NodeViewContext> {
   key: string = nanoid()

@@ -2,13 +2,13 @@ import { CoreNodeView } from '@prosemirror-adapter/core'
 import { nanoid } from 'nanoid'
 import { writable } from 'svelte/store'
 
-import type { SvelteRenderer } from '../SvelteRenderer'
 import { createContextMap } from '../context'
 import { mount } from '../mount'
+import type { SvelteRenderer } from '../SvelteRenderer'
 import type { SvelteRenderOptions } from '../types'
 
-import type { SvelteNodeViewComponent } from './SvelteNodeViewOptions'
 import type { NodeViewContext } from './nodeViewContext'
+import type { SvelteNodeViewComponent } from './SvelteNodeViewOptions'
 
 export class SvelteNodeView extends CoreNodeView<SvelteNodeViewComponent> implements SvelteRenderer<NodeViewContext> {
   key: string = nanoid()

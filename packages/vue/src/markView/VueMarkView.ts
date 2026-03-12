@@ -4,9 +4,9 @@ import { defineComponent, h, markRaw, provide, shallowRef, Teleport } from 'vue'
 
 import type { VueRenderer, VueRendererComponent } from '../VueRenderer'
 
-import type { VueMarkViewComponent } from './VueMarkViewOptions'
 import type { MarkViewContext } from './markViewContext'
 import { markViewContext } from './markViewContext'
+import type { VueMarkViewComponent } from './VueMarkViewOptions'
 
 export class VueMarkView extends CoreMarkView<VueMarkViewComponent> implements VueRenderer<MarkViewContext> {
   key: string = nanoid()

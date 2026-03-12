@@ -7,9 +7,9 @@ import { Dynamic, Portal } from 'solid-js/web'
 import type { SolidRenderer } from '../SolidRenderer'
 import { hidePortalDiv } from '../utils/hidePortalDiv'
 
-import type { SolidMarkViewComponent } from './SolidMarkViewOptions'
 import type { MarkViewContext, MarkViewContextProps } from './markViewContext'
 import { markViewContext } from './markViewContext'
+import type { SolidMarkViewComponent } from './SolidMarkViewOptions'
 
 export class SolidMarkView extends CoreMarkView<SolidMarkViewComponent> implements SolidRenderer<MarkViewContext> {
   key: string = nanoid()

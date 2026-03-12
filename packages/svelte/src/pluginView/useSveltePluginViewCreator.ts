@@ -2,8 +2,8 @@ import { getAllContexts } from 'svelte'
 
 import type { SvelteRendererResult } from '../SvelteRenderer'
 
-import { SveltePluginView } from './SveltePluginView'
 import type { PluginViewFactory } from './pluginViewContext'
+import { SveltePluginView } from './SveltePluginView'
 
 export function useSveltePluginViewCreator(
   renderSvelteRenderer: SvelteRendererResult['renderSvelteRenderer'],

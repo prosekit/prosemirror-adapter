@@ -1,9 +1,9 @@
 import { CoreWidgetView } from '@prosemirror-adapter/core'
 import { nanoid } from 'nanoid'
 
-import type { SvelteRenderer } from '../SvelteRenderer'
 import { createContextMap } from '../context'
 import { mount } from '../mount'
+import type { SvelteRenderer } from '../SvelteRenderer'
 import type { SvelteRenderOptions } from '../types'
 
 import type { SvelteWidgetViewComponent } from './SvelteWidgetViewOptions'

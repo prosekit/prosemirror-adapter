@@ -2,8 +2,8 @@ import { getAllContexts } from 'svelte'
 
 import type { SvelteRendererResult } from '../SvelteRenderer'
 
-import { SvelteMarkView } from './SvelteMarkView'
 import type { MarkViewFactory } from './markViewContext'
+import { SvelteMarkView } from './SvelteMarkView'
 
 export function useSvelteMarkViewCreator(
   renderSvelteRenderer: SvelteRendererResult['renderSvelteRenderer'],

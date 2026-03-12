@@ -2,13 +2,13 @@ import { CorePluginView } from '@prosemirror-adapter/core'
 import { nanoid } from 'nanoid'
 import { writable } from 'svelte/store'
 
-import type { SvelteRenderer } from '../SvelteRenderer'
 import { createContextMap } from '../context'
 import { mount } from '../mount'
+import type { SvelteRenderer } from '../SvelteRenderer'
 import type { SvelteRenderOptions } from '../types'
 
-import type { SveltePluginViewComponent } from './SveltePluginViewOptions'
 import type { PluginViewContext } from './pluginViewContext'
+import type { SveltePluginViewComponent } from './SveltePluginViewOptions'
 
 export class SveltePluginView
   extends CorePluginView<SveltePluginViewComponent>

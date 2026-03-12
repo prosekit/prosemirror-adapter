@@ -4,9 +4,9 @@ import { createPortal } from 'react-dom'
 
 import type { ReactRenderer } from '../ReactRenderer'
 
-import type { ReactPluginViewComponent } from './ReactPluginViewOptions'
 import type { PluginViewContext } from './pluginViewContext'
 import { pluginViewContext } from './pluginViewContext'
+import type { ReactPluginViewComponent } from './ReactPluginViewOptions'
 
 export class ReactPluginView
   extends CorePluginView<ReactPluginViewComponent>

@@ -1,3 +1,5 @@
+import './style.css'
+
 import { provide } from '@lit/context'
 import { ShallowLitElement } from '@prosemirror-adapter/lit'
 import { html } from 'lit'
@@ -6,7 +8,6 @@ import { keyed } from 'lit/directives/keyed.js'
 
 import { getNow } from '../shared/utils'
 
-import './style.css'
 import { extraContext } from './components/context'
 
 export * from './components/Editor'

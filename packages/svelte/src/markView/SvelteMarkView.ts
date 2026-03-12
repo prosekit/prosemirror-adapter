@@ -2,13 +2,13 @@ import { CoreMarkView } from '@prosemirror-adapter/core'
 import { nanoid } from 'nanoid'
 import { writable } from 'svelte/store'
 
-import type { SvelteRenderer } from '../SvelteRenderer'
 import { createContextMap } from '../context'
 import { mount } from '../mount'
+import type { SvelteRenderer } from '../SvelteRenderer'
 import type { SvelteRenderOptions } from '../types'
 
-import type { SvelteMarkViewComponent } from './SvelteMarkViewOptions'
 import type { MarkViewContext } from './markViewContext'
+import type { SvelteMarkViewComponent } from './SvelteMarkViewOptions'
 
 export class SvelteMarkView extends CoreMarkView<SvelteMarkViewComponent> implements SvelteRenderer<MarkViewContext> {
   key: string = nanoid()

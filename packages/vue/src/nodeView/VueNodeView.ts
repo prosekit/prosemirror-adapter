@@ -4,9 +4,9 @@ import { defineComponent, h, markRaw, provide, shallowRef, Teleport } from 'vue'
 
 import type { VueRenderer, VueRendererComponent } from '../VueRenderer'
 
-import type { VueNodeViewComponent } from './VueNodeViewOptions'
 import type { NodeViewContext } from './nodeViewContext'
 import { nodeViewContext } from './nodeViewContext'
+import type { VueNodeViewComponent } from './VueNodeViewOptions'
 
 export class VueNodeView extends CoreNodeView<VueNodeViewComponent> implements VueRenderer<NodeViewContext> {
   key: string = nanoid()

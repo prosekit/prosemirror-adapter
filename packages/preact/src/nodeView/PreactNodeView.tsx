@@ -4,9 +4,9 @@ import { createPortal } from 'preact/compat'
 
 import type { PreactRenderer } from '../PreactRenderer'
 
-import type { PreactNodeViewComponent } from './PreactNodeViewOptions'
 import type { NodeViewContext } from './nodeViewContext'
 import { nodeViewContext } from './nodeViewContext'
+import type { PreactNodeViewComponent } from './PreactNodeViewOptions'
 
 export class PreactNodeView extends CoreNodeView<PreactNodeViewComponent> implements PreactRenderer<NodeViewContext> {
   key: string = nanoid()

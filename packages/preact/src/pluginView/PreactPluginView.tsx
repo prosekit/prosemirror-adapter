@@ -4,9 +4,9 @@ import { createPortal } from 'preact/compat'
 
 import type { PreactRenderer } from '../PreactRenderer'
 
-import type { PreactPluginViewComponent } from './PreactPluginViewOptions'
 import type { PluginViewContext } from './pluginViewContext'
 import { pluginViewContext } from './pluginViewContext'
+import type { PreactPluginViewComponent } from './PreactPluginViewOptions'
 
 export class PreactPluginView
   extends CorePluginView<PreactPluginViewComponent>

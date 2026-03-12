@@ -2,8 +2,8 @@ import { ProsemirrorAdapterProvider } from '@prosemirror-adapter/preact'
 import { StrictMode } from 'preact/compat'
 import { useState } from 'preact/hooks'
 
-import { Editor } from './components/Editor'
 import { ExtraContextProvider } from './components/context'
+import { Editor } from './components/Editor'
 
 export function App() {
   const [counter, setCounter] = useState(0)
