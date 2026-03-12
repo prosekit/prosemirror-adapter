@@ -63,7 +63,7 @@ export interface VueRendererResult {
  * @internal
  */
 export function useVueRenderer(): VueRendererResult {
-  const portals = shallowRef<PortalState>([[], []])
+  const portalState = shallowRef<PortalState>([[], []])
   const instance = getCurrentInstance()
   const update = markRaw<{ updater?: () => void }>({})
 
@@ -78,7 +78,7 @@ export function useVueRenderer(): VueRendererResult {
   })
 
   const renderVueRenderer = (renderer: VueRenderer<unknown>) => {
-    portals.value = updateRenderer(portals.value, renderer)
+    portalState.value = updateRenderer(portalState.value, renderer)
 
     // Force update the vue component to render
     // Cursor won't move to new node without this
@@ -86,12 +86,12 @@ export function useVueRenderer(): VueRendererResult {
   }
 
   const removeVueRenderer = (renderer: VueRenderer<unknown>) => {
-    portals.value = removeRenderer(portals.value, renderer)
+    portalState.value = removeRenderer(portalState.value, renderer)
   }
 
   const render = () => {
     const children: VNode[] = []
-    const [keys, components] = portals.value
+    const [keys, components] = portalState.value
     const length = keys.length
     for (let i = 0; i < length; i++) {
       const key = keys[i]
