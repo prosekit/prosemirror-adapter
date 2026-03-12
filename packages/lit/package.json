@@ -29,7 +29,7 @@
     "nanoid": "^5.1.6",
     "prosemirror-model": "^1.25.4",
     "prosemirror-state": "^1.4.4",
-    "prosemirror-view": "^1.41.4"
+    "prosemirror-view": "^1.41.6"
   },
   "peerDependencies": {
     "@lit/context": "^1.0.0",
@@ -46,8 +46,8 @@
   "devDependencies": {
     "@lit/context": "^1.1.6",
     "lit": "^3.3.2",
-    "tsdown": "^0.18.3",
-    "vite": "^7.3.0"
+    "tsdown": "^0.21.1",
+    "vite": "^7.3.1"
   },
   "publishConfig": {
     "types": "./dist/index.d.ts",

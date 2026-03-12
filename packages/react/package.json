@@ -29,7 +29,7 @@
     "nanoid": "^5.1.6",
     "prosemirror-model": "^1.25.4",
     "prosemirror-state": "^1.4.4",
-    "prosemirror-view": "^1.41.4"
+    "prosemirror-view": "^1.41.6"
   },
   "peerDependencies": {
     "react": "*",
@@ -44,11 +44,11 @@
     }
   },
   "devDependencies": {
-    "@types/react": "^19.2.7",
+    "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
-    "react": "^19.2.3",
-    "react-dom": "^19.2.3",
-    "tsdown": "^0.18.3"
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "tsdown": "^0.21.1"
   },
   "publishConfig": {
     "types": "./dist/index.d.ts",

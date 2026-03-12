@@ -29,7 +29,7 @@
     "nanoid": "^5.1.6",
     "prosemirror-model": "^1.25.4",
     "prosemirror-state": "^1.4.4",
-    "prosemirror-view": "^1.41.4"
+    "prosemirror-view": "^1.41.6"
   },
   "peerDependencies": {
     "svelte": "^4.0.0 || ^5.0.0"
@@ -40,9 +40,9 @@
     }
   },
   "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "^6.2.1",
-    "svelte": "^5.46.1",
-    "tsdown": "^0.18.3"
+    "@sveltejs/vite-plugin-svelte": "^6.2.4",
+    "svelte": "^5.53.10",
+    "tsdown": "^0.21.1"
   },
   "publishConfig": {
     "types": "./dist/index.d.ts",

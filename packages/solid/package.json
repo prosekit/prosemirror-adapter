@@ -29,7 +29,7 @@
     "nanoid": "^5.1.6",
     "prosemirror-model": "^1.25.4",
     "prosemirror-state": "^1.4.4",
-    "prosemirror-view": "^1.41.4"
+    "prosemirror-view": "^1.41.6"
   },
   "peerDependencies": {
     "solid-js": "^1.8.22"
@@ -40,9 +40,9 @@
     }
   },
   "devDependencies": {
-    "solid-js": "^1.9.10",
-    "tsdown": "^0.18.3",
-    "vite": "^7.3.0",
+    "solid-js": "^1.9.11",
+    "tsdown": "^0.21.1",
+    "vite": "^7.3.1",
     "vite-plugin-solid": "^2.11.10"
   },
   "publishConfig": {

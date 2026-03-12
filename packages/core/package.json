@@ -26,10 +26,10 @@
   "dependencies": {
     "prosemirror-model": "^1.25.4",
     "prosemirror-state": "^1.4.4",
-    "prosemirror-view": "^1.41.4"
+    "prosemirror-view": "^1.41.6"
   },
   "devDependencies": {
-    "tsdown": "^0.18.3"
+    "tsdown": "^0.21.1"
   },
   "publishConfig": {
     "types": "./dist/index.d.ts",
