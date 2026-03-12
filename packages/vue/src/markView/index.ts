@@ -1,10 +1,10 @@
 export {
-  type MarkViewContext,
   markViewContext,
-  useMarkViewContext,
-  type MarkViewFactory,
   markViewFactoryKey,
+  useMarkViewContext,
   useMarkViewFactory,
+  type MarkViewContext,
+  type MarkViewFactory,
 } from './markViewContext'
 export { VueMarkView } from './VueMarkView'
 export type { VueMarkViewComponent, VueMarkViewSpec, VueMarkViewUserOptions } from './VueMarkViewOptions'
