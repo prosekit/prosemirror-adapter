@@ -1,5 +1,17 @@
 # @prosemirror-adapter/svelte
 
+## 0.6.0
+
+### Minor Changes
+
+- 8b507c2: Drop support for Svelte v4.
+
+### Patch Changes
+
+- a9460fa: Move shared logic to core.
+- Updated dependencies [a9460fa]
+  - @prosemirror-adapter/core@0.6.0
+
 ## 0.5.0
 
 ### Minor Changes
