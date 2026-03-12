@@ -33,7 +33,7 @@
     "@types/react-dom": "^19.2.3",
     "@webcomponents/template-shadowroot": "^0.2.1",
     "astro": "^6.0.3",
-    "astrobook": "https://pkg.pr.new/astrobook@225",
+    "astrobook": "^0.12.3",
     "lit": "^3.3.2",
     "preact": "^10.29.0",
     "prosemirror-example-setup": "^1.2.3",

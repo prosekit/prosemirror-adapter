@@ -114,8 +114,8 @@ importers:
         specifier: ^6.0.3
         version: 6.0.3(@types/node@22.17.2)(jiti@2.6.1)(rollup@4.46.3)(terser@5.43.1)(typescript@5.9.3)(yaml@2.8.2)
       astrobook:
-        specifier: https://pkg.pr.new/astrobook@225
-        version: https://pkg.pr.new/astrobook@225(astro@6.0.3(@types/node@22.17.2)(jiti@2.6.1)(rollup@4.46.3)(terser@5.43.1)(typescript@5.9.3)(yaml@2.8.2))(typescript@5.9.3)
+        specifier: ^0.12.3
+        version: 0.12.3(astro@6.0.3(@types/node@22.17.2)(jiti@2.6.1)(rollup@4.46.3)(terser@5.43.1)(typescript@5.9.3)(yaml@2.8.2))(typescript@5.9.3)
       lit:
         specifier: ^3.3.2
         version: 3.3.2
@@ -637,27 +637,24 @@ packages:
   '@altano/repository-tools@2.0.1':
     resolution: {integrity: sha512-YE/52CkFtb+YtHPgbWPai7oo5N9AKnMuP5LM+i2AG7G1H2jdYBCO1iDnkDE3dZ3C1MIgckaF+d5PNRulgt0bdw==}
 
-  '@astrobook/core@https://pkg.pr.new/ocavue/astrobook/@astrobook/core@bf05001':
-    resolution: {integrity: sha512-X7YAYptqI09r8naV+IVtAuW5IaWduVdBsAt7jVK3Mr1r7As2UVmhYFzfT+2ruJQAtI1gxOJ/0KWVJANNcWqdeA==, tarball: https://pkg.pr.new/ocavue/astrobook/@astrobook/core@bf05001}
-    version: 0.12.2
+  '@astrobook/core@0.12.3':
+    resolution: {integrity: sha512-xt64QW/ThYnXvQ4IduaEmrJHlcXiwpLEYbDThcKrOEVS7o2byJiurxriNDQDsjT7GARp0spaTeNisXknkYRgcw==}
     peerDependencies:
       astro: '>=5.0.0'
     peerDependenciesMeta:
       astro:
         optional: true
 
-  '@astrobook/types@https://pkg.pr.new/ocavue/astrobook/@astrobook/types@bf05001':
-    resolution: {integrity: sha512-/0/nXB678Vm5lJu2oKP0zCUrMOJeCey0Yhoa6besW+gDpXVCLZcQn+AdgHhx6orMQQByZTZ7JbUYok/wLD5R3Q==, tarball: https://pkg.pr.new/ocavue/astrobook/@astrobook/types@bf05001}
-    version: 0.12.2
+  '@astrobook/types@0.12.3':
+    resolution: {integrity: sha512-ZhhxvqVmlsPswmPiSNpsJceurP/+iKDNHVUZoI/fsJSDFnvhUHLRTnjIz08A73wbPOJ8vFAecg0t293Hx9Rn4A==}
     peerDependencies:
       astro: '>=5.0.0'
     peerDependenciesMeta:
       astro:
         optional: true
 
-  '@astrobook/ui@https://pkg.pr.new/ocavue/astrobook/@astrobook/ui@bf05001':
-    resolution: {integrity: sha512-FP+lY1MBWY9TrACIgVTkvsvX/j7GLxIhFQM8Km9XIMGlR+7oWYmtygfeUw8U1LJsUDyZ/Ddb97ybqmfdimTabQ==, tarball: https://pkg.pr.new/ocavue/astrobook/@astrobook/ui@bf05001}
-    version: 0.12.2
+  '@astrobook/ui@0.12.3':
+    resolution: {integrity: sha512-qdcxGkvy4//CeonNO2/CGwnWqyW82ENgsSFkaeAw30seVvRJBCFdJ2B63kbe7iwrcaeUgdnRF4BU3gxDWh4VhQ==}
     peerDependencies:
       astro: '>=5.0.0'
     peerDependenciesMeta:
@@ -2389,9 +2386,8 @@ packages:
     engines: {node: ^20.19.1 || >=22.12.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
-  astrobook@https://pkg.pr.new/astrobook@225:
-    resolution: {integrity: sha512-5N5UaQsoGD4558V5tbKVMRIO86su63Iyb3xNDzsBBO6oCXq989MMQ+RFmWtIe4f7Tm+GoKNIF1C/Oo0ZAKmPAQ==, tarball: https://pkg.pr.new/astrobook@225}
-    version: 0.12.2
+  astrobook@0.12.3:
+    resolution: {integrity: sha512-0+7QjQAefpBExR0CNuU7dv0/D3HIEQm+phjx8d5carKvELNiOUGoe64CiwAqYbUv050ZbetjscLmHDGypXNMmg==}
     peerDependencies:
       astro: '>=5.0.0'
     peerDependenciesMeta:
@@ -5000,9 +4996,9 @@ snapshots:
 
   '@altano/repository-tools@2.0.1': {}
 
-  '@astrobook/core@https://pkg.pr.new/ocavue/astrobook/@astrobook/core@bf05001(astro@6.0.3(@types/node@22.17.2)(jiti@2.6.1)(rollup@4.46.3)(terser@5.43.1)(typescript@5.9.3)(yaml@2.8.2))(typescript@5.9.3)':
+  '@astrobook/core@0.12.3(astro@6.0.3(@types/node@22.17.2)(jiti@2.6.1)(rollup@4.46.3)(terser@5.43.1)(typescript@5.9.3)(yaml@2.8.2))(typescript@5.9.3)':
     dependencies:
-      '@astrobook/types': https://pkg.pr.new/ocavue/astrobook/@astrobook/types@bf05001(astro@6.0.3(@types/node@22.17.2)(jiti@2.6.1)(rollup@4.46.3)(terser@5.43.1)(typescript@5.9.3)(yaml@2.8.2))
+      '@astrobook/types': 0.12.3(astro@6.0.3(@types/node@22.17.2)(jiti@2.6.1)(rollup@4.46.3)(terser@5.43.1)(typescript@5.9.3)(yaml@2.8.2))
       '@sveltejs/acorn-typescript': 1.0.9(acorn@8.16.0)
       acorn: 8.16.0
       fdir: 6.5.0(picomatch@4.0.3)
@@ -5015,14 +5011,14 @@ snapshots:
     transitivePeerDependencies:
       - typescript
 
-  '@astrobook/types@https://pkg.pr.new/ocavue/astrobook/@astrobook/types@bf05001(astro@6.0.3(@types/node@22.17.2)(jiti@2.6.1)(rollup@4.46.3)(terser@5.43.1)(typescript@5.9.3)(yaml@2.8.2))':
+  '@astrobook/types@0.12.3(astro@6.0.3(@types/node@22.17.2)(jiti@2.6.1)(rollup@4.46.3)(terser@5.43.1)(typescript@5.9.3)(yaml@2.8.2))':
     optionalDependencies:
       astro: 6.0.3(@types/node@22.17.2)(jiti@2.6.1)(rollup@4.46.3)(terser@5.43.1)(typescript@5.9.3)(yaml@2.8.2)
 
-  '@astrobook/ui@https://pkg.pr.new/ocavue/astrobook/@astrobook/ui@bf05001(astro@6.0.3(@types/node@22.17.2)(jiti@2.6.1)(rollup@4.46.3)(terser@5.43.1)(typescript@5.9.3)(yaml@2.8.2))(typescript@5.9.3)':
+  '@astrobook/ui@0.12.3(astro@6.0.3(@types/node@22.17.2)(jiti@2.6.1)(rollup@4.46.3)(terser@5.43.1)(typescript@5.9.3)(yaml@2.8.2))(typescript@5.9.3)':
     dependencies:
-      '@astrobook/core': https://pkg.pr.new/ocavue/astrobook/@astrobook/core@bf05001(astro@6.0.3(@types/node@22.17.2)(jiti@2.6.1)(rollup@4.46.3)(terser@5.43.1)(typescript@5.9.3)(yaml@2.8.2))(typescript@5.9.3)
-      '@astrobook/types': https://pkg.pr.new/ocavue/astrobook/@astrobook/types@bf05001(astro@6.0.3(@types/node@22.17.2)(jiti@2.6.1)(rollup@4.46.3)(terser@5.43.1)(typescript@5.9.3)(yaml@2.8.2))
+      '@astrobook/core': 0.12.3(astro@6.0.3(@types/node@22.17.2)(jiti@2.6.1)(rollup@4.46.3)(terser@5.43.1)(typescript@5.9.3)(yaml@2.8.2))(typescript@5.9.3)
+      '@astrobook/types': 0.12.3(astro@6.0.3(@types/node@22.17.2)(jiti@2.6.1)(rollup@4.46.3)(terser@5.43.1)(typescript@5.9.3)(yaml@2.8.2))
       astro-theme-toggle: 0.8.0
       just-group-by: 2.2.0
     optionalDependencies:
@@ -7197,11 +7193,11 @@ snapshots:
       - uploadthing
       - yaml
 
-  astrobook@https://pkg.pr.new/astrobook@225(astro@6.0.3(@types/node@22.17.2)(jiti@2.6.1)(rollup@4.46.3)(terser@5.43.1)(typescript@5.9.3)(yaml@2.8.2))(typescript@5.9.3):
+  astrobook@0.12.3(astro@6.0.3(@types/node@22.17.2)(jiti@2.6.1)(rollup@4.46.3)(terser@5.43.1)(typescript@5.9.3)(yaml@2.8.2))(typescript@5.9.3):
     dependencies:
-      '@astrobook/core': https://pkg.pr.new/ocavue/astrobook/@astrobook/core@bf05001(astro@6.0.3(@types/node@22.17.2)(jiti@2.6.1)(rollup@4.46.3)(terser@5.43.1)(typescript@5.9.3)(yaml@2.8.2))(typescript@5.9.3)
-      '@astrobook/types': https://pkg.pr.new/ocavue/astrobook/@astrobook/types@bf05001(astro@6.0.3(@types/node@22.17.2)(jiti@2.6.1)(rollup@4.46.3)(terser@5.43.1)(typescript@5.9.3)(yaml@2.8.2))
-      '@astrobook/ui': https://pkg.pr.new/ocavue/astrobook/@astrobook/ui@bf05001(astro@6.0.3(@types/node@22.17.2)(jiti@2.6.1)(rollup@4.46.3)(terser@5.43.1)(typescript@5.9.3)(yaml@2.8.2))(typescript@5.9.3)
+      '@astrobook/core': 0.12.3(astro@6.0.3(@types/node@22.17.2)(jiti@2.6.1)(rollup@4.46.3)(terser@5.43.1)(typescript@5.9.3)(yaml@2.8.2))(typescript@5.9.3)
+      '@astrobook/types': 0.12.3(astro@6.0.3(@types/node@22.17.2)(jiti@2.6.1)(rollup@4.46.3)(terser@5.43.1)(typescript@5.9.3)(yaml@2.8.2))
+      '@astrobook/ui': 0.12.3(astro@6.0.3(@types/node@22.17.2)(jiti@2.6.1)(rollup@4.46.3)(terser@5.43.1)(typescript@5.9.3)(yaml@2.8.2))(typescript@5.9.3)
     optionalDependencies:
       astro: 6.0.3(@types/node@22.17.2)(jiti@2.6.1)(rollup@4.46.3)(terser@5.43.1)(typescript@5.9.3)(yaml@2.8.2)
     transitivePeerDependencies:
