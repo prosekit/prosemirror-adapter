@@ -1,28 +1,10 @@
-import * as svelte from 'svelte'
+import { flushSync, mount as svelteMount, unmount } from 'svelte'
 
-import type { SvelteClassComponentConstructor, SvelteComponentConstructor } from './types'
-
-const isSvelte5 = !!svelte.mount && !!svelte.flushSync
+import type { SvelteComponentConstructor } from './types'
 
 interface MountOptions {
   target: HTMLElement
   context: Map<unknown, unknown>
-}
-
-function mountFunctionComponent(UserComponent: SvelteComponentConstructor, options: MountOptions): VoidFunction {
-  // Using Svelte v5, where components are functions
-  const component = svelte.mount(UserComponent, { ...options }) as svelte.SvelteComponent
-  // Unlike `new UserComponent()` in Svelte v4, `mount()` in Svelte v5 doesn't
-  // call `onMount()` and action functions automatically. So we need to call
-  // `flushSync()` to ensure they run.
-  svelte.flushSync()
-  return () => svelte.unmount(component)
-}
-
-function mountClassComponent(UserComponent: SvelteComponentConstructor, options: MountOptions): VoidFunction {
-  // Using Svelte v4, where components are classes
-  const component = new (UserComponent as SvelteClassComponentConstructor)(options)
-  return () => component.$destroy()
 }
 
 /**
@@ -30,4 +12,10 @@ function mountClassComponent(UserComponent: SvelteComponentConstructor, options:
  *
  * Returns a function that unmounts the component.
  */
-export const mount = isSvelte5 ? mountFunctionComponent : mountClassComponent
+export function mount(UserComponent: SvelteComponentConstructor, options: MountOptions): VoidFunction {
+  const component = svelteMount(UserComponent, { ...options })
+  // `mount()` in Svelte v5 doesn't call `onMount()` and action functions
+  // automatically. So we need to call `flushSync()` to ensure they run.
+  flushSync()
+  return () => unmount(component)
+}
