@@ -1,6 +1,7 @@
 import type { Component } from 'svelte'
 
-export type SvelteComponentConstructor = Component<any, any, any>
+export type AnyRecord = Record<string, any>
+export type SvelteComponentConstructor = Component<AnyRecord, AnyRecord>
 
 /**
  * @internal
