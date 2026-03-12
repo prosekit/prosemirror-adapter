@@ -1,5 +1,4 @@
 import { CoreWidgetView } from '@prosemirror-adapter/core'
-import { nanoid } from 'nanoid'
 import { createPortal } from 'preact/compat'
 
 import type { PreactRenderer } from '../PreactRenderer'
@@ -12,8 +11,6 @@ export class PreactWidgetView
   extends CoreWidgetView<PreactWidgetViewComponent>
   implements PreactRenderer<WidgetViewContext>
 {
-  key: string = nanoid()
-
   context: WidgetViewContext = {
     view: this.view!,
     getPos: this.getPos!,

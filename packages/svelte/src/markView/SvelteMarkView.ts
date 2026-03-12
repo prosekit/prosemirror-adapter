@@ -1,5 +1,4 @@
 import { CoreMarkView } from '@prosemirror-adapter/core'
-import { nanoid } from 'nanoid'
 import { writable } from 'svelte/store'
 
 import { createContextMap } from '../context'
@@ -11,14 +10,8 @@ import type { MarkViewContext } from './markViewContext'
 import type { SvelteMarkViewComponent } from './SvelteMarkViewOptions'
 
 export class SvelteMarkView extends CoreMarkView<SvelteMarkViewComponent> implements SvelteRenderer<MarkViewContext> {
-  key: string = nanoid()
-
   context: MarkViewContext = {
-    contentRef: (element) => {
-      if (element && element instanceof HTMLElement && this.contentDOM && element.firstChild !== this.contentDOM) {
-        element.appendChild(this.contentDOM)
-      }
-    },
+    contentRef: this.contentRef,
     view: this.view,
     mark: writable(this.mark),
   }

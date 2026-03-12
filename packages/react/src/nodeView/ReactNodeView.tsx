@@ -1,5 +1,4 @@
 import { CoreNodeView } from '@prosemirror-adapter/core'
-import { nanoid } from 'nanoid'
 import { createPortal } from 'react-dom'
 
 import type { ReactRenderer } from '../ReactRenderer'
@@ -9,12 +8,8 @@ import { nodeViewContext } from './nodeViewContext'
 import type { ReactNodeViewComponent } from './ReactNodeViewOptions'
 
 export class ReactNodeView extends CoreNodeView<ReactNodeViewComponent> implements ReactRenderer<NodeViewContext> {
-  key: string = nanoid()
-
   context: NodeViewContext = {
-    contentRef: (element) => {
-      if (element && this.contentDOM && element.firstChild !== this.contentDOM) element.appendChild(this.contentDOM)
-    },
+    contentRef: this.contentRef,
     view: this.view,
     getPos: this.getPos,
     setAttrs: this.setAttrs,

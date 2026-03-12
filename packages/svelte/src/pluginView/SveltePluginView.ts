@@ -1,5 +1,4 @@
 import { CorePluginView } from '@prosemirror-adapter/core'
-import { nanoid } from 'nanoid'
 import { writable } from 'svelte/store'
 
 import { createContextMap } from '../context'
@@ -14,8 +13,6 @@ export class SveltePluginView
   extends CorePluginView<SveltePluginViewComponent>
   implements SvelteRenderer<PluginViewContext>
 {
-  key: string = nanoid()
-
   context: PluginViewContext = {
     view: writable(this.view),
     prevState: writable(this.prevState),

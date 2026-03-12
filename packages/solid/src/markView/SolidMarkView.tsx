@@ -1,5 +1,4 @@
 import { CoreMarkView, type CoreMarkViewSpec } from '@prosemirror-adapter/core'
-import { nanoid } from 'nanoid'
 import type { Setter } from 'solid-js'
 import { createSignal } from 'solid-js'
 import { Dynamic, Portal } from 'solid-js/web'
@@ -12,7 +11,6 @@ import { markViewContext } from './markViewContext'
 import type { SolidMarkViewComponent } from './SolidMarkViewOptions'
 
 export class SolidMarkView extends CoreMarkView<SolidMarkViewComponent> implements SolidRenderer<MarkViewContext> {
-  key: string = nanoid()
   context: MarkViewContext
 
   private setContext: Setter<MarkViewContextProps>
@@ -20,11 +18,7 @@ export class SolidMarkView extends CoreMarkView<SolidMarkViewComponent> implemen
   constructor(spec: CoreMarkViewSpec<SolidMarkViewComponent>) {
     super(spec)
     const [context, setContext] = createSignal<MarkViewContextProps>({
-      contentRef: (element) => {
-        if (element && this.contentDOM && element.firstChild !== this.contentDOM) {
-          element.appendChild(this.contentDOM)
-        }
-      },
+      contentRef: this.contentRef,
       view: this.view,
       mark: this.mark,
     })

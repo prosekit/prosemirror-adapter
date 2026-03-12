@@ -1,5 +1,4 @@
 import { CoreWidgetView } from '@prosemirror-adapter/core'
-import { nanoid } from 'nanoid'
 
 import { createContextMap } from '../context'
 import { mount } from '../mount'
@@ -13,8 +12,6 @@ export class SvelteWidgetView
   extends CoreWidgetView<SvelteWidgetViewComponent>
   implements SvelteRenderer<WidgetViewContext>
 {
-  key: string = nanoid()
-
   context: WidgetViewContext = {
     view: this.view!,
     getPos: this.getPos!,
