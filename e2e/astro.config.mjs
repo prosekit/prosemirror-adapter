@@ -21,7 +21,7 @@ export default defineConfig({
     '/vue': '/stories/vue/app/vue',
   },
   integrations: [
-    react({ include: ['**/src/react/**/*.tsx',  '**/src/react/**/*.stories.ts'] }),
+    react({ include: ['**/src/react/**/*.tsx', '**/src/react/**/*.stories.ts'] }),
     preact({ include: ['**/src/preact/**/*.tsx', '**/src/preact/**/*.stories.ts'] }),
     solidJs({ include: ['**/src/solid/**/*'] }),
     svelte(),
