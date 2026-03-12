@@ -7,7 +7,7 @@ import { createKey } from '../create-key'
 import type { CoreMarkViewSpec, CoreMarkViewUserOptions, MarkViewDOMSpec } from './CoreMarkViewOptions'
 
 export class CoreMarkView<ComponentType> implements MarkView {
-  readonly key: string
+  key: string
   dom: HTMLElement
   contentDOM: HTMLElement
   mark: Mark

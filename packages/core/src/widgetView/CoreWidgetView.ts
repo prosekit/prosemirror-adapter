@@ -5,7 +5,7 @@ import { createKey } from '../create-key'
 import type { CoreWidgetViewSpec, CoreWidgetViewUserOptions, WidgetDecorationSpec } from './CoreWidgetViewOptions'
 
 export class CoreWidgetView<Component> {
-  readonly key: string
+  key: string
   dom: HTMLElement
   pos: number
   view?: EditorView

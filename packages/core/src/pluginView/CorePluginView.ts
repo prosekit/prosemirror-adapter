@@ -6,7 +6,7 @@ import { createKey } from '../create-key'
 import type { CorePluginViewSpec, CorePluginViewUserOptions } from './CorePluginViewOptions'
 
 export class CorePluginView<ComponentType> implements PluginView {
-  readonly key: string
+  key: string
   view: EditorView
   prevState?: EditorState
   options: CorePluginViewUserOptions<ComponentType>

@@ -7,7 +7,7 @@ import { createKey } from '../create-key'
 import type { CoreNodeViewSpec, CoreNodeViewUserOptions, NodeViewDOMSpec } from './CoreNodeViewOptions'
 
 export class CoreNodeView<ComponentType> implements NodeView {
-  readonly key: string
+  key: string
   dom: HTMLElement
   contentDOM: HTMLElement | null
   node: Node
