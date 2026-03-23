@@ -1,4 +1,4 @@
-import { useCallback } from 'preact/hooks'
+import { useMemo } from 'preact/hooks'
 import type { NodeViewConstructor } from 'prosemirror-view'
 
 import type { PreactRendererResult } from '../PreactRenderer'
@@ -10,54 +10,53 @@ import type { PreactNodeViewUserOptions } from './PreactNodeViewOptions'
 /**
  * @internal
  */
-export function useAbstractPreactNodeViewCreator(
+export function buildPreactNodeViewCreator(
   renderPreactRenderer: PreactRendererResult['renderPreactRenderer'],
   removePreactRenderer: PreactRendererResult['removePreactRenderer'],
   PreactNodeViewClass: new (...args: ConstructorParameters<typeof AbstractPreactNodeView>) => AbstractPreactNodeView,
 ) {
-  const createPreactNodeView = useCallback(
-    (options: PreactNodeViewUserOptions): NodeViewConstructor =>
-      (node, view, getPos, decorations, innerDecorations) => {
-        const nodeView = new PreactNodeViewClass({
-          node,
-          view,
-          getPos,
-          decorations,
-          innerDecorations,
-          options: {
-            ...options,
-            onUpdate() {
-              options.onUpdate?.()
-              renderPreactRenderer(nodeView)
-            },
-            selectNode() {
-              options.selectNode?.()
-              renderPreactRenderer(nodeView)
-            },
-            deselectNode() {
-              options.deselectNode?.()
-              renderPreactRenderer(nodeView)
-            },
-            destroy() {
-              options.destroy?.()
-              removePreactRenderer(nodeView)
-            },
+  return function nodeViewCreator(options: PreactNodeViewUserOptions): NodeViewConstructor {
+    return function nodeViewConstructor(node, view, getPos, decorations, innerDecorations) {
+      const nodeView = new PreactNodeViewClass({
+        node,
+        view,
+        getPos,
+        decorations,
+        innerDecorations,
+        options: {
+          ...options,
+          onUpdate() {
+            options.onUpdate?.()
+            renderPreactRenderer(nodeView)
           },
-        })
+          selectNode() {
+            options.selectNode?.()
+            renderPreactRenderer(nodeView)
+          },
+          deselectNode() {
+            options.deselectNode?.()
+            renderPreactRenderer(nodeView)
+          },
+          destroy() {
+            options.destroy?.()
+            removePreactRenderer(nodeView)
+          },
+        },
+      })
 
-        renderPreactRenderer(nodeView, false)
+      renderPreactRenderer(nodeView, false)
 
-        return nodeView
-      },
-    [removePreactRenderer, renderPreactRenderer, PreactNodeViewClass],
-  )
-
-  return createPreactNodeView
+      return nodeView
+    }
+  }
 }
 
 export function usePreactNodeViewCreator(
   renderPreactRenderer: PreactRendererResult['renderPreactRenderer'],
   removePreactRenderer: PreactRendererResult['removePreactRenderer'],
 ) {
-  return useAbstractPreactNodeViewCreator(renderPreactRenderer, removePreactRenderer, PreactNodeView)
+  return useMemo(
+    () => buildPreactNodeViewCreator(renderPreactRenderer, removePreactRenderer, PreactNodeView),
+    [renderPreactRenderer, removePreactRenderer],
+  )
 }

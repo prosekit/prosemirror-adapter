@@ -7,5 +7,5 @@ export {
   type NodeViewContext,
 } from './nodeViewContext'
 export { PreactNodeView, AbstractPreactNodeView } from './PreactNodeView'
-export { useAbstractPreactNodeViewCreator } from './usePreactNodeViewCreator'
+export { buildPreactNodeViewCreator } from './usePreactNodeViewCreator'
 export type { PreactNodeViewComponent, PreactNodeViewSpec, PreactNodeViewUserOptions } from './PreactNodeViewOptions'

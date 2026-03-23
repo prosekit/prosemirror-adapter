@@ -1,4 +1,4 @@
-import { useCallback } from 'preact/hooks'
+import { useMemo } from 'preact/hooks'
 import type { MarkViewConstructor } from 'prosemirror-view'
 
 import type { PreactRendererResult } from '../PreactRenderer'
@@ -10,39 +10,38 @@ import type { PreactMarkViewUserOptions } from './PreactMarkViewOptions'
 /**
  * @internal
  */
-export function useAbstractPreactMarkViewCreator(
+export function buildPreactMarkViewCreator(
   renderPreactRenderer: PreactRendererResult['renderPreactRenderer'],
   removePreactRenderer: PreactRendererResult['removePreactRenderer'],
   PreactMarkViewClass: new (...args: ConstructorParameters<typeof AbstractPreactMarkView>) => AbstractPreactMarkView,
 ) {
-  const createPreactMarkView = useCallback(
-    (options: PreactMarkViewUserOptions): MarkViewConstructor =>
-      (mark, view, inline) => {
-        const markView = new PreactMarkViewClass({
-          mark,
-          view,
-          inline,
-          options: {
-            ...options,
-            destroy() {
-              options.destroy?.()
-              removePreactRenderer(markView)
-            },
+  return function markViewCreator(options: PreactMarkViewUserOptions): MarkViewConstructor {
+    return function markViewConstructor(mark, view, inline) {
+      const markView = new PreactMarkViewClass({
+        mark,
+        view,
+        inline,
+        options: {
+          ...options,
+          destroy() {
+            options.destroy?.()
+            removePreactRenderer(markView)
           },
-        })
-        renderPreactRenderer(markView, false)
+        },
+      })
+      renderPreactRenderer(markView, false)
 
-        return markView
-      },
-    [removePreactRenderer, renderPreactRenderer, PreactMarkViewClass],
-  )
-
-  return createPreactMarkView
+      return markView
+    }
+  }
 }
 
 export function usePreactMarkViewCreator(
   renderPreactRenderer: PreactRendererResult['renderPreactRenderer'],
   removePreactRenderer: PreactRendererResult['removePreactRenderer'],
 ) {
-  return useAbstractPreactMarkViewCreator(renderPreactRenderer, removePreactRenderer, PreactMarkView)
+  return useMemo(
+    () => buildPreactMarkViewCreator(renderPreactRenderer, removePreactRenderer, PreactMarkView),
+    [renderPreactRenderer, removePreactRenderer],
+  )
 }

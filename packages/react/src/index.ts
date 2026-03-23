@@ -3,7 +3,7 @@ export {
   markViewContext,
   ReactMarkView,
   AbstractReactMarkView,
-  useAbstractReactMarkViewCreator,
+  buildReactMarkViewCreator,
   useMarkViewContext,
   useMarkViewFactory,
   type MarkViewContentRef,
