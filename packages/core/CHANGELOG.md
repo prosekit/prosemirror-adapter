@@ -1,5 +1,11 @@
 # @prosemirror-adapter/core
 
+## 0.5.2
+
+### Patch Changes
+
+- a9460fa: Move shared logic to core.
+
 ## 0.4.6
 
 ### Patch Changes

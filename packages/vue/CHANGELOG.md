@@ -1,5 +1,13 @@
 # @prosemirror-adapter/vue
 
+## 0.5.2
+
+### Patch Changes
+
+- a9460fa: Move shared logic to core.
+- Updated dependencies [a9460fa]
+  - @prosemirror-adapter/core@0.5.2
+
 ## 0.4.6
 
 ### Patch Changes
