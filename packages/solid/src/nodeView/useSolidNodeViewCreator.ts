@@ -9,7 +9,7 @@ import type { SolidNodeViewUserOptions } from './SolidNodeViewOptions'
 /**
  * @internal
  */
-export function useAbstractSolidNodeViewCreator(
+export function buildSolidNodeViewCreator(
   renderSolidRenderer: SolidRendererResult['renderSolidRenderer'],
   removeSolidRenderer: SolidRendererResult['removeSolidRenderer'],
   SolidNodeViewClass: new (...args: ConstructorParameters<typeof AbstractSolidNodeView>) => AbstractSolidNodeView,
@@ -56,5 +56,5 @@ export function useSolidNodeViewCreator(
   renderSolidRenderer: SolidRendererResult['renderSolidRenderer'],
   removeSolidRenderer: SolidRendererResult['removeSolidRenderer'],
 ) {
-  return useAbstractSolidNodeViewCreator(renderSolidRenderer, removeSolidRenderer, SolidNodeView)
+  return buildSolidNodeViewCreator(renderSolidRenderer, removeSolidRenderer, SolidNodeView)
 }

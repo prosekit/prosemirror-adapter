@@ -9,13 +9,12 @@ import { SvelteMarkView } from './SvelteMarkView'
 /**
  * @internal
  */
-export function useAbstractSvelteMarkViewCreator(
+export function buildSvelteMarkViewCreator(
   renderSvelteRenderer: SvelteRendererResult['renderSvelteRenderer'],
   removeSvelteRenderer: SvelteRendererResult['removeSvelteRenderer'],
   SvelteMarkViewClass: new (...args: ConstructorParameters<typeof AbstractSvelteMarkView>) => AbstractSvelteMarkView,
+  context: Map<any, any>,
 ) {
-  const context = getAllContexts()
-
   const createSvelteMarkView: MarkViewFactory = (options) => (mark, view, inline) => {
     const markView = new SvelteMarkViewClass({
       mark,
@@ -41,5 +40,6 @@ export function useSvelteMarkViewCreator(
   renderSvelteRenderer: SvelteRendererResult['renderSvelteRenderer'],
   removeSvelteRenderer: SvelteRendererResult['removeSvelteRenderer'],
 ) {
-  return useAbstractSvelteMarkViewCreator(renderSvelteRenderer, removeSvelteRenderer, SvelteMarkView)
+  const context = getAllContexts()
+  return buildSvelteMarkViewCreator(renderSvelteRenderer, removeSvelteRenderer, SvelteMarkView, context)
 }

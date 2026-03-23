@@ -7,7 +7,7 @@ import { VueMarkView } from './VueMarkView'
 /**
  * @internal
  */
-export function useAbstractVueMarkViewCreator(
+export function buildVueMarkViewCreator(
   renderVueRenderer: VueRendererResult['renderVueRenderer'],
   removeVueRenderer: VueRendererResult['removeVueRenderer'],
   VueMarkViewClass: new (...args: ConstructorParameters<typeof AbstractVueMarkView>) => AbstractVueMarkView,
@@ -37,5 +37,5 @@ export function useVueMarkViewCreator(
   renderVueRenderer: VueRendererResult['renderVueRenderer'],
   removeVueRenderer: VueRendererResult['removeVueRenderer'],
 ) {
-  return useAbstractVueMarkViewCreator(renderVueRenderer, removeVueRenderer, VueMarkView)
+  return buildVueMarkViewCreator(renderVueRenderer, removeVueRenderer, VueMarkView)
 }

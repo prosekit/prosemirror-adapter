@@ -9,7 +9,7 @@ import type { SolidMarkViewUserOptions } from './SolidMarkViewOptions'
 /**
  * @internal
  */
-export function useAbstractSolidMarkViewCreator(
+export function buildSolidMarkViewCreator(
   renderSolidRenderer: SolidRendererResult['renderSolidRenderer'],
   removeSolidRenderer: SolidRendererResult['removeSolidRenderer'],
   SolidMarkViewClass: new (...args: ConstructorParameters<typeof AbstractSolidMarkView>) => AbstractSolidMarkView,
@@ -42,5 +42,5 @@ export function useSolidMarkViewCreator(
   renderSolidRenderer: SolidRendererResult['renderSolidRenderer'],
   removeSolidRenderer: SolidRendererResult['removeSolidRenderer'],
 ) {
-  return useAbstractSolidMarkViewCreator(renderSolidRenderer, removeSolidRenderer, SolidMarkView)
+  return buildSolidMarkViewCreator(renderSolidRenderer, removeSolidRenderer, SolidMarkView)
 }

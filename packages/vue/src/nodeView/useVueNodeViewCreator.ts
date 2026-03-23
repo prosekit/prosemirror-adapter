@@ -7,7 +7,7 @@ import { VueNodeView } from './VueNodeView'
 /**
  * @internal
  */
-export function useAbstractVueNodeViewCreator(
+export function buildVueNodeViewCreator(
   renderVueRenderer: VueRendererResult['renderVueRenderer'],
   removeVueRenderer: VueRendererResult['removeVueRenderer'],
   VueNodeViewClass: new (...args: ConstructorParameters<typeof AbstractVueNodeView>) => AbstractVueNodeView,
@@ -51,5 +51,5 @@ export function useVueNodeViewCreator(
   renderVueRenderer: VueRendererResult['renderVueRenderer'],
   removeVueRenderer: VueRendererResult['removeVueRenderer'],
 ) {
-  return useAbstractVueNodeViewCreator(renderVueRenderer, removeVueRenderer, VueNodeView)
+  return buildVueNodeViewCreator(renderVueRenderer, removeVueRenderer, VueNodeView)
 }
