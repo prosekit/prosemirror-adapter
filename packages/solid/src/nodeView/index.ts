@@ -8,5 +8,5 @@ export {
   type NodeViewContextProps,
 } from './nodeViewContext'
 export { SolidNodeView, AbstractSolidNodeView } from './SolidNodeView'
-export { useAbstractSolidNodeViewCreator } from './useSolidNodeViewCreator'
+export { buildSolidNodeViewCreator } from './useSolidNodeViewCreator'
 export type { SolidNodeViewComponent, SolidNodeViewSpec, SolidNodeViewUserOptions } from './SolidNodeViewOptions'

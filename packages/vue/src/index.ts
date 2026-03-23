@@ -5,7 +5,7 @@ export {
   useMarkViewFactory,
   VueMarkView,
   AbstractVueMarkView,
-  useAbstractVueMarkViewCreator,
+  buildVueMarkViewCreator,
   type MarkViewContext,
   type MarkViewFactory,
   type VueMarkViewComponent,
@@ -23,7 +23,7 @@ export {
   type VueNodeViewComponent,
   type VueNodeViewSpec,
   type VueNodeViewUserOptions,
-  useAbstractVueNodeViewCreator,
+  buildVueNodeViewCreator,
   AbstractVueNodeView,
 } from './nodeView'
 export {
