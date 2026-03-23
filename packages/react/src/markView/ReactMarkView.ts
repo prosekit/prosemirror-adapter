@@ -12,8 +12,8 @@ import type { ReactMarkViewComponent } from './ReactMarkViewOptions'
 /**
  * @internal
  */
-export abstract class AbstractReactMarkView
-  extends CoreMarkView<ReactMarkViewComponent>
+export abstract class AbstractReactMarkView<ComponentType>
+  extends CoreMarkView<ComponentType>
   implements ReactRenderer<MarkViewContext>
 {
   context: MarkViewContext = {
@@ -32,7 +32,10 @@ export abstract class AbstractReactMarkView
   abstract render: () => ReactPortal
 }
 
-export class ReactMarkView extends AbstractReactMarkView implements ReactRenderer<MarkViewContext> {
+export class ReactMarkView
+  extends AbstractReactMarkView<ReactMarkViewComponent>
+  implements ReactRenderer<MarkViewContext>
+{
   render = () => {
     const UserComponent = this.component
 

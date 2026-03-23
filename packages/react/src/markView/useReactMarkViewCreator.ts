@@ -1,3 +1,4 @@
+import type { CoreMarkViewSpec, CoreMarkViewUserOptions } from '@prosemirror-adapter/core'
 import type { MarkViewConstructor } from 'prosemirror-view'
 import { useMemo } from 'react'
 
@@ -5,32 +6,32 @@ import type { ReactRendererResult } from '../ReactRenderer'
 
 import type { AbstractReactMarkView } from './ReactMarkView'
 import { ReactMarkView } from './ReactMarkView'
-import type { ReactMarkViewUserOptions } from './ReactMarkViewOptions'
 
 /**
  * @internal
  */
-export function buildReactMarkViewCreator(
+export function buildReactMarkViewCreator<ComponentType>(
   renderReactRenderer: ReactRendererResult['renderReactRenderer'],
   removeReactRenderer: ReactRendererResult['removeReactRenderer'],
-  ReactMarkViewClass: new (...args: ConstructorParameters<typeof AbstractReactMarkView>) => AbstractReactMarkView,
+  ReactMarkViewClass: new (options: CoreMarkViewSpec<ComponentType>) => AbstractReactMarkView<ComponentType>,
 ) {
-  return function markViewCreator(options: ReactMarkViewUserOptions): MarkViewConstructor {
+  return function markViewCreator(userOptions: CoreMarkViewUserOptions<ComponentType>): MarkViewConstructor {
     return function markViewConstructor(mark, view, inline) {
-      const markView = new ReactMarkViewClass({
+      const patchedUserOptions: CoreMarkViewUserOptions<ComponentType> = {
+        ...userOptions,
+        destroy() {
+          userOptions.destroy?.()
+          removeReactRenderer(markView)
+        },
+      }
+      const spec: CoreMarkViewSpec<ComponentType> = {
         mark,
         view,
         inline,
-        options: {
-          ...options,
-          destroy() {
-            options.destroy?.()
-            removeReactRenderer(markView)
-          },
-        },
-      })
+        options: patchedUserOptions,
+      }
+      const markView = new ReactMarkViewClass(spec)
       renderReactRenderer(markView, false)
-
       return markView
     }
   }
