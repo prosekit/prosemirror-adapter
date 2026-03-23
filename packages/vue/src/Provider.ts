@@ -15,7 +15,7 @@ export type CreateVueMarkView = ReturnType<typeof useVueMarkViewCreator>
 export type CreateVuePluginView = ReturnType<typeof useVuePluginViewCreator>
 export type CreateVueWidgetView = ReturnType<typeof useVueWidgetViewCreator>
 
-export const ProsemirrorAdapterProvider = defineComponent({
+export const ProsemirrorAdapterProvider = /* @__PURE__ */ defineComponent({
   name: 'ProsemirrorAdapterProvider',
   setup: (_, { slots }) => {
     const { render, renderVueRenderer, removeVueRenderer } = useVueRenderer()
