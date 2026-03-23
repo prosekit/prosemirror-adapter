@@ -28,10 +28,7 @@ export abstract class AbstractVueMarkView<ComponentType>
   abstract render: () => VueRendererComponent
 }
 
-export class VueMarkView
-  extends AbstractVueMarkView<VueMarkViewComponent>
-  implements VueRenderer<MarkViewContext>
-{
+export class VueMarkView extends AbstractVueMarkView<VueMarkViewComponent> implements VueRenderer<MarkViewContext> {
   render = () => {
     const UserComponent = this.component
 

@@ -37,10 +37,7 @@ export abstract class AbstractVueNodeView<ComponentType>
   abstract render: () => VueRendererComponent
 }
 
-export class VueNodeView
-  extends AbstractVueNodeView<VueNodeViewComponent>
-  implements VueRenderer<NodeViewContext>
-{
+export class VueNodeView extends AbstractVueNodeView<VueNodeViewComponent> implements VueRenderer<NodeViewContext> {
   render = () => {
     const UserComponent = this.component
 
