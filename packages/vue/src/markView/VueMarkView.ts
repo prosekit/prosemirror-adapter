@@ -10,8 +10,8 @@ import type { VueMarkViewComponent } from './VueMarkViewOptions'
 /**
  * @internal
  */
-export abstract class AbstractVueMarkView
-  extends CoreMarkView<VueMarkViewComponent>
+export abstract class AbstractVueMarkView<ComponentType>
+  extends CoreMarkView<ComponentType>
   implements VueRenderer<MarkViewContext>
 {
   context: MarkViewContext = {
@@ -28,7 +28,10 @@ export abstract class AbstractVueMarkView
   abstract render: () => VueRendererComponent
 }
 
-export class VueMarkView extends AbstractVueMarkView implements VueRenderer<MarkViewContext> {
+export class VueMarkView
+  extends AbstractVueMarkView<VueMarkViewComponent>
+  implements VueRenderer<MarkViewContext>
+{
   render = () => {
     const UserComponent = this.component
 

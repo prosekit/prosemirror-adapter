@@ -1,3 +1,4 @@
+import type { CoreNodeViewSpec, CoreNodeViewUserOptions } from '@prosemirror-adapter/core'
 import { useMemo } from 'preact/hooks'
 import type { NodeViewConstructor } from 'prosemirror-view'
 
@@ -5,47 +6,46 @@ import type { PreactRendererResult } from '../PreactRenderer'
 
 import type { AbstractPreactNodeView } from './PreactNodeView'
 import { PreactNodeView } from './PreactNodeView'
-import type { PreactNodeViewUserOptions } from './PreactNodeViewOptions'
 
 /**
  * @internal
  */
-export function buildPreactNodeViewCreator(
+export function buildPreactNodeViewCreator<ComponentType>(
   renderPreactRenderer: PreactRendererResult['renderPreactRenderer'],
   removePreactRenderer: PreactRendererResult['removePreactRenderer'],
-  PreactNodeViewClass: new (...args: ConstructorParameters<typeof AbstractPreactNodeView>) => AbstractPreactNodeView,
+  PreactNodeViewClass: new (spec: CoreNodeViewSpec<ComponentType>) => AbstractPreactNodeView<ComponentType>,
 ) {
-  return function nodeViewCreator(options: PreactNodeViewUserOptions): NodeViewConstructor {
+  return function nodeViewCreator(userOptions: CoreNodeViewUserOptions<ComponentType>): NodeViewConstructor {
     return function nodeViewConstructor(node, view, getPos, decorations, innerDecorations) {
-      const nodeView = new PreactNodeViewClass({
+      const patchedUserOptions: CoreNodeViewUserOptions<ComponentType> = {
+        ...userOptions,
+        onUpdate() {
+          userOptions.onUpdate?.()
+          renderPreactRenderer(nodeView)
+        },
+        selectNode() {
+          userOptions.selectNode?.()
+          renderPreactRenderer(nodeView)
+        },
+        deselectNode() {
+          userOptions.deselectNode?.()
+          renderPreactRenderer(nodeView)
+        },
+        destroy() {
+          userOptions.destroy?.()
+          removePreactRenderer(nodeView)
+        },
+      }
+      const spec: CoreNodeViewSpec<ComponentType> = {
         node,
         view,
         getPos,
         decorations,
         innerDecorations,
-        options: {
-          ...options,
-          onUpdate() {
-            options.onUpdate?.()
-            renderPreactRenderer(nodeView)
-          },
-          selectNode() {
-            options.selectNode?.()
-            renderPreactRenderer(nodeView)
-          },
-          deselectNode() {
-            options.deselectNode?.()
-            renderPreactRenderer(nodeView)
-          },
-          destroy() {
-            options.destroy?.()
-            removePreactRenderer(nodeView)
-          },
-        },
-      })
-
+        options: patchedUserOptions,
+      }
+      const nodeView = new PreactNodeViewClass(spec)
       renderPreactRenderer(nodeView, false)
-
       return nodeView
     }
   }

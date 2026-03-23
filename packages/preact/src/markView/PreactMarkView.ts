@@ -12,8 +12,8 @@ import type { PreactMarkViewComponent } from './PreactMarkViewOptions'
 /**
  * @internal
  */
-export abstract class AbstractPreactMarkView
-  extends CoreMarkView<PreactMarkViewComponent>
+export abstract class AbstractPreactMarkView<ComponentType>
+  extends CoreMarkView<ComponentType>
   implements PreactRenderer<MarkViewContext>
 {
   context: MarkViewContext = {
@@ -32,7 +32,10 @@ export abstract class AbstractPreactMarkView
   abstract render: () => VNode
 }
 
-export class PreactMarkView extends AbstractPreactMarkView implements PreactRenderer<MarkViewContext> {
+export class PreactMarkView
+  extends AbstractPreactMarkView<PreactMarkViewComponent>
+  implements PreactRenderer<MarkViewContext>
+{
   render = () => {
     const UserComponent = this.component
 

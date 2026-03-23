@@ -12,8 +12,8 @@ import type { SvelteMarkViewComponent } from './SvelteMarkViewOptions'
 /**
  * @internal
  */
-export abstract class AbstractSvelteMarkView
-  extends CoreMarkView<SvelteMarkViewComponent>
+export abstract class AbstractSvelteMarkView<ComponentType>
+  extends CoreMarkView<ComponentType>
   implements SvelteRenderer<MarkViewContext>
 {
   context: MarkViewContext = {
@@ -29,7 +29,10 @@ export abstract class AbstractSvelteMarkView
   abstract render: (options: SvelteRenderOptions) => VoidFunction
 }
 
-export class SvelteMarkView extends AbstractSvelteMarkView implements SvelteRenderer<MarkViewContext> {
+export class SvelteMarkView
+  extends AbstractSvelteMarkView<SvelteMarkViewComponent>
+  implements SvelteRenderer<MarkViewContext>
+{
   render = (options: SvelteRenderOptions) => {
     const UserComponent = this.component
 

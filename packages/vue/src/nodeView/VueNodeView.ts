@@ -10,8 +10,8 @@ import type { VueNodeViewComponent } from './VueNodeViewOptions'
 /**
  * @internal
  */
-export abstract class AbstractVueNodeView
-  extends CoreNodeView<VueNodeViewComponent>
+export abstract class AbstractVueNodeView<ComponentType>
+  extends CoreNodeView<ComponentType>
   implements VueRenderer<NodeViewContext>
 {
   context: NodeViewContext = {
@@ -37,7 +37,10 @@ export abstract class AbstractVueNodeView
   abstract render: () => VueRendererComponent
 }
 
-export class VueNodeView extends AbstractVueNodeView implements VueRenderer<NodeViewContext> {
+export class VueNodeView
+  extends AbstractVueNodeView<VueNodeViewComponent>
+  implements VueRenderer<NodeViewContext>
+{
   render = () => {
     const UserComponent = this.component
 

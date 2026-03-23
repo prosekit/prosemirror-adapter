@@ -13,15 +13,15 @@ import type { SolidNodeViewComponent } from './SolidNodeViewOptions'
 /**
  * @internal
  */
-export abstract class AbstractSolidNodeView
-  extends CoreNodeView<SolidNodeViewComponent>
+export abstract class AbstractSolidNodeView<ComponentType>
+  extends CoreNodeView<ComponentType>
   implements SolidRenderer<NodeViewContext>
 {
   context: NodeViewContext
 
   protected setContext: Setter<NodeViewContextProps>
 
-  constructor(spec: CoreNodeViewSpec<SolidNodeViewComponent>) {
+  constructor(spec: CoreNodeViewSpec<ComponentType>) {
     super(spec)
     const [context, setContext] = createSignal<NodeViewContextProps>({
       contentRef: this.contentRef,
@@ -51,7 +51,10 @@ export abstract class AbstractSolidNodeView
   abstract render: () => JSX.Element
 }
 
-export class SolidNodeView extends AbstractSolidNodeView implements SolidRenderer<NodeViewContext> {
+export class SolidNodeView
+  extends AbstractSolidNodeView<SolidNodeViewComponent>
+  implements SolidRenderer<NodeViewContext>
+{
   render = () => {
     const UserComponent = this.component
 

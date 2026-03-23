@@ -12,8 +12,8 @@ import type { PreactNodeViewComponent } from './PreactNodeViewOptions'
 /**
  * @internal
  */
-export abstract class AbstractPreactNodeView
-  extends CoreNodeView<PreactNodeViewComponent>
+export abstract class AbstractPreactNodeView<ComponentType>
+  extends CoreNodeView<ComponentType>
   implements PreactRenderer<NodeViewContext>
 {
   context: NodeViewContext = {
@@ -40,7 +40,10 @@ export abstract class AbstractPreactNodeView
   abstract render: () => VNode
 }
 
-export class PreactNodeView extends AbstractPreactNodeView implements PreactRenderer<NodeViewContext> {
+export class PreactNodeView
+  extends AbstractPreactNodeView<PreactNodeViewComponent>
+  implements PreactRenderer<NodeViewContext>
+{
   render = () => {
     const UserComponent = this.component
 

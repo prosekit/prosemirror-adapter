@@ -12,8 +12,8 @@ import type { ReactNodeViewComponent } from './ReactNodeViewOptions'
 /**
  * @internal
  */
-export abstract class AbstractReactNodeView
-  extends CoreNodeView<ReactNodeViewComponent>
+export abstract class AbstractReactNodeView<ComponentType>
+  extends CoreNodeView<ComponentType>
   implements ReactRenderer<NodeViewContext>
 {
   context: NodeViewContext = {
@@ -40,7 +40,10 @@ export abstract class AbstractReactNodeView
   abstract render: () => ReactPortal
 }
 
-export class ReactNodeView extends AbstractReactNodeView implements ReactRenderer<NodeViewContext> {
+export class ReactNodeView
+  extends AbstractReactNodeView<ReactNodeViewComponent>
+  implements ReactRenderer<NodeViewContext>
+{
   render = () => {
     const UserComponent = this.component
 

@@ -1,35 +1,36 @@
+import type { CoreMarkViewSpec, CoreMarkViewUserOptions } from '@prosemirror-adapter/core'
 import type { MarkViewConstructor } from 'prosemirror-view'
 
 import type { VueRendererResult } from '../VueRenderer'
 
 import type { AbstractVueMarkView } from './VueMarkView'
 import { VueMarkView } from './VueMarkView'
-import type { VueMarkViewUserOptions } from './VueMarkViewOptions'
 
 /**
  * @internal
  */
-export function buildVueMarkViewCreator(
+export function buildVueMarkViewCreator<ComponentType>(
   renderVueRenderer: VueRendererResult['renderVueRenderer'],
   removeVueRenderer: VueRendererResult['removeVueRenderer'],
-  VueMarkViewClass: new (...args: ConstructorParameters<typeof AbstractVueMarkView>) => AbstractVueMarkView,
+  VueMarkViewClass: new (spec: CoreMarkViewSpec<ComponentType>) => AbstractVueMarkView<ComponentType>,
 ) {
-  return function markViewCreator(options: VueMarkViewUserOptions): MarkViewConstructor {
+  return function markViewCreator(userOptions: CoreMarkViewUserOptions<ComponentType>): MarkViewConstructor {
     return function markViewConstructor(mark, view, inline) {
-      const markView = new VueMarkViewClass({
+      const patchedUserOptions: CoreMarkViewUserOptions<ComponentType> = {
+        ...userOptions,
+        destroy() {
+          userOptions.destroy?.()
+          removeVueRenderer(markView)
+        },
+      }
+      const spec: CoreMarkViewSpec<ComponentType> = {
         mark,
         view,
         inline,
-        options: {
-          ...options,
-          destroy() {
-            options.destroy?.()
-            removeVueRenderer(markView)
-          },
-        },
-      })
+        options: patchedUserOptions,
+      }
+      const markView = new VueMarkViewClass(spec)
       renderVueRenderer(markView)
-
       return markView
     }
   }

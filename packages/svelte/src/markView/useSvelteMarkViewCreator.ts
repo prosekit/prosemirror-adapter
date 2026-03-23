@@ -1,3 +1,4 @@
+import type { CoreMarkViewSpec, CoreMarkViewUserOptions } from '@prosemirror-adapter/core'
 import type { MarkViewConstructor } from 'prosemirror-view'
 import { getAllContexts } from 'svelte'
 
@@ -5,33 +6,33 @@ import type { SvelteRendererResult } from '../SvelteRenderer'
 
 import type { AbstractSvelteMarkView } from './SvelteMarkView'
 import { SvelteMarkView } from './SvelteMarkView'
-import type { SvelteMarkViewUserOptions } from './SvelteMarkViewOptions'
 
 /**
  * @internal
  */
-export function buildSvelteMarkViewCreator(
+export function buildSvelteMarkViewCreator<ComponentType>(
   renderSvelteRenderer: SvelteRendererResult['renderSvelteRenderer'],
   removeSvelteRenderer: SvelteRendererResult['removeSvelteRenderer'],
-  SvelteMarkViewClass: new (...args: ConstructorParameters<typeof AbstractSvelteMarkView>) => AbstractSvelteMarkView,
+  SvelteMarkViewClass: new (spec: CoreMarkViewSpec<ComponentType>) => AbstractSvelteMarkView<ComponentType>,
   context: Map<any, any>,
 ) {
-  return function markViewCreator(options: SvelteMarkViewUserOptions): MarkViewConstructor {
+  return function markViewCreator(userOptions: CoreMarkViewUserOptions<ComponentType>): MarkViewConstructor {
     return function markViewConstructor(mark, view, inline) {
-      const markView = new SvelteMarkViewClass({
+      const patchedUserOptions: CoreMarkViewUserOptions<ComponentType> = {
+        ...userOptions,
+        destroy() {
+          userOptions.destroy?.()
+          removeSvelteRenderer(markView)
+        },
+      }
+      const spec: CoreMarkViewSpec<ComponentType> = {
         mark,
         view,
         inline,
-        options: {
-          ...options,
-          destroy() {
-            options.destroy?.()
-            removeSvelteRenderer(markView)
-          },
-        },
-      })
+        options: patchedUserOptions,
+      }
+      const markView = new SvelteMarkViewClass(spec)
       renderSvelteRenderer(markView, { context })
-
       return markView
     }
   }

@@ -12,8 +12,8 @@ import type { SvelteNodeViewComponent } from './SvelteNodeViewOptions'
 /**
  * @internal
  */
-export abstract class AbstractSvelteNodeView
-  extends CoreNodeView<SvelteNodeViewComponent>
+export abstract class AbstractSvelteNodeView<ComponentType>
+  extends CoreNodeView<ComponentType>
   implements SvelteRenderer<NodeViewContext>
 {
   context: NodeViewContext = {
@@ -38,7 +38,10 @@ export abstract class AbstractSvelteNodeView
   abstract render: (options: SvelteRenderOptions) => VoidFunction
 }
 
-export class SvelteNodeView extends AbstractSvelteNodeView implements SvelteRenderer<NodeViewContext> {
+export class SvelteNodeView
+  extends AbstractSvelteNodeView<SvelteNodeViewComponent>
+  implements SvelteRenderer<NodeViewContext>
+{
   render = (options: SvelteRenderOptions) => {
     const UserComponent = this.component
 

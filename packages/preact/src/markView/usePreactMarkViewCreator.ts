@@ -1,3 +1,4 @@
+import type { CoreMarkViewSpec, CoreMarkViewUserOptions } from '@prosemirror-adapter/core'
 import { useMemo } from 'preact/hooks'
 import type { MarkViewConstructor } from 'prosemirror-view'
 
@@ -5,32 +6,32 @@ import type { PreactRendererResult } from '../PreactRenderer'
 
 import type { AbstractPreactMarkView } from './PreactMarkView'
 import { PreactMarkView } from './PreactMarkView'
-import type { PreactMarkViewUserOptions } from './PreactMarkViewOptions'
 
 /**
  * @internal
  */
-export function buildPreactMarkViewCreator(
+export function buildPreactMarkViewCreator<ComponentType>(
   renderPreactRenderer: PreactRendererResult['renderPreactRenderer'],
   removePreactRenderer: PreactRendererResult['removePreactRenderer'],
-  PreactMarkViewClass: new (...args: ConstructorParameters<typeof AbstractPreactMarkView>) => AbstractPreactMarkView,
+  PreactMarkViewClass: new (spec: CoreMarkViewSpec<ComponentType>) => AbstractPreactMarkView<ComponentType>,
 ) {
-  return function markViewCreator(options: PreactMarkViewUserOptions): MarkViewConstructor {
+  return function markViewCreator(userOptions: CoreMarkViewUserOptions<ComponentType>): MarkViewConstructor {
     return function markViewConstructor(mark, view, inline) {
-      const markView = new PreactMarkViewClass({
+      const patchedUserOptions: CoreMarkViewUserOptions<ComponentType> = {
+        ...userOptions,
+        destroy() {
+          userOptions.destroy?.()
+          removePreactRenderer(markView)
+        },
+      }
+      const spec: CoreMarkViewSpec<ComponentType> = {
         mark,
         view,
         inline,
-        options: {
-          ...options,
-          destroy() {
-            options.destroy?.()
-            removePreactRenderer(markView)
-          },
-        },
-      })
+        options: patchedUserOptions,
+      }
+      const markView = new PreactMarkViewClass(spec)
       renderPreactRenderer(markView, false)
-
       return markView
     }
   }
