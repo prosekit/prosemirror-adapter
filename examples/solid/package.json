@@ -18,12 +18,12 @@
     "prosemirror-model": "^1.25.4",
     "prosemirror-schema-basic": "^1.2.4",
     "prosemirror-state": "^1.4.4",
-    "prosemirror-view": "^1.41.6",
+    "prosemirror-view": "^1.41.7",
     "solid-js": "^1.9.11"
   },
   "devDependencies": {
     "typescript": "~5.9.3",
     "vite": "^7.3.1",
-    "vite-plugin-solid": "^2.11.10"
+    "vite-plugin-solid": "^2.11.11"
   }
 }

@@ -9,7 +9,7 @@
     "build": "vite build"
   },
   "dependencies": {
-    "@preact/preset-vite": "^2.10.3",
+    "@preact/preset-vite": "^2.10.5",
     "@prosemirror-adapter/preact": "*",
     "preact": "^10.29.0",
     "prosemirror-example-setup": "^1.2.3",
@@ -18,7 +18,7 @@
     "prosemirror-model": "^1.25.4",
     "prosemirror-schema-basic": "^1.2.4",
     "prosemirror-state": "^1.4.4",
-    "prosemirror-view": "^1.41.6",
+    "prosemirror-view": "^1.41.7",
     "typescript": "~5.9.3",
     "vite": "^7.3.1"
   }
