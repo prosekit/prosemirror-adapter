@@ -3,17 +3,22 @@ import type { MarkViewConstructor } from 'prosemirror-view'
 
 import type { PreactRendererResult } from '../PreactRenderer'
 
+import type { AbstractPreactMarkView } from './PreactMarkView'
 import { PreactMarkView } from './PreactMarkView'
 import type { PreactMarkViewUserOptions } from './PreactMarkViewOptions'
 
-export function usePreactMarkViewCreator(
+/**
+ * @internal
+ */
+export function useAbstractPreactMarkViewCreator(
   renderPreactRenderer: PreactRendererResult['renderPreactRenderer'],
   removePreactRenderer: PreactRendererResult['removePreactRenderer'],
+  PreactMarkViewClass: new (...args: ConstructorParameters<typeof AbstractPreactMarkView>) => AbstractPreactMarkView,
 ) {
   const createPreactMarkView = useCallback(
     (options: PreactMarkViewUserOptions): MarkViewConstructor =>
       (mark, view, inline) => {
-        const markView = new PreactMarkView({
+        const markView = new PreactMarkViewClass({
           mark,
           view,
           inline,
@@ -29,8 +34,15 @@ export function usePreactMarkViewCreator(
 
         return markView
       },
-    [removePreactRenderer, renderPreactRenderer],
+    [removePreactRenderer, renderPreactRenderer, PreactMarkViewClass],
   )
 
   return createPreactMarkView
+}
+
+export function usePreactMarkViewCreator(
+  renderPreactRenderer: PreactRendererResult['renderPreactRenderer'],
+  removePreactRenderer: PreactRendererResult['removePreactRenderer'],
+) {
+  return useAbstractPreactMarkViewCreator(renderPreactRenderer, removePreactRenderer, PreactMarkView)
 }

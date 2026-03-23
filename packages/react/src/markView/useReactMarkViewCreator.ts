@@ -3,17 +3,22 @@ import { useCallback } from 'react'
 
 import type { ReactRendererResult } from '../ReactRenderer'
 
+import type { AbstractReactMarkView } from './ReactMarkView'
 import { ReactMarkView } from './ReactMarkView'
 import type { ReactMarkViewUserOptions } from './ReactMarkViewOptions'
 
-export function useReactMarkViewCreator(
+/**
+ * @internal
+ */
+export function useAbstractReactMarkViewCreator(
   renderReactRenderer: ReactRendererResult['renderReactRenderer'],
   removeReactRenderer: ReactRendererResult['removeReactRenderer'],
+  ReactMarkViewClass: new (...args: ConstructorParameters<typeof AbstractReactMarkView>) => AbstractReactMarkView,
 ) {
   const createReactMarkView = useCallback(
     (options: ReactMarkViewUserOptions): MarkViewConstructor =>
       (mark, view, inline) => {
-        const markView = new ReactMarkView({
+        const markView = new ReactMarkViewClass({
           mark,
           view,
           inline,
@@ -29,8 +34,15 @@ export function useReactMarkViewCreator(
 
         return markView
       },
-    [removeReactRenderer, renderReactRenderer],
+    [removeReactRenderer, renderReactRenderer, ReactMarkViewClass],
   )
 
   return createReactMarkView
+}
+
+export function useReactMarkViewCreator(
+  renderReactRenderer: ReactRendererResult['renderReactRenderer'],
+  removeReactRenderer: ReactRendererResult['removeReactRenderer'],
+) {
+  return useAbstractReactMarkViewCreator(renderReactRenderer, removeReactRenderer, ReactMarkView)
 }

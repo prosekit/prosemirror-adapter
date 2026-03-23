@@ -1,4 +1,5 @@
 import { CoreNodeView } from '@prosemirror-adapter/core'
+import type { VNode } from 'preact'
 import { createElement } from 'preact'
 import { createPortal } from 'preact/compat'
 
@@ -8,10 +9,15 @@ import type { NodeViewContext } from './nodeViewContext'
 import { nodeViewContext } from './nodeViewContext'
 import type { PreactNodeViewComponent } from './PreactNodeViewOptions'
 
+
+
 /**
  * @internal
  */
-export class PreactHeadlessNodeView<ComponentType> extends CoreNodeView<ComponentType> {
+export abstract class AbstractPreactNodeView
+  extends CoreNodeView<PreactNodeViewComponent>
+  implements PreactRenderer<NodeViewContext>
+{
   context: NodeViewContext = {
     contentRef: this.contentRef,
     view: this.view,
@@ -32,12 +38,11 @@ export class PreactHeadlessNodeView<ComponentType> extends CoreNodeView<Componen
       innerDecorations: this.innerDecorations,
     })
   }
+
+  abstract render: () => VNode
 }
 
-export class PreactNodeView
-  extends PreactHeadlessNodeView<PreactNodeViewComponent>
-  implements PreactRenderer<NodeViewContext>
-{
+export class PreactNodeView extends AbstractPreactNodeView implements PreactRenderer<NodeViewContext> {
   render = () => {
     const UserComponent = this.component
 

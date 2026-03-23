@@ -1,4 +1,5 @@
 import { CoreMarkView } from '@prosemirror-adapter/core'
+import type { ReactPortal } from 'react'
 import { createElement } from 'react'
 import { createPortal } from 'react-dom'
 
@@ -11,7 +12,10 @@ import type { ReactMarkViewComponent } from './ReactMarkViewOptions'
 /**
  * @internal
  */
-export class ReactHeadlessMarkView<ComponentType> extends CoreMarkView<ComponentType> {
+export abstract class AbstractReactMarkView
+  extends CoreMarkView<ReactMarkViewComponent>
+  implements ReactRenderer<MarkViewContext>
+{
   context: MarkViewContext = {
     contentRef: this.contentRef,
     view: this.view,
@@ -24,12 +28,11 @@ export class ReactHeadlessMarkView<ComponentType> extends CoreMarkView<Component
       mark: this.mark,
     })
   }
+
+  abstract render: () => ReactPortal
 }
 
-export class ReactMarkView
-  extends ReactHeadlessMarkView<ReactMarkViewComponent>
-  implements ReactRenderer<MarkViewContext>
-{
+export class ReactMarkView extends AbstractReactMarkView implements ReactRenderer<MarkViewContext> {
   render = () => {
     const UserComponent = this.component
 

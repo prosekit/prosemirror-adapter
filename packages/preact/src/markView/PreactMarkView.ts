@@ -1,4 +1,5 @@
 import { CoreMarkView } from '@prosemirror-adapter/core'
+import type { VNode } from 'preact'
 import { createElement } from 'preact'
 import { createPortal } from 'preact/compat'
 
@@ -11,7 +12,10 @@ import type { PreactMarkViewComponent } from './PreactMarkViewOptions'
 /**
  * @internal
  */
-export class PreactHeadlessMarkView<ComponentType> extends CoreMarkView<ComponentType> {
+export abstract class AbstractPreactMarkView
+  extends CoreMarkView<PreactMarkViewComponent>
+  implements PreactRenderer<MarkViewContext>
+{
   context: MarkViewContext = {
     contentRef: this.contentRef,
     view: this.view,
@@ -24,12 +28,11 @@ export class PreactHeadlessMarkView<ComponentType> extends CoreMarkView<Componen
       mark: this.mark,
     })
   }
+
+  abstract render: () => VNode
 }
 
-export class PreactMarkView
-  extends PreactHeadlessMarkView<PreactMarkViewComponent>
-  implements PreactRenderer<MarkViewContext>
-{
+export class PreactMarkView extends AbstractPreactMarkView implements PreactRenderer<MarkViewContext> {
   render = () => {
     const UserComponent = this.component
 

@@ -6,5 +6,6 @@ export {
   type MarkViewContentRef,
   type MarkViewContext,
 } from './markViewContext'
-export { PreactMarkView, PreactHeadlessMarkView } from './PreactMarkView'
+export { PreactMarkView, AbstractPreactMarkView } from './PreactMarkView'
+export { useAbstractPreactMarkViewCreator } from './usePreactMarkViewCreator'
 export type { PreactMarkViewComponent, PreactMarkViewSpec, PreactMarkViewUserOptions } from './PreactMarkViewOptions'

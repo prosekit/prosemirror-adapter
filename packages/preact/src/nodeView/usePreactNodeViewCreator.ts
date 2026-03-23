@@ -3,17 +3,22 @@ import type { NodeViewConstructor } from 'prosemirror-view'
 
 import type { PreactRendererResult } from '../PreactRenderer'
 
+import type { AbstractPreactNodeView } from './PreactNodeView'
 import { PreactNodeView } from './PreactNodeView'
 import type { PreactNodeViewUserOptions } from './PreactNodeViewOptions'
 
-export function usePreactNodeViewCreator(
+/**
+ * @internal
+ */
+export function useAbstractPreactNodeViewCreator(
   renderPreactRenderer: PreactRendererResult['renderPreactRenderer'],
   removePreactRenderer: PreactRendererResult['removePreactRenderer'],
+  PreactNodeViewClass: new (...args: ConstructorParameters<typeof AbstractPreactNodeView>) => AbstractPreactNodeView,
 ) {
   const createPreactNodeView = useCallback(
     (options: PreactNodeViewUserOptions): NodeViewConstructor =>
       (node, view, getPos, decorations, innerDecorations) => {
-        const nodeView = new PreactNodeView({
+        const nodeView = new PreactNodeViewClass({
           node,
           view,
           getPos,
@@ -44,8 +49,15 @@ export function usePreactNodeViewCreator(
 
         return nodeView
       },
-    [removePreactRenderer, renderPreactRenderer],
+    [removePreactRenderer, renderPreactRenderer, PreactNodeViewClass],
   )
 
   return createPreactNodeView
+}
+
+export function usePreactNodeViewCreator(
+  renderPreactRenderer: PreactRendererResult['renderPreactRenderer'],
+  removePreactRenderer: PreactRendererResult['removePreactRenderer'],
+) {
+  return useAbstractPreactNodeViewCreator(renderPreactRenderer, removePreactRenderer, PreactNodeView)
 }

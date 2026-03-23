@@ -2,17 +2,22 @@ import type { NodeViewConstructor } from 'prosemirror-view'
 
 import type { SolidRendererResult } from '../SolidRenderer'
 
+import type { AbstractSolidNodeView } from './SolidNodeView'
 import { SolidNodeView } from './SolidNodeView'
 import type { SolidNodeViewUserOptions } from './SolidNodeViewOptions'
 
-export function useSolidNodeViewCreator(
+/**
+ * @internal
+ */
+export function useAbstractSolidNodeViewCreator(
   renderSolidRenderer: SolidRendererResult['renderSolidRenderer'],
   removeSolidRenderer: SolidRendererResult['removeSolidRenderer'],
+  SolidNodeViewClass: new (...args: ConstructorParameters<typeof AbstractSolidNodeView>) => AbstractSolidNodeView,
 ) {
   const createSolidNodeView =
     (options: SolidNodeViewUserOptions): NodeViewConstructor =>
     (node, view, getPos, decorations, innerDecorations) => {
-      const nodeView = new SolidNodeView({
+      const nodeView = new SolidNodeViewClass({
         node,
         view,
         getPos,
@@ -45,4 +50,11 @@ export function useSolidNodeViewCreator(
     }
 
   return createSolidNodeView
+}
+
+export function useSolidNodeViewCreator(
+  renderSolidRenderer: SolidRendererResult['renderSolidRenderer'],
+  removeSolidRenderer: SolidRendererResult['removeSolidRenderer'],
+) {
+  return useAbstractSolidNodeViewCreator(renderSolidRenderer, removeSolidRenderer, SolidNodeView)
 }

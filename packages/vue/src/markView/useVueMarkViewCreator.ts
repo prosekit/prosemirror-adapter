@@ -1,14 +1,19 @@
 import type { VueRendererResult } from '../VueRenderer'
 
 import type { MarkViewFactory } from './markViewContext'
+import type { AbstractVueMarkView } from './VueMarkView'
 import { VueMarkView } from './VueMarkView'
 
-export function useVueMarkViewCreator(
+/**
+ * @internal
+ */
+export function useAbstractVueMarkViewCreator(
   renderVueRenderer: VueRendererResult['renderVueRenderer'],
   removeVueRenderer: VueRendererResult['removeVueRenderer'],
+  VueMarkViewClass: new (...args: ConstructorParameters<typeof AbstractVueMarkView>) => AbstractVueMarkView,
 ) {
   const createVueMarkView: MarkViewFactory = (options) => (mark, view, inline) => {
-    const nodeView = new VueMarkView({
+    const nodeView = new VueMarkViewClass({
       mark,
       view,
       inline,
@@ -26,4 +31,11 @@ export function useVueMarkViewCreator(
   }
 
   return createVueMarkView
+}
+
+export function useVueMarkViewCreator(
+  renderVueRenderer: VueRendererResult['renderVueRenderer'],
+  removeVueRenderer: VueRendererResult['removeVueRenderer'],
+) {
+  return useAbstractVueMarkViewCreator(renderVueRenderer, removeVueRenderer, VueMarkView)
 }

@@ -6,5 +6,6 @@ export {
   type NodeViewContentRef,
   type NodeViewContext,
 } from './nodeViewContext'
-export { ReactNodeView, ReactHeadlessNodeView } from './ReactNodeView'
+export { ReactNodeView, AbstractReactNodeView } from './ReactNodeView'
+export { useAbstractReactNodeViewCreator } from './useReactNodeViewCreator'
 export type { ReactNodeViewComponent, ReactNodeViewSpec, ReactNodeViewUserOptions } from './ReactNodeViewOptions'

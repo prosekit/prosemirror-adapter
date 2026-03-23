@@ -1,5 +1,5 @@
 import { CoreMarkView, type CoreMarkViewSpec } from '@prosemirror-adapter/core'
-import type { Setter } from 'solid-js'
+import type { JSX, Setter } from 'solid-js'
 import { createSignal } from 'solid-js'
 import { Dynamic, Portal } from 'solid-js/web'
 
@@ -13,12 +13,15 @@ import type { SolidMarkViewComponent } from './SolidMarkViewOptions'
 /**
  * @internal
  */
-export class SolidHeadlessMarkView<ComponentType> extends CoreMarkView<ComponentType> {
+export abstract class AbstractSolidMarkView
+  extends CoreMarkView<SolidMarkViewComponent>
+  implements SolidRenderer<MarkViewContext>
+{
   context: MarkViewContext
 
   protected setContext: Setter<MarkViewContextProps>
 
-  constructor(spec: CoreMarkViewSpec<ComponentType>) {
+  constructor(spec: CoreMarkViewSpec<SolidMarkViewComponent>) {
     super(spec)
     const [context, setContext] = createSignal<MarkViewContextProps>({
       contentRef: this.contentRef,
@@ -36,12 +39,11 @@ export class SolidHeadlessMarkView<ComponentType> extends CoreMarkView<Component
       mark: this.mark,
     }))
   }
+
+  abstract render: () => JSX.Element
 }
 
-export class SolidMarkView
-  extends SolidHeadlessMarkView<SolidMarkViewComponent>
-  implements SolidRenderer<MarkViewContext>
-{
+export class SolidMarkView extends AbstractSolidMarkView implements SolidRenderer<MarkViewContext> {
   render = () => {
     const UserComponent = this.component
 

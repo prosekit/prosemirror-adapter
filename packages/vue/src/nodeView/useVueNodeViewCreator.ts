@@ -1,14 +1,19 @@
 import type { VueRendererResult } from '../VueRenderer'
 
 import type { NodeViewFactory } from './nodeViewContext'
+import type { AbstractVueNodeView } from './VueNodeView'
 import { VueNodeView } from './VueNodeView'
 
-export function useVueNodeViewCreator(
+/**
+ * @internal
+ */
+export function useAbstractVueNodeViewCreator(
   renderVueRenderer: VueRendererResult['renderVueRenderer'],
   removeVueRenderer: VueRendererResult['removeVueRenderer'],
+  VueNodeViewClass: new (...args: ConstructorParameters<typeof AbstractVueNodeView>) => AbstractVueNodeView,
 ) {
   const createVueNodeView: NodeViewFactory = (options) => (node, view, getPos, decorations, innerDecorations) => {
-    const nodeView = new VueNodeView({
+    const nodeView = new VueNodeViewClass({
       node,
       view,
       getPos,
@@ -40,4 +45,11 @@ export function useVueNodeViewCreator(
   }
 
   return createVueNodeView
+}
+
+export function useVueNodeViewCreator(
+  renderVueRenderer: VueRendererResult['renderVueRenderer'],
+  removeVueRenderer: VueRendererResult['removeVueRenderer'],
+) {
+  return useAbstractVueNodeViewCreator(renderVueRenderer, removeVueRenderer, VueNodeView)
 }

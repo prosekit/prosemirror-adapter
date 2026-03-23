@@ -12,7 +12,10 @@ import type { SvelteNodeViewComponent } from './SvelteNodeViewOptions'
 /**
  * @internal
  */
-export class SvelteHeadlessNodeView<ComponentType> extends CoreNodeView<ComponentType> {
+export abstract class AbstractSvelteNodeView
+  extends CoreNodeView<SvelteNodeViewComponent>
+  implements SvelteRenderer<NodeViewContext>
+{
   context: NodeViewContext = {
     contentRef: this.contentRef,
     view: this.view,
@@ -31,12 +34,11 @@ export class SvelteHeadlessNodeView<ComponentType> extends CoreNodeView<Componen
     this.context.decorations.set(this.decorations)
     this.context.innerDecorations.set(this.innerDecorations)
   }
+
+  abstract render: (options: SvelteRenderOptions) => VoidFunction
 }
 
-export class SvelteNodeView
-  extends SvelteHeadlessNodeView<SvelteNodeViewComponent>
-  implements SvelteRenderer<NodeViewContext>
-{
+export class SvelteNodeView extends AbstractSvelteNodeView implements SvelteRenderer<NodeViewContext> {
   render = (options: SvelteRenderOptions) => {
     const UserComponent = this.component
 

@@ -3,16 +3,21 @@ import { getAllContexts } from 'svelte'
 import type { SvelteRendererResult } from '../SvelteRenderer'
 
 import type { NodeViewFactory } from './nodeViewContext'
+import type { AbstractSvelteNodeView } from './SvelteNodeView'
 import { SvelteNodeView } from './SvelteNodeView'
 
-export function useSvelteNodeViewCreator(
+/**
+ * @internal
+ */
+export function useAbstractSvelteNodeViewCreator(
   renderSvelteRenderer: SvelteRendererResult['renderSvelteRenderer'],
   removeSvelteRenderer: SvelteRendererResult['removeSvelteRenderer'],
+  SvelteNodeViewClass: new (...args: ConstructorParameters<typeof AbstractSvelteNodeView>) => AbstractSvelteNodeView,
 ) {
   const context = getAllContexts()
 
   const createSvelteNodeView: NodeViewFactory = (options) => (node, view, getPos, decorations, innerDecorations) => {
-    const nodeView = new SvelteNodeView({
+    const nodeView = new SvelteNodeViewClass({
       node,
       view,
       getPos,
@@ -44,4 +49,11 @@ export function useSvelteNodeViewCreator(
   }
 
   return createSvelteNodeView
+}
+
+export function useSvelteNodeViewCreator(
+  renderSvelteRenderer: SvelteRendererResult['renderSvelteRenderer'],
+  removeSvelteRenderer: SvelteRendererResult['removeSvelteRenderer'],
+) {
+  return useAbstractSvelteNodeViewCreator(renderSvelteRenderer, removeSvelteRenderer, SvelteNodeView)
 }

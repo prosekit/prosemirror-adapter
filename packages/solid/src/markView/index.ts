@@ -7,5 +7,6 @@ export {
   type MarkViewContext,
   type MarkViewContextProps,
 } from './markViewContext'
-export { SolidMarkView, SolidHeadlessMarkView } from './SolidMarkView'
+export { SolidMarkView, AbstractSolidMarkView } from './SolidMarkView'
+export { useAbstractSolidMarkViewCreator } from './useSolidMarkViewCreator'
 export type { SolidMarkViewComponent, SolidMarkViewSpec, SolidMarkViewUserOptions } from './SolidMarkViewOptions'

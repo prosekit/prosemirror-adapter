@@ -1,4 +1,5 @@
 import { CoreNodeView } from '@prosemirror-adapter/core'
+import type { ReactPortal } from 'react'
 import { createElement } from 'react'
 import { createPortal } from 'react-dom'
 
@@ -11,7 +12,10 @@ import type { ReactNodeViewComponent } from './ReactNodeViewOptions'
 /**
  * @internal
  */
-export class ReactHeadlessNodeView<ComponentType> extends CoreNodeView<ComponentType> {
+export abstract class AbstractReactNodeView
+  extends CoreNodeView<ReactNodeViewComponent>
+  implements ReactRenderer<NodeViewContext>
+{
   context: NodeViewContext = {
     contentRef: this.contentRef,
     view: this.view,
@@ -32,12 +36,11 @@ export class ReactHeadlessNodeView<ComponentType> extends CoreNodeView<Component
       innerDecorations: this.innerDecorations,
     })
   }
+
+  abstract render: () => ReactPortal
 }
 
-export class ReactNodeView
-  extends ReactHeadlessNodeView<ReactNodeViewComponent>
-  implements ReactRenderer<NodeViewContext>
-{
+export class ReactNodeView extends AbstractReactNodeView implements ReactRenderer<NodeViewContext> {
   render = () => {
     const UserComponent = this.component
 
