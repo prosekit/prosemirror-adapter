@@ -6,5 +6,6 @@ export {
   type MarkViewContentRef,
   type MarkViewContext,
 } from './markViewContext'
-export { ReactMarkView, ReactHeadlessMarkView } from './ReactMarkView'
+export { ReactMarkView, AbstractReactMarkView } from './ReactMarkView'
+export { buildReactMarkViewCreator } from './useReactMarkViewCreator'
 export type { ReactMarkViewComponent, ReactMarkViewSpec, ReactMarkViewUserOptions } from './ReactMarkViewOptions'

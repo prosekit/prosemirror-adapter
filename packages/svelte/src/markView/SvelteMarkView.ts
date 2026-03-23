@@ -12,7 +12,10 @@ import type { SvelteMarkViewComponent } from './SvelteMarkViewOptions'
 /**
  * @internal
  */
-export class SvelteHeadlessMarkView<ComponentType> extends CoreMarkView<ComponentType> {
+export abstract class AbstractSvelteMarkView<ComponentType>
+  extends CoreMarkView<ComponentType>
+  implements SvelteRenderer<MarkViewContext>
+{
   context: MarkViewContext = {
     contentRef: this.contentRef,
     view: this.view,
@@ -22,10 +25,12 @@ export class SvelteHeadlessMarkView<ComponentType> extends CoreMarkView<Componen
   updateContext = () => {
     this.context.mark.set(this.mark)
   }
+
+  abstract render: (options: SvelteRenderOptions) => VoidFunction
 }
 
 export class SvelteMarkView
-  extends SvelteHeadlessMarkView<SvelteMarkViewComponent>
+  extends AbstractSvelteMarkView<SvelteMarkViewComponent>
   implements SvelteRenderer<MarkViewContext>
 {
   render = (options: SvelteRenderOptions) => {

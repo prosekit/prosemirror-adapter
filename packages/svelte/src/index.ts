@@ -1,7 +1,8 @@
 export {
   markViewFactoryKey,
   SvelteMarkView,
-  SvelteHeadlessMarkView,
+  AbstractSvelteMarkView,
+  buildSvelteMarkViewCreator,
   useMarkViewContext,
   useMarkViewFactory,
   type MarkViewContext,
@@ -13,7 +14,8 @@ export {
 export {
   nodeViewFactoryKey,
   SvelteNodeView,
-  SvelteHeadlessNodeView,
+  AbstractSvelteNodeView,
+  buildSvelteNodeViewCreator,
   useNodeViewContext,
   useNodeViewFactory,
   type NodeViewContext,

@@ -10,7 +10,10 @@ import type { VueMarkViewComponent } from './VueMarkViewOptions'
 /**
  * @internal
  */
-export class VueHeadlessMarkView<ComponentType> extends CoreMarkView<ComponentType> {
+export abstract class AbstractVueMarkView<ComponentType>
+  extends CoreMarkView<ComponentType>
+  implements VueRenderer<MarkViewContext>
+{
   context: MarkViewContext = {
     contentRef: this.contentRef,
     view: this.view,
@@ -21,9 +24,11 @@ export class VueHeadlessMarkView<ComponentType> extends CoreMarkView<ComponentTy
     const ctx = this.context
     if (ctx.mark.value !== this.mark) ctx.mark.value = this.mark
   }
+
+  abstract render: () => VueRendererComponent
 }
 
-export class VueMarkView extends VueHeadlessMarkView<VueMarkViewComponent> implements VueRenderer<MarkViewContext> {
+export class VueMarkView extends AbstractVueMarkView<VueMarkViewComponent> implements VueRenderer<MarkViewContext> {
   render = () => {
     const UserComponent = this.component
 

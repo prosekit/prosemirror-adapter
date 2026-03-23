@@ -6,5 +6,6 @@ export {
   type NodeViewContentRef,
   type NodeViewContext,
 } from './nodeViewContext'
-export { PreactNodeView, PreactHeadlessNodeView } from './PreactNodeView'
+export { PreactNodeView, AbstractPreactNodeView } from './PreactNodeView'
+export { buildPreactNodeViewCreator } from './usePreactNodeViewCreator'
 export type { PreactNodeViewComponent, PreactNodeViewSpec, PreactNodeViewUserOptions } from './PreactNodeViewOptions'

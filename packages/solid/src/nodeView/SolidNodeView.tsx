@@ -1,5 +1,5 @@
 import { CoreNodeView, type CoreNodeViewSpec } from '@prosemirror-adapter/core'
-import type { Setter } from 'solid-js'
+import type { JSX, Setter } from 'solid-js'
 import { createSignal } from 'solid-js'
 import { Dynamic, Portal } from 'solid-js/web'
 
@@ -13,7 +13,10 @@ import type { SolidNodeViewComponent } from './SolidNodeViewOptions'
 /**
  * @internal
  */
-export class SolidHeadlessNodeView<ComponentType> extends CoreNodeView<ComponentType> {
+export abstract class AbstractSolidNodeView<ComponentType>
+  extends CoreNodeView<ComponentType>
+  implements SolidRenderer<NodeViewContext>
+{
   context: NodeViewContext
 
   protected setContext: Setter<NodeViewContextProps>
@@ -44,10 +47,12 @@ export class SolidHeadlessNodeView<ComponentType> extends CoreNodeView<Component
       innerDecorations: this.innerDecorations,
     }))
   }
+
+  abstract render: () => JSX.Element
 }
 
 export class SolidNodeView
-  extends SolidHeadlessNodeView<SolidNodeViewComponent>
+  extends AbstractSolidNodeView<SolidNodeViewComponent>
   implements SolidRenderer<NodeViewContext>
 {
   render = () => {

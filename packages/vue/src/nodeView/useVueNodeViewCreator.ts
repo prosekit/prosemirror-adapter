@@ -1,43 +1,58 @@
+import type { CoreNodeViewSpec, CoreNodeViewUserOptions } from '@prosemirror-adapter/core'
+import type { NodeViewConstructor } from 'prosemirror-view'
+
 import type { VueRendererResult } from '../VueRenderer'
 
-import type { NodeViewFactory } from './nodeViewContext'
+import type { AbstractVueNodeView } from './VueNodeView'
 import { VueNodeView } from './VueNodeView'
+
+/**
+ * @internal
+ */
+export function buildVueNodeViewCreator<ComponentType>(
+  renderVueRenderer: VueRendererResult['renderVueRenderer'],
+  removeVueRenderer: VueRendererResult['removeVueRenderer'],
+  VueNodeViewClass: new (spec: CoreNodeViewSpec<ComponentType>) => AbstractVueNodeView<ComponentType>,
+) {
+  return function nodeViewCreator(userOptions: CoreNodeViewUserOptions<ComponentType>): NodeViewConstructor {
+    return function nodeViewConstructor(node, view, getPos, decorations, innerDecorations) {
+      const patchedUserOptions: CoreNodeViewUserOptions<ComponentType> = {
+        ...userOptions,
+        onUpdate() {
+          userOptions.onUpdate?.()
+          nodeView.updateContext()
+        },
+        selectNode() {
+          userOptions.selectNode?.()
+          nodeView.updateContext()
+        },
+        deselectNode() {
+          userOptions.deselectNode?.()
+          nodeView.updateContext()
+        },
+        destroy() {
+          userOptions.destroy?.()
+          removeVueRenderer(nodeView)
+        },
+      }
+      const spec: CoreNodeViewSpec<ComponentType> = {
+        node,
+        view,
+        getPos,
+        decorations,
+        innerDecorations,
+        options: patchedUserOptions,
+      }
+      const nodeView = new VueNodeViewClass(spec)
+      renderVueRenderer(nodeView)
+      return nodeView
+    }
+  }
+}
 
 export function useVueNodeViewCreator(
   renderVueRenderer: VueRendererResult['renderVueRenderer'],
   removeVueRenderer: VueRendererResult['removeVueRenderer'],
 ) {
-  const createVueNodeView: NodeViewFactory = (options) => (node, view, getPos, decorations, innerDecorations) => {
-    const nodeView = new VueNodeView({
-      node,
-      view,
-      getPos,
-      decorations,
-      innerDecorations,
-      options: {
-        ...options,
-        onUpdate() {
-          options.onUpdate?.()
-          nodeView.updateContext()
-        },
-        selectNode() {
-          options.selectNode?.()
-          nodeView.updateContext()
-        },
-        deselectNode() {
-          options.deselectNode?.()
-          nodeView.updateContext()
-        },
-        destroy() {
-          options.destroy?.()
-          removeVueRenderer(nodeView)
-        },
-      },
-    })
-    renderVueRenderer(nodeView)
-
-    return nodeView
-  }
-
-  return createVueNodeView
+  return buildVueNodeViewCreator(renderVueRenderer, removeVueRenderer, VueNodeView)
 }

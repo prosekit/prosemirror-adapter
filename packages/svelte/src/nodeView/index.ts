@@ -5,5 +5,6 @@ export {
   type NodeViewContext,
   type NodeViewFactory,
 } from './nodeViewContext'
-export { SvelteNodeView, SvelteHeadlessNodeView } from './SvelteNodeView'
+export { SvelteNodeView, AbstractSvelteNodeView } from './SvelteNodeView'
+export { buildSvelteNodeViewCreator } from './useSvelteNodeViewCreator'
 export type { SvelteNodeViewComponent, SvelteNodeViewSpec, SvelteNodeViewUserOptions } from './SvelteNodeViewOptions'
