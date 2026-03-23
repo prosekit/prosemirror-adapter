@@ -17,7 +17,7 @@ export {
   nodeViewContext,
   ReactNodeView,
   AbstractReactNodeView,
-  useAbstractReactNodeViewCreator,
+  buildReactNodeViewCreator,
   useNodeViewContext,
   useNodeViewFactory,
   type NodeViewContentRef,
