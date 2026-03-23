@@ -108,18 +108,18 @@ export function buildReactMarkViewCreator(
 export function buildReactMarkViewCreator<ComponentType>(
   renderReactRenderer: ReactRendererResult['renderReactRenderer'],
   removeReactRenderer: ReactRendererResult['removeReactRenderer'],
-  ReactMarkViewClass: new (options: CoreMarkViewSpec<ComponentType>) => AbstractReactMarkView<ComponentType>,
+  ReactMarkViewClass: new (spec: CoreMarkViewSpec<ComponentType>) => AbstractReactMarkView<ComponentType>,
 ) {
 ```
 
 - 函数添加泛型参数 `<ComponentType>`
-- `ReactMarkViewClass` 构造器签名改为显式的 `(options: CoreXxxViewSpec<ComponentType>)`，不再使用 `ConstructorParameters`
+- `ReactMarkViewClass` 构造器签名改为显式的 `(spec: CoreXxxViewSpec<ComponentType>)`，不再使用 `ConstructorParameters`
 - `AbstractReactMarkView` 改为 `AbstractReactMarkView<ComponentType>`
 
 ### 规则
 
 1. 函数泛型参数命名为 `ComponentType`，与 Abstract 类的泛型参数保持一致
-2. 构造器参数类型从 `ConstructorParameters<typeof AbstractReactXxxView>` 改为 `(options: CoreXxxViewSpec<ComponentType>)`
+2. 构造器参数类型从 `ConstructorParameters<typeof AbstractReactXxxView>` 改为 `(spec: CoreXxxViewSpec<ComponentType>)`
 3. 返回类型中所有 `AbstractReactXxxView` 都附加 `<ComponentType>`
 
 ---
