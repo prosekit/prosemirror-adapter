@@ -13,7 +13,7 @@ import { ReactMarkView } from './ReactMarkView'
 export function buildReactMarkViewCreator<ComponentType>(
   renderReactRenderer: ReactRendererResult['renderReactRenderer'],
   removeReactRenderer: ReactRendererResult['removeReactRenderer'],
-  ReactMarkViewClass: new (options: CoreMarkViewSpec<ComponentType>) => AbstractReactMarkView<ComponentType>,
+  ReactMarkViewClass: new (spec: CoreMarkViewSpec<ComponentType>) => AbstractReactMarkView<ComponentType>,
 ) {
   return function markViewCreator(userOptions: CoreMarkViewUserOptions<ComponentType>): MarkViewConstructor {
     return function markViewConstructor(mark, view, inline) {
