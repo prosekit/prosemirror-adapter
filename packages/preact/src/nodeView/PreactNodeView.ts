@@ -9,8 +9,6 @@ import type { NodeViewContext } from './nodeViewContext'
 import { nodeViewContext } from './nodeViewContext'
 import type { PreactNodeViewComponent } from './PreactNodeViewOptions'
 
-
-
 /**
  * @internal
  */
