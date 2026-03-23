@@ -1,5 +1,4 @@
-import { Fragment, type ComponentChildren, type FunctionalComponent } from 'preact'
-import { createElement } from 'preact'
+import { createElement, Fragment, type ComponentChildren, type FunctionalComponent } from 'preact'
 
 import { createMarkViewContext } from './markView'
 import { usePreactMarkViewCreator } from './markView/usePreactMarkViewCreator'
