@@ -1,8 +1,10 @@
+import type { MarkViewConstructor } from 'prosemirror-view'
+
 import type { VueRendererResult } from '../VueRenderer'
 
-import type { MarkViewFactory } from './markViewContext'
 import type { AbstractVueMarkView } from './VueMarkView'
 import { VueMarkView } from './VueMarkView'
+import type { VueMarkViewUserOptions } from './VueMarkViewOptions'
 
 /**
  * @internal
@@ -12,25 +14,25 @@ export function buildVueMarkViewCreator(
   removeVueRenderer: VueRendererResult['removeVueRenderer'],
   VueMarkViewClass: new (...args: ConstructorParameters<typeof AbstractVueMarkView>) => AbstractVueMarkView,
 ) {
-  const createVueMarkView: MarkViewFactory = (options) => (mark, view, inline) => {
-    const nodeView = new VueMarkViewClass({
-      mark,
-      view,
-      inline,
-      options: {
-        ...options,
-        destroy() {
-          options.destroy?.()
-          removeVueRenderer(nodeView)
+  return function markViewCreator(options: VueMarkViewUserOptions): MarkViewConstructor {
+    return function markViewConstructor(mark, view, inline) {
+      const markView = new VueMarkViewClass({
+        mark,
+        view,
+        inline,
+        options: {
+          ...options,
+          destroy() {
+            options.destroy?.()
+            removeVueRenderer(markView)
+          },
         },
-      },
-    })
-    renderVueRenderer(nodeView)
+      })
+      renderVueRenderer(markView)
 
-    return nodeView
+      return markView
+    }
   }
-
-  return createVueMarkView
 }
 
 export function useVueMarkViewCreator(

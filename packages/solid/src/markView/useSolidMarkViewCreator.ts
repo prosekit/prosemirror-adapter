@@ -14,10 +14,9 @@ export function buildSolidMarkViewCreator(
   removeSolidRenderer: SolidRendererResult['removeSolidRenderer'],
   SolidMarkViewClass: new (...args: ConstructorParameters<typeof AbstractSolidMarkView>) => AbstractSolidMarkView,
 ) {
-  const createSolidMarkView =
-    (options: SolidMarkViewUserOptions): MarkViewConstructor =>
-    (mark, view, inline) => {
-      const nodeView = new SolidMarkViewClass({
+  return function markViewCreator(options: SolidMarkViewUserOptions): MarkViewConstructor {
+    return function markViewConstructor(mark, view, inline) {
+      const markView = new SolidMarkViewClass({
         mark,
         view,
         inline,
@@ -25,17 +24,16 @@ export function buildSolidMarkViewCreator(
           ...options,
           destroy() {
             options.destroy?.()
-            removeSolidRenderer(nodeView)
+            removeSolidRenderer(markView)
           },
         },
       })
 
-      renderSolidRenderer(nodeView, false)
+      renderSolidRenderer(markView, false)
 
-      return nodeView
+      return markView
     }
-
-  return createSolidMarkView
+  }
 }
 
 export function useSolidMarkViewCreator(

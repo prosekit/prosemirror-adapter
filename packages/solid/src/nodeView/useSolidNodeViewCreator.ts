@@ -14,9 +14,8 @@ export function buildSolidNodeViewCreator(
   removeSolidRenderer: SolidRendererResult['removeSolidRenderer'],
   SolidNodeViewClass: new (...args: ConstructorParameters<typeof AbstractSolidNodeView>) => AbstractSolidNodeView,
 ) {
-  const createSolidNodeView =
-    (options: SolidNodeViewUserOptions): NodeViewConstructor =>
-    (node, view, getPos, decorations, innerDecorations) => {
+  return function nodeViewCreator(options: SolidNodeViewUserOptions): NodeViewConstructor {
+    return function nodeViewConstructor(node, view, getPos, decorations, innerDecorations) {
       const nodeView = new SolidNodeViewClass({
         node,
         view,
@@ -48,8 +47,7 @@ export function buildSolidNodeViewCreator(
 
       return nodeView
     }
-
-  return createSolidNodeView
+  }
 }
 
 export function useSolidNodeViewCreator(

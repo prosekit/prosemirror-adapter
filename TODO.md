@@ -38,7 +38,7 @@
   - 重命名函数
   - 更新 export: `packages/vue/src/nodeView/index.ts`, `packages/vue/src/index.ts`
 
-- [ ] `buildVueNodeViewCreator`: 箭头函数 → 具名函数
+- [x] `buildVueNodeViewCreator`: 箭头函数 → 具名函数
   - 文件: `packages/vue/src/nodeView/useVueNodeViewCreator.ts`
   - `const createVueNodeView: NodeViewFactory = (options) => (node, ...) => {` → `return function nodeViewCreator(options) { return function nodeViewConstructor(node, ...) {`
 
@@ -47,7 +47,7 @@
   - 重命名函数
   - 更新 export: `packages/vue/src/markView/index.ts`, `packages/vue/src/index.ts`
 
-- [ ] `buildVueMarkViewCreator`: 箭头函数 → 具名函数
+- [x] `buildVueMarkViewCreator`: 箭头函数 → 具名函数
   - 文件: `packages/vue/src/markView/useVueMarkViewCreator.ts`
   - `const createVueMarkView: MarkViewFactory = (options) => (mark, ...) => {` → `return function markViewCreator(options) { return function markViewConstructor(mark, ...) {`
 
@@ -58,7 +58,7 @@
   - 重命名函数
   - 更新 export: `packages/solid/src/nodeView/index.ts`, `packages/solid/src/index.ts`
 
-- [ ] `buildSolidNodeViewCreator`: 箭头函数 → 具名函数
+- [x] `buildSolidNodeViewCreator`: 箭头函数 → 具名函数
   - 文件: `packages/solid/src/nodeView/useSolidNodeViewCreator.ts`
   - `const createSolidNodeView = (options): NodeViewConstructor => (node, ...) => {` → `return function nodeViewCreator(options) { return function nodeViewConstructor(node, ...) {`
 
@@ -67,7 +67,7 @@
   - 重命名函数
   - 更新 export: `packages/solid/src/markView/index.ts`, `packages/solid/src/index.ts`
 
-- [ ] `buildSolidMarkViewCreator`: 箭头函数 → 具名函数
+- [x] `buildSolidMarkViewCreator`: 箭头函数 → 具名函数
   - 文件: `packages/solid/src/markView/useSolidMarkViewCreator.ts`
   - `const createSolidMarkView = (options): MarkViewConstructor => (mark, ...) => {` → `return function markViewCreator(options) { return function markViewConstructor(mark, ...) {`
 
@@ -78,7 +78,7 @@
   - 重命名函数，`getAllContexts()` 移到调用方
   - 更新 export: `packages/svelte/src/nodeView/index.ts`, `packages/svelte/src/index.ts`
 
-- [ ] `buildSvelteNodeViewCreator`: 箭头函数 → 具名函数
+- [x] `buildSvelteNodeViewCreator`: 箭头函数 → 具名函数
   - 文件: `packages/svelte/src/nodeView/useSvelteNodeViewCreator.ts`
   - `const createSvelteNodeView: NodeViewFactory = (options) => (node, ...) => {` → `return function nodeViewCreator(options) { return function nodeViewConstructor(node, ...) {`
 
@@ -87,6 +87,6 @@
   - 重命名函数，`getAllContexts()` 移到调用方
   - 更新 export: `packages/svelte/src/markView/index.ts`, `packages/svelte/src/index.ts`
 
-- [ ] `buildSvelteMarkViewCreator`: 箭头函数 → 具名函数
+- [x] `buildSvelteMarkViewCreator`: 箭头函数 → 具名函数
   - 文件: `packages/svelte/src/markView/useSvelteMarkViewCreator.ts`
   - `const createSvelteMarkView: MarkViewFactory = (options) => (mark, ...) => {` → `return function markViewCreator(options) { return function markViewConstructor(mark, ...) {`

@@ -1,8 +1,10 @@
+import type { NodeViewConstructor } from 'prosemirror-view'
+
 import type { VueRendererResult } from '../VueRenderer'
 
-import type { NodeViewFactory } from './nodeViewContext'
 import type { AbstractVueNodeView } from './VueNodeView'
 import { VueNodeView } from './VueNodeView'
+import type { VueNodeViewUserOptions } from './VueNodeViewOptions'
 
 /**
  * @internal
@@ -12,39 +14,39 @@ export function buildVueNodeViewCreator(
   removeVueRenderer: VueRendererResult['removeVueRenderer'],
   VueNodeViewClass: new (...args: ConstructorParameters<typeof AbstractVueNodeView>) => AbstractVueNodeView,
 ) {
-  const createVueNodeView: NodeViewFactory = (options) => (node, view, getPos, decorations, innerDecorations) => {
-    const nodeView = new VueNodeViewClass({
-      node,
-      view,
-      getPos,
-      decorations,
-      innerDecorations,
-      options: {
-        ...options,
-        onUpdate() {
-          options.onUpdate?.()
-          nodeView.updateContext()
+  return function nodeViewCreator(options: VueNodeViewUserOptions): NodeViewConstructor {
+    return function nodeViewConstructor(node, view, getPos, decorations, innerDecorations) {
+      const nodeView = new VueNodeViewClass({
+        node,
+        view,
+        getPos,
+        decorations,
+        innerDecorations,
+        options: {
+          ...options,
+          onUpdate() {
+            options.onUpdate?.()
+            nodeView.updateContext()
+          },
+          selectNode() {
+            options.selectNode?.()
+            nodeView.updateContext()
+          },
+          deselectNode() {
+            options.deselectNode?.()
+            nodeView.updateContext()
+          },
+          destroy() {
+            options.destroy?.()
+            removeVueRenderer(nodeView)
+          },
         },
-        selectNode() {
-          options.selectNode?.()
-          nodeView.updateContext()
-        },
-        deselectNode() {
-          options.deselectNode?.()
-          nodeView.updateContext()
-        },
-        destroy() {
-          options.destroy?.()
-          removeVueRenderer(nodeView)
-        },
-      },
-    })
-    renderVueRenderer(nodeView)
+      })
+      renderVueRenderer(nodeView)
 
-    return nodeView
+      return nodeView
+    }
   }
-
-  return createVueNodeView
 }
 
 export function useVueNodeViewCreator(
