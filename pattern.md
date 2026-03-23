@@ -286,7 +286,7 @@ return function markViewConstructor(mark, view, inline) {
 - [ ] 新增 `import type { CoreXxxViewSpec, CoreXxxViewUserOptions } from '@prosemirror-adapter/core'`，放在文件最顶部
 - [ ] 删除 `import type { ReactXxxViewUserOptions } from './ReactXxxViewOptions'`
 - [ ] `buildReactXxxViewCreator` 函数添加泛型参数 `<ComponentType>`
-- [ ] `ReactXxxViewClass` 构造器签名改为 `new (options: CoreXxxViewSpec<ComponentType>) => AbstractReactXxxView<ComponentType>`
+- [ ] `ReactXxxViewClass` 构造器签名改为 `new (spec: CoreXxxViewSpec<ComponentType>) => AbstractReactXxxView<ComponentType>`
 - [ ] `markViewCreator` / `nodeViewCreator` 的参数名从 `options` 改为 `userOptions`
 - [ ] 参数类型从 `ReactXxxViewUserOptions` 改为 `CoreXxxViewUserOptions<ComponentType>`
 - [ ] 函数体内 `options` 引用全部改为 `userOptions`
