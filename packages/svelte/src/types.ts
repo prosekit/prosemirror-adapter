@@ -1,6 +1,6 @@
 import type { Component, ComponentConstructorOptions, SvelteComponent } from 'svelte'
 
-export type AnyRecord = Record<string, any>
+type AnyRecord = Record<string, any>
 export type SvelteClassComponentConstructor<T extends AnyRecord = any> = new (
   options: ComponentConstructorOptions<T>,
 ) => SvelteComponent
