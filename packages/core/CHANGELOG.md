@@ -1,5 +1,11 @@
 # @prosemirror-adapter/core
 
+## 0.5.3
+
+### Patch Changes
+
+- c3307f2: Avoid `instanceof HTMLElement`.
+
 ## 0.5.2
 
 ### Patch Changes
