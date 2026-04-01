@@ -22,7 +22,7 @@ export abstract class AbstractVueMarkView<ComponentType>
 
   updateContext = (): void => {
     const ctx = this.context
-    if (ctx.mark.value !== this.mark) ctx.mark.value = this.mark
+    ctx.mark.value = this.mark
   }
 
   abstract render: () => VueRendererComponent

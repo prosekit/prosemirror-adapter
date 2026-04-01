@@ -28,10 +28,10 @@ export abstract class AbstractVueNodeView<ComponentType>
 
   updateContext = () => {
     const ctx = this.context
-    if (ctx.node.value !== this.node) ctx.node.value = this.node
-    if (ctx.selected.value !== this.selected) ctx.selected.value = this.selected
-    if (ctx.decorations.value !== this.decorations) ctx.decorations.value = this.decorations
-    if (ctx.innerDecorations.value !== this.innerDecorations) ctx.innerDecorations.value = this.innerDecorations
+    ctx.node.value = this.node
+    ctx.selected.value = this.selected
+    ctx.decorations.value = this.decorations
+    ctx.innerDecorations.value = this.innerDecorations
   }
 
   abstract render: () => VueRendererComponent
