@@ -1,5 +1,12 @@
 # @prosemirror-adapter/lit
 
+## 0.5.3
+
+### Patch Changes
+
+- Updated dependencies [c3307f2]
+  - @prosemirror-adapter/core@0.5.3
+
 ## 0.5.2
 
 ### Patch Changes
