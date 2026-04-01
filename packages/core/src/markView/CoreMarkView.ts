@@ -17,13 +17,13 @@ export class CoreMarkView<ComponentType> implements MarkView {
 
   #createElement(as?: MarkViewDOMSpec) {
     const { inline, mark } = this
-    return as == null
+    return !as
       ? document.createElement(inline ? 'span' : 'div')
-      : as instanceof HTMLElement
-        ? as
+      : typeof as === 'string'
+        ? document.createElement(as)
         : typeof as === 'function'
           ? as(mark)
-          : document.createElement(as)
+          : as
   }
 
   createDOM(as?: MarkViewDOMSpec) {
