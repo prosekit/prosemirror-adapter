@@ -22,7 +22,7 @@ export class CoreNodeView<ComponentType> implements NodeView {
 
   #createElement(as?: NodeViewDOMSpec) {
     const { node } = this
-    return !as 
+    return !as
       ? document.createElement(node.isInline ? 'span' : 'div')
       : typeof as === 'string'
         ? document.createElement(as)
