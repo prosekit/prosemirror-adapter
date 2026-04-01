@@ -22,13 +22,13 @@ export class CoreNodeView<ComponentType> implements NodeView {
 
   #createElement(as?: NodeViewDOMSpec) {
     const { node } = this
-    return as == null
+    return !as 
       ? document.createElement(node.isInline ? 'span' : 'div')
-      : as instanceof HTMLElement
-        ? as
+      : typeof as === 'string'
+        ? document.createElement(as)
         : typeof as === 'function'
           ? as(node)
-          : document.createElement(as)
+          : as
   }
 
   createDOM(as?: NodeViewDOMSpec) {

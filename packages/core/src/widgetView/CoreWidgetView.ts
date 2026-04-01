@@ -15,7 +15,7 @@ export class CoreWidgetView<Component> {
   options: CoreWidgetViewUserOptions<Component>
 
   #createElement(as: string | HTMLElement) {
-    return as instanceof HTMLElement ? as : document.createElement(as)
+    return typeof as === 'string' ? document.createElement(as) : as
   }
 
   constructor({ pos, spec, options }: CoreWidgetViewSpec<Component>) {
