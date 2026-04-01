@@ -19,7 +19,7 @@ export class CoreMarkView<ComponentType> implements MarkView {
     const { inline, mark } = this
     return !as
       ? document.createElement(inline ? 'span' : 'div')
-      : typeof as === 'string' 
+      : typeof as === 'string'
         ? document.createElement(as)
         : typeof as === 'function'
           ? as(mark)
