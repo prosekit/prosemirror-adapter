@@ -44,7 +44,7 @@
   "devDependencies": {
     "@lit/context": "^1.1.6",
     "lit": "^3.3.2",
-    "tsdown": "^0.21.7",
+    "tsdown": "^0.21.8",
     "vite": "^7.3.2"
   },
   "publishConfig": {

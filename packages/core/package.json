@@ -29,7 +29,7 @@
     "prosemirror-view": "^1.41.8"
   },
   "devDependencies": {
-    "tsdown": "^0.21.7"
+    "tsdown": "^0.21.8"
   },
   "publishConfig": {
     "types": "./dist/index.d.ts",

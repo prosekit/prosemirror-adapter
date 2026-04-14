@@ -38,7 +38,7 @@
     }
   },
   "devDependencies": {
-    "tsdown": "^0.21.7",
+    "tsdown": "^0.21.8",
     "vue": "^3.5.32"
   },
   "publishConfig": {

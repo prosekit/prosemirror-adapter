@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "svelte": "^5.55.3",
-    "tsdown": "^0.21.7"
+    "tsdown": "^0.21.8"
   },
   "publishConfig": {
     "types": "./dist/index.d.ts",

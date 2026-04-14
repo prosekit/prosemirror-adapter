@@ -46,7 +46,7 @@
     "@types/react-dom": "^19.2.3",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
-    "tsdown": "^0.21.7"
+    "tsdown": "^0.21.8"
   },
   "publishConfig": {
     "types": "./dist/index.d.ts",
