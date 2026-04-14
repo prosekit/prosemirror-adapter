@@ -27,7 +27,7 @@
     "@prosemirror-adapter/core": "workspace:*",
     "prosemirror-model": "^1.25.4",
     "prosemirror-state": "^1.4.4",
-    "prosemirror-view": "^1.41.7"
+    "prosemirror-view": "^1.41.8"
   },
   "peerDependencies": {
     "vue": "^3.0.0"
@@ -38,8 +38,8 @@
     }
   },
   "devDependencies": {
-    "tsdown": "^0.21.7",
-    "vue": "^3.5.31"
+    "tsdown": "^0.21.8",
+    "vue": "^3.5.32"
   },
   "publishConfig": {
     "types": "./dist/index.d.ts",

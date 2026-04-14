@@ -27,7 +27,7 @@
     "@prosemirror-adapter/core": "workspace:*",
     "prosemirror-model": "^1.25.4",
     "prosemirror-state": "^1.4.4",
-    "prosemirror-view": "^1.41.7"
+    "prosemirror-view": "^1.41.8"
   },
   "peerDependencies": {
     "svelte": "^4.0.0 || ^5.0.0"
@@ -38,8 +38,8 @@
     }
   },
   "devDependencies": {
-    "svelte": "^5.55.1",
-    "tsdown": "^0.21.7"
+    "svelte": "^5.55.3",
+    "tsdown": "^0.21.8"
   },
   "publishConfig": {
     "types": "./dist/index.d.ts",

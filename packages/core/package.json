@@ -26,10 +26,10 @@
     "@ocavue/utils": "^1.6.0",
     "prosemirror-model": "^1.25.4",
     "prosemirror-state": "^1.4.4",
-    "prosemirror-view": "^1.41.7"
+    "prosemirror-view": "^1.41.8"
   },
   "devDependencies": {
-    "tsdown": "^0.21.7"
+    "tsdown": "^0.21.8"
   },
   "publishConfig": {
     "types": "./dist/index.d.ts",
