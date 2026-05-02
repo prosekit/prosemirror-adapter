@@ -38,8 +38,8 @@
     }
   },
   "devDependencies": {
-    "tsdown": "^0.21.8",
-    "vue": "^3.5.32"
+    "tsdown": "^0.21.10",
+    "vue": "^3.5.33"
   },
   "publishConfig": {
     "types": "./dist/index.d.ts",
