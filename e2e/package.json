@@ -21,7 +21,7 @@
     "@astrojs/svelte": "^8.0.5",
     "@astrojs/vue": "^6.0.1",
     "@lit/context": "^1.1.6",
-    "@playwright/test": "^1.58.2",
+    "@playwright/test": "^1.60.0",
     "@prosemirror-adapter/lit": "workspace:*",
     "@prosemirror-adapter/preact": "workspace:*",
     "@prosemirror-adapter/react": "workspace:*",
