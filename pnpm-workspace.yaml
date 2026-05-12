@@ -8,3 +8,5 @@ allowBuilds:
   sharp: false
 
 strictPeerDependencies: true
+
+linkWorkspacePackages: deep

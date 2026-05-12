@@ -159,7 +159,7 @@ importers:
         specifier: '*'
         version: link:../../packages/lit
       lit:
-        specifier: ^3.3.2
+        specifier: ^3.0.0
         version: 3.3.2
       prosemirror-example-setup:
         specifier: ^1.2.3
