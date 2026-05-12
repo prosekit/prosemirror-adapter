@@ -3,4 +3,10 @@ packages:
   - 'examples/*'
   - e2e
 
+allowBuilds:
+  esbuild: false
+  sharp: false
+
 strictPeerDependencies: true
+
+linkWorkspacePackages: deep
