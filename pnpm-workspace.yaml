@@ -10,3 +10,5 @@ allowBuilds:
 strictPeerDependencies: true
 
 linkWorkspacePackages: deep
+
+ignoreWorkspaceRootCheck: true
