@@ -41,6 +41,6 @@
     "pkg-pr-new": "^0.0.66",
     "prettier": "^3.8.2",
     "prettier-plugin-svelte": "^3.5.1",
-    "typescript": "~5.9.3"
+    "typescript": "~6.0.3"
   }
 }
