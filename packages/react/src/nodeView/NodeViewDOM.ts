@@ -251,7 +251,9 @@ function areStylesEqual(prevStyle: NodeViewStyle | null | undefined, style: Node
 
   if (prevKeys.length !== keys.length) return false
 
-  return prevKeys.every((name) => name in style && Object.is(prevStyle[name as keyof NodeViewStyle], style[name as keyof NodeViewStyle]))
+  return prevKeys.every(
+    (name) => name in style && Object.is(prevStyle[name as keyof NodeViewStyle], style[name as keyof NodeViewStyle]),
+  )
 }
 
 function areDOMAttrsEqual(prevAttrs: NodeViewDOMProps | null, attrs: NodeViewDOMProps): boolean {
@@ -263,14 +265,15 @@ function areDOMAttrsEqual(prevAttrs: NodeViewDOMProps | null, attrs: NodeViewDOM
 
   if (prevKeys.length !== keys.length) return false
 
-  return prevKeys.every((name) => name in attrs && Object.is(prevAttrs[name as keyof NodeViewDOMProps], attrs[name as keyof NodeViewDOMProps])) && areStylesEqual(prevAttrs.style, attrs.style)
+  return (
+    prevKeys.every(
+      (name) =>
+        name in attrs && Object.is(prevAttrs[name as keyof NodeViewDOMProps], attrs[name as keyof NodeViewDOMProps]),
+    ) && areStylesEqual(prevAttrs.style, attrs.style)
+  )
 }
 
-function useDOMAttrs(
-  element: HTMLElement | null,
-  attrs: NodeViewDOMProps,
-  ref: Ref<HTMLElement> | undefined,
-): void {
+function useDOMAttrs(element: HTMLElement | null, attrs: NodeViewDOMProps, ref: Ref<HTMLElement> | undefined): void {
   const prevAttrsRef = useRef<NodeViewDOMProps | null>(null)
   const prevElementRef = useRef<HTMLElement | null>(null)
   const originalAttrsRef = useRef(new Map<string, string | null>())
