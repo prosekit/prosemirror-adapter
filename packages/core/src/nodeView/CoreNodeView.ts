@@ -4,7 +4,12 @@ import type { Decoration, DecorationSource, EditorView, NodeView, ViewMutationRe
 
 import { createKey } from '../create-key'
 
-import type { CoreNodeViewSpec, CoreNodeViewUserOptions, NodeViewDOMSpec } from './CoreNodeViewOptions'
+import type {
+  CoreNodeViewSpec,
+  CoreNodeViewUserOptions,
+  NodeViewContentMountSource,
+  NodeViewDOMSpec,
+} from './CoreNodeViewOptions'
 
 export class CoreNodeView<ComponentType> implements NodeView {
   key: string
@@ -19,6 +24,8 @@ export class CoreNodeView<ComponentType> implements NodeView {
   selected = false
   setSelection?: (anchor: number, head: number, root: Document | ShadowRoot) => void
   stopEvent?: (event: Event) => boolean
+  #contentMountSource: NodeViewContentMountSource | null = null
+  #didWarnContentMountSource = false
 
   #createElement(as?: NodeViewDOMSpec) {
     const { node } = this
@@ -65,9 +72,27 @@ export class CoreNodeView<ComponentType> implements NodeView {
     return this.options.component
   }
 
-  protected contentRef = (element: unknown): void => {
-    if (element && this.contentDOM && isElementLike(element) && element.firstChild !== this.contentDOM) {
+  mountContentDOM = (element: HTMLElement | null, source: NodeViewContentMountSource = 'contentRef'): void => {
+    if (!element || !this.contentDOM) return
+
+    if (this.#contentMountSource && this.#contentMountSource !== source && !this.#didWarnContentMountSource) {
+      this.#didWarnContentMountSource = true
+      console.warn(
+        '[prosemirror-adapter] Do not mix contentRef and NodeViewContent in the same node view. ' +
+          'They both control the same contentDOM mount point.',
+      )
+    }
+
+    this.#contentMountSource = source
+
+    if (element.firstChild !== this.contentDOM) {
       element.appendChild(this.contentDOM)
+    }
+  }
+
+  protected contentRef = (element: unknown): void => {
+    if (element && isElementLike(element)) {
+      this.mountContentDOM(element as HTMLElement, 'contentRef')
     }
   }
 
