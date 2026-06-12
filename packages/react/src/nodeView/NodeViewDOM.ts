@@ -2,6 +2,7 @@ import {
   createElement,
   forwardRef,
   Fragment,
+  useCallback,
   useLayoutEffect,
   useRef,
   type AriaAttributes,
@@ -241,8 +242,37 @@ function saveOriginalDOMAttrs(
   }
 }
 
-function useDOMAttrs(element: HTMLElement | null, attrs: NodeViewDOMProps, ref: Ref<HTMLElement> | undefined): void {
+function areStylesEqual(prevStyle: NodeViewStyle | null | undefined, style: NodeViewStyle | null | undefined): boolean {
+  if (prevStyle === style) return true
+  if (!prevStyle || !style) return !prevStyle && !style
+
+  const prevKeys = Object.keys(prevStyle)
+  const keys = Object.keys(style)
+
+  if (prevKeys.length !== keys.length) return false
+
+  return prevKeys.every((name) => name in style && Object.is(prevStyle[name as keyof NodeViewStyle], style[name as keyof NodeViewStyle]))
+}
+
+function areDOMAttrsEqual(prevAttrs: NodeViewDOMProps | null, attrs: NodeViewDOMProps): boolean {
+  if (prevAttrs === attrs) return true
+  if (!prevAttrs) return false
+
+  const prevKeys = Object.keys(prevAttrs).filter((name) => name !== 'style')
+  const keys = Object.keys(attrs).filter((name) => name !== 'style')
+
+  if (prevKeys.length !== keys.length) return false
+
+  return prevKeys.every((name) => name in attrs && Object.is(prevAttrs[name as keyof NodeViewDOMProps], attrs[name as keyof NodeViewDOMProps])) && areStylesEqual(prevAttrs.style, attrs.style)
+}
+
+function useDOMAttrs(
+  element: HTMLElement | null,
+  attrs: NodeViewDOMProps,
+  ref: Ref<HTMLElement> | undefined,
+): void {
   const prevAttrsRef = useRef<NodeViewDOMProps | null>(null)
+  const prevElementRef = useRef<HTMLElement | null>(null)
   const originalAttrsRef = useRef(new Map<string, string | null>())
   const originalStylesRef = useRef(new Map<string, string>())
 
@@ -260,7 +290,16 @@ function useDOMAttrs(element: HTMLElement | null, attrs: NodeViewDOMProps, ref: 
   useLayoutEffect(() => {
     assignRef(ref, element)
 
+    return () => {
+      assignRef(ref, null)
+    }
+  }, [element, ref])
+
+  useLayoutEffect(() => {
     const prevAttrs = prevAttrsRef.current
+    const prevElement = prevElementRef.current
+
+    if (prevElement === element && areDOMAttrsEqual(prevAttrs, attrs)) return
 
     if (element) {
       restoreRemovedDOMAttrs(element, prevAttrs, attrs, originalAttrsRef.current, originalStylesRef.current)
@@ -275,10 +314,7 @@ function useDOMAttrs(element: HTMLElement | null, attrs: NodeViewDOMProps, ref: 
     }
 
     prevAttrsRef.current = attrs
-
-    return () => {
-      assignRef(ref, null)
-    }
+    prevElementRef.current = element
   })
 }
 
@@ -307,11 +343,16 @@ export const NodeViewContent = forwardRef<HTMLElement, NodeViewContentProps>((pr
     }
   })
 
-  return createElement('span', {
-    'data-node-view-content-anchor': 'true',
-    ref: (element: HTMLElement | null) => {
+  const handleAnchorRef = useCallback(
+    (element: HTMLElement | null) => {
       mountContentDOM(element, 'component')
     },
+    [mountContentDOM],
+  )
+
+  return createElement('span', {
+    'data-node-view-content-anchor': 'true',
+    ref: handleAnchorRef,
     style: { display: 'contents' },
   })
 })
