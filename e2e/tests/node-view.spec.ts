@@ -44,9 +44,7 @@ testAll(() => {
 
 testAll(() => {
   test('react node view controls root and content DOM attributes', async ({ page }) => {
-    const root = page.locator(
-      '.editor blockquote [data-node-view-root="true"][data-react-node-view-root="true"]',
-    )
+    const root = page.locator('.editor blockquote [data-node-view-root="true"][data-react-node-view-root="true"]')
     const content = root.locator('[data-node-view-content="true"][data-react-node-view-content="true"]')
     const anchor = root.locator('[data-node-view-content-anchor="true"]')
 
@@ -70,8 +68,8 @@ testAll(() => {
 
     await page.goto('/stories/react/app/react?mixed-content-ref=true', { waitUntil: 'domcontentloaded' })
 
-    await expect.poll(() => warnings.some((warning) => warning.includes('Do not mix contentRef and NodeViewContent'))).toBe(
-      true,
-    )
+    await expect
+      .poll(() => warnings.some((warning) => warning.includes('Do not mix contentRef and NodeViewContent')))
+      .toBe(true)
   })
 }, ['react'])

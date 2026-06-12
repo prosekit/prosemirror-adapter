@@ -241,11 +241,7 @@ function saveOriginalDOMAttrs(
   }
 }
 
-function useDOMAttrs(
-  element: HTMLElement | null,
-  attrs: NodeViewDOMProps,
-  ref: Ref<HTMLElement> | undefined,
-): void {
+function useDOMAttrs(element: HTMLElement | null, attrs: NodeViewDOMProps, ref: Ref<HTMLElement> | undefined): void {
   const prevAttrsRef = useRef<NodeViewDOMProps | null>(null)
   const originalAttrsRef = useRef(new Map<string, string | null>())
   const originalStylesRef = useRef(new Map<string, string>())
