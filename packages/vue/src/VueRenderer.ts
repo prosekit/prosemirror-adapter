@@ -59,10 +59,7 @@ export function useVueRenderer(): VueRendererResult {
   }
 
   const render = () => {
-    const children: VNode[] = []
-    for (const [key, Comp] of portals.value.entries()) {
-      children.push(h(Comp, { key }))
-    }
+    const children: VNode[] = Array.from(portals.value.entries(), ([key, Comp]) => h(Comp, { key }))
     return children
   }
 

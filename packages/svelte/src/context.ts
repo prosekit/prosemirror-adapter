@@ -9,7 +9,7 @@ export function createContextMap(
   adapterContext: object,
 ): Map<unknown, unknown> {
   return new Map<unknown, unknown>([
-    ...allContext.entries(),
+    ...allContext,
 
     // Put it last so that it can override if there are key conflicts.
     ...Object.entries(adapterContext),
