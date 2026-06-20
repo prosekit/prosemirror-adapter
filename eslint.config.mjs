@@ -13,7 +13,7 @@ export default defineESLintConfig(
     },
     {
       rules: {
-        '@eslint-react/naming-convention/context-name': 'off',
+        '@eslint-react/naming-convention-context-name': 'off',
       },
     },
   ],
