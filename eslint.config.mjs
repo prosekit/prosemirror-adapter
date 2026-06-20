@@ -13,6 +13,7 @@ export default defineESLintConfig(
     },
     {
       rules: {
+        "@eslint-react/dom-no-flush-sync": 'off',
         '@eslint-react/naming-convention-context-name': 'off',
       },
     },
