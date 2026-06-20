@@ -25,9 +25,9 @@
   },
   "dependencies": {
     "@prosemirror-adapter/core": "workspace:*",
-    "prosemirror-model": "^1.25.7",
+    "prosemirror-model": "^1.25.9",
     "prosemirror-state": "^1.4.4",
-    "prosemirror-view": "^1.41.8"
+    "prosemirror-view": "^1.41.9"
   },
   "peerDependencies": {
     "solid-js": "^1.8.22"
@@ -40,7 +40,7 @@
   "devDependencies": {
     "solid-js": "^1.9.13",
     "tsdown": "^0.22.1",
-    "vite": "^7.3.3",
+    "vite": "^7.3.5",
     "vite-plugin-solid": "^2.11.12"
   },
   "publishConfig": {

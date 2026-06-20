@@ -33,20 +33,20 @@ importers:
         specifier: ^6.14.2
         version: 6.14.2(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0)
       lint-staged:
-        specifier: ^17.0.5
-        version: 17.0.5
+        specifier: ^17.0.7
+        version: 17.0.7
       monorepo-typescript-references:
-        specifier: ^1.1.1
-        version: 1.1.1
+        specifier: ^1.1.2
+        version: 1.1.2
       pkg-pr-new:
         specifier: ^0.0.75
         version: 0.0.75
       prettier:
-        specifier: ^3.8.3
-        version: 3.8.3
+        specifier: ^3.8.4
+        version: 3.8.4
       prettier-plugin-svelte:
         specifier: ^4.1.0
-        version: 4.1.0(prettier@3.8.3)(svelte@5.56.0(@typescript-eslint/types@8.60.0))
+        version: 4.1.0(prettier@3.8.4)(svelte@5.56.0(@typescript-eslint/types@8.60.0))
       typescript:
         specifier: ~6.0.3
         version: 6.0.3
@@ -58,7 +58,7 @@ importers:
         version: 5.1.4(@babel/core@7.29.0)(@types/node@24.12.0)(jiti@2.7.0)(preact@10.29.2)(rollup@4.59.0)(yaml@2.9.0)
       '@astrojs/react':
         specifier: ^5.0.6
-        version: 5.0.6(@types/node@24.12.0)(@types/react-dom@19.2.3(@types/react@19.2.15))(@types/react@19.2.15)(jiti@2.7.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yaml@2.9.0)
+        version: 5.0.6(@types/node@24.12.0)(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(jiti@2.7.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(yaml@2.9.0)
       '@astrojs/solid-js':
         specifier: ^6.0.1
         version: 6.0.1(@types/node@24.12.0)(jiti@2.7.0)(solid-js@1.9.13)(yaml@2.9.0)
@@ -72,8 +72,8 @@ importers:
         specifier: ^1.1.6
         version: 1.1.6
       '@playwright/test':
-        specifier: ^1.60.0
-        version: 1.60.0
+        specifier: ^1.61.0
+        version: 1.61.0
       '@prosemirror-adapter/lit':
         specifier: workspace:*
         version: link:../packages/lit
@@ -96,11 +96,11 @@ importers:
         specifier: ^24.0.0
         version: 24.12.0
       '@types/react':
-        specifier: ^19.2.15
-        version: 19.2.15
+        specifier: ^19.2.17
+        version: 19.2.17
       '@types/react-dom':
         specifier: ^19.2.3
-        version: 19.2.3(@types/react@19.2.15)
+        version: 19.2.3(@types/react@19.2.17)
       astro:
         specifier: ^6.4.2
         version: 6.4.2(@types/node@24.12.0)(jiti@2.7.0)(rollup@4.59.0)(yaml@2.9.0)
@@ -129,14 +129,14 @@ importers:
         specifier: ^1.4.4
         version: 1.4.4
       prosemirror-view:
-        specifier: ^1.41.8
-        version: 1.41.8
+        specifier: ^1.41.9
+        version: 1.41.9
       react:
-        specifier: ^19.2.6
-        version: 19.2.6
+        specifier: ^19.2.7
+        version: 19.2.7
       react-dom:
-        specifier: ^19.2.6
-        version: 19.2.6(react@19.2.6)
+        specifier: ^19.2.7
+        version: 19.2.7(react@19.2.7)
       solid-js:
         specifier: ^1.9.13
         version: 1.9.13
@@ -171,8 +171,8 @@ importers:
         specifier: ^1.3.2
         version: 1.3.2
       prosemirror-model:
-        specifier: ^1.25.7
-        version: 1.25.7
+        specifier: ^1.25.9
+        version: 1.25.9
       prosemirror-schema-basic:
         specifier: ^1.2.4
         version: 1.2.4
@@ -180,21 +180,21 @@ importers:
         specifier: ^1.4.4
         version: 1.4.4
       prosemirror-view:
-        specifier: ^1.41.8
-        version: 1.41.8
+        specifier: ^1.41.9
+        version: 1.41.9
     devDependencies:
       typescript:
         specifier: ~6.0.3
         version: 6.0.3
       vite:
-        specifier: ^7.3.3
-        version: 7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)
+        specifier: ^7.3.5
+        version: 7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)
 
   examples/preact:
     dependencies:
       '@preact/preset-vite':
         specifier: ^2.10.5
-        version: 2.10.5(@babel/core@7.29.0)(preact@10.29.2)(rollup@4.59.0)(vite@7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))
+        version: 2.10.5(@babel/core@7.29.0)(preact@10.29.2)(rollup@4.59.0)(vite@7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))
       '@prosemirror-adapter/preact':
         specifier: '*'
         version: link:../../packages/preact
@@ -211,8 +211,8 @@ importers:
         specifier: ^1.3.2
         version: 1.3.2
       prosemirror-model:
-        specifier: ^1.25.7
-        version: 1.25.7
+        specifier: ^1.25.9
+        version: 1.25.9
       prosemirror-schema-basic:
         specifier: ^1.2.4
         version: 1.2.4
@@ -220,14 +220,14 @@ importers:
         specifier: ^1.4.4
         version: 1.4.4
       prosemirror-view:
-        specifier: ^1.41.8
-        version: 1.41.8
+        specifier: ^1.41.9
+        version: 1.41.9
       typescript:
         specifier: ~6.0.3
         version: 6.0.3
       vite:
-        specifier: ^7.3.3
-        version: 7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)
+        specifier: ^7.3.5
+        version: 7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)
 
   examples/react:
     dependencies:
@@ -235,14 +235,14 @@ importers:
         specifier: '*'
         version: link:../../packages/react
       '@types/react':
-        specifier: ^19.2.15
-        version: 19.2.15
+        specifier: ^19.2.17
+        version: 19.2.17
       '@types/react-dom':
         specifier: ^19.2.3
-        version: 19.2.3(@types/react@19.2.15)
+        version: 19.2.3(@types/react@19.2.17)
       '@vitejs/plugin-react':
         specifier: ^5.2.0
-        version: 5.2.0(vite@7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))
+        version: 5.2.0(vite@7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))
       prosemirror-example-setup:
         specifier: ^1.2.3
         version: 1.2.3
@@ -253,8 +253,8 @@ importers:
         specifier: ^1.3.2
         version: 1.3.2
       prosemirror-model:
-        specifier: ^1.25.7
-        version: 1.25.7
+        specifier: ^1.25.9
+        version: 1.25.9
       prosemirror-schema-basic:
         specifier: ^1.2.4
         version: 1.2.4
@@ -262,20 +262,20 @@ importers:
         specifier: ^1.4.4
         version: 1.4.4
       prosemirror-view:
-        specifier: ^1.41.8
-        version: 1.41.8
+        specifier: ^1.41.9
+        version: 1.41.9
       react:
-        specifier: ^19.2.6
-        version: 19.2.6
+        specifier: ^19.2.7
+        version: 19.2.7
       react-dom:
-        specifier: ^19.2.6
-        version: 19.2.6(react@19.2.6)
+        specifier: ^19.2.7
+        version: 19.2.7(react@19.2.7)
       typescript:
         specifier: ~6.0.3
         version: 6.0.3
       vite:
-        specifier: ^7.3.3
-        version: 7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)
+        specifier: ^7.3.5
+        version: 7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)
 
   examples/solid:
     dependencies:
@@ -292,8 +292,8 @@ importers:
         specifier: ^1.3.2
         version: 1.3.2
       prosemirror-model:
-        specifier: ^1.25.7
-        version: 1.25.7
+        specifier: ^1.25.9
+        version: 1.25.9
       prosemirror-schema-basic:
         specifier: ^1.2.4
         version: 1.2.4
@@ -301,8 +301,8 @@ importers:
         specifier: ^1.4.4
         version: 1.4.4
       prosemirror-view:
-        specifier: ^1.41.8
-        version: 1.41.8
+        specifier: ^1.41.9
+        version: 1.41.9
       solid-js:
         specifier: ^1.9.13
         version: 1.9.13
@@ -311,11 +311,11 @@ importers:
         specifier: ~6.0.3
         version: 6.0.3
       vite:
-        specifier: ^7.3.3
-        version: 7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)
+        specifier: ^7.3.5
+        version: 7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)
       vite-plugin-solid:
         specifier: ^2.11.12
-        version: 2.11.12(solid-js@1.9.13)(vite@7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))
+        version: 2.11.12(solid-js@1.9.13)(vite@7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))
 
   examples/svelte:
     dependencies:
@@ -332,8 +332,8 @@ importers:
         specifier: ^1.3.2
         version: 1.3.2
       prosemirror-model:
-        specifier: ^1.25.7
-        version: 1.25.7
+        specifier: ^1.25.9
+        version: 1.25.9
       prosemirror-schema-basic:
         specifier: ^1.2.4
         version: 1.2.4
@@ -341,18 +341,18 @@ importers:
         specifier: ^1.4.4
         version: 1.4.4
       prosemirror-view:
-        specifier: ^1.41.8
-        version: 1.41.8
+        specifier: ^1.41.9
+        version: 1.41.9
     devDependencies:
       '@sveltejs/adapter-auto':
         specifier: ^7.0.1
-        version: 7.0.1(@sveltejs/kit@2.61.1(@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.56.0(@typescript-eslint/types@8.60.0))(vite@7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)))(svelte@5.56.0(@typescript-eslint/types@8.60.0))(typescript@6.0.3)(vite@7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)))
+        version: 7.0.1(@sveltejs/kit@2.61.1(@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.56.0(@typescript-eslint/types@8.60.0))(vite@7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)))(svelte@5.56.0(@typescript-eslint/types@8.60.0))(typescript@6.0.3)(vite@7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)))
       '@sveltejs/kit':
         specifier: ^2.61.1
-        version: 2.61.1(@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.56.0(@typescript-eslint/types@8.60.0))(vite@7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)))(svelte@5.56.0(@typescript-eslint/types@8.60.0))(typescript@6.0.3)(vite@7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))
+        version: 2.61.1(@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.56.0(@typescript-eslint/types@8.60.0))(vite@7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)))(svelte@5.56.0(@typescript-eslint/types@8.60.0))(typescript@6.0.3)(vite@7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))
       '@sveltejs/vite-plugin-svelte':
         specifier: ^6.2.4
-        version: 6.2.4(svelte@5.56.0(@typescript-eslint/types@8.60.0))(vite@7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))
+        version: 6.2.4(svelte@5.56.0(@typescript-eslint/types@8.60.0))(vite@7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))
       svelte:
         specifier: ^5.55.10
         version: 5.56.0(@typescript-eslint/types@8.60.0)
@@ -360,8 +360,8 @@ importers:
         specifier: ~6.0.3
         version: 6.0.3
       vite:
-        specifier: ^7.3.3
-        version: 7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)
+        specifier: ^7.3.5
+        version: 7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)
 
   examples/vue:
     dependencies:
@@ -370,7 +370,7 @@ importers:
         version: link:../../packages/vue
       '@vitejs/plugin-vue':
         specifier: ^6.0.7
-        version: 6.0.7(vite@7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))(vue@3.5.35(typescript@6.0.3))
+        version: 6.0.7(vite@7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))(vue@3.5.35(typescript@6.0.3))
       prosemirror-example-setup:
         specifier: ^1.2.3
         version: 1.2.3
@@ -381,8 +381,8 @@ importers:
         specifier: ^1.3.2
         version: 1.3.2
       prosemirror-model:
-        specifier: ^1.25.7
-        version: 1.25.7
+        specifier: ^1.25.9
+        version: 1.25.9
       prosemirror-schema-basic:
         specifier: ^1.2.4
         version: 1.2.4
@@ -390,14 +390,14 @@ importers:
         specifier: ^1.4.4
         version: 1.4.4
       prosemirror-view:
-        specifier: ^1.41.8
-        version: 1.41.8
+        specifier: ^1.41.9
+        version: 1.41.9
       typescript:
         specifier: ~6.0.3
         version: 6.0.3
       vite:
-        specifier: ^7.3.3
-        version: 7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)
+        specifier: ^7.3.5
+        version: 7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)
       vue:
         specifier: ^3.5.35
         version: 3.5.35(typescript@6.0.3)
@@ -405,17 +405,17 @@ importers:
   packages/core:
     dependencies:
       '@ocavue/utils':
-        specifier: ^1.6.0
-        version: 1.6.0
+        specifier: ^1.7.0
+        version: 1.7.0
       prosemirror-model:
-        specifier: ^1.25.7
-        version: 1.25.7
+        specifier: ^1.25.9
+        version: 1.25.9
       prosemirror-state:
         specifier: ^1.4.4
         version: 1.4.4
       prosemirror-view:
-        specifier: ^1.41.8
-        version: 1.41.8
+        specifier: ^1.41.9
+        version: 1.41.9
     devDependencies:
       tsdown:
         specifier: ^0.22.1
@@ -427,14 +427,14 @@ importers:
         specifier: workspace:*
         version: link:../core
       prosemirror-model:
-        specifier: ^1.25.7
-        version: 1.25.7
+        specifier: ^1.25.9
+        version: 1.25.9
       prosemirror-state:
         specifier: ^1.4.4
         version: 1.4.4
       prosemirror-view:
-        specifier: ^1.41.8
-        version: 1.41.8
+        specifier: ^1.41.9
+        version: 1.41.9
     devDependencies:
       '@lit/context':
         specifier: ^1.1.6
@@ -446,8 +446,8 @@ importers:
         specifier: ^0.22.1
         version: 0.22.1(oxc-resolver@11.19.1(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0))(typescript@6.0.3)
       vite:
-        specifier: ^7.3.3
-        version: 7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)
+        specifier: ^7.3.5
+        version: 7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)
 
   packages/preact:
     dependencies:
@@ -455,14 +455,14 @@ importers:
         specifier: workspace:*
         version: link:../core
       prosemirror-model:
-        specifier: ^1.25.7
-        version: 1.25.7
+        specifier: ^1.25.9
+        version: 1.25.9
       prosemirror-state:
         specifier: ^1.4.4
         version: 1.4.4
       prosemirror-view:
-        specifier: ^1.41.8
-        version: 1.41.8
+        specifier: ^1.41.9
+        version: 1.41.9
     devDependencies:
       preact:
         specifier: ^10.29.2
@@ -477,27 +477,27 @@ importers:
         specifier: workspace:*
         version: link:../core
       prosemirror-model:
-        specifier: ^1.25.7
-        version: 1.25.7
+        specifier: ^1.25.9
+        version: 1.25.9
       prosemirror-state:
         specifier: ^1.4.4
         version: 1.4.4
       prosemirror-view:
-        specifier: ^1.41.8
-        version: 1.41.8
+        specifier: ^1.41.9
+        version: 1.41.9
     devDependencies:
       '@types/react':
-        specifier: ^19.2.15
-        version: 19.2.15
+        specifier: ^19.2.17
+        version: 19.2.17
       '@types/react-dom':
         specifier: ^19.2.3
-        version: 19.2.3(@types/react@19.2.15)
+        version: 19.2.3(@types/react@19.2.17)
       react:
-        specifier: ^19.2.6
-        version: 19.2.6
+        specifier: ^19.2.7
+        version: 19.2.7
       react-dom:
-        specifier: ^19.2.6
-        version: 19.2.6(react@19.2.6)
+        specifier: ^19.2.7
+        version: 19.2.7(react@19.2.7)
       tsdown:
         specifier: ^0.22.1
         version: 0.22.1(oxc-resolver@11.19.1(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0))(typescript@6.0.3)
@@ -508,14 +508,14 @@ importers:
         specifier: workspace:*
         version: link:../core
       prosemirror-model:
-        specifier: ^1.25.7
-        version: 1.25.7
+        specifier: ^1.25.9
+        version: 1.25.9
       prosemirror-state:
         specifier: ^1.4.4
         version: 1.4.4
       prosemirror-view:
-        specifier: ^1.41.8
-        version: 1.41.8
+        specifier: ^1.41.9
+        version: 1.41.9
     devDependencies:
       solid-js:
         specifier: ^1.9.13
@@ -524,11 +524,11 @@ importers:
         specifier: ^0.22.1
         version: 0.22.1(oxc-resolver@11.19.1(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0))(typescript@6.0.3)
       vite:
-        specifier: ^7.3.3
-        version: 7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)
+        specifier: ^7.3.5
+        version: 7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)
       vite-plugin-solid:
         specifier: ^2.11.12
-        version: 2.11.12(solid-js@1.9.13)(vite@7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))
+        version: 2.11.12(solid-js@1.9.13)(vite@7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))
 
   packages/svelte:
     dependencies:
@@ -536,14 +536,14 @@ importers:
         specifier: workspace:*
         version: link:../core
       prosemirror-model:
-        specifier: ^1.25.7
-        version: 1.25.7
+        specifier: ^1.25.9
+        version: 1.25.9
       prosemirror-state:
         specifier: ^1.4.4
         version: 1.4.4
       prosemirror-view:
-        specifier: ^1.41.8
-        version: 1.41.8
+        specifier: ^1.41.9
+        version: 1.41.9
     devDependencies:
       svelte:
         specifier: ^5.55.10
@@ -558,14 +558,14 @@ importers:
         specifier: workspace:*
         version: link:../core
       prosemirror-model:
-        specifier: ^1.25.7
-        version: 1.25.7
+        specifier: ^1.25.9
+        version: 1.25.9
       prosemirror-state:
         specifier: ^1.4.4
         version: 1.4.4
       prosemirror-view:
-        specifier: ^1.41.8
-        version: 1.41.8
+        specifier: ^1.41.9
+        version: 1.41.9
     devDependencies:
       tsdown:
         specifier: ^0.22.1
@@ -1190,10 +1190,6 @@ packages:
     resolution: {integrity: sha512-vqTaUEgxzm+YDSdElad6PiRoX4t8VGDjCtt05zn4nU810UIx/uNEV7/lZJ6KwFThKZOzOxzXy48da+No7HZaMw==}
     engines: {node: ^20.19.0 || ^22.13.0 || >=24}
 
-  '@eslint/plugin-kit@0.7.1':
-    resolution: {integrity: sha512-rZAP3aVgB9ds9KOeUSL+zZ21hPmo8dh6fnIFwRQj5EAZl9gzR7wxYbYXYysAM8CTqGmUGyp2S4kUdV17MnGuWQ==}
-    engines: {node: ^20.19.0 || ^22.13.0 || >=24}
-
   '@eslint/plugin-kit@0.7.2':
     resolution: {integrity: sha512-+CNAzxglkrpNf/kKywqQfk74QjtceuOE7Qm+AF8miRvPF/wmmK5+OJOgVh3AVTT3RP2mH3+FOaxlE5v72owk0A==}
     engines: {node: ^20.19.0 || ^22.13.0 || >=24}
@@ -1443,8 +1439,8 @@ packages:
   '@ocavue/tsconfig@0.7.1':
     resolution: {integrity: sha512-jw1LPUqi/f043s61WOYEWWA6P1ZSSYXR3KJXcNxBXXrxiUXhEAbuEBUmi6Qs8NduIVU3xCkbaYw5BU3UyL3G3A==}
 
-  '@ocavue/utils@1.6.0':
-    resolution: {integrity: sha512-8W3q1hxx9qFdrYgPtbElllG/tqYkO/dMhlRUiqasO0SuDFTj78azSQjhIrBTFWxlBPPsSZN6zXYHmb3RwN2Jtg==}
+  '@ocavue/utils@1.7.0':
+    resolution: {integrity: sha512-yEk9ATNBjTZTtuVFMB/MAIF6zJBvJ2+lVNQvK2+O+ggEBGTgx2tp27d4FPgmD5bRsNHHP3D0SleQia/bvIeV8w==}
 
   '@oslojs/encoding@1.1.0':
     resolution: {integrity: sha512-70wQhgYmndg4GCPxPPxPGevRKqTIJ2Nh4OkiMWmDAVYsTQ+Ta7Sq+rPevXyXGdzr30/qZBnyOalCszoMxlyldQ==}
@@ -1694,8 +1690,8 @@ packages:
     resolution: {integrity: sha512-QNqXyfVS2wm9hweSYD2O7F0G06uurj9kZ96TRQE5Y9hU7+tgdZwIkbAKc5Ocy1HxEY2kuDQa6cQ1WRs/O5LFKA==}
     engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
 
-  '@playwright/test@1.60.0':
-    resolution: {integrity: sha512-O71yZIbAh/PxDMNGns37GHBIfrVkEVyn+AXyIa5dOTfb4/xNvRWV+Vv/NMbNCtODB/pO7vLlF2OTmMVLhmr7Ag==}
+  '@playwright/test@1.61.0':
+    resolution: {integrity: sha512-cKA5B6lpFEMyMGjxF54QihfYpB4FkEGH+qZhtArDEG+wezQAJY8Pq6C7T1SjWz+FFzt3TbyoXBQYk/0292TdJA==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -2022,8 +2018,8 @@ packages:
   '@standard-schema/spec@1.1.0':
     resolution: {integrity: sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w==}
 
-  '@stricli/core@1.2.6':
-    resolution: {integrity: sha512-j5fa1wyOLrP9WJqqLFEJeQviqb3cK46K+FXTuISEkG/H5C820YfKDoVQ3CDVdM5WLhEx1ARdpiW6+hU4tYHjCQ==}
+  '@stricli/core@1.2.8':
+    resolution: {integrity: sha512-zqEZu9x+UAAZrzQlfD/iDXIyb6Y3560MzfvFpNfWXJdZuJ0SSxGOGse+0P/5kwlufsSXQF8Wn5jK1NZF4vcqnw==}
 
   '@sveltejs/acorn-typescript@1.0.10':
     resolution: {integrity: sha512-4WfKk68eTih+MiJD4fSbxN7E8kVBmTMPWHUPYjvl2N0rMs53YLTT8/YjKU5Dtnz5LqDjl7LEw4U7lXR2W3J5WA==}
@@ -2125,8 +2121,8 @@ packages:
     peerDependencies:
       '@types/react': ^19.2.0
 
-  '@types/react@19.2.15':
-    resolution: {integrity: sha512-eRwcGNHve+E8qtEQSSRl6urh+rFop4v8gm6O8rGv25CodbvFdLjA1vVQ1KkiFE0w0UPOnb8tDiFKL5lp0rtY5Q==}
+  '@types/react@19.2.17':
+    resolution: {integrity: sha512-MXfmqaVPEVgkBT/aY0aGCkRWWtByiYQXo3xdQ8r5RzuFrPiRn8Gar2tQdXSUQ2GKV3bkXckek89V8wQBY2Q/Aw==}
 
   '@types/trusted-types@2.0.7':
     resolution: {integrity: sha512-ScaPdn1dQczgbl0QFTeTOmVHFULt394XJgOQNoyVhZ6r2vLnMLJfBPd53SB52T/3G36VI1/g2MZaX0cwDuXsfw==}
@@ -2465,11 +2461,6 @@ packages:
     resolution: {integrity: sha512-BLrgEcRTwX2o6gGxGOCNyMvGSp35YofuYzw9h1IMTRmKqttAZZVU67bdb9Pr2vUHA8+j3i2tJfjO6C6+4myGTA==}
     engines: {node: 18 || 20 || >=22}
 
-  baseline-browser-mapping@2.10.0:
-    resolution: {integrity: sha512-lIyg0szRfYbiy67j9KN8IyeD7q7hcmqnJ1ddWmNt19ItGpNN64mnllmxUNFIOdOm6by97jlL6wfpTTJrmnjWAA==}
-    engines: {node: '>=6.0.0'}
-    hasBin: true
-
   baseline-browser-mapping@2.10.38:
     resolution: {integrity: sha512-31/02mVB4yuQU6adKk5SlY6m+mxDwUq5KZkyYgnLrrKl7TEm1+3PyDtDBz2kOv/wxZz41GHsvV1A/u6RmiyBvw==}
     engines: {node: '>=6.0.0'}
@@ -2499,11 +2490,6 @@ packages:
     resolution: {integrity: sha512-yQbXgO/OSZVD2IsiLlro+7Hf6Q18EJrKSEsdoMzKePKXct3gvD8oLcOQdIzGupr5Fj+EDe8gO/lxc1BzfMpxvA==}
     engines: {node: '>=8'}
 
-  browserslist@4.28.1:
-    resolution: {integrity: sha512-ZC5Bd0LgJXgwGqUknZY/vkUQ04r8NXnJZ3yYi4vDmSiZmC/pdSN0NbNRPxZpbtO4uAfDUAFffO8IZoM3Gj8IkA==}
-    engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
-    hasBin: true
-
   browserslist@4.28.2:
     resolution: {integrity: sha512-48xSriZYYg+8qXna9kwqjIVzuQxi+KYWp2+5nCYnYKPTr0LvD89Jqk2Or5ogxz0NUMfIjhh2lIUX/LyX9B4oIg==}
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
@@ -2520,9 +2506,6 @@ packages:
   cac@7.0.0:
     resolution: {integrity: sha512-tixWYgm5ZoOD+3g6UTea91eow5z6AAHaho3g0V9CNSNb45gM8SmflpAc+GRd1InC4AqN/07Unrgp56Y94N9hJQ==}
     engines: {node: '>=20.19.0'}
-
-  caniuse-lite@1.0.30001778:
-    resolution: {integrity: sha512-PN7uxFL+ExFJO61aVmP1aIEG4i9whQd4eoSCebav62UwDyp5OHh06zN4jqKSMePVgxHifCw1QJxdRkA1Pisekg==}
 
   caniuse-lite@1.0.30001799:
     resolution: {integrity: sha512-hG1bReV+OUU+MOqK4t/ZWI0tZOyz3rqS9XuhOUz1cIcbwBKjOyJEJuw9ER5JuNyqxNk8u/JUVbGibBOL1yrjFw==}
@@ -2747,9 +2730,6 @@ packages:
     peerDependenciesMeta:
       oxc-resolver:
         optional: true
-
-  electron-to-chromium@1.5.313:
-    resolution: {integrity: sha512-QBMrTWEf00GXZmJyx2lbYD45jpI3TUFnNIzJ5BBc8piGUDwMPa1GV6HJWTZVvY/eiN3fSopl7NRbgGp9sZ9LTA==}
 
   electron-to-chromium@1.5.375:
     resolution: {integrity: sha512-ZWP5eB4BVPW/ZYo9252hQZHZ5XavtsTgpbhcmMmRwymavC5AsLWQWBPaKMeNd2LW0KGby5HPXvj7+sr4ta5j/Q==}
@@ -3393,8 +3373,8 @@ packages:
     resolution: {integrity: sha512-+bT2uH4E5LGE7h/n3evcS/sQlJXCpIp6ym8OWJ5eV6+67Dsql/LaaT7qJBAt2rzfoa/5QBGBhxDix1dMt2kQKQ==}
     engines: {node: '>= 0.8.0'}
 
-  lint-staged@17.0.5:
-    resolution: {integrity: sha512-d12yC+/e8RhBjZtaxZn71FyrgU/P5e+uAPifhCLwdosQZP/zamSdKRWDC30ocVIbzDKiFG1McHc/LUgB92GIPw==}
+  lint-staged@17.0.7:
+    resolution: {integrity: sha512-JrSobt+tW3rH8IOMi8tDZd3foorM5yPEkLD/V2NxobgHrFfHWGee4MOLVuZeScgxftEwbHrPHIFA/ZL+nUJeuA==}
     engines: {node: '>=22.22.1'}
     hasBin: true
 
@@ -3615,8 +3595,8 @@ packages:
   minimist@1.2.8:
     resolution: {integrity: sha512-2yyAR8qBkN3YuheJanUpWC5U3bb5osDywNB8RzDVlDwDHbocAJveqqj1u8+SVD7jkWT4yvsHCpWqqWqAxb0zCA==}
 
-  monorepo-typescript-references@1.1.1:
-    resolution: {integrity: sha512-cdHVTL2Ah8MEQ2m1XsbqjAyuQOXXWSjUN2A4DqGl2/AXrwmALMzu+VMYPKSjDdpIF037lezfgOjQvpIe3GfSFw==}
+  monorepo-typescript-references@1.1.2:
+    resolution: {integrity: sha512-XxEYJEyhwB2PADGW88ZPu0z75GLZ7X4R1K9GMGN0ACibuCaQ3LA5e+gcrRd15zSzzJcK3qmtmXm3FhliGLmpmg==}
     hasBin: true
 
   mri@1.2.0:
@@ -3808,13 +3788,13 @@ packages:
     resolution: {integrity: sha512-u9mdErTewKSMsr+ceCt8VcNuNP0ro5AXiPXhUVApuEyqr2Zlvt+DdCFBcm+yGWN8mhOdZJ27meIDbnoZgfzpOw==}
     hasBin: true
 
-  playwright-core@1.60.0:
-    resolution: {integrity: sha512-9bW6zvX/m0lEbgTKJ6YppOKx8H3VOPBMOCFh2irXFOT4BbHgrx5hPjwJYLT40Lu+4qtD36qKc/Hn56StUW57IA==}
+  playwright-core@1.61.0:
+    resolution: {integrity: sha512-caX7TrY3Ml6egyDX0WUcTHDxodl/b51y5wJOdCEA36QviK/s2g081hvmGs8eaE3DWb6NYZQ6BjO/QkNRPenoPA==}
     engines: {node: '>=18'}
     hasBin: true
 
-  playwright@1.60.0:
-    resolution: {integrity: sha512-hheHdokM8cdqCb0lcE3s+zT4t4W+vvjpGxsZlDnikarzx8tSzMebh3UiFtgqwFwnTnjYQcsyMF8ei2mCO/tpeA==}
+  playwright@1.61.0:
+    resolution: {integrity: sha512-Z+7BeeqQPRRzklHsVFP4KTGIyMxKUmfeRA4WisM6G3/XW6nwGeX6fX9qYaDa+CiUqpOkb2f6X3nar05R3kSuJQ==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -3854,8 +3834,8 @@ packages:
     engines: {node: '>=10.13.0'}
     hasBin: true
 
-  prettier@3.8.3:
-    resolution: {integrity: sha512-7igPTM53cGHMW8xWuVTydi2KO233VFiTNyF5hLJqpilHfmn8C8gPf+PS7dUT64YcXFbiMGZxS9pCSxL/Dxm/Jw==}
+  prettier@3.8.4:
+    resolution: {integrity: sha512-N2MylSdi48+5N/6S5j+maeHbUSIzzZ5uOcX5Hm4QpV8Dkb1HFjfAKTKX6yNPJQD9AhcT3ifHNB66tWTTJDi11Q==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -3894,8 +3874,8 @@ packages:
   prosemirror-menu@1.3.2:
     resolution: {integrity: sha512-6VgUJTYod0nMBlCaYJGhXGLu7Gt4AvcwcOq0YfJCY/6Uh+3S7UsWhpy6rJFCBFOmonq1hD8KyWOtZhkppd4YPg==}
 
-  prosemirror-model@1.25.7:
-    resolution: {integrity: sha512-A79aN8QEFUwI6cax8Yq4Rpcx1TJZ3Kagn+ii7qLo4/V8H3mMiHrhFyhTyHHvpSnOgMPpWiDGSwM3etwrxE50ug==}
+  prosemirror-model@1.25.9:
+    resolution: {integrity: sha512-pRTklkDDMMRopyoAcrr9wV/8g/RYgrLHBuJAb5hlEuYZRdm5yqmPjWId83fpBwPpSFqEdja0H7Dfd7z1X/npcA==}
 
   prosemirror-schema-basic@1.2.4:
     resolution: {integrity: sha512-ELxP4TlX3yr2v5rM7Sb70SqStq5NvI15c0j9j/gjsrO5vaw+fnnpovCLEGIcpeGfifkuqJwl4fon6b+KdrODYQ==}
@@ -3909,8 +3889,8 @@ packages:
   prosemirror-transform@1.11.0:
     resolution: {integrity: sha512-4I7Ce4KpygXb9bkiPS3hTEk4dSHorfRw8uI0pE8IhxlK2GXsqv5tIA7JUSxtSu7u8APVOTtbUBxTmnHIxVkIJw==}
 
-  prosemirror-view@1.41.8:
-    resolution: {integrity: sha512-TnKDdohEatgyZNGCDWIdccOHXhYloJwbwU+phw/a23KBvJIR9lWQWW7WHHK3vBdOLDNuF7TaX98GObUZOWkOnA==}
+  prosemirror-view@1.41.9:
+    resolution: {integrity: sha512-clTunTX+eaLbr87L1V1QPheRlEQJyTlL3gXe9x3jQIk3rL0RVWxviDGz8tFaydwIVm+hKhYCyr+R/zBtWr9s6A==}
 
   punycode@2.3.1:
     resolution: {integrity: sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg==}
@@ -3928,17 +3908,17 @@ packages:
   radix3@1.1.2:
     resolution: {integrity: sha512-b484I/7b8rDEdSDKckSSBA8knMpcdsXudlE/LNL639wFoHKwLbEkQFZHWEYwDC0wa0FKUcCY+GAF73Z7wxNVFA==}
 
-  react-dom@19.2.6:
-    resolution: {integrity: sha512-0prMI+hvBbPjsWnxDLxlCGyM8PN6UuWjEUCYmZhO67xIV9Xasa/r/vDnq+Xyq4Lo27g8QSbO5YzARu0D1Sps3g==}
+  react-dom@19.2.7:
+    resolution: {integrity: sha512-t0BRVXvbiE/o20Hfw669rLbMCDWtYZLvmJigy2f0MxsXF+71pxhR3xOkspmsO8h3ZlNzyibAmtCa3l4lYKk6gQ==}
     peerDependencies:
-      react: ^19.2.6
+      react: ^19.2.7
 
   react-refresh@0.18.0:
     resolution: {integrity: sha512-QgT5//D3jfjJb6Gsjxv0Slpj23ip+HtOpnNgnb2S5zU3CB26G/IDPGoy4RJB42wzFE46DRsstbW6tKHoKbhAxw==}
     engines: {node: '>=0.10.0'}
 
-  react@19.2.6:
-    resolution: {integrity: sha512-sfWGGfavi0xr8Pg0sVsyHMAOziVYKgPLNrS7ig+ivMNb3wbCBw3KxtflsGBAwD3gYQlE/AEZsTLgToRrSCjb0Q==}
+  react@19.2.7:
+    resolution: {integrity: sha512-HNe9WslTbXmFK8o8cmwgAeJFSBvt1bPdHCVKtaaV+WlAN36mpT4hcRpwbf3fY56ar2oIXzsBpOAiIRHAdY0OlQ==}
     engines: {node: '>=0.10.0'}
 
   read-yaml-file@1.1.0:
@@ -4074,11 +4054,6 @@ packages:
 
   semver@6.3.1:
     resolution: {integrity: sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA==}
-    hasBin: true
-
-  semver@7.8.1:
-    resolution: {integrity: sha512-rkVq3IXh+4FDGch+KwzX3aV9W3kO54GyEgpvBzSyctDA6Xtd7RJQV1xmXbeQp5v7+VzLOfVqiutSE6GICgPFvg==}
-    engines: {node: '>=10'}
     hasBin: true
 
   semver@7.8.4:
@@ -4266,8 +4241,8 @@ packages:
     resolution: {integrity: sha512-Ae3OVUqifDw0wBriIBS7yVaW44Dp6eSHQcyq4Igc7eN2TJH/2YsicswaW+J/OuMvhpDPOKEgpAZCjkb4hpoyeA==}
     engines: {node: ^16.14.0 || >= 17.3.0}
 
-  tinyexec@1.2.2:
-    resolution: {integrity: sha512-M/Q0B2cp4K7kynaT/vnED1j8TlLY+Pp7C6Wl2bl/7u/F0mUVwdyOpwomQb8JpYLitHUssAJRmLZdMCGsrx7i+g==}
+  tinyexec@1.2.4:
+    resolution: {integrity: sha512-SHf/r48b7vOrjve9PxJo3MN5v5yuyjHvdUcrQffT3WXMUfnGmHDVbC4k3sHJaJTgZCwpUplIaAo5ANtMyp3YHg==}
     engines: {node: '>=18'}
 
   tinyglobby@0.2.16:
@@ -4561,8 +4536,8 @@ packages:
     peerDependencies:
       vite: 5.x || 6.x || 7.x
 
-  vite@7.3.3:
-    resolution: {integrity: sha512-/4XH147Ui7OGTjg3HbdWe5arnZQSbfuRzdr9Ec7TQi5I7R+ir0Rlc9GIvD4v0XZurELqA035KVXJXpR61xhiTA==}
+  vite@7.3.5:
+    resolution: {integrity: sha512-KuOaNhcnGFN2zIPGA7wRmzF+lJA1sea7rHq17aiJ++9lzY1WWG6Jpwqwe1KNbRVPIqHmr8GLYx7jbrQcN/7/ww==}
     engines: {node: ^20.19.0 || >=22.12.0}
     hasBin: true
     peerDependencies:
@@ -4776,12 +4751,12 @@ snapshots:
   '@astrojs/preact@5.1.4(@babel/core@7.29.0)(@types/node@24.12.0)(jiti@2.7.0)(preact@10.29.2)(rollup@4.59.0)(yaml@2.9.0)':
     dependencies:
       '@astrojs/internal-helpers': 0.10.0
-      '@preact/preset-vite': 2.10.5(@babel/core@7.29.0)(preact@10.29.2)(rollup@4.59.0)(vite@7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))
+      '@preact/preset-vite': 2.10.5(@babel/core@7.29.0)(preact@10.29.2)(rollup@4.59.0)(vite@7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))
       '@preact/signals': 2.8.2(preact@10.29.2)
       devalue: 5.8.1
       preact: 10.29.2
       preact-render-to-string: 6.6.6(preact@10.29.2)
-      vite: 7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)
+      vite: 7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)
     transitivePeerDependencies:
       - '@babel/core'
       - '@types/node'
@@ -4802,17 +4777,17 @@ snapshots:
     dependencies:
       prismjs: 1.30.0
 
-  '@astrojs/react@5.0.6(@types/node@24.12.0)(@types/react-dom@19.2.3(@types/react@19.2.15))(@types/react@19.2.15)(jiti@2.7.0)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(yaml@2.9.0)':
+  '@astrojs/react@5.0.6(@types/node@24.12.0)(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(jiti@2.7.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(yaml@2.9.0)':
     dependencies:
       '@astrojs/internal-helpers': 0.10.0
-      '@types/react': 19.2.15
-      '@types/react-dom': 19.2.3(@types/react@19.2.15)
-      '@vitejs/plugin-react': 5.2.0(vite@7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))
+      '@types/react': 19.2.17
+      '@types/react-dom': 19.2.3(@types/react@19.2.17)
+      '@vitejs/plugin-react': 5.2.0(vite@7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))
       devalue: 5.8.1
-      react: 19.2.6
-      react-dom: 19.2.6(react@19.2.6)
+      react: 19.2.7
+      react-dom: 19.2.7(react@19.2.7)
       ultrahtml: 1.6.0
-      vite: 7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)
+      vite: 7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)
     transitivePeerDependencies:
       - '@types/node'
       - jiti
@@ -4830,8 +4805,8 @@ snapshots:
   '@astrojs/solid-js@6.0.1(@types/node@24.12.0)(jiti@2.7.0)(solid-js@1.9.13)(yaml@2.9.0)':
     dependencies:
       solid-js: 1.9.13
-      vite: 7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)
-      vite-plugin-solid: 2.11.12(solid-js@1.9.13)(vite@7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))
+      vite: 7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)
+      vite-plugin-solid: 2.11.12(solid-js@1.9.13)(vite@7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))
     transitivePeerDependencies:
       - '@testing-library/jest-dom'
       - '@types/node'
@@ -4849,13 +4824,13 @@ snapshots:
 
   '@astrojs/svelte@8.1.2(@types/node@24.12.0)(astro@6.4.2(@types/node@24.12.0)(jiti@2.7.0)(rollup@4.59.0)(yaml@2.9.0))(jiti@2.7.0)(svelte@5.56.0(@typescript-eslint/types@8.60.0))(typescript@6.0.3)(yaml@2.9.0)':
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 6.2.4(svelte@5.56.0(@typescript-eslint/types@8.60.0))(vite@7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))
+      '@sveltejs/vite-plugin-svelte': 6.2.4(svelte@5.56.0(@typescript-eslint/types@8.60.0))(vite@7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))
       astro: 6.4.2(@types/node@24.12.0)(jiti@2.7.0)(rollup@4.59.0)(yaml@2.9.0)
       svelte: 5.56.0(@typescript-eslint/types@8.60.0)
       svelte2tsx: 0.7.55(svelte@5.56.0(@typescript-eslint/types@8.60.0))(typescript@6.0.3)
       typescript: 6.0.3
-      vite: 7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)
-      vitefu: 1.1.2(vite@7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))
+      vite: 7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)
+      vitefu: 1.1.2(vite@7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))
     transitivePeerDependencies:
       - '@types/node'
       - jiti
@@ -4879,12 +4854,12 @@ snapshots:
 
   '@astrojs/vue@6.0.1(@types/node@24.12.0)(astro@6.4.2(@types/node@24.12.0)(jiti@2.7.0)(rollup@4.59.0)(yaml@2.9.0))(jiti@2.7.0)(vue@3.5.35(typescript@6.0.3))(yaml@2.9.0)':
     dependencies:
-      '@vitejs/plugin-vue': 6.0.7(vite@7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))(vue@3.5.35(typescript@6.0.3))
-      '@vitejs/plugin-vue-jsx': 5.1.4(vite@7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))(vue@3.5.35(typescript@6.0.3))
+      '@vitejs/plugin-vue': 6.0.7(vite@7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))(vue@3.5.35(typescript@6.0.3))
+      '@vitejs/plugin-vue-jsx': 5.1.4(vite@7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))(vue@3.5.35(typescript@6.0.3))
       '@vue/compiler-sfc': 3.5.35
       astro: 6.4.2(@types/node@24.12.0)(jiti@2.7.0)(rollup@4.59.0)(yaml@2.9.0)
-      vite: 7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)
-      vite-plugin-vue-devtools: 8.0.7(vite@7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))(vue@3.5.35(typescript@6.0.3))
+      vite: 7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)
+      vite-plugin-vue-devtools: 8.0.7(vite@7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))(vue@3.5.35(typescript@6.0.3))
       vue: 3.5.35(typescript@6.0.3)
     transitivePeerDependencies:
       - '@nuxt/kit'
@@ -4954,7 +4929,7 @@ snapshots:
     dependencies:
       '@babel/compat-data': 7.29.0
       '@babel/helper-validator-option': 7.27.1
-      browserslist: 4.28.1
+      browserslist: 4.28.2
       lru-cache: 5.1.1
       semver: 6.3.1
 
@@ -5172,7 +5147,7 @@ snapshots:
       outdent: 0.5.0
       prettier: 2.8.8
       resolve-from: 5.0.0
-      semver: 7.8.1
+      semver: 7.8.4
 
   '@changesets/assemble-release-plan@6.0.10':
     dependencies:
@@ -5181,7 +5156,7 @@ snapshots:
       '@changesets/should-skip-package': 0.1.2
       '@changesets/types': 6.1.0
       '@manypkg/get-packages': 1.1.3
-      semver: 7.8.1
+      semver: 7.8.4
 
   '@changesets/changelog-git@0.2.1':
     dependencies:
@@ -5212,7 +5187,7 @@ snapshots:
       package-manager-detector: 0.2.11
       picocolors: 1.1.1
       resolve-from: 5.0.0
-      semver: 7.8.1
+      semver: 7.8.4
       spawndamnit: 3.0.1
       term-size: 2.2.1
     transitivePeerDependencies:
@@ -5238,7 +5213,7 @@ snapshots:
       '@changesets/types': 6.1.0
       '@manypkg/get-packages': 1.1.3
       picocolors: 1.1.1
-      semver: 7.8.1
+      semver: 7.8.4
 
   '@changesets/get-release-plan@4.0.16':
     dependencies:
@@ -5537,7 +5512,7 @@ snapshots:
   '@eslint/markdown@8.0.2':
     dependencies:
       '@eslint/core': 1.2.1
-      '@eslint/plugin-kit': 0.7.1
+      '@eslint/plugin-kit': 0.7.2
       github-slugger: 2.0.0
       mdast-util-from-markdown: 2.0.3
       mdast-util-frontmatter: 2.0.1
@@ -5551,11 +5526,6 @@ snapshots:
       - supports-color
 
   '@eslint/object-schema@3.0.5': {}
-
-  '@eslint/plugin-kit@0.7.1':
-    dependencies:
-      '@eslint/core': 1.2.1
-      levn: 0.4.1
 
   '@eslint/plugin-kit@0.7.2':
     dependencies:
@@ -5789,7 +5759,7 @@ snapshots:
 
   '@ocavue/tsconfig@0.7.1': {}
 
-  '@ocavue/utils@1.6.0': {}
+  '@ocavue/utils@1.7.0': {}
 
   '@oslojs/encoding@1.1.0': {}
 
@@ -5928,25 +5898,25 @@ snapshots:
 
   '@pkgr/core@0.2.9': {}
 
-  '@playwright/test@1.60.0':
+  '@playwright/test@1.61.0':
     dependencies:
-      playwright: 1.60.0
+      playwright: 1.61.0
 
   '@polka/url@1.0.0-next.29': {}
 
-  '@preact/preset-vite@2.10.5(@babel/core@7.29.0)(preact@10.29.2)(rollup@4.59.0)(vite@7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))':
+  '@preact/preset-vite@2.10.5(@babel/core@7.29.0)(preact@10.29.2)(rollup@4.59.0)(vite@7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))':
     dependencies:
       '@babel/core': 7.29.0
       '@babel/plugin-transform-react-jsx': 7.28.6(@babel/core@7.29.0)
       '@babel/plugin-transform-react-jsx-development': 7.27.1(@babel/core@7.29.0)
-      '@prefresh/vite': 2.4.12(preact@10.29.2)(vite@7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))
+      '@prefresh/vite': 2.4.12(preact@10.29.2)(vite@7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))
       '@rollup/pluginutils': 5.3.0(rollup@4.59.0)
       babel-plugin-transform-hook-names: 1.0.2(@babel/core@7.29.0)
       debug: 4.4.3
       magic-string: 0.30.21
       picocolors: 1.1.1
-      vite: 7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)
-      vite-prerender-plugin: 0.5.12(vite@7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))
+      vite: 7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)
+      vite-prerender-plugin: 0.5.12(vite@7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))
       zimmerframe: 1.1.4
     transitivePeerDependencies:
       - preact
@@ -5968,7 +5938,7 @@ snapshots:
 
   '@prefresh/utils@1.2.1': {}
 
-  '@prefresh/vite@2.4.12(preact@10.29.2)(vite@7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))':
+  '@prefresh/vite@2.4.12(preact@10.29.2)(vite@7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))':
     dependencies:
       '@babel/core': 7.29.0
       '@prefresh/babel-plugin': 0.5.3
@@ -5976,7 +5946,7 @@ snapshots:
       '@prefresh/utils': 1.2.1
       '@rollup/pluginutils': 4.2.1
       preact: 10.29.2
-      vite: 7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)
+      vite: 7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -6167,21 +6137,21 @@ snapshots:
 
   '@standard-schema/spec@1.1.0': {}
 
-  '@stricli/core@1.2.6': {}
+  '@stricli/core@1.2.8': {}
 
   '@sveltejs/acorn-typescript@1.0.10(acorn@8.16.0)':
     dependencies:
       acorn: 8.16.0
 
-  '@sveltejs/adapter-auto@7.0.1(@sveltejs/kit@2.61.1(@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.56.0(@typescript-eslint/types@8.60.0))(vite@7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)))(svelte@5.56.0(@typescript-eslint/types@8.60.0))(typescript@6.0.3)(vite@7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)))':
+  '@sveltejs/adapter-auto@7.0.1(@sveltejs/kit@2.61.1(@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.56.0(@typescript-eslint/types@8.60.0))(vite@7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)))(svelte@5.56.0(@typescript-eslint/types@8.60.0))(typescript@6.0.3)(vite@7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)))':
     dependencies:
-      '@sveltejs/kit': 2.61.1(@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.56.0(@typescript-eslint/types@8.60.0))(vite@7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)))(svelte@5.56.0(@typescript-eslint/types@8.60.0))(typescript@6.0.3)(vite@7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))
+      '@sveltejs/kit': 2.61.1(@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.56.0(@typescript-eslint/types@8.60.0))(vite@7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)))(svelte@5.56.0(@typescript-eslint/types@8.60.0))(typescript@6.0.3)(vite@7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))
 
-  '@sveltejs/kit@2.61.1(@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.56.0(@typescript-eslint/types@8.60.0))(vite@7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)))(svelte@5.56.0(@typescript-eslint/types@8.60.0))(typescript@6.0.3)(vite@7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))':
+  '@sveltejs/kit@2.61.1(@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.56.0(@typescript-eslint/types@8.60.0))(vite@7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)))(svelte@5.56.0(@typescript-eslint/types@8.60.0))(typescript@6.0.3)(vite@7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))':
     dependencies:
       '@standard-schema/spec': 1.1.0
       '@sveltejs/acorn-typescript': 1.0.10(acorn@8.16.0)
-      '@sveltejs/vite-plugin-svelte': 6.2.4(svelte@5.56.0(@typescript-eslint/types@8.60.0))(vite@7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))
+      '@sveltejs/vite-plugin-svelte': 6.2.4(svelte@5.56.0(@typescript-eslint/types@8.60.0))(vite@7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))
       '@types/cookie': 0.6.0
       acorn: 8.16.0
       cookie: 0.6.0
@@ -6193,26 +6163,26 @@ snapshots:
       set-cookie-parser: 3.0.1
       sirv: 3.0.2
       svelte: 5.56.0(@typescript-eslint/types@8.60.0)
-      vite: 7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)
+      vite: 7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)
     optionalDependencies:
       typescript: 6.0.3
 
-  '@sveltejs/vite-plugin-svelte-inspector@5.0.2(@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.56.0(@typescript-eslint/types@8.60.0))(vite@7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)))(svelte@5.56.0(@typescript-eslint/types@8.60.0))(vite@7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))':
+  '@sveltejs/vite-plugin-svelte-inspector@5.0.2(@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.56.0(@typescript-eslint/types@8.60.0))(vite@7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)))(svelte@5.56.0(@typescript-eslint/types@8.60.0))(vite@7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))':
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 6.2.4(svelte@5.56.0(@typescript-eslint/types@8.60.0))(vite@7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))
+      '@sveltejs/vite-plugin-svelte': 6.2.4(svelte@5.56.0(@typescript-eslint/types@8.60.0))(vite@7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))
       obug: 2.1.1
       svelte: 5.56.0(@typescript-eslint/types@8.60.0)
-      vite: 7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)
+      vite: 7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)
 
-  '@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.56.0(@typescript-eslint/types@8.60.0))(vite@7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))':
+  '@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.56.0(@typescript-eslint/types@8.60.0))(vite@7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))':
     dependencies:
-      '@sveltejs/vite-plugin-svelte-inspector': 5.0.2(@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.56.0(@typescript-eslint/types@8.60.0))(vite@7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)))(svelte@5.56.0(@typescript-eslint/types@8.60.0))(vite@7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))
+      '@sveltejs/vite-plugin-svelte-inspector': 5.0.2(@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.56.0(@typescript-eslint/types@8.60.0))(vite@7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)))(svelte@5.56.0(@typescript-eslint/types@8.60.0))(vite@7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))
       deepmerge: 4.3.1
       magic-string: 0.30.21
       obug: 2.1.1
       svelte: 5.56.0(@typescript-eslint/types@8.60.0)
-      vite: 7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)
-      vitefu: 1.1.2(vite@7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))
+      vite: 7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)
+      vitefu: 1.1.2(vite@7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))
 
   '@tybys/wasm-util@0.10.1':
     dependencies:
@@ -6276,11 +6246,11 @@ snapshots:
     dependencies:
       undici-types: 7.16.0
 
-  '@types/react-dom@19.2.3(@types/react@19.2.15)':
+  '@types/react-dom@19.2.3(@types/react@19.2.17)':
     dependencies:
-      '@types/react': 19.2.15
+      '@types/react': 19.2.17
 
-  '@types/react@19.2.15':
+  '@types/react@19.2.17':
     dependencies:
       csstype: 3.2.3
 
@@ -6355,7 +6325,7 @@ snapshots:
       eslint: 10.5.0(jiti@2.7.0)
       json-stable-stringify-without-jsonify: 1.0.1
       lodash.merge: 4.6.2
-      semver: 7.8.1
+      semver: 7.8.4
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -6402,7 +6372,7 @@ snapshots:
       '@typescript-eslint/visitor-keys': 8.58.2
       debug: 4.4.3
       minimatch: 10.2.4
-      semver: 7.8.1
+      semver: 7.8.4
       tinyglobby: 0.2.16
       ts-api-utils: 2.5.0(typescript@6.0.3)
       typescript: 6.0.3
@@ -6417,7 +6387,7 @@ snapshots:
       '@typescript-eslint/visitor-keys': 8.60.0
       debug: 4.4.3
       minimatch: 10.2.4
-      semver: 7.8.1
+      semver: 7.8.4
       tinyglobby: 0.2.16
       ts-api-utils: 2.5.0(typescript@6.0.3)
       typescript: 6.0.3
@@ -6493,7 +6463,7 @@ snapshots:
       '@unocss/core': 66.7.0
       magic-string: 0.30.21
 
-  '@vitejs/plugin-react@5.2.0(vite@7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))':
+  '@vitejs/plugin-react@5.2.0(vite@7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))':
     dependencies:
       '@babel/core': 7.29.0
       '@babel/plugin-transform-react-jsx-self': 7.27.1(@babel/core@7.29.0)
@@ -6501,26 +6471,26 @@ snapshots:
       '@rolldown/pluginutils': 1.0.0-rc.3
       '@types/babel__core': 7.20.5
       react-refresh: 0.18.0
-      vite: 7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)
+      vite: 7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)
     transitivePeerDependencies:
       - supports-color
 
-  '@vitejs/plugin-vue-jsx@5.1.4(vite@7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))(vue@3.5.35(typescript@6.0.3))':
+  '@vitejs/plugin-vue-jsx@5.1.4(vite@7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))(vue@3.5.35(typescript@6.0.3))':
     dependencies:
       '@babel/core': 7.29.0
       '@babel/plugin-syntax-typescript': 7.28.6(@babel/core@7.29.0)
       '@babel/plugin-transform-typescript': 7.28.6(@babel/core@7.29.0)
       '@rolldown/pluginutils': 1.0.1
       '@vue/babel-plugin-jsx': 2.0.1(@babel/core@7.29.0)
-      vite: 7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)
+      vite: 7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)
       vue: 3.5.35(typescript@6.0.3)
     transitivePeerDependencies:
       - supports-color
 
-  '@vitejs/plugin-vue@6.0.7(vite@7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))(vue@3.5.35(typescript@6.0.3))':
+  '@vitejs/plugin-vue@6.0.7(vite@7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))(vue@3.5.35(typescript@6.0.3))':
     dependencies:
       '@rolldown/pluginutils': 1.0.1
-      vite: 7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)
+      vite: 7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)
       vue: 3.5.35(typescript@6.0.3)
 
   '@vue/babel-helper-vue-transform-on@1.5.0': {}
@@ -6744,20 +6714,20 @@ snapshots:
       piccolore: 0.1.3
       picomatch: 4.0.4
       rehype: 13.0.2
-      semver: 7.8.1
+      semver: 7.8.4
       shiki: 4.0.2
       smol-toml: 1.6.1
       svgo: 4.0.1
       tinyclip: 0.1.12
-      tinyexec: 1.2.2
+      tinyexec: 1.2.4
       tinyglobby: 0.2.16
       ultrahtml: 1.6.0
       unifont: 0.7.4
       unist-util-visit: 5.1.0
       unstorage: 1.17.5
       vfile: 6.0.3
-      vite: 7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)
-      vitefu: 1.1.2(vite@7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))
+      vite: 7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)
+      vitefu: 1.1.2(vite@7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))
       xxhash-wasm: 1.1.0
       yargs-parser: 22.0.0
       zod: 4.4.3
@@ -6833,8 +6803,6 @@ snapshots:
 
   balanced-match@4.0.4: {}
 
-  baseline-browser-mapping@2.10.0: {}
-
   baseline-browser-mapping@2.10.38: {}
 
   better-path-resolve@1.0.0:
@@ -6857,14 +6825,6 @@ snapshots:
     dependencies:
       fill-range: 7.1.1
 
-  browserslist@4.28.1:
-    dependencies:
-      baseline-browser-mapping: 2.10.0
-      caniuse-lite: 1.0.30001778
-      electron-to-chromium: 1.5.313
-      node-releases: 2.0.36
-      update-browserslist-db: 1.2.3(browserslist@4.28.1)
-
   browserslist@4.28.2:
     dependencies:
       baseline-browser-mapping: 2.10.38
@@ -6880,8 +6840,6 @@ snapshots:
       run-applescript: 7.1.0
 
   cac@7.0.0: {}
-
-  caniuse-lite@1.0.30001778: {}
 
   caniuse-lite@1.0.30001799: {}
 
@@ -6940,7 +6898,7 @@ snapshots:
 
   core-js-compat@3.49.0:
     dependencies:
-      browserslist: 4.28.1
+      browserslist: 4.28.2
 
   crelt@1.0.6: {}
 
@@ -7056,8 +7014,6 @@ snapshots:
     optionalDependencies:
       oxc-resolver: 11.19.1(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0)
 
-  electron-to-chromium@1.5.313: {}
-
   electron-to-chromium@1.5.375: {}
 
   emoji-regex@10.6.0: {}
@@ -7162,7 +7118,7 @@ snapshots:
       eslint-json-compat-utils: 0.2.3(eslint@10.5.0(jiti@2.7.0))(jsonc-eslint-parser@3.1.0)
       jsonc-eslint-parser: 3.1.0
       package-json-validator: 1.5.2
-      semver: 7.8.1
+      semver: 7.8.4
       sort-object-keys: 2.1.0
       sort-package-json: 3.6.1
     transitivePeerDependencies:
@@ -7309,7 +7265,7 @@ snapshots:
       natural-compare: 1.4.0
       nth-check: 2.1.1
       postcss-selector-parser: 7.1.1
-      semver: 7.8.1
+      semver: 7.8.4
       vue-eslint-parser: 10.4.1(eslint@10.5.0(jiti@2.7.0))
       xml-name-validator: 4.0.0
     optionalDependencies:
@@ -7755,7 +7711,7 @@ snapshots:
     dependencies:
       acorn: 8.16.0
       eslint-visitor-keys: 5.0.1
-      semver: 7.8.1
+      semver: 7.8.4
 
   jsonc-parser@3.3.1: {}
 
@@ -7802,12 +7758,12 @@ snapshots:
       prelude-ls: 1.2.1
       type-check: 0.4.0
 
-  lint-staged@17.0.5:
+  lint-staged@17.0.7:
     dependencies:
       listr2: 10.2.1
       picomatch: 4.0.4
       string-argv: 0.3.2
-      tinyexec: 1.2.2
+      tinyexec: 1.2.4
     optionalDependencies:
       yaml: 2.9.0
 
@@ -8251,15 +8207,13 @@ snapshots:
 
   minimist@1.2.8: {}
 
-  monorepo-typescript-references@1.1.1:
+  monorepo-typescript-references@1.1.2:
     dependencies:
       '@manypkg/find-root': 3.1.0
       '@manypkg/get-packages': 3.1.0
-      '@stricli/core': 1.2.6
-      debug: 4.4.3
+      '@stricli/core': 1.2.8
       jsonc-parser: 3.3.1
-    transitivePeerDependencies:
-      - supports-color
+      obug: 2.1.1
 
   mri@1.2.0: {}
 
@@ -8296,7 +8250,7 @@ snapshots:
     dependencies:
       hosted-git-info: 9.0.3
       proc-log: 6.1.0
-      semver: 7.8.1
+      semver: 7.8.4
       validate-npm-package-name: 7.0.2
 
   nth-check@2.1.1:
@@ -8434,7 +8388,7 @@ snapshots:
   package-json-validator@1.5.2:
     dependencies:
       npm-package-arg: 13.0.2
-      semver: 7.8.1
+      semver: 7.8.4
       validate-npm-package-license: 3.0.4
       validate-npm-package-name: 7.0.2
 
@@ -8479,11 +8433,11 @@ snapshots:
 
   pkg-pr-new@0.0.75: {}
 
-  playwright-core@1.60.0: {}
+  playwright-core@1.61.0: {}
 
-  playwright@1.60.0:
+  playwright@1.61.0:
     dependencies:
-      playwright-core: 1.60.0
+      playwright-core: 1.61.0
     optionalDependencies:
       fsevents: 2.3.2
 
@@ -8508,14 +8462,14 @@ snapshots:
 
   prelude-ls@1.2.1: {}
 
-  prettier-plugin-svelte@4.1.0(prettier@3.8.3)(svelte@5.56.0(@typescript-eslint/types@8.60.0)):
+  prettier-plugin-svelte@4.1.0(prettier@3.8.4)(svelte@5.56.0(@typescript-eslint/types@8.60.0)):
     dependencies:
-      prettier: 3.8.3
+      prettier: 3.8.4
       svelte: 5.56.0(@typescript-eslint/types@8.60.0)
 
   prettier@2.8.8: {}
 
-  prettier@3.8.3: {}
+  prettier@3.8.4: {}
 
   prismjs@1.30.0: {}
 
@@ -8525,7 +8479,7 @@ snapshots:
 
   prosemirror-commands@1.7.1:
     dependencies:
-      prosemirror-model: 1.25.7
+      prosemirror-model: 1.25.9
       prosemirror-state: 1.4.4
       prosemirror-transform: 1.11.0
 
@@ -8533,7 +8487,7 @@ snapshots:
     dependencies:
       prosemirror-state: 1.4.4
       prosemirror-transform: 1.11.0
-      prosemirror-view: 1.41.8
+      prosemirror-view: 1.41.9
 
   prosemirror-example-setup@1.2.3:
     dependencies:
@@ -8550,15 +8504,15 @@ snapshots:
   prosemirror-gapcursor@1.4.1:
     dependencies:
       prosemirror-keymap: 1.2.3
-      prosemirror-model: 1.25.7
+      prosemirror-model: 1.25.9
       prosemirror-state: 1.4.4
-      prosemirror-view: 1.41.8
+      prosemirror-view: 1.41.9
 
   prosemirror-history@1.5.0:
     dependencies:
       prosemirror-state: 1.4.4
       prosemirror-transform: 1.11.0
-      prosemirror-view: 1.41.8
+      prosemirror-view: 1.41.9
       rope-sequence: 1.3.4
 
   prosemirror-inputrules@1.5.1:
@@ -8578,33 +8532,33 @@ snapshots:
       prosemirror-history: 1.5.0
       prosemirror-state: 1.4.4
 
-  prosemirror-model@1.25.7:
+  prosemirror-model@1.25.9:
     dependencies:
       orderedmap: 2.1.1
 
   prosemirror-schema-basic@1.2.4:
     dependencies:
-      prosemirror-model: 1.25.7
+      prosemirror-model: 1.25.9
 
   prosemirror-schema-list@1.5.1:
     dependencies:
-      prosemirror-model: 1.25.7
+      prosemirror-model: 1.25.9
       prosemirror-state: 1.4.4
       prosemirror-transform: 1.11.0
 
   prosemirror-state@1.4.4:
     dependencies:
-      prosemirror-model: 1.25.7
+      prosemirror-model: 1.25.9
       prosemirror-transform: 1.11.0
-      prosemirror-view: 1.41.8
+      prosemirror-view: 1.41.9
 
   prosemirror-transform@1.11.0:
     dependencies:
-      prosemirror-model: 1.25.7
+      prosemirror-model: 1.25.9
 
-  prosemirror-view@1.41.8:
+  prosemirror-view@1.41.9:
     dependencies:
-      prosemirror-model: 1.25.7
+      prosemirror-model: 1.25.9
       prosemirror-state: 1.4.4
       prosemirror-transform: 1.11.0
 
@@ -8618,14 +8572,14 @@ snapshots:
 
   radix3@1.1.2: {}
 
-  react-dom@19.2.6(react@19.2.6):
+  react-dom@19.2.7(react@19.2.7):
     dependencies:
-      react: 19.2.6
+      react: 19.2.7
       scheduler: 0.27.0
 
   react-refresh@0.18.0: {}
 
-  react@19.2.6: {}
+  react@19.2.7: {}
 
   read-yaml-file@1.1.0:
     dependencies:
@@ -8840,8 +8794,6 @@ snapshots:
 
   semver@6.3.1: {}
 
-  semver@7.8.1: {}
-
   semver@7.8.4: {}
 
   seroval-plugins@1.5.1(seroval@1.5.1):
@@ -8856,7 +8808,7 @@ snapshots:
     dependencies:
       '@img/colour': 1.1.0
       detect-libc: 2.1.2
-      semver: 7.8.1
+      semver: 7.8.4
     optionalDependencies:
       '@img/sharp-darwin-arm64': 0.34.5
       '@img/sharp-darwin-x64': 0.34.5
@@ -8954,7 +8906,7 @@ snapshots:
       detect-newline: 4.0.1
       git-hooks-list: 4.2.1
       is-plain-obj: 4.1.0
-      semver: 7.8.1
+      semver: 7.8.4
       sort-object-keys: 2.1.0
       tinyglobby: 0.2.16
 
@@ -9069,7 +9021,7 @@ snapshots:
 
   tinyclip@0.1.12: {}
 
-  tinyexec@1.2.2: {}
+  tinyexec@1.2.4: {}
 
   tinyglobby@0.2.16:
     dependencies:
@@ -9106,8 +9058,8 @@ snapshots:
       picomatch: 4.0.4
       rolldown: 1.0.3
       rolldown-plugin-dts: 0.25.1(oxc-resolver@11.19.1(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0))(rolldown@1.0.3)(typescript@6.0.3)
-      semver: 7.8.1
-      tinyexec: 1.2.2
+      semver: 7.8.4
+      tinyexec: 1.2.4
       tinyglobby: 0.2.16
       tree-kill: 1.2.2
       unconfig-core: 7.5.0
@@ -9238,12 +9190,6 @@ snapshots:
       ofetch: 1.5.1
       ufo: 1.6.3
 
-  update-browserslist-db@1.2.3(browserslist@4.28.1):
-    dependencies:
-      browserslist: 4.28.1
-      escalade: 3.2.0
-      picocolors: 1.1.1
-
   update-browserslist-db@1.2.3(browserslist@4.28.2):
     dependencies:
       browserslist: 4.28.2
@@ -9282,17 +9228,17 @@ snapshots:
       '@types/unist': 3.0.3
       vfile-message: 4.0.3
 
-  vite-dev-rpc@1.1.0(vite@7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)):
+  vite-dev-rpc@1.1.0(vite@7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)):
     dependencies:
       birpc: 2.9.0
-      vite: 7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)
-      vite-hot-client: 2.1.0(vite@7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))
+      vite: 7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)
+      vite-hot-client: 2.1.0(vite@7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))
 
-  vite-hot-client@2.1.0(vite@7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)):
+  vite-hot-client@2.1.0(vite@7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)):
     dependencies:
-      vite: 7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)
+      vite: 7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)
 
-  vite-plugin-inspect@11.3.3(vite@7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)):
+  vite-plugin-inspect@11.3.3(vite@7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)):
     dependencies:
       ansis: 4.3.0
       debug: 4.4.3
@@ -9302,12 +9248,12 @@ snapshots:
       perfect-debounce: 2.1.0
       sirv: 3.0.2
       unplugin-utils: 0.3.1
-      vite: 7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)
-      vite-dev-rpc: 1.1.0(vite@7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))
+      vite: 7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)
+      vite-dev-rpc: 1.1.0(vite@7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))
     transitivePeerDependencies:
       - supports-color
 
-  vite-plugin-solid@2.11.12(solid-js@1.9.13)(vite@7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)):
+  vite-plugin-solid@2.11.12(solid-js@1.9.13)(vite@7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)):
     dependencies:
       '@babel/core': 7.29.0
       '@types/babel__core': 7.20.5
@@ -9315,26 +9261,26 @@ snapshots:
       merge-anything: 5.1.7
       solid-js: 1.9.13
       solid-refresh: 0.6.3(solid-js@1.9.13)
-      vite: 7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)
-      vitefu: 1.1.2(vite@7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))
+      vite: 7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)
+      vitefu: 1.1.2(vite@7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))
     transitivePeerDependencies:
       - supports-color
 
-  vite-plugin-vue-devtools@8.0.7(vite@7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))(vue@3.5.35(typescript@6.0.3)):
+  vite-plugin-vue-devtools@8.0.7(vite@7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))(vue@3.5.35(typescript@6.0.3)):
     dependencies:
       '@vue/devtools-core': 8.0.7(vue@3.5.35(typescript@6.0.3))
       '@vue/devtools-kit': 8.0.7
       '@vue/devtools-shared': 8.0.7
       sirv: 3.0.2
-      vite: 7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)
-      vite-plugin-inspect: 11.3.3(vite@7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))
-      vite-plugin-vue-inspector: 5.3.2(vite@7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))
+      vite: 7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)
+      vite-plugin-inspect: 11.3.3(vite@7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))
+      vite-plugin-vue-inspector: 5.3.2(vite@7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0))
     transitivePeerDependencies:
       - '@nuxt/kit'
       - supports-color
       - vue
 
-  vite-plugin-vue-inspector@5.3.2(vite@7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)):
+  vite-plugin-vue-inspector@5.3.2(vite@7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)):
     dependencies:
       '@babel/core': 7.29.0
       '@babel/plugin-proposal-decorators': 7.29.0(@babel/core@7.29.0)
@@ -9345,11 +9291,11 @@ snapshots:
       '@vue/compiler-dom': 3.5.35
       kolorist: 1.8.0
       magic-string: 0.30.21
-      vite: 7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)
+      vite: 7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)
     transitivePeerDependencies:
       - supports-color
 
-  vite-prerender-plugin@0.5.12(vite@7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)):
+  vite-prerender-plugin@0.5.12(vite@7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)):
     dependencies:
       kolorist: 1.8.0
       magic-string: 0.30.21
@@ -9357,9 +9303,9 @@ snapshots:
       simple-code-frame: 1.3.0
       source-map: 0.7.6
       stack-trace: 1.0.0-pre2
-      vite: 7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)
+      vite: 7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)
 
-  vite@7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0):
+  vite@7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0):
     dependencies:
       esbuild: 0.27.3
       fdir: 6.5.0(picomatch@4.0.4)
@@ -9373,9 +9319,9 @@ snapshots:
       jiti: 2.7.0
       yaml: 2.9.0
 
-  vitefu@1.1.2(vite@7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)):
+  vitefu@1.1.2(vite@7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)):
     optionalDependencies:
-      vite: 7.3.3(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)
+      vite: 7.3.5(@types/node@24.12.0)(jiti@2.7.0)(yaml@2.9.0)
 
   vue-eslint-parser@10.4.1(eslint@10.5.0(jiti@2.7.0)):
     dependencies:
@@ -9385,7 +9331,7 @@ snapshots:
       eslint-visitor-keys: 5.0.1
       espree: 11.2.0
       esquery: 1.7.0
-      semver: 7.8.1
+      semver: 7.8.4
     transitivePeerDependencies:
       - supports-color
 
