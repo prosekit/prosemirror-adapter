@@ -31,7 +31,7 @@ importers:
         specifier: ^9.1.7
         version: 9.1.7
       knip:
-        specifier: ^6.15.0
+        specifier: ^6.16.0
         version: 6.24.0
       lint-staged:
         specifier: ^17.0.7
@@ -5843,7 +5843,7 @@ snapshots:
     dependencies:
       jju: 1.4.0
       js-yaml: 4.1.1
-      tinyglobby: 0.2.16
+      tinyglobby: 0.2.17
 
   '@napi-rs/wasm-runtime@1.1.4(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0)':
     dependencies:
@@ -6529,7 +6529,7 @@ snapshots:
       debug: 4.4.3
       minimatch: 10.2.4
       semver: 7.8.5
-      tinyglobby: 0.2.16
+      tinyglobby: 0.2.17
       ts-api-utils: 2.5.0(typescript@6.0.3)
       typescript: 6.0.3
     transitivePeerDependencies:
@@ -6544,7 +6544,7 @@ snapshots:
       debug: 4.4.3
       minimatch: 10.2.4
       semver: 7.8.5
-      tinyglobby: 0.2.16
+      tinyglobby: 0.2.17
       ts-api-utils: 2.5.0(typescript@6.0.3)
       typescript: 6.0.3
     transitivePeerDependencies:
@@ -9124,7 +9124,7 @@ snapshots:
       is-plain-obj: 4.1.0
       semver: 7.8.4
       sort-object-keys: 2.1.0
-      tinyglobby: 0.2.16
+      tinyglobby: 0.2.17
 
   source-map-js@1.2.1: {}
 
