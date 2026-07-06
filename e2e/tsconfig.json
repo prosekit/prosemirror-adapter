@@ -2,6 +2,9 @@
   "extends": "@ocavue/tsconfig/dom/root.json",
   "include": ["./tests", "./*.js", "./*.mjs", "./*.ts", ".astro/types.d.ts"],
   "compilerOptions": {
+    "target": "ES2022",
+    "experimentalDecorators": true,
+    "useDefineForClassFields": false,
     "types": ["node"]
   },
   "references": [
