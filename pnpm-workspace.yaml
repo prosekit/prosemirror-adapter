@@ -7,6 +7,8 @@ allowBuilds:
   esbuild: false
   sharp: false
 
+dedupePeers: true
+
 strictPeerDependencies: true
 
 linkWorkspacePackages: deep
