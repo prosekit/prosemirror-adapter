@@ -8,14 +8,14 @@ testAll(() => {
     await expect(editor).toBeVisible()
 
     const locator = editor.locator("[data-test-id='size-view-plugin']")
-    await expect(locator).toContainText('Size for document: 523')
+    await expect(locator).toContainText('Size for document: 549')
 
     await editor.locator('p').first().click()
     await page.keyboard.type('OK')
-    await expect(locator).toContainText('Size for document: 525')
+    await expect(locator).toContainText('Size for document: 551')
 
     await page.keyboard.press('Backspace')
-    await expect(locator).toContainText('Size for document: 524')
+    await expect(locator).toContainText('Size for document: 550')
   })
 
   test('Render context from parent component', async ({ page }) => {

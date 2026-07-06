@@ -3,6 +3,7 @@ import type { Attrs, Node } from 'prosemirror-model'
 import type { Decoration, DecorationSource, EditorView, NodeView, ViewMutationRecord } from 'prosemirror-view'
 
 import { createKey } from '../create-key'
+import { isContentDOMRemoval } from '../is-content-dom-removal'
 
 import type { CoreNodeViewSpec, CoreNodeViewUserOptions, NodeViewDOMSpec } from './CoreNodeViewOptions'
 
@@ -113,6 +114,8 @@ export class CoreNodeView<ComponentType> implements NodeView {
     if (this.contentDOM === mutation.target && mutation.type === 'attributes') return true
 
     if (this.contentDOM.contains(mutation.target)) return false
+
+    if (isContentDOMRemoval(mutation, this.contentDOM)) return false
 
     return true
   }

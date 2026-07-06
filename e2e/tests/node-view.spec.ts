@@ -41,3 +41,39 @@ testAll(() => {
     await expect(h5).toBeVisible()
   })
 })
+
+testAll(() => {
+  test('code block node view survives typing over a fully selected code block', async ({ page }) => {
+    const content = page.locator('.editor [data-node-view-root="true"] pre code[data-node-view-content="true"]')
+    await expect(content).toBeVisible()
+    await expect(content).toContainText('const greeting')
+
+    await content.click()
+    // Select all of the code block text, crossing the highlight spans, like a
+    // user dragging from the first character to the last one.
+    await content.evaluate((element) => {
+      const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT)
+      const textNodes: Text[] = []
+      while (walker.nextNode()) textNodes.push(walker.currentNode as Text)
+      const firstText = textNodes.at(0)
+      const lastText = textNodes.at(-1)
+      const selection = window.getSelection()
+      if (!selection || !firstText || !lastText) throw new Error('found no text to select')
+      const range = document.createRange()
+      range.setStart(firstText, 0)
+      range.setEnd(lastText, lastText.length)
+      selection.removeAllRanges()
+      selection.addRange(range)
+    })
+    await page.keyboard.type('X')
+
+    // Chrome and Safari delete the whole contentDOM element when typing over
+    // a selection that covers all of its content. ProseMirror must not ignore
+    // that mutation: the contentDOM has to come back under its control and
+    // typing has to keep updating the document.
+    await expect(content).toBeAttached()
+
+    await page.keyboard.type('hello')
+    await expect(content).toContainText('hello')
+  })
+}, ['react'])
