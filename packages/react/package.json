@@ -27,7 +27,7 @@
     "@prosemirror-adapter/core": "workspace:*",
     "prosemirror-model": "^1.25.9",
     "prosemirror-state": "^1.4.4",
-    "prosemirror-view": "^1.41.9"
+    "prosemirror-view": "^1.42.0"
   },
   "peerDependencies": {
     "react": "*",
@@ -46,7 +46,7 @@
     "@types/react-dom": "^19.2.3",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
-    "tsdown": "^0.22.1"
+    "tsdown": "^0.22.3"
   },
   "publishConfig": {
     "types": "./dist/index.d.ts",
