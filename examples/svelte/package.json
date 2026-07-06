@@ -4,6 +4,7 @@
   "private": true,
   "description": "Svelte example for ProseMirror Adapter",
   "scripts": {
+    "postinstall": "svelte-kit sync",
     "start": "vite",
     "build": "vite build"
   },

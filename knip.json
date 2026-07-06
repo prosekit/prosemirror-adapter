@@ -4,7 +4,7 @@
   "workspaces": {
     "e2e": {
       "entry": "src/*/*.stories.ts",
-      "ignore": ["src/*/shim.d.ts", "src/lit/App.ts", "src/lit/components/Editor.ts"]
+      "ignore": ["src/*/shim.d.ts", "src/lit/App.ts"]
     }
   }
 }
