@@ -23,14 +23,6 @@ export function buildReactNodeViewCreator<ComponentType>(
           userOptions.onUpdate?.()
           renderReactRenderer(nodeView)
         },
-        selectNode() {
-          userOptions.selectNode?.()
-          renderReactRenderer(nodeView)
-        },
-        deselectNode() {
-          userOptions.deselectNode?.()
-          renderReactRenderer(nodeView)
-        },
         destroy() {
           userOptions.destroy?.()
           removeReactRenderer(nodeView)
@@ -45,6 +37,16 @@ export function buildReactNodeViewCreator<ComponentType>(
         options: patchedUserOptions,
       }
       const nodeView = new ReactNodeViewClass(spec)
+      const selectNode = nodeView.selectNode
+      nodeView.selectNode = () => {
+        selectNode()
+        renderReactRenderer(nodeView)
+      }
+      const deselectNode = nodeView.deselectNode
+      nodeView.deselectNode = () => {
+        deselectNode()
+        renderReactRenderer(nodeView)
+      }
       renderReactRenderer(nodeView, false)
       return nodeView
     }

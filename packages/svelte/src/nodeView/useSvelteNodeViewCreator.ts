@@ -24,14 +24,6 @@ export function buildSvelteNodeViewCreator<ComponentType>(
           userOptions.onUpdate?.()
           nodeView.updateContext()
         },
-        selectNode() {
-          userOptions.selectNode?.()
-          nodeView.updateContext()
-        },
-        deselectNode() {
-          userOptions.deselectNode?.()
-          nodeView.updateContext()
-        },
         destroy() {
           userOptions.destroy?.()
           removeSvelteRenderer(nodeView)
@@ -46,6 +38,16 @@ export function buildSvelteNodeViewCreator<ComponentType>(
         options: patchedUserOptions,
       }
       const nodeView = new SvelteNodeViewClass(spec)
+      const selectNode = nodeView.selectNode
+      nodeView.selectNode = () => {
+        selectNode()
+        nodeView.updateContext()
+      }
+      const deselectNode = nodeView.deselectNode
+      nodeView.deselectNode = () => {
+        deselectNode()
+        nodeView.updateContext()
+      }
       renderSvelteRenderer(nodeView, { context })
       return nodeView
     }

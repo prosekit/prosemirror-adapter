@@ -20,20 +20,22 @@ export function useLitNodeViewCreator(
           options.onUpdate?.()
           nodeView.updateContext()
         },
-        selectNode() {
-          options.selectNode?.()
-          nodeView.updateContext()
-        },
-        deselectNode() {
-          options.deselectNode?.()
-          nodeView.updateContext()
-        },
         destroy() {
           options.destroy?.()
           removeLitRenderer(nodeView)
         },
       },
     })
+    const selectNode = nodeView.selectNode
+    nodeView.selectNode = () => {
+      selectNode()
+      nodeView.updateContext()
+    }
+    const deselectNode = nodeView.deselectNode
+    nodeView.deselectNode = () => {
+      deselectNode()
+      nodeView.updateContext()
+    }
     renderLitRenderer(nodeView)
 
     return nodeView
