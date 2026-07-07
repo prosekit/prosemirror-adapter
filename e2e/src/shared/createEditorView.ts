@@ -6,7 +6,7 @@ import { exampleSetup } from 'prosemirror-example-setup'
 import { keymap } from 'prosemirror-keymap'
 import { schema } from 'prosemirror-schema-basic'
 import type { Plugin } from 'prosemirror-state'
-import { EditorState } from 'prosemirror-state'
+import { EditorState, NodeSelection, TextSelection } from 'prosemirror-state'
 import type { MarkViewConstructor, NodeViewConstructor } from 'prosemirror-view'
 import { EditorView } from 'prosemirror-view'
 
@@ -143,7 +143,7 @@ export function createEditorView(
   markViews: Record<string, MarkViewConstructor>,
   plugins: Plugin[],
 ) {
-  return new EditorView(element, {
+  const view = new EditorView(element, {
     state: EditorState.create({
       doc: schema.nodeFromJSON(defaultDoc),
       schema,
@@ -174,4 +174,43 @@ export function createEditorView(
     nodeViews,
     markViews,
   })
+
+  installTestHelpers(view)
+
+  return view
+}
+
+type TestWindow = Window & {
+  __selectNodeByType?: (typeName: string, index?: number) => void
+  __setTextSelection?: (pos?: number) => void
+}
+
+function installTestHelpers(view: EditorView) {
+  const testWindow = window as TestWindow
+
+  testWindow.__selectNodeByType = (typeName, index = 0) => {
+    let foundPos: number | undefined
+    let remaining = index
+
+    view.state.doc.descendants((node, pos) => {
+      if (foundPos != null) return false
+      if (node.type.name !== typeName) return true
+      if (remaining > 0) {
+        remaining -= 1
+        return true
+      }
+      foundPos = pos
+      return false
+    })
+
+    if (foundPos == null) {
+      throw new Error(`Cannot find node of type "${typeName}" at index ${index}`)
+    }
+
+    view.dispatch(view.state.tr.setSelection(NodeSelection.create(view.state.doc, foundPos)))
+  }
+
+  testWindow.__setTextSelection = (pos = 1) => {
+    view.dispatch(view.state.tr.setSelection(TextSelection.near(view.state.doc.resolve(pos), 1)))
+  }
 }

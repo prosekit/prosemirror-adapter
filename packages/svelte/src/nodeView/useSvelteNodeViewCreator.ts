@@ -24,12 +24,8 @@ export function buildSvelteNodeViewCreator<ComponentType>(
           userOptions.onUpdate?.()
           nodeView.updateContext()
         },
-        selectNode() {
-          userOptions.selectNode?.()
-          nodeView.updateContext()
-        },
-        deselectNode() {
-          userOptions.deselectNode?.()
+        onSelectionChange() {
+          userOptions.onSelectionChange?.()
           nodeView.updateContext()
         },
         destroy() {

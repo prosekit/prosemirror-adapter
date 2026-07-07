@@ -73,12 +73,33 @@ export class CoreNodeView<ComponentType> implements NodeView {
 
   selectNode = () => {
     this.selected = true
-    this.options.selectNode?.()
+    if (this.options.selectNode) this.options.selectNode()
+    else this.selectNodeDefault()
+    this.options.onSelectionChange?.()
   }
 
   deselectNode = () => {
     this.selected = false
-    this.options.deselectNode?.()
+    if (this.options.deselectNode) this.options.deselectNode()
+    else this.deselectNodeDefault()
+    this.options.onSelectionChange?.()
+  }
+
+  // Restore ProseMirror's default selected-node marking when users don't
+  // provide custom select handlers:
+  // https://code.haverbeke.berlin/prosemirror/prosemirror-view/src/tag/1.42.0/src/viewdesc.ts#L890
+  protected selectNodeDefault = () => {
+    this.dom.classList.add('ProseMirror-selectednode')
+    if (this.contentDOM || !this.node.type.spec.draggable) {
+      this.dom.draggable = true
+    }
+  }
+
+  protected deselectNodeDefault = () => {
+    this.dom.classList.remove('ProseMirror-selectednode')
+    if (this.contentDOM || !this.node.type.spec.draggable) {
+      this.dom.removeAttribute('draggable')
+    }
   }
 
   // Return true if the current node view instance can handle the update.

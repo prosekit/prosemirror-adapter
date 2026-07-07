@@ -22,6 +22,7 @@ export interface CoreNodeViewUserOptions<Component> {
 
   // Additional
   onUpdate?: () => void
+  onSelectionChange?: () => void
 }
 
 export interface CoreNodeViewSpec<Component> {
