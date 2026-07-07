@@ -20,12 +20,8 @@ export function useLitNodeViewCreator(
           options.onUpdate?.()
           nodeView.updateContext()
         },
-        selectNode() {
-          options.selectNode?.()
-          nodeView.updateContext()
-        },
-        deselectNode() {
-          options.deselectNode?.()
+        onSelectionChange() {
+          options.onSelectionChange?.()
           nodeView.updateContext()
         },
         destroy() {

@@ -73,12 +73,30 @@ export class CoreNodeView<ComponentType> implements NodeView {
 
   selectNode = () => {
     this.selected = true
-    this.options.selectNode?.()
+    if (this.options.selectNode) this.options.selectNode()
+    else this.selectNodeDefault()
+    this.options.onSelectionChange?.()
   }
 
   deselectNode = () => {
     this.selected = false
-    this.options.deselectNode?.()
+    if (this.options.deselectNode) this.options.deselectNode()
+    else this.deselectNodeDefault()
+    this.options.onSelectionChange?.()
+  }
+
+  protected selectNodeDefault = () => {
+    this.dom.classList.add('ProseMirror-selectednode')
+    if (this.contentDOM || !this.node.type.spec.draggable) {
+      this.dom.draggable = true
+    }
+  }
+
+  protected deselectNodeDefault = () => {
+    this.dom.classList.remove('ProseMirror-selectednode')
+    if (this.contentDOM || !this.node.type.spec.draggable) {
+      this.dom.removeAttribute('draggable')
+    }
   }
 
   // Return true if the current node view instance can handle the update.

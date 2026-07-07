@@ -23,12 +23,8 @@ export function buildReactNodeViewCreator<ComponentType>(
           userOptions.onUpdate?.()
           renderReactRenderer(nodeView)
         },
-        selectNode() {
-          userOptions.selectNode?.()
-          renderReactRenderer(nodeView)
-        },
-        deselectNode() {
-          userOptions.deselectNode?.()
+        onSelectionChange() {
+          userOptions.onSelectionChange?.()
           renderReactRenderer(nodeView)
         },
         destroy() {

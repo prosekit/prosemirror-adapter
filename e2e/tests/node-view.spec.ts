@@ -40,4 +40,23 @@ testAll(() => {
     await expect(h4).not.toBeVisible()
     await expect(h5).toBeVisible()
   })
+
+  test('node selection applies ProseMirror default selected node behavior', async ({ page }) => {
+    const headingNodeView = page.locator('.editor [data-node-view-root="true"]').first()
+    await expect(headingNodeView).toBeVisible()
+
+    await page.evaluate(() => {
+      ;(window as unknown as { __selectNodeByType: (typeName: string) => void }).__selectNodeByType('heading')
+    })
+
+    await expect(headingNodeView).toHaveClass(/ProseMirror-selectednode/)
+    await expect(headingNodeView).toHaveAttribute('draggable', 'true')
+
+    await page.evaluate(() => {
+      ;(window as unknown as { __setTextSelection: () => void }).__setTextSelection()
+    })
+
+    await expect(headingNodeView).not.toHaveClass(/ProseMirror-selectednode/)
+    await expect(headingNodeView).not.toHaveAttribute('draggable', 'true')
+  })
 })

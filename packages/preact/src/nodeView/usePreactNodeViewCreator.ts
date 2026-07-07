@@ -23,12 +23,8 @@ export function buildPreactNodeViewCreator<ComponentType>(
           userOptions.onUpdate?.()
           renderPreactRenderer(nodeView)
         },
-        selectNode() {
-          userOptions.selectNode?.()
-          renderPreactRenderer(nodeView)
-        },
-        deselectNode() {
-          userOptions.deselectNode?.()
+        onSelectionChange() {
+          userOptions.onSelectionChange?.()
           renderPreactRenderer(nodeView)
         },
         destroy() {

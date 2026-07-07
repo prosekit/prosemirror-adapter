@@ -415,6 +415,8 @@ interface NodeViewFactoryOptions {
 
   // Called when the node view is updated.
   onUpdate?: () => void
+  // Called after the node view is selected or deselected.
+  onSelectionChange?: () => void
 }
 ```
 
