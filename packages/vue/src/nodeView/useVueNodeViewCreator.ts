@@ -22,14 +22,6 @@ export function buildVueNodeViewCreator<ComponentType>(
           userOptions.onUpdate?.()
           nodeView.updateContext()
         },
-        selectNode() {
-          userOptions.selectNode?.()
-          nodeView.updateContext()
-        },
-        deselectNode() {
-          userOptions.deselectNode?.()
-          nodeView.updateContext()
-        },
         destroy() {
           userOptions.destroy?.()
           removeVueRenderer(nodeView)
@@ -44,6 +36,16 @@ export function buildVueNodeViewCreator<ComponentType>(
         options: patchedUserOptions,
       }
       const nodeView = new VueNodeViewClass(spec)
+      const selectNode = nodeView.selectNode
+      nodeView.selectNode = () => {
+        selectNode()
+        nodeView.updateContext()
+      }
+      const deselectNode = nodeView.deselectNode
+      nodeView.deselectNode = () => {
+        deselectNode()
+        nodeView.updateContext()
+      }
       renderVueRenderer(nodeView)
       return nodeView
     }

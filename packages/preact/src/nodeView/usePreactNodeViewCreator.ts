@@ -23,14 +23,6 @@ export function buildPreactNodeViewCreator<ComponentType>(
           userOptions.onUpdate?.()
           renderPreactRenderer(nodeView)
         },
-        selectNode() {
-          userOptions.selectNode?.()
-          renderPreactRenderer(nodeView)
-        },
-        deselectNode() {
-          userOptions.deselectNode?.()
-          renderPreactRenderer(nodeView)
-        },
         destroy() {
           userOptions.destroy?.()
           removePreactRenderer(nodeView)
@@ -45,6 +37,16 @@ export function buildPreactNodeViewCreator<ComponentType>(
         options: patchedUserOptions,
       }
       const nodeView = new PreactNodeViewClass(spec)
+      const selectNode = nodeView.selectNode
+      nodeView.selectNode = () => {
+        selectNode()
+        renderPreactRenderer(nodeView)
+      }
+      const deselectNode = nodeView.deselectNode
+      nodeView.deselectNode = () => {
+        deselectNode()
+        renderPreactRenderer(nodeView)
+      }
       renderPreactRenderer(nodeView, false)
       return nodeView
     }

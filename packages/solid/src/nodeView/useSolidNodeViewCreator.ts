@@ -22,14 +22,6 @@ export function buildSolidNodeViewCreator<ComponentType>(
           userOptions.onUpdate?.()
           nodeView.updateContext()
         },
-        selectNode() {
-          userOptions.selectNode?.()
-          nodeView.updateContext()
-        },
-        deselectNode() {
-          userOptions.deselectNode?.()
-          nodeView.updateContext()
-        },
         destroy() {
           userOptions.destroy?.()
           removeSolidRenderer(nodeView)
@@ -44,6 +36,16 @@ export function buildSolidNodeViewCreator<ComponentType>(
         options: patchedUserOptions,
       }
       const nodeView = new SolidNodeViewClass(spec)
+      const selectNode = nodeView.selectNode
+      nodeView.selectNode = () => {
+        selectNode()
+        nodeView.updateContext()
+      }
+      const deselectNode = nodeView.deselectNode
+      nodeView.deselectNode = () => {
+        deselectNode()
+        nodeView.updateContext()
+      }
       renderSolidRenderer(nodeView, false)
       return nodeView
     }
