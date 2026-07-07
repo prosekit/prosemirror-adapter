@@ -85,6 +85,9 @@ export class CoreNodeView<ComponentType> implements NodeView {
     this.options.onSelectionChange?.()
   }
 
+  // Restore ProseMirror's default selected-node marking when users don't
+  // provide custom select handlers:
+  // https://code.haverbeke.berlin/prosemirror/prosemirror-view/src/tag/1.42.0/src/viewdesc.ts#L890
   protected selectNodeDefault = () => {
     this.dom.classList.add('ProseMirror-selectednode')
     if (this.contentDOM || !this.node.type.spec.draggable) {
