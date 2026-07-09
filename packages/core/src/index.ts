@@ -1,5 +1,11 @@
 export { CoreMarkView, type CoreMarkViewSpec, type CoreMarkViewUserOptions, type MarkViewDOMSpec } from './markView'
-export { CoreNodeView, type CoreNodeViewSpec, type CoreNodeViewUserOptions, type NodeViewDOMSpec } from './nodeView'
+export {
+  CoreNodeView,
+  type CoreNodeViewSpec,
+  type CoreNodeViewUserOptions,
+  type NodeViewContentMountSource,
+  type NodeViewDOMSpec,
+} from './nodeView'
 export {
   CorePluginView,
   type CorePluginViewSpec,

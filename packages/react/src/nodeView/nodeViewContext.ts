@@ -1,3 +1,4 @@
+import type { NodeViewContentMountSource } from '@prosemirror-adapter/core'
 import type { Attrs, Node } from 'prosemirror-model'
 import type { Decoration, DecorationSource, EditorView, NodeViewConstructor } from 'prosemirror-view'
 import { createContext, useContext } from 'react'
@@ -12,6 +13,9 @@ export interface NodeViewContext {
   view: EditorView
   getPos: () => number | undefined
   setAttrs: (attrs: Attrs) => void
+  rootDOM: HTMLElement
+  contentDOM: HTMLElement | null
+  mountContentDOM: (element: HTMLElement | null, source?: NodeViewContentMountSource) => void
 
   // changes between updates
   node: Node
@@ -27,6 +31,11 @@ export const nodeViewContext = createContext<NodeViewContext>({
   view: null as never,
   getPos: () => 0,
   setAttrs: () => {
+    // nothing to do
+  },
+  rootDOM: null as never,
+  contentDOM: null,
+  mountContentDOM: () => {
     // nothing to do
   },
 

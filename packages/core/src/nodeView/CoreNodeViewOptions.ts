@@ -3,6 +3,8 @@ import type { Decoration, DecorationSource, EditorView, ViewMutationRecord } fro
 
 export type NodeViewDOMSpec = string | HTMLElement | ((node: Node) => HTMLElement)
 
+export type NodeViewContentMountSource = 'contentRef' | 'component'
+
 export interface CoreNodeViewUserOptions<Component> {
   // DOM
   as?: NodeViewDOMSpec

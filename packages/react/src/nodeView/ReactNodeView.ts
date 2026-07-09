@@ -21,6 +21,9 @@ export abstract class AbstractReactNodeView<ComponentType>
     view: this.view,
     getPos: this.getPos,
     setAttrs: this.setAttrs,
+    rootDOM: this.dom,
+    contentDOM: this.contentDOM,
+    mountContentDOM: this.mountContentDOM,
 
     node: this.node,
     selected: this.selected,
