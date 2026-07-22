@@ -9,6 +9,7 @@
   import { DecorationSet, EditorView } from 'prosemirror-view'
   import { onDestroy } from 'svelte'
   import { createEditorView } from '../../shared/createEditorView'
+  import CodeBlock from './CodeBlock.svelte'
   import Hashes from './Hashes.svelte'
   import Paragraph from './Paragraph.svelte'
   import Heading from './Heading.svelte'
@@ -39,6 +40,10 @@
         }),
         heading: nodeViewFactory({
           component: Heading,
+        }),
+        code_block: nodeViewFactory({
+          component: CodeBlock,
+          contentAs: 'code',
         }),
       },
       {

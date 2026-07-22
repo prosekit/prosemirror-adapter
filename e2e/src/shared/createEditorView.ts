@@ -5,10 +5,9 @@ import 'prosemirror-menu/style/menu.css'
 import { exampleSetup } from 'prosemirror-example-setup'
 import { keymap } from 'prosemirror-keymap'
 import { schema } from 'prosemirror-schema-basic'
-import type { Plugin } from 'prosemirror-state'
-import { EditorState } from 'prosemirror-state'
+import { EditorState, Plugin } from 'prosemirror-state'
 import type { MarkViewConstructor, NodeViewConstructor } from 'prosemirror-view'
-import { EditorView } from 'prosemirror-view'
+import { Decoration, DecorationSet, EditorView } from 'prosemirror-view'
 
 const defaultDoc = {
   type: 'doc',
@@ -134,7 +133,38 @@ const defaultDoc = {
         },
       ],
     },
+    {
+      type: 'code_block',
+      content: [
+        {
+          type: 'text',
+          text: 'const greeting = "hello"',
+        },
+      ],
+    },
   ],
+}
+
+// Mimics an inline syntax highlighter: wraps every word inside a code block
+// in a styled span, like prosemirror-highlight and similar plugins do.
+function createCodeHighlightPlugin(): Plugin {
+  return new Plugin({
+    props: {
+      decorations(state) {
+        const decorations: Decoration[] = []
+        state.doc.descendants((node, pos) => {
+          if (node.type.name !== 'code_block') return true
+          const pattern = /\S+/g
+          for (const match of node.textContent.matchAll(pattern)) {
+            const from = pos + 1 + match.index
+            decorations.push(Decoration.inline(from, from + match[0].length, { style: 'color: rgb(207, 34, 46)' }))
+          }
+          return false
+        })
+        return DecorationSet.create(state.doc, decorations)
+      },
+    },
+  })
 }
 
 export function createEditorView(
@@ -168,6 +198,7 @@ export function createEditorView(
             return true
           },
         }),
+        createCodeHighlightPlugin(),
         ...plugins,
       ],
     }),

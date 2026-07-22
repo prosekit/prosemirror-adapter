@@ -9,6 +9,7 @@ import { ref, watchEffect } from 'vue'
 import { Plugin } from 'prosemirror-state'
 import { DecorationSet } from 'prosemirror-view'
 import { createEditorView } from '../../shared/createEditorView'
+import CodeBlock from './CodeBlock.vue'
 import Paragraph from './Paragraph.vue'
 import Heading from './Heading.vue'
 import Size from './Size.vue'
@@ -44,6 +45,10 @@ watchEffect((onCleanup) => {
       }),
       heading: nodeViewFactory({
         component: Heading,
+      }),
+      code_block: nodeViewFactory({
+        component: CodeBlock,
+        contentAs: 'code',
       }),
     },
     {

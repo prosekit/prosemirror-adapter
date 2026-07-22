@@ -1,6 +1,6 @@
 import type { EditorView } from 'prosemirror-view'
 
-import { createKey } from '../create-key'
+import { createKey } from '../utils/create-key'
 
 import type { CoreWidgetViewSpec, CoreWidgetViewUserOptions, WidgetDecorationSpec } from './CoreWidgetViewOptions'
 

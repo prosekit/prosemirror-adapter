@@ -2,7 +2,8 @@ import { isElementLike } from '@ocavue/utils'
 import type { Mark } from 'prosemirror-model'
 import type { EditorView, MarkView, ViewMutationRecord } from 'prosemirror-view'
 
-import { createKey } from '../create-key'
+import { createKey } from '../utils/create-key'
+import { isContentDOMRemoval } from '../utils/is-content-dom-removal'
 
 import type { CoreMarkViewSpec, CoreMarkViewUserOptions, MarkViewDOMSpec } from './CoreMarkViewOptions'
 
@@ -67,6 +68,8 @@ export class CoreMarkView<ComponentType> implements MarkView {
     if (this.contentDOM === mutation.target && mutation.type === 'attributes') return true
 
     if (this.contentDOM.contains(mutation.target)) return false
+
+    if (isContentDOMRemoval(mutation, this.contentDOM)) return false
 
     return true
   }
