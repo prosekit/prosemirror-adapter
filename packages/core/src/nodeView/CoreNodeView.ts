@@ -3,7 +3,7 @@ import type { Attrs, Node } from 'prosemirror-model'
 import type { Decoration, DecorationSource, EditorView, NodeView, ViewMutationRecord } from 'prosemirror-view'
 
 import { createKey } from '../create-key'
-import { isContentDOMRemoval } from '../is-content-dom-removal'
+import { isContentDOMRemoval } from '../utils/is-content-dom-removal'
 
 import type { CoreNodeViewSpec, CoreNodeViewUserOptions, NodeViewDOMSpec } from './CoreNodeViewOptions'
 
