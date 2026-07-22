@@ -15,6 +15,7 @@ import { DecorationSet } from 'prosemirror-view'
 
 import { createEditorView } from '../../shared/createEditorView'
 
+import { CodeBlock } from './CodeBlock'
 import { Hashes } from './Hashes'
 import { Heading } from './Heading'
 import { Link } from './Link'
@@ -53,6 +54,10 @@ export class MyEditor extends ShallowLitElement {
         }),
         heading: nodeViewFactory({
           component: Heading,
+        }),
+        code_block: nodeViewFactory({
+          component: CodeBlock,
+          contentAs: 'code',
         }),
       },
       {

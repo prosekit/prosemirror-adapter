@@ -76,4 +76,4 @@ testAll(() => {
     await page.keyboard.type('hello')
     await expect(content).toContainText('hello')
   })
-}, ['react'])
+})
