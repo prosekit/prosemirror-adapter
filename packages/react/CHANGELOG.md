@@ -1,5 +1,12 @@
 # @prosemirror-adapter/react
 
+## 0.5.4
+
+### Patch Changes
+
+- Updated dependencies [41e26f2]
+  - @prosemirror-adapter/core@0.5.4
+
 ## 0.5.3
 
 ### Patch Changes
