@@ -24,12 +24,12 @@
   },
   "dependencies": {
     "@ocavue/utils": "^1.7.0",
-    "prosemirror-model": "^1.25.9",
+    "prosemirror-model": "^1.25.11",
     "prosemirror-state": "^1.4.4",
-    "prosemirror-view": "^1.42.0"
+    "prosemirror-view": "^1.42.1"
   },
   "devDependencies": {
-    "tsdown": "^0.22.3"
+    "tsdown": "^0.22.13"
   },
   "publishConfig": {
     "types": "./dist/index.d.ts",
