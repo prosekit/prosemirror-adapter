@@ -19,7 +19,7 @@
     "prosemirror-model": "^1.25.11",
     "prosemirror-schema-basic": "^1.2.4",
     "prosemirror-state": "^1.4.4",
-    "prosemirror-view": "^1.42.1",
+    "prosemirror-view": "^1.42.2",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "typescript": "~6.0.3",
