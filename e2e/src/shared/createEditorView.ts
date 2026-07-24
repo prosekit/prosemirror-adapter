@@ -145,8 +145,15 @@ const defaultDoc = {
   ],
 }
 
-// Mimics an inline syntax highlighter: wraps every word inside a code block
-// in a styled span, like prosemirror-highlight and similar plugins do.
+function getCodeTokenStyle(token: string): string {
+  if (/^(?:const|let|var|function|return)$/.test(token)) return 'color: rgb(207, 34, 46)'
+  if (token.startsWith('"')) return 'color: rgb(17, 99, 41)'
+  if (/^[=!<>+*/-]+$/.test(token)) return 'color: rgb(149, 56, 0)'
+  return 'color: rgb(5, 80, 174)'
+}
+
+// Mimics a syntax highlighter: wraps code tokens in differently styled spans,
+// like prosemirror-highlight and similar plugins do.
 function createCodeHighlightPlugin(): Plugin {
   return new Plugin({
     props: {
@@ -157,7 +164,11 @@ function createCodeHighlightPlugin(): Plugin {
           const pattern = /\S+/g
           for (const match of node.textContent.matchAll(pattern)) {
             const from = pos + 1 + match.index
-            decorations.push(Decoration.inline(from, from + match[0].length, { style: 'color: rgb(207, 34, 46)' }))
+            decorations.push(
+              Decoration.inline(from, from + match[0].length, {
+                style: getCodeTokenStyle(match[0]),
+              }),
+            )
           }
           return false
         })
