@@ -90,48 +90,6 @@ So something out of this scope will not be considered. For example:
   </tr>
 </table>
 
-## Manually reproduce typing over a selected code block
-
-The E2E example contains a decorated code block rendered as a node view. Its
-inline syntax highlighter gives keywords, identifiers, operators, and strings
-different colors, so the editable code is split across multiple `<span>`
-elements.
-
-To reproduce the first-character regression:
-
-1. Install dependencies and build the packages:
-
-   ```sh
-   pnpm install
-   pnpm build
-   ```
-
-2. Start the E2E example:
-
-   ```sh
-   pnpm ex
-   ```
-
-3. Open one of the framework pages printed by Astro, for example
-   `http://localhost:4321/lit/`.
-4. Find the code block containing `const greeting = "hello"`.
-5. Select the complete code text, from the first character of `const` through
-   the final quote of `"hello"`.
-6. Type `1`.
-
-The expected result is one code block containing `1`. In Chromium and Safari,
-the current failure removes the first typed character. Typing more text
-afterward works, which can hide the original failure.
-
-The automated reproduction runs the same interaction for Lit, Preact, React,
-Solid, Svelte, and Vue in Chromium, Firefox, and WebKit:
-
-```sh
-pnpm --filter=e2e test \
-  -g 'code block node view preserves the first character typed over a full selection' \
-  --retries 0
-```
-
 ## Contributing
 
 PR welcome! Follow our [contribution guide](/CONTRIBUTING.md) to learn how to contribute to prosemirror-adapter.

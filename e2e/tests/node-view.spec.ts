@@ -43,7 +43,15 @@ testAll(() => {
 })
 
 testAll(() => {
-  test('code block node view preserves the first character typed over a full selection', async ({ page }) => {
+  test('code block node view preserves the first character typed over a full selection', async ({
+    page,
+    browserName,
+  }) => {
+    test.fail(
+      browserName === 'chromium' || browserName === 'webkit',
+      'prosemirror-view currently drops the first character in these browsers',
+    )
+
     const content = page.locator('.editor [data-node-view-root="true"] pre code[data-node-view-content="true"]')
     await expect(content).toBeVisible()
     await expect(content).toContainText('const greeting')

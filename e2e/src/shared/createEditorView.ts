@@ -146,10 +146,10 @@ const defaultDoc = {
 }
 
 function getCodeTokenStyle(token: string): string {
-  if (/^(?:const|let|var|function|return)$/.test(token)) return 'color: rgb(207, 34, 46)'
-  if (token.startsWith('"')) return 'color: rgb(17, 99, 41)'
-  if (/^[=!<>+*/-]+$/.test(token)) return 'color: rgb(149, 56, 0)'
-  return 'color: rgb(5, 80, 174)'
+  if (/^(?:const|let|var|function|return)$/.test(token)) return 'color: crimson'
+  if (token.startsWith('"')) return 'color: forestgreen'
+  if (/^[=!<>+*/-]+$/.test(token)) return 'color: darkorange'
+  return 'color: royalblue'
 }
 
 // Mimics a syntax highlighter: wraps code tokens in differently styled spans,
