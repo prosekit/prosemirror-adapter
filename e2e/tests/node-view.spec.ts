@@ -43,10 +43,27 @@ testAll(() => {
 })
 
 testAll(() => {
-  test('code block node view survives typing over a fully selected code block', async ({ page }) => {
+  test('code block node view preserves the first character typed over a full selection', async ({
+    page,
+    browserName,
+  }) => {
+    test.fail(
+      browserName === 'chromium' || browserName === 'webkit',
+      'prosemirror-view currently drops the first character in these browsers',
+    )
+
     const content = page.locator('.editor [data-node-view-root="true"] pre code[data-node-view-content="true"]')
     await expect(content).toBeVisible()
     await expect(content).toContainText('const greeting')
+    await expect(content.locator('span')).toHaveCount(4)
+    await expect
+      .poll(async () => {
+        const colors = await content
+          .locator('span')
+          .evaluateAll((spans) => spans.map((span) => (span as HTMLElement).style.color))
+        return new Set(colors).size
+      })
+      .toBe(4)
 
     await content.click()
     // Select all of the code block text, crossing the highlight spans, like a
@@ -65,15 +82,16 @@ testAll(() => {
       selection.removeAllRanges()
       selection.addRange(range)
     })
-    await page.keyboard.type('X')
+    await page.keyboard.type('1')
 
     // Chrome and Safari delete the whole contentDOM element when typing over
     // a selection that covers all of its content. ProseMirror must not ignore
     // that mutation: the contentDOM has to come back under its control and
     // typing has to keep updating the document.
-    await expect(content).toBeAttached()
+    await expect(content).toHaveCount(1)
+    await expect(content).toHaveText('1')
 
     await page.keyboard.type('hello')
-    await expect(content).toContainText('hello')
+    await expect(content).toHaveText('1hello')
   })
 })
