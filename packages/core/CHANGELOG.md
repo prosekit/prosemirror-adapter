@@ -1,5 +1,11 @@
 # @prosemirror-adapter/core
 
+## 0.5.5
+
+### Patch Changes
+
+- c5d8334: Report replacement mutations after the browser removes a node view's `contentDOM`, allowing ProseMirror to preserve the first character typed over a full selection.
+
 ## 0.5.4
 
 ### Patch Changes

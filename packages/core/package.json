@@ -1,7 +1,7 @@
 {
   "name": "@prosemirror-adapter/core",
   "type": "module",
-  "version": "0.5.4",
+  "version": "0.5.5",
   "description": "Core package for ProseMirror Adapter",
   "license": "MIT",
   "repository": {
