@@ -42,14 +42,15 @@ testAll(() => {
   })
 })
 
-testAll(() => {
+testAll(({ framework }) => {
   test('code block node view preserves the first character typed over a full selection', async ({
     page,
     browserName,
   }) => {
     test.fail(
-      browserName === 'chromium' || browserName === 'webkit',
-      'prosemirror-view currently drops the first character in these browsers',
+      // https://code.haverbeke.berlin/prosemirror/prosemirror/issues/1581
+      framework === 'lit' && (browserName === 'chromium' || browserName === 'webkit'),
+      'prosemirror-view cannot recover Lit node view content in these browsers',
     )
 
     const content = page.locator('.editor [data-node-view-root="true"] pre code[data-node-view-content="true"]')
