@@ -15,6 +15,7 @@
     "ex": "pnpm --filter=e2e start",
     "test": "pnpm run build && pnpm --filter=e2e test",
     "test:install": "pnpm --filter=e2e test:install",
+    "test:debug-temp": "pnpm --filter=e2e test -g 'code block node view survives typing over a fully selected code block' --retries 0",
     "changeset": "changeset",
     "lint": "pnpm run lint:eslint && pnpm run lint:prettier && pnpm run lint:knip",
     "lint:eslint": "eslint --max-warnings 0",

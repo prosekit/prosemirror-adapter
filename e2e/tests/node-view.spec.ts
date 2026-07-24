@@ -65,13 +65,14 @@ testAll(() => {
       selection.removeAllRanges()
       selection.addRange(range)
     })
-    await page.keyboard.type('X')
+    await page.keyboard.type('1')
 
     // Chrome and Safari delete the whole contentDOM element when typing over
     // a selection that covers all of its content. ProseMirror must not ignore
     // that mutation: the contentDOM has to come back under its control and
     // typing has to keep updating the document.
     await expect(content).toBeAttached()
+    await expect(content).toContainText('1')
 
     await page.keyboard.type('hello')
     await expect(content).toContainText('hello')
