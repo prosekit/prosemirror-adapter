@@ -16,5 +16,5 @@ dedupePeers: true
 ignoreWorkspaceRootCheck: true
 
 minimumReleaseAgeExclude:
-  - '@ocavue/eslint-config@4.11.0'
-  - eslint-plugin-unicorn@71.0.0
+  - '@ocavue/eslint-config'
+  - prosemirror-view@1.42.2

@@ -26,7 +26,7 @@
     "@ocavue/utils": "^1.7.0",
     "prosemirror-model": "^1.25.11",
     "prosemirror-state": "^1.4.4",
-    "prosemirror-view": "^1.42.1"
+    "prosemirror-view": "^1.42.2"
   },
   "devDependencies": {
     "tsdown": "^0.22.13"

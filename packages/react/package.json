@@ -27,7 +27,7 @@
     "@prosemirror-adapter/core": "workspace:*",
     "prosemirror-model": "^1.25.11",
     "prosemirror-state": "^1.4.4",
-    "prosemirror-view": "^1.42.1"
+    "prosemirror-view": "^1.42.2"
   },
   "peerDependencies": {
     "react": "*",

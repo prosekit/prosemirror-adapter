@@ -18,7 +18,7 @@
     "prosemirror-model": "^1.25.11",
     "prosemirror-schema-basic": "^1.2.4",
     "prosemirror-state": "^1.4.4",
-    "prosemirror-view": "^1.42.1",
+    "prosemirror-view": "^1.42.2",
     "solid-js": "^1.9.14"
   },
   "devDependencies": {
