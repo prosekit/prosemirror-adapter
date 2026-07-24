@@ -8,6 +8,8 @@ import { isContentDOMRemoval } from '../utils/is-content-dom-removal'
 import type { CoreNodeViewSpec, CoreNodeViewUserOptions, NodeViewDOMSpec } from './CoreNodeViewOptions'
 
 export class CoreNodeView<ComponentType> implements NodeView {
+  #contentDOMWasRemoved = false
+
   key: string
   dom: HTMLElement
   contentDOM: HTMLElement | null
@@ -107,6 +109,8 @@ export class CoreNodeView<ComponentType> implements NodeView {
   shouldIgnoreMutation: (mutation: ViewMutationRecord) => boolean = (mutation) => {
     if (!this.dom || !this.contentDOM) return true
 
+    if (this.dom.contains(this.contentDOM)) this.#contentDOMWasRemoved = false
+
     if (this.node.isLeaf || this.node.isAtom) return true
 
     if (mutation.type === 'selection') return false
@@ -115,7 +119,12 @@ export class CoreNodeView<ComponentType> implements NodeView {
 
     if (this.contentDOM.contains(mutation.target)) return false
 
-    if (isContentDOMRemoval(mutation, this.contentDOM)) return false
+    if (isContentDOMRemoval(mutation, this.contentDOM)) {
+      this.#contentDOMWasRemoved = true
+      return false
+    }
+
+    if (this.#contentDOMWasRemoved && this.dom.contains(mutation.target)) return false
 
     return true
   }
