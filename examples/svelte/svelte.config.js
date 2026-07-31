@@ -15,6 +15,12 @@ const config = {
     // See https://svelte.dev/docs/kit/adapters for more information about adapters.
     adapter: adapter(),
   },
+
+  compilerOptions: {
+    experimental: {
+      async: true,
+    },
+  },
 }
 
 export default config
