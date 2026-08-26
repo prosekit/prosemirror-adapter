@@ -44,6 +44,7 @@
         code_block: nodeViewFactory({
           component: CodeBlock,
           contentAs: 'code',
+          isolateContent: true,
         }),
       },
       {
