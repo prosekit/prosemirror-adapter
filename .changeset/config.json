@@ -2,14 +2,8 @@
   "$schema": "https://unpkg.com/@changesets/config@4.0.0/schema.json",
   "changelog": "@changesets/cli/changelog",
   "commit": false,
-  "linked": [
-    [
-      "@prosemirror-adapter/*"
-    ]
-  ],
-  "ignore": [
-    "e2e"
-  ],
+  "linked": [["@prosemirror-adapter/*"]],
+  "ignore": ["e2e"],
   "access": "public",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
