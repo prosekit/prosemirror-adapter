@@ -1,5 +1,11 @@
 # @prosemirror-adapter/preact
 
+## 0.5.6
+
+### Patch Changes
+
+- d4fbefc: Add Preact v11 to the supported `preact` peer dependency range.
+
 ## 0.5.5
 
 ### Patch Changes
