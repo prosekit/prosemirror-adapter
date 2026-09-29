@@ -58,6 +58,7 @@ export class MyEditor extends ShallowLitElement {
         code_block: nodeViewFactory({
           component: CodeBlock,
           contentAs: 'code',
+          isolateContent: true,
         }),
       },
       {

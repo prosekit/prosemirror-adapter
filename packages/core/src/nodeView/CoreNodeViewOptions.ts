@@ -7,6 +7,12 @@ export interface CoreNodeViewUserOptions<Component> {
   // DOM
   as?: NodeViewDOMSpec
   contentAs?: NodeViewDOMSpec
+  /**
+   * Make the node view's `dom` non-editable and its `contentDOM` editable, so
+   * native browser editing cannot escape the `contentDOM` into the elements
+   * the component renders around it. Only applies when the node has content.
+   */
+  isolateContent?: boolean
 
   // Component
   component: Component
