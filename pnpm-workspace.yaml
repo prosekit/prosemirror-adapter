@@ -14,7 +14,3 @@ linkWorkspacePackages: deep
 dedupePeers: true
 
 ignoreWorkspaceRootCheck: true
-
-minimumReleaseAgeExclude:
-  - '@ocavue/eslint-config'
-  - prosemirror-view@1.42.2
