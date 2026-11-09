@@ -23,13 +23,13 @@
     "build": "tsdown --platform browser"
   },
   "dependencies": {
-    "@ocavue/utils": "^1.7.0",
-    "prosemirror-model": "^1.25.11",
+    "@ocavue/utils": "^1.10.0",
+    "prosemirror-model": "^1.25.12",
     "prosemirror-state": "^1.4.4",
-    "prosemirror-view": "^1.42.3"
+    "prosemirror-view": "^1.42.9"
   },
   "devDependencies": {
-    "tsdown": "^0.23.0"
+    "tsdown": "^0.23.4"
   },
   "publishConfig": {
     "types": "./dist/index.d.ts",

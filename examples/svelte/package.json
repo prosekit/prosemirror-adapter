@@ -13,17 +13,17 @@
     "prosemirror-example-setup": "^1.2.3",
     "prosemirror-keymap": "^1.2.3",
     "prosemirror-menu": "^1.3.2",
-    "prosemirror-model": "^1.25.11",
-    "prosemirror-schema-basic": "^1.2.4",
+    "prosemirror-model": "^1.25.12",
+    "prosemirror-schema-basic": "^1.2.5",
     "prosemirror-state": "^1.4.4",
-    "prosemirror-view": "^1.42.3"
+    "prosemirror-view": "^1.42.9"
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "^7.0.1",
     "@sveltejs/kit": "^2.70.3",
-    "@sveltejs/vite-plugin-svelte": "^7.3.0",
-    "svelte": "^5.57.0",
+    "@sveltejs/vite-plugin-svelte": "^7.3.1",
+    "svelte": "^5.57.3",
     "typescript": "~6.0.3",
-    "vite": "^8.2.2"
+    "vite": "^8.3.5"
   }
 }
