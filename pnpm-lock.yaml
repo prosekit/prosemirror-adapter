@@ -56,7 +56,7 @@ importers:
     devDependencies:
       '@astrojs/preact':
         specifier: ^6.1.1
-        version: 6.1.2(@babel/core@7.29.7)(@types/node@24.13.2)(esbuild@0.28.1)(jiti@2.7.0)(preact@10.29.8)(yaml@2.9.1)
+        version: 6.1.2(@babel/core@7.29.7)(@types/node@24.13.2)(esbuild@0.28.1)(jiti@2.7.0)(preact@11.2.0)(yaml@2.9.1)
       '@astrojs/react':
         specifier: ^6.0.6
         version: 6.0.6(@types/node@24.13.2)(@types/react-dom@19.3.0)(@types/react@19.3.0)(esbuild@0.28.1)(jiti@2.7.0)(react-dom@19.3.1)(react@19.3.1)(yaml@2.9.1)
@@ -112,8 +112,8 @@ importers:
         specifier: ^3.3.3
         version: 3.3.3
       preact:
-        specifier: ^10.29.8
-        version: 10.29.8(preact-render-to-string@6.8.2)
+        specifier: ^11.1.1
+        version: 11.2.0(preact-render-to-string@6.8.2)
       prosemirror-example-setup:
         specifier: ^1.2.3
         version: 1.2.3
@@ -195,13 +195,13 @@ importers:
     dependencies:
       '@preact/preset-vite':
         specifier: ^2.10.6
-        version: 2.10.6(@babel/core@7.29.7)(preact@10.29.8)(rollup@4.62.2)(vite@8.3.6)
+        version: 2.10.6(@babel/core@7.29.7)(preact@11.2.0)(rollup@4.62.2)(vite@8.3.6)
       '@prosemirror-adapter/preact':
         specifier: '*'
         version: link:../../packages/preact
       preact:
-        specifier: ^10.29.8
-        version: 10.29.8(preact-render-to-string@6.8.2)
+        specifier: ^11.1.1
+        version: 11.2.0(preact-render-to-string@6.8.2)
       prosemirror-example-setup:
         specifier: ^1.2.3
         version: 1.2.3
@@ -466,8 +466,8 @@ importers:
         version: 1.42.9
     devDependencies:
       preact:
-        specifier: ^10.29.8
-        version: 10.29.8(preact-render-to-string@6.8.2)
+        specifier: ^11.1.1
+        version: 11.2.0(preact-render-to-string@6.8.2)
       tsdown:
         specifier: ^0.23.4
         version: 0.23.7(oxc-resolver@11.24.2)(typescript@6.0.3)
@@ -4050,10 +4050,10 @@ packages:
     peerDependencies:
       preact: '>=10 || >= 11.0.0-0'
 
-  preact@10.29.8:
-    resolution: {integrity: sha512-ej2aVZ+vZ8WO7tvlQWRM9N63A0KzF9q4mWJfDUHgYaIofWY9hu74QdnQrjoPMmZi2/nZ5gN0bJCQF49xQqx09Q==}
+  preact@11.2.0:
+    resolution: {integrity: sha512-/HfHI/7N84e6GrWBJ3J280z3mLaRJiDcSvj/A+y/4AbLnND/1UlGHe1sR6oYuTGwId0nP7dqDU9OnLxMPZ7xBg==}
     peerDependencies:
-      preact-render-to-string: '>=5'
+      preact-render-to-string: '>=6.7.0'
     peerDependenciesMeta:
       preact-render-to-string:
         optional: true
@@ -4961,14 +4961,14 @@ snapshots:
       github-slugger: 2.0.0
       satteri: 0.11.7
 
-  '@astrojs/preact@6.1.2(@babel/core@7.29.7)(@types/node@24.13.2)(esbuild@0.28.1)(jiti@2.7.0)(preact@10.29.8)(yaml@2.9.1)':
+  '@astrojs/preact@6.1.2(@babel/core@7.29.7)(@types/node@24.13.2)(esbuild@0.28.1)(jiti@2.7.0)(preact@11.2.0)(yaml@2.9.1)':
     dependencies:
       '@astrojs/internal-helpers': 0.13.1
-      '@preact/preset-vite': 2.10.6(@babel/core@7.29.7)(preact@10.29.8)(rollup@4.62.2)(vite@8.3.6)
-      '@preact/signals': 2.11.4(preact@10.29.8)
+      '@preact/preset-vite': 2.10.6(@babel/core@7.29.7)(preact@11.2.0)(rollup@4.62.2)(vite@8.3.6)
+      '@preact/signals': 2.11.4(preact@11.2.0)
       devalue: 6.0.3
-      preact: 10.29.8(preact-render-to-string@6.8.2)
-      preact-render-to-string: 6.8.2(preact@10.29.8)
+      preact: 11.2.0(preact-render-to-string@6.8.2)
+      preact-render-to-string: 6.8.2(preact@11.2.0)
       vite: 8.3.6(@types/node@24.13.2)(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.1)
     transitivePeerDependencies:
       - '@babel/core'
@@ -6187,12 +6187,12 @@ snapshots:
 
   '@polka/url@1.0.0-next.29': {}
 
-  '@preact/preset-vite@2.10.6(@babel/core@7.29.7)(preact@10.29.8)(rollup@4.62.2)(vite@8.3.6)':
+  '@preact/preset-vite@2.10.6(@babel/core@7.29.7)(preact@11.2.0)(rollup@4.62.2)(vite@8.3.6)':
     dependencies:
       '@babel/core': 7.29.7
       '@babel/plugin-transform-react-jsx': 7.29.7(@babel/core@7.29.7)
       '@babel/plugin-transform-react-jsx-development': 7.29.7(@babel/core@7.29.7)
-      '@prefresh/vite': 2.4.12(preact@10.29.8)(vite@8.3.6)
+      '@prefresh/vite': 2.4.12(preact@11.2.0)(vite@8.3.6)
       '@rollup/pluginutils': 5.4.0(rollup@4.62.2)
       babel-plugin-transform-hook-names: 1.0.2(@babel/core@7.29.7)
       debug: 4.4.3
@@ -6208,27 +6208,27 @@ snapshots:
 
   '@preact/signals-core@1.14.5': {}
 
-  '@preact/signals@2.11.4(preact@10.29.8)':
+  '@preact/signals@2.11.4(preact@11.2.0)':
     dependencies:
       '@preact/signals-core': 1.14.5
-      preact: 10.29.8(preact-render-to-string@6.8.2)
+      preact: 11.2.0(preact-render-to-string@6.8.2)
 
   '@prefresh/babel-plugin@0.5.3': {}
 
-  '@prefresh/core@1.5.10(preact@10.29.8)':
+  '@prefresh/core@1.5.10(preact@11.2.0)':
     dependencies:
-      preact: 10.29.8(preact-render-to-string@6.8.2)
+      preact: 11.2.0(preact-render-to-string@6.8.2)
 
   '@prefresh/utils@1.2.1': {}
 
-  '@prefresh/vite@2.4.12(preact@10.29.8)(vite@8.3.6)':
+  '@prefresh/vite@2.4.12(preact@11.2.0)(vite@8.3.6)':
     dependencies:
       '@babel/core': 7.29.7
       '@prefresh/babel-plugin': 0.5.3
-      '@prefresh/core': 1.5.10(preact@10.29.8)
+      '@prefresh/core': 1.5.10(preact@11.2.0)
       '@prefresh/utils': 1.2.1
       '@rollup/pluginutils': 4.2.1
-      preact: 10.29.8(preact-render-to-string@6.8.2)
+      preact: 11.2.0(preact-render-to-string@6.8.2)
       vite: 8.3.6(@types/node@24.13.2)(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.1)
     transitivePeerDependencies:
       - supports-color
@@ -8610,13 +8610,13 @@ snapshots:
 
   powershell-utils@0.1.0: {}
 
-  preact-render-to-string@6.8.2(preact@10.29.8):
+  preact-render-to-string@6.8.2(preact@11.2.0):
     dependencies:
-      preact: 10.29.8(preact-render-to-string@6.8.2)
+      preact: 11.2.0(preact-render-to-string@6.8.2)
 
-  preact@10.29.8(preact-render-to-string@6.8.2):
+  preact@11.2.0(preact-render-to-string@6.8.2):
     optionalDependencies:
-      preact-render-to-string: 6.8.2(preact@10.29.8)
+      preact-render-to-string: 6.8.2(preact@11.2.0)
 
   prelude-ls@1.2.1: {}
 
