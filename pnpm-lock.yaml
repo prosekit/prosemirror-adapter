@@ -5,6 +5,9 @@ settings:
   dedupePeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  prosemirror-view: 1.43.0-beta2
+
 importers:
 
   .:
@@ -130,8 +133,8 @@ importers:
         specifier: ^1.4.4
         version: 1.4.4
       prosemirror-view:
-        specifier: ^1.42.9
-        version: 1.42.9
+        specifier: 1.43.0-beta2
+        version: 1.43.0-beta2
       react:
         specifier: ^19.3.1
         version: 19.3.1
@@ -181,8 +184,8 @@ importers:
         specifier: ^1.4.4
         version: 1.4.4
       prosemirror-view:
-        specifier: ^1.42.9
-        version: 1.42.9
+        specifier: 1.43.0-beta2
+        version: 1.43.0-beta2
     devDependencies:
       typescript:
         specifier: ~6.0.3
@@ -221,8 +224,8 @@ importers:
         specifier: ^1.4.4
         version: 1.4.4
       prosemirror-view:
-        specifier: ^1.42.9
-        version: 1.42.9
+        specifier: 1.43.0-beta2
+        version: 1.43.0-beta2
       typescript:
         specifier: ~6.0.3
         version: 6.0.3
@@ -263,8 +266,8 @@ importers:
         specifier: ^1.4.4
         version: 1.4.4
       prosemirror-view:
-        specifier: ^1.42.9
-        version: 1.42.9
+        specifier: 1.43.0-beta2
+        version: 1.43.0-beta2
       react:
         specifier: ^19.3.1
         version: 19.3.1
@@ -302,8 +305,8 @@ importers:
         specifier: ^1.4.4
         version: 1.4.4
       prosemirror-view:
-        specifier: ^1.42.9
-        version: 1.42.9
+        specifier: 1.43.0-beta2
+        version: 1.43.0-beta2
       solid-js:
         specifier: ^1.9.18
         version: 1.9.18
@@ -342,8 +345,8 @@ importers:
         specifier: ^1.4.4
         version: 1.4.4
       prosemirror-view:
-        specifier: ^1.42.9
-        version: 1.42.9
+        specifier: 1.43.0-beta2
+        version: 1.43.0-beta2
     devDependencies:
       '@sveltejs/adapter-auto':
         specifier: ^8.0.0
@@ -391,8 +394,8 @@ importers:
         specifier: ^1.4.4
         version: 1.4.4
       prosemirror-view:
-        specifier: ^1.42.9
-        version: 1.42.9
+        specifier: 1.43.0-beta2
+        version: 1.43.0-beta2
       typescript:
         specifier: ~6.0.3
         version: 6.0.3
@@ -415,8 +418,8 @@ importers:
         specifier: ^1.4.4
         version: 1.4.4
       prosemirror-view:
-        specifier: ^1.42.9
-        version: 1.42.9
+        specifier: 1.43.0-beta2
+        version: 1.43.0-beta2
     devDependencies:
       tsdown:
         specifier: ^0.23.4
@@ -434,8 +437,8 @@ importers:
         specifier: ^1.4.4
         version: 1.4.4
       prosemirror-view:
-        specifier: ^1.42.9
-        version: 1.42.9
+        specifier: 1.43.0-beta2
+        version: 1.43.0-beta2
     devDependencies:
       '@lit/context':
         specifier: ^1.1.6
@@ -462,8 +465,8 @@ importers:
         specifier: ^1.4.4
         version: 1.4.4
       prosemirror-view:
-        specifier: ^1.42.9
-        version: 1.42.9
+        specifier: 1.43.0-beta2
+        version: 1.43.0-beta2
     devDependencies:
       preact:
         specifier: ^11.1.1
@@ -484,8 +487,8 @@ importers:
         specifier: ^1.4.4
         version: 1.4.4
       prosemirror-view:
-        specifier: ^1.42.9
-        version: 1.42.9
+        specifier: 1.43.0-beta2
+        version: 1.43.0-beta2
     devDependencies:
       '@types/react':
         specifier: ^19.3.0
@@ -515,8 +518,8 @@ importers:
         specifier: ^1.4.4
         version: 1.4.4
       prosemirror-view:
-        specifier: ^1.42.9
-        version: 1.42.9
+        specifier: 1.43.0-beta2
+        version: 1.43.0-beta2
     devDependencies:
       solid-js:
         specifier: ^1.9.18
@@ -543,8 +546,8 @@ importers:
         specifier: ^1.4.4
         version: 1.4.4
       prosemirror-view:
-        specifier: ^1.42.9
-        version: 1.42.9
+        specifier: 1.43.0-beta2
+        version: 1.43.0-beta2
     devDependencies:
       svelte:
         specifier: ^5.57.3
@@ -565,8 +568,8 @@ importers:
         specifier: ^1.4.4
         version: 1.4.4
       prosemirror-view:
-        specifier: ^1.42.9
-        version: 1.42.9
+        specifier: 1.43.0-beta2
+        version: 1.43.0-beta2
     devDependencies:
       tsdown:
         specifier: ^0.23.4
@@ -4117,8 +4120,8 @@ packages:
   prosemirror-transform@1.12.0:
     resolution: {integrity: sha512-GxboyN4AMIsoHNtz5uf2r2Ru551i5hWeCMD6E2Ib4Eogqoub0NflniaBPVQ4MrGE5yZ8JV9tUHg9qcZTTrcN4w==}
 
-  prosemirror-view@1.42.9:
-    resolution: {integrity: sha512-bKbfzeKZOu2H2JQU2TaJmYu6EBcor3VnGIR4jR31cbEt1ztUnfUB6bKGV1+fJzOJdrVWR+tRU0208zM3oQx4wA==}
+  prosemirror-view@1.43.0-beta2:
+    resolution: {integrity: sha512-SwvBlb0c8UM8m35RUIbfmwIta++Z+MZHXRQK9fBQv+xueUpZ4Hb09Lvz6CKTSHs1TaT4lPxwyYL5e0OTUgtj8A==}
 
   punycode@2.3.1:
     resolution: {integrity: sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg==}
@@ -8621,7 +8624,7 @@ snapshots:
     dependencies:
       prosemirror-state: 1.4.4
       prosemirror-transform: 1.12.0
-      prosemirror-view: 1.42.9
+      prosemirror-view: 1.43.0-beta2
 
   prosemirror-example-setup@1.2.3:
     dependencies:
@@ -8640,13 +8643,13 @@ snapshots:
       prosemirror-keymap: 1.2.3
       prosemirror-model: 1.25.13
       prosemirror-state: 1.4.4
-      prosemirror-view: 1.42.9
+      prosemirror-view: 1.43.0-beta2
 
   prosemirror-history@1.5.0:
     dependencies:
       prosemirror-state: 1.4.4
       prosemirror-transform: 1.12.0
-      prosemirror-view: 1.42.9
+      prosemirror-view: 1.43.0-beta2
       rope-sequence: 1.3.4
 
   prosemirror-inputrules@1.5.1:
@@ -8684,13 +8687,13 @@ snapshots:
     dependencies:
       prosemirror-model: 1.25.13
       prosemirror-transform: 1.12.0
-      prosemirror-view: 1.42.9
+      prosemirror-view: 1.43.0-beta2
 
   prosemirror-transform@1.12.0:
     dependencies:
       prosemirror-model: 1.25.13
 
-  prosemirror-view@1.42.9:
+  prosemirror-view@1.43.0-beta2:
     dependencies:
       prosemirror-model: 1.25.13
       prosemirror-state: 1.4.4
