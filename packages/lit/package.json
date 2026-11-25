@@ -45,7 +45,7 @@
     "@lit/context": "^1.1.6",
     "lit": "^3.3.3",
     "tsdown": "^0.23.4",
-    "vite": "^8.3.5"
+    "vite": "^8.3.8"
   },
   "publishConfig": {
     "types": "./dist/index.d.ts",
