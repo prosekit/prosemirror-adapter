@@ -16,7 +16,7 @@
     "prosemirror-model": "^1.25.13",
     "prosemirror-schema-basic": "^1.2.5",
     "prosemirror-state": "^1.4.4",
-    "prosemirror-view": "^1.43.0"
+    "prosemirror-view": "^1.44.0"
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "^8.0.0",
