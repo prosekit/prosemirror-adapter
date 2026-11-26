@@ -14,3 +14,6 @@ linkWorkspacePackages: deep
 dedupePeers: true
 
 ignoreWorkspaceRootCheck: true
+
+minimumReleaseAgeExclude:
+  - prosemirror-view

@@ -27,7 +27,7 @@
     "@prosemirror-adapter/core": "workspace:*",
     "prosemirror-model": "^1.25.13",
     "prosemirror-state": "^1.4.4",
-    "prosemirror-view": "^1.43.0"
+    "prosemirror-view": "^1.44.0"
   },
   "peerDependencies": {
     "solid-js": "^1.8.22"
@@ -40,8 +40,8 @@
   "devDependencies": {
     "solid-js": "^1.9.18",
     "tsdown": "^0.23.4",
-    "vite": "^8.3.5",
-    "vite-plugin-solid": "^2.11.15"
+    "vite": "^8.3.8",
+    "vite-plugin-solid": "^2.11.17"
   },
   "publishConfig": {
     "types": "./dist/index.d.ts",
