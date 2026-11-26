@@ -58,6 +58,10 @@ export class CoreNodeView<ComponentType> implements NodeView {
     if (this.contentDOM) {
       this.contentDOM.setAttribute('data-node-view-content', 'true')
       this.contentDOM.style.whiteSpace = 'inherit'
+      if (options.isolateContent) {
+        this.dom.contentEditable = 'false'
+        this.contentDOM.contentEditable = 'true'
+      }
     }
 
     this.setSelection = options.setSelection
