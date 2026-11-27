@@ -36,7 +36,7 @@
     "git-cz": "^4.9.0",
     "husky": "^9.1.7",
     "knip": "^6.44.1",
-    "lint-staged": "^17.6.0",
+    "lint-staged": "^17.6.2",
     "monorepo-typescript-references": "^1.1.2",
     "pkg-pr-new": "^0.0.93",
     "prettier": "^3.10.1",
