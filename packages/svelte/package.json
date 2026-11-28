@@ -38,7 +38,7 @@
     }
   },
   "devDependencies": {
-    "svelte": "^5.57.3",
+    "svelte": "^5.59.2",
     "tsdown": "^0.23.4"
   },
   "publishConfig": {
